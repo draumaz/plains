@@ -26,7 +26,7 @@ MAINMENU:
 	//DEBUGGER END//
 	
 	printf("\n");
-	printf("==ADVENTURE GAME==\n");
+	printf("==THE PLAINS==\n");
 	printf("==MADE BY DRAUMAZ IN 2021==\n");
 	printf("==LOVINGLY CODED IN C==\n");
 	printf("\n");
