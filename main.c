@@ -36,8 +36,8 @@ MAINMENU:
 	printf("ACTION: \n");
 	printf("\n");
 	printf("LOOK AROUND [1] \n");
-	printf("SIT DOWN [2] \n");
-	printf("WIP [3] \n");
+	printf("SIT DOWN [2] [UNFINISHED] \n");
+	printf("WIP [3] [NON-FUNCTIONAL] \n");
 	printf("QUIT [Q] \n");
 	printf("\n");
 	printf("ACTION >> ");
@@ -49,7 +49,7 @@ SUB1:
 
 	if(strcmp(opt1, "1")==0){
 		printf("\n");
-		printf("Peering just over the horizon, you can\njust barely make out the sight of a\nlarge hill.\n");
+		printf("Peering just over the horizon, you can just barely make out\nthe sight of a large hill.\n");
 		printf("\n");
 		printf("HEAD TOWARDS [1] \n");
 		printf("STAND STILL [2] \n");
@@ -92,7 +92,7 @@ SUB1:
 			printf("ACTION >> ");
 			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
-			printf("You continue standing there, and you stand there\n until time stops progressing. You did it!\nYou became god! ");
+			printf("You continue standing there, and you stand there until time stops progressing.\nYou did it!\nYou became god!\n");
 			printf("\n");
 			printf("GAME...OVER?\n");
 			printf("\n");
@@ -138,8 +138,8 @@ SUB2:
 		memset(nav1, '\0', 1000);
 		printf("You sit down on the warm grass. You feel the sun shining...\nBut why exactly are you here?\n");
 		printf("REMEMBER [1] \n");
-		printf("S2O[2] \n");
-		printf("S2O[3] \n");
+		printf("DISREGARD [2] [UNFINISHED] \n");
+		printf("INTROSPECT [3] [UNFINISHED] \n");
 		printf("[B]ACK \n");
 		printf("Please choose a submenu >> ");
 		scanf("%s", nav1);
@@ -152,12 +152,11 @@ SUB2:
 			printf("\n");
 			printf("ACTION >> ");
 			scanf("%s", nav1);
-			
-			//TODO CONSTRUCT CONCEPT//
-
 			if(strcmp(nav1, "E")==0){
-			printf("LOREM IPSUM");
-			goto MAINMENU;
+			printf("Suddenly, it all comes flooding back...\nYou look down at your hands, and realize that\nyou have been on a LSD trip for the last hour or so.\nYou come to your senses and wake up on your bed.\n\n");
+			printf("TRUE ENDING UNLOCKED!\n\n");
+			printf("==THE END==\n\n");
+			return 0;
 			}
 			else {
 			goto SUB2;
@@ -165,10 +164,10 @@ SUB2:
 
 		if(strcmp(nav1, "2")==0){
 			memset(nav1, '\0', 1000);
-			printf("You have entered S2O2.\n");
+			printf("You're right, it's probably not a big deal.\nNot like you're in the middle of nowhere, or anything.\n");
 			printf("[E]XIT\n");
 			printf("[B]ACK\n");
-			printf("Please make a choice >> ");
+			printf("ACTION >> ");
 			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
 			printf("Exiting... ");
