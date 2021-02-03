@@ -47,6 +47,7 @@ MAINMENU:
 	printf("ACTION >> ");
 	scanf("%s", opt1);
 
+
 		//BEGIN SUB-MENU ONE//
 
 SUB1:
@@ -145,7 +146,6 @@ SUB1:
 		//BEGIN SUB-MENU TWO//
 
 SUB2:
-//SIT DOWN//
 
 	if(strcmp(opt1, "2")==0){
 		system("clear");
@@ -186,7 +186,7 @@ SUB2:
 			printf("\nThe Plains v0.02\n\n");
 			printf("You're right, it's probably not a big deal.\nNot like you're in the middle of nowhere, or anything.\n");
 			printf("ACTUALL-[E]...\n");
-			printf("[B]ACK\n");
+			printf("[B]ACK\n\n");
 			printf("ACTION >> ");
 			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
@@ -195,6 +195,7 @@ SUB2:
 			goto MAINMENU;
 			}
 			else {
+
 			goto SUB2;
 		}}
 
@@ -202,7 +203,7 @@ SUB2:
 			system("clear");
 			memset(nav1, '\0', 50);
 			printf("\nThe Plains v0.02\n\n");
-			printf("With introspection of your soul, the truth may be\ncloser to reveal than ever.\n");
+			printf("With introspection of your soul, the truth may be\ncloser to reveal than ever.\n\n");
 			printf("DIG DE[E]PER\n");
 			printf("[B]ACK\n");
 			printf("ACTION >> ");
@@ -297,6 +298,7 @@ SUB3:
 		}	
 		else {
 		printf("Did you mean something else?\n");
+		sleep(1);
 		memset(nav1, '\0', 50);
 		memset(opt1, '\0', 50);
 		goto MAINMENU;
