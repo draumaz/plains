@@ -28,15 +28,17 @@ memset(nav1, '\0', 50);
 	
 	printf("\n==THE PLAINS==\n");
 	printf("==MADE BY DRAUMAZ IN 2021==\n");
-	printf("==LOVINGLY CODED IN C==\n\n");
-	sleep(1);
+	printf("==LOVINGLY CODED IN C==\n");
+	printf("==CHARACTER DESIGN AND INSPIRATION BY BRYCE CANO==\n\n");
+	sleep(3);
 	goto MAINMENU;
 
 MAINMENU:
 
 	system("clear");
 	printf("\nThe Plains v0.03\n\n");
-	printf("You awaken suddenly, finding yourself in the middle of a large,\ngrassy field. There doesn't seem to be a single sign of civilization.\nThe only thing that really sticks out is a massive hill just a couple hundred meters away from you.\n\n\n");
+	printf("You are [LIAM], an astronaut who found himself crash-landed in an unknown place.\n");
+	printf("You awaken suddenly, finding yourself in the middle of a large, grassy field.\nSomething that sticks out is a massive hill just a couple hundred meters away from you.\n\n");
 	printf("CHECK THE HILL OUT [1] \n");
 	printf("LOOK AROUND [2] \n");
 	printf("WIP [3] [WIP] \n");
@@ -138,9 +140,9 @@ SUB2:
 		system("clear");
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.03\n\n");
-		printf("You sit down on the warm grass. You feel the sun shining...\nBut why exactly are you here?\n\n\n");
-		printf("REMEMBER [1] \n");
-		printf("DISREGARD [2] \n");
+		printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect for introspection.\n\n\n");
+		printf("RECENT EVENTS [1] \n");
+		printf("SURROUNDINGS [2] \n");
 		printf("INTROSPECT [3] \n");
 		printf("[B]ACK \n");
 		printf("\nACTION >> ");
@@ -150,16 +152,18 @@ SUB2:
 			system("clear");
 			memset(nav1, '\0', 50);
 			printf("\nThe Plains v0.03\n\n");
-			printf("You start to remember how you got here...\n\n");
-			printf("THINK HARD[E]R\n");
+			printf("You were on a mission to a different planet, and something happened...\nyou can't exactly remember.\n\n");
+			printf("WHAT [E]LSE?\n");
 			printf("[B]ACK\n\n");
 			printf("ACTION >> ");
 			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
-			printf("\nSuddenly, it all comes flooding back...\nYou look down at your hands, and realize that\nyou have been in an astral projection for the last hour or so.\nYou come to your senses and wake up on your bed.\n\n");
-			printf("TRUE ENDING UNLOCKED!\n\n");
-			printf("==THE END==\n\n");
-			sleep(8);
+			printf("\nBack at your home world, you are a successful astronaut, and spacetravel has been\nan interest of yours as long as you can remember.\n\n");
+			sleep(5);
+			printf("...you have a life to get back to. People that care about you.\n");
+			sleep(2);
+			printf("\nGAME OVER!\n");
+			sleep(1);
 			return 0;
 			}
 			else {
@@ -170,19 +174,20 @@ SUB2:
 			system("clear");
 			memset(nav1, '\0', 50);
 			printf("\nThe Plains v0.03\n\n");
-			printf("You're right, it's probably not a big deal.\nNot like you're in the middle of nowhere, or anything.\n");
-			printf("ACTUALL-[E]...\n");
+			printf("Seems like your ship has broken apart, pieces of it strewn around you.\n\n");
+			printf("CH[E]CK YOUR SHIP\n");
 			printf("[B]ACK\n\n");
 			printf("ACTION >> ");
 			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
 			printf("\n");
-			printf("Your flagrant disregard becomes so immense\nthat you end up at the beginning of your adventure.\n");
+			printf("Looks pretty destroyed. You can see some foodstuffs and items you brought,\nbut the machine is toast.\n");
 			sleep(4);
+			printf("You decide to go back to where you landed.\n");
+			sleep(2);
 			goto MAINMENU;
 			}
 			else {
-
 			goto SUB2;
 		}}
 
