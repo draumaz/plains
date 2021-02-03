@@ -36,7 +36,7 @@ memset(nav1, '\0', 50);
 MAINMENU:
 
 	system("clear");
-	printf("\nThe Plains v0.03\n\n");
+	printf("\nThe Plains v0.04\n\n");
 	printf("You are [LIAM], an astronaut who found himself crash-landed in an unknown place.\n");
 	printf("You awaken suddenly, finding yourself in the middle of a large, grassy field.\nSomething that sticks out is a massive hill just a couple hundred meters away from you.\n\n");
 	printf("CHECK THE HILL OUT [1] \n");
@@ -52,7 +52,7 @@ SUB1:
 
 	if(strcmp(opt1, "1")==0){
 		system("clear");
-		printf("\nThe Plains v0.03\n\n");
+		printf("\nThe Plains v0.04\n\n");
 		printf("Peering just over the horizon, you can just barely make out\nthe sight of a large hill.\n\n");
 		printf("HEAD TOWARDS [1] \n");
 		printf("STAND STILL [2] \n");
@@ -64,7 +64,7 @@ SUB1:
 	
 		if(strcmp(nav1, "1")==0){
 			system("clear");
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			memset(nav1, '\0', 50);
 			printf("Deciding to take a walk, you make your\nway towards the hill before realizing that it is not a hill, but an evil creature!\n\n");
 			printf("DI[E]\n");
@@ -85,7 +85,7 @@ SUB1:
 
 		if(strcmp(nav1, "2")==0){
 			system("clear");
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			memset(nav1, '\0', 50);
 			printf("You remain motionless. Seems like a waste of time, doesn't it?.\n\n");
 			printf("[E]H...\n");
@@ -106,7 +106,7 @@ SUB1:
 
 		if(strcmp(nav1, "3")==0){
 			system("clear");
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			memset(nav1, '\0', 50);
 			printf("You lay down on the grassy plains and get a good\nlook at the sky. It's beautiful - clouds gently pattern\nthe bright blue sky.\n\n");
 			printf("[E]XAMINE\n");
@@ -139,7 +139,7 @@ SUB2:
 	if(strcmp(opt1, "2")==0){
 		system("clear");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.03\n\n");
+		printf("\nThe Plains v0.04\n\n");
 		printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect for introspection.\n\n\n");
 		printf("RECENT EVENTS [1] \n");
 		printf("SURROUNDINGS [2] \n");
@@ -151,7 +151,7 @@ SUB2:
 		if(strcmp(nav1, "1")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("You were on a mission to a different planet, and something happened...\nyou can't exactly remember.\n\n");
 			printf("WHAT [E]LSE?\n");
 			printf("[B]ACK\n\n");
@@ -173,7 +173,7 @@ SUB2:
 		if(strcmp(nav1, "2")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("Seems like your ship has broken apart, pieces of it strewn around you.\n\n");
 			printf("CH[E]CK YOUR SHIP\n");
 			printf("[B]ACK\n\n");
@@ -194,7 +194,7 @@ SUB2:
 		if(strcmp(nav1, "3")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("With introspection of your soul, the truth may be\ncloser to reveal than ever.\n\n");
 			printf("DIG DE[E]PER\n");
 			printf("[B]ACK\n");
@@ -225,7 +225,7 @@ SUB3:
 	if(strcmp(opt1, "3")==0){
 		system("clear");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.03\n\n");
+		printf("\nThe Plains v0.04\n\n");
 		printf("Welcome to the third Submenu.\n\n");
 		printf("S3O[1] \n");
 		printf("S3O[2] \n");
@@ -237,7 +237,7 @@ SUB3:
 		if(strcmp(nav1, "1")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("You have entered S3O1.\n\n");
 			printf("[E]XIT\n");
 			printf("[B]ACK\n\n");
@@ -254,7 +254,7 @@ SUB3:
 		if(strcmp(nav1, "2")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("You have entered S3O2.\n\n");
 			printf("[E]XIT\n");
 			printf("[B]ACK\n\n");
@@ -271,7 +271,7 @@ SUB3:
 		if(strcmp(nav1, "3")==0){
 			system("clear");
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.03\n\n");
+			printf("\nThe Plains v0.04\n\n");
 			printf("You have entered S3O3.\n\n");
 			printf("[E]XIT\n");
 			printf("[B]ACK\n\n");
