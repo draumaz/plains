@@ -162,9 +162,9 @@ SUB2:
 			sleep(5);
 			printf("...you have a life to get back to. People that care about you.\n");
 			sleep(2);
-			printf("\nYou decide to go back to where you landed.\n");
-			sleep(2);
-			goto MAINMENU;
+			printf("\nGAME OVER!\n");
+			sleep(1);
+			return 0;
 			}
 			else {
 			goto SUB2;
