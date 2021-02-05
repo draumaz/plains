@@ -64,7 +64,7 @@ SUB1:
 	printf("CHECK THE SKY [3] \n");
 	printf("[B]ACK \n");
 	printf("\n");
-	printf("ACTION  >> ");
+	printf("ACTION >> ");
 	memset(nav1, '\0', 50);
 	scanf("%s", nav1);
 
@@ -75,7 +75,7 @@ SUB1:
 		printf("Deciding to take a walk, you make your way towards the hill\nbefore realizing that it is not a hill, but an evil creature!\n\n");
 		printf("DI[E]\n");
 		printf("[B]ACK\n\n");
-		printf("ACTION >> ");
+		printf("\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "E")==0){
 		printf("\nIn a moment of mind-blowing wit, you\nwillingly let yourself die.\nNice going, genius.\n\n");
@@ -96,9 +96,10 @@ SUB1:
 		printf("You remain motionless. Seems like a waste of time, doesn't it?.\n\n");
 		printf("[E]H...\n");
 		printf("[B]ACK\n");
-		printf("\nACTION >> ");
+		printf("\n\n\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "B")==0){
+		printf("\nYou stop being motionless and return to a life full of motion.\n");
 		sleep(2);
 		goto SUB1;
 		}
@@ -126,12 +127,12 @@ SUB1:
 		printf("You lay down on the grassy plains and get a good look at the sky.\nIt's beautiful - clouds gently pattern the great blue expanse.\n\n");
 		printf("[E]XAMINE\n");
 		printf("[B]ACK\n\n");
-		printf("ACTION >> ");
+		printf("\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "E")==0){
-		printf("\nREWRITE\n");
-		printf("\nREWRITE\n");
-		sleep(3);
+		printf("\nYou feel truly refreshed. Perhaps a crash landing was just what you needed.");
+		printf("\n...shouldn't your team have checked in on you by now?\n");
+		sleep(5);
 		goto SUB1;
 		}
 		else {
@@ -153,12 +154,12 @@ SUB2:
 	system("cls");
 	memset(nav1, '\0', 50);
 	printf("\nThe Plains v0.05\n\n");
-	printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect for introspection.\n\n\n");
+	printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect to sit down and think.\n\n");
 	printf("RECENT EVENTS [1] \n");
 	printf("SURROUNDINGS [2] \n");
-	printf("INTROSPECT [3] \n");
-	printf("[B]ACK \n");
-	printf("\nACTION >> ");
+	printf("ABOUT YOURSELF [3] \n");
+	printf("[B]ACK \n\n");
+	printf("ACTION >> ");
 	scanf("%s", nav1);
 		
 	if(strcmp(nav1, "1")==0){
@@ -168,7 +169,7 @@ SUB2:
 		printf("You were on a mission to a different planet, and something happened...\nyou can't exactly remember.\n\n");
 		printf("WHAT [E]LSE?\n");
 		printf("[B]ACK\n\n");
-		printf("ACTION >> ");
+		printf("\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "E")==0){
 		printf("\nBack at your home world, you are a successful astronaut, and spacetravel has been\nan interest of yours as long as you can remember.\n\n");
@@ -190,11 +191,10 @@ SUB2:
 		printf("Seems like your ship has broken apart, pieces of it strewn around you.\n\n");
 		printf("CH[E]CK YOUR SHIP\n");
 		printf("[B]ACK\n\n");
-		printf("ACTION >> ");
+		printf("\n\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "E")==0){
-		printf("\n");
-		printf("Looks pretty destroyed. You can see some foodstuffs and items you brought,\nbut the machine is toast.\n");
+		printf("\nLooks pretty destroyed. You can see some foodstuffs and items you brought,\nbut the machine is toast.\n");
 		sleep(4);
 		printf("You decide to go back to where you landed.\n");
 		sleep(2);
@@ -208,23 +208,23 @@ SUB2:
 		system("cls");
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.05\n\n");
-		printf("With introspection of your soul, the truth may be\ncloser to reveal than ever.\n\n");
-		printf("DIG DE[E]PER\n");
-		printf("[B]ACK\n");
-		printf("ACTION >> ");
+		printf("You're Liam!\n\n");
+		printf("MOR[E]\n");
+		printf("[B]ACK\n\n");
+		printf("\n\n\nACTION >> ");
 		scanf("%s", nav1);
 		if(strcmp(nav1, "E")==0){
-		printf("\n");
-		printf("Your wish came true!\n");
-		printf("GAME OVER!\n");
+		printf("\nYou're of small stature and tan shade. Your spacesuit is intricate and comfortable... Especially against this grass.\n");
 		sleep(4);
-		return 0;
+		goto SUB2;
 		}
 		else {
 		goto SUB2;
 	}}
 
 	if(strcmp(nav1, "B")==0){
+		printf("\nYou decide to head back to where you landed.\n");
+		sleep(2);
 		goto MAINMENU;
 	}}
 	
