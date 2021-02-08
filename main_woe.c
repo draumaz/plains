@@ -10,25 +10,11 @@ int main() {
 char opt1[50];
 char nav1[50];
 
-//CLEAR MEMORY//
-
-memset(opt1, '\0', 50);
-memset(nav1, '\0', 50);
-
 //INIT DISPLAY//
 
 system("cls");
 
-//DEBUGGER START//
-//printf("\n");
-//printf("DEBUGGER\n");
-//printf("OPT1 = %s\n", opt1);
-//printf("NAV1 = %s\n", nav1);
-//printf("\n");
-//printf("\n");
-//DEBUGGER END//
-
-//BEGIN SPLASH//
+//SPLASH//
 
 printf("\n==THE PLAINS==\n");
 printf("==MADE BY DRAUMAZ IN 2021==\n");
@@ -36,13 +22,13 @@ printf("==LOVINGLY CODED IN C==\n");
 printf("==CHARACTER DESIGN AND INSPIRATION BY BRYCE CANO==\n\n");
 sleep(2);
 
-//END SPLASH//
+//BEGIN MAIN//
 
 MAINMENU:
 	system("cls");
 	memset(opt1, '\0', 50);
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.07\n\n");
+	printf("\nThe Plains v0.08\n\n");
 	printf("You are Liam, an astronaut who found himself crash-landed in an unknown place.\n");
 	printf("You awaken suddenly, finding yourself in the middle of a large, grassy field.\nYou can see some hills, a mountain range, and strange flora.\n\n");
 	printf("CHECK THE HILL OUT [1] \n");
@@ -57,7 +43,7 @@ MAINMENU:
 SUB1:
 	if(strcmp(opt1, "1")==0){
 	system("cls");
-	printf("\nThe Plains v0.07\n\n");
+	printf("\nThe Plains v0.08\n\n");
 	printf("Peering over the horizon, you can just barely make out\nthe sight of a large hill.\n\n");
 	printf("HEAD TOWARDS [1] \n");
 	printf("STAND STILL [2] \n");
@@ -69,7 +55,7 @@ SUB1:
 
 	if(strcmp(nav1, "1")==0){
 		system("cls");
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		memset(nav1, '\0', 50);
 		printf("Deciding to take a walk, you make your way towards the hill\nbefore realizing that it is not a hill, but an evil creature!\n\n");
 		printf("DI[E]\n");
@@ -100,12 +86,12 @@ SUB1:
 		}
 		else {
 		goto SUB1;
-		
-	}}
+		}
+	}
 
 	if(strcmp(nav1, "2")==0){
 		system("cls");
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		memset(nav1, '\0', 50);
 		printf("You remain motionless. Seems like a waste of time, doesn't it?.\n\n");
 		printf("[E]H...\n");
@@ -126,69 +112,67 @@ SUB1:
 		printf("\nACTION >> ");
 		memset(nav1, '\0', 50);
 		scanf("%s", nav1);
-		if(strcmp(nav1, "E")==0){
-		sleep(15);
-		printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
-		sleep(4);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "e")==0){
-		sleep(15);
-		printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
-		sleep(4);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "B")==0){
-		printf("\nYou stop being motionless and return to a life full of motion.\n");
-		sleep(2);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "b")==0){
-		printf("\nYou stop being motionless and return to a life full of motion.\n");
-		sleep(2);
-		goto SUB1;
-		}
-		else {
-		goto SUB1;
-		}}
-		if(strcmp(nav1, "e")==0){
-		printf("\nYou continue standing there.\n");
-		sleep(10);
-		printf("Seriously, why are you doing this?\n");
-		printf("\nK[E]EP STANDING");
-		printf("\n[B]ACK\n");
-		printf("\nACTION >> ");
-		memset(nav1, '\0', 50);
-		scanf("%s", nav1);
-		if(strcmp(nav1, "E")==0){
-		sleep(15);
-		printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
-		sleep(4);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "e")==0){
-		sleep(15);
-		printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
-		sleep(4);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "B")==0){
-		sleep(15);
-		printf("\nYou stop being motionless and return to a life full of motion.\n");
-		sleep(2);
-		goto SUB1;
-		}
-		if(strcmp(nav1, "b")==0){
-		sleep(15);
-		printf("\nYou stop being motionless and return to a life full of motion.\n");
-		sleep(2);
-		goto SUB1;
-		}
-	}}
+			if(strcmp(nav1, "E")==0){
+			sleep(15);
+			printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
+			sleep(4);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "e")==0){
+			sleep(15);
+			printf("\nYou've been standing there for a while. Shouldn't you head back?\n");
+			sleep(4);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "B")==0){
+			printf("\nYou stop being motionless and return to a life full of motion.\n");
+			sleep(2);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "b")==0){
+			printf("\nYou stop being motionless and return to a life full of motion.\n");
+			sleep(2);
+			goto SUB1;
+			}
+			else {
+			goto SUB1;
+			}}
+			if(strcmp(nav1, "e")==0){
+			printf("\nYou continue standing there.\n");
+			sleep(10);
+			printf("Seriously, why are you doing this?\n");
+			printf("\nK[E]EP STANDING");
+			printf("\n[B]ACK\n");
+			printf("\nACTION >> ");
+			memset(nav1, '\0', 50);
+			scanf("%s", nav1);
+			if(strcmp(nav1, "E")==0){
+			sleep(5);
+			printf("\nStanding there completely motionless, it gives you the feeling that everything's going to be alright.\n");
+			sleep(4);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "e")==0){
+			sleep(5);
+			printf("\nStanding there completely motionless, it gives you the feeling that everything's going to be alright.\n");
+			sleep(4);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "B")==0){
+			printf("\nYou stop being motionless and return to a life full of motion.\n");
+			sleep(2);
+			goto SUB1;
+			}
+			if(strcmp(nav1, "b")==0){
+			printf("\nYou stop being motionless and return to a life full of motion.\n");
+			sleep(2);
+			goto SUB1;
+			}}
+	}
 	
 	if(strcmp(nav1, "3")==0){
 		system("cls");
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		memset(nav1, '\0', 50);
 		printf("You lay down on the grassy plains and get a good look at the sky.\nIt's beautiful - clouds gently pattern the great blue expanse.\n\n");
 		printf("[E]XAMINE\n");
@@ -230,8 +214,8 @@ SUB1:
 		printf("\nYou consider checking the mountain out...\nYou've got better things to do.\n");
 		sleep(2);
 		goto MAINMENU;
-		
-	}}
+		}
+	}
 
 //END SUB-MENU ONE//
 //
@@ -241,7 +225,7 @@ SUB2:
 	if(strcmp(opt1, "2")==0){
 	system("cls");
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.07\n\n");
+	printf("\nThe Plains v0.08\n\n");
 	printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect to sit down and think.\n\n");
 	printf("\nRECENT EVENTS [1]");
 	printf("\nSURROUNDINGS [2]");
@@ -253,7 +237,7 @@ SUB2:
 	if(strcmp(nav1, "1")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		printf("You were on a mission to a different planet, and something happened...\nyou can't exactly remember.\n\n");
 		printf("WHAT [E]LSE?\n");
 		printf("[B]ACK\n\n");
@@ -291,7 +275,7 @@ SUB2:
 	if(strcmp(nav1, "2")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		printf("Seems like your ship has broken apart, pieces of it strewn around you.\n\n");
 		printf("CH[E]CK YOUR SHIP\n");
 		printf("[B]ACK\n\n");
@@ -311,14 +295,21 @@ SUB2:
 		sleep(2);
 		goto MAINMENU;
 		}
+		if(strcmp(nav1, "B")==0){
+		goto SUB2;
+		}
+		if(strcmp(nav1, "B")==0){
+		goto SUB2;
+		}
 		else {
 		goto SUB2;
-	}}
+		}
+	}
 
 	if(strcmp(nav1, "3")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		printf("You're Liam!\n\n");
 		printf("MOR[E]\n");
 		printf("[B]ACK\n\n");
@@ -347,18 +338,18 @@ SUB2:
 		else {
 		goto SUB2;
 	}}
-
+	
 	if(strcmp(nav1, "B")==0){
-		printf("\nYou decide to head back to where you landed.\n");
+		printf("\nSitting down on the grass is nice, but you've got work to do.\n");
 		sleep(2);
 		goto MAINMENU;
 	}
 	if(strcmp(nav1, "b")==0){
-		printf("\nYou decide to head back to where you landed.\n");
+		printf("\nSitting down on the grass is nice, but you've got work to do.\n");
 		sleep(2);
 		goto MAINMENU;
-	}}
-
+		}
+	}
 	
 //END SUB-MENU TWO//
 //		
@@ -368,7 +359,7 @@ SUB3:
 	if(strcmp(opt1, "3")==0){
 	system("cls");
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.07\n\n");
+	printf("\nThe Plains v0.08\n\n");
 	printf("Stranded on this distant planet, you decide to use the tools at your disposal.\n\n");
 	printf("PHONE [1] \n");
 	printf("RADAR [2] \n");
@@ -408,12 +399,13 @@ SUB3:
 		}
 		else {
 		goto SUB3;
-	}}
+		}
+	}
 
 	if(strcmp(nav1, "2")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		printf("Using your radar, you try to establish contact.\n\n");
 		printf("SCAN HARD[E]R\n");
 		printf("[B]ACK\n\n");
@@ -439,12 +431,13 @@ SUB3:
 		}
 		else {
 		goto SUB3;
-	}}
+		}
+	}
 //TODO
 	if(strcmp(nav1, "3")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.07\n\n");
+		printf("\nThe Plains v0.08\n\n");
 		printf("You have entered S3O3.\n\n");
 		printf("[E]XIT\n");
 		printf("[B]ACK\n\n");
@@ -470,11 +463,16 @@ SUB3:
 	}}
 
 	if(strcmp(nav1, "B")==0){
+		printf("\nHaving used your tools, you head back to where you landed.\n");
+		sleep(3);
 		goto MAINMENU;
 	}
 	if(strcmp(nav1, "b")==0){
+		printf("\nHaving used your tools, you head back to where you landed.\n");
+		sleep(3);
 		goto MAINMENU;
-	}}
+		}
+	}
 
 //END SUB-MENU THREE//
 //
@@ -497,4 +495,7 @@ HANDLER:
 		sleep(1);
 		goto MAINMENU;
 	}
+
+//END MAIN//		
+
 }
