@@ -33,7 +33,7 @@ sleep(2);
 //BEGIN MAIN//
 
 MAINMENU:
-	system("cls");
+	system("clear");
 	memset(opt1, '\0', 50);
 	memset(nav1, '\0', 50);
 	printf("\nThe Plains v0.11\n\n");
@@ -56,13 +56,13 @@ MAINMENU:
 
 	if(strcmp(opt1, "Q")==0){
 	if(var2 == 1){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
 	}
 	if(var2 == 0){
-	system("cls");
+	system("clear");
 	printf("\nYou quit immediately?\nOh well.\n\n");
 	sleep(2);
 	return 0;
@@ -70,13 +70,13 @@ MAINMENU:
 
 	if(strcmp(opt1, "q")==0){
 	if(var2 == 1){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
 	}
 	if(var2 == 0){
-	system("cls");
+	system("clear");
 	printf("\nYou quit immediately?\nOh well.\n\n");
 	sleep(2);
 	return 0;
@@ -107,7 +107,7 @@ MAINMENU:
 
 SUB1:
 	if(strcmp(opt1, "1")==0){
-	system("cls");
+	system("clear");
 	var2 = 1;
 	printf("\nThe Plains v0.11\n\n");
 	if(var4 == 1){
@@ -123,7 +123,7 @@ SUB1:
 	scanf("%s", nav1);
 
 		if(strcmp(nav1, "1")==0){
-		system("cls");
+		system("clear");
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
 		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
@@ -164,7 +164,7 @@ SUB1:
 		}
 
 		if(strcmp(nav1, "2")==0){
-		system("cls");
+		system("clear");
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
 		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
@@ -264,7 +264,7 @@ SUB1:
 		}
 	
 		if(strcmp(nav1, "3")==0){
-		system("cls");
+		system("clear");
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
 		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
@@ -328,7 +328,7 @@ SUB1:
 SUB2:
 	if(strcmp(opt1, "2")==0){
 	var2 = 1;
-	system("cls");
+	system("clear");
 	memset(nav1, '\0', 50);
 	printf("\nThe Plains v0.11\n\n");
 	if(var4 == 1){
@@ -342,7 +342,7 @@ SUB2:
 	printf("ACTION >> ");
 	scanf("%s", nav1);	
 		if(strcmp(nav1, "1")==0){
-		system("cls");
+		system("clear");
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
@@ -385,7 +385,7 @@ SUB2:
 		}
 
 		if(strcmp(nav1, "2")==0){
-		system("cls");
+		system("clear");
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
@@ -424,7 +424,7 @@ SUB2:
 		}
 
 		if(strcmp(nav1, "3")==0){
-		system("cls");
+		system("clear");
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.11\n\n");
 		if(var4 == 1){
@@ -486,7 +486,7 @@ SUB2:
 SUB3:
 	if(strcmp(opt1, "3")==0){
 	var2 = 1;
-	system("cls");
+	system("clear");
 	memset(nav1, '\0', 50);
 	printf("\nThe Plains v0.11\n\n");
 	if(var4 == 1){
@@ -500,7 +500,7 @@ SUB3:
 	printf("\n\n\nACTION >> ");
 	scanf("%s", nav1);
 		if(strcmp(nav1, "1")==0){
-		system("cls");
+		system("clear");
 		memset(nav1, '\0', 50);
 		var1 = 1;
 		printf("\nThe Plains v0.11\n\n");
@@ -540,7 +540,7 @@ SUB3:
 	}
 
 		if(strcmp(nav1, "2")==0){
-		system("cls");
+		system("clear");
 		var1 = 1;
 		memset(nav1, '\0', 50);
 		printf("\nThe Plains v0.11\n\n");
@@ -576,7 +576,7 @@ SUB3:
 		}
 
 			if(strcmp(nav1, "3")==0){
-			system("cls");
+			system("clear");
 			var1 = 1;
 			memset(nav1, '\0', 50);
 			printf("\nThe Plains v0.11\n\n");
@@ -669,7 +669,7 @@ SUB3:
 SUB4:
 	if(strcmp(opt1, "4")==0){
 	if(var3 == 1){
-	system("cls");
+	system("clear");
 	printf("\nThe Plains v0.11\n\n");
 	if(var4 == 1){
 	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
@@ -685,10 +685,10 @@ SUB4:
 		sleep(4);
 		printf("\nTO BE CONTINUED...\n");
 		sleep(3);
-		system("cls");
+		system("clear");
 		printf("\n==TRUE ENDING==\n");
 		sleep(2);
-		system("cls");
+		system("clear");
 		printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 		sleep(2);
 		return 0;
