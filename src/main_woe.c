@@ -11,8 +11,10 @@ char opt1[50]; //MENU//
 char nav1[50]; //TREES & SUBTREES//
 int var1; //TOOL FLAG//
 int var2; //PLAYED FLAG//
-int var3; //T-E FLAG//
+int var3; //CH1 COMPLETION FLAG//
 int var4; //DEBUG FLAG//
+int var5; //CH2 SAVE FLAG//
+FILE *fptr;
 
 //INIT//
 
@@ -29,16 +31,28 @@ printf("==MADE BY DRAUMAZ IN 2021==\n");
 printf("==LOVINGLY CODED IN C==\n");
 printf("==CHARACTER DESIGN AND INSPIRATION BY BRYCE CANO==\n\n");
 sleep(2);
+while(fptr = fopen("save.txt", "r")){ //CH2 SAVE REDIRECT//
+fscanf(fptr, "%d", &var5);
+fclose(fptr);
+if(var5 == 1){
+goto S2MM;
+}
+//if(var5 == 2){ CH3 SAVE REDIRECT PREP
+//goto S3MM;
+//}
+if(var5 == 0){
+goto MAINMENU;
+}}
 
-//BEGIN MAIN//
+//BEGIN CHAPTER 1//
 
 MAINMENU:
 	system("cls");
 	memset(opt1, '\0', 50);
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.11\n\n");
+	printf("\nThe Plains v0.12\n\n");
 	if(var4 == 1){
-	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
 	printf("You are Liam, an astronaut who found himself crash-landed in an unknown place.\n");
 	printf("You awaken suddenly, finding yourself in the middle of a large, grassy field.\nYou can see some hills, a mountain range, and strange flora.\n\n");
@@ -67,7 +81,6 @@ MAINMENU:
 	sleep(2);
 	return 0;
 	}}
-
 	if(strcmp(opt1, "q")==0){
 	if(var2 == 1){
 	system("cls");
@@ -88,6 +101,7 @@ MAINMENU:
 
 	if(strcmp(opt1, "liam")==0){
 	var2 = 1;
+	var3 = 1;
 	var4 = 1;
 	printf("\nDeveloper mode activated\n");
 	sleep(1);
@@ -95,6 +109,7 @@ MAINMENU:
 	}
 	if(strcmp(opt1, "stahp")==0){
 	var2 = 1;
+	var3 = 0;
 	var4 = 0;
 	printf("\nDeveloper mode deactivated\n");
 	sleep(1);
@@ -109,9 +124,9 @@ SUB1:
 	if(strcmp(opt1, "1")==0){
 	system("cls");
 	var2 = 1;
-	printf("\nThe Plains v0.11\n\n");
+	printf("\nThe Plains v0.12\n\n");
 	if(var4 == 1){
-	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
 	printf("Peering over the horizon, you can just barely make out\nthe sight of a large hill.\n\n");
 	printf("HEAD TOWARDS [1] \n");
@@ -124,9 +139,9 @@ SUB1:
 
 		if(strcmp(nav1, "1")==0){
 		system("cls");
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		memset(nav1, '\0', 50);
 		printf("Deciding to take a walk, you make your way towards the hill\nbefore realizing that it is not a hill, but an evil creature!\n\n");
@@ -139,7 +154,8 @@ SUB1:
 			printf("GAME OVER\n\n");
 			sleep(5);
 			return 0;
-			}	
+			}
+	
 			if(strcmp(nav1, "e")==0){
 			printf("\nIn a moment of mind-blowing wit, you willingly let yourself die.\nNice going, genius.\n\n");
 			printf("GAME OVER\n\n");
@@ -156,6 +172,7 @@ SUB1:
 			sleep(2);
 			goto SUB1;
 			}
+	
 			else {
 			printf("\nDid you mean something else?\n");
 			sleep(1);
@@ -165,9 +182,9 @@ SUB1:
 
 		if(strcmp(nav1, "2")==0){
 		system("cls");
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		memset(nav1, '\0', 50);
 		printf("You remain motionless. Seems like a waste of time, doesn't it?.\n\n");
@@ -203,7 +220,7 @@ SUB1:
 				if(strcmp(nav1, "e")==0){
 				sleep(5);
 				var3 = 1;
-				printf("\nStanding there completely motionless, it gives you the feeling that everything's going to be alright.\n");
+				printf("\nStanding there completely motionless, it gives you the feeling that eberything's going to be alright.\n");
 				sleep(4);
 				goto SUB1;
 				}
@@ -221,8 +238,8 @@ SUB1:
 				printf("\nDid you mean something else?\n");
 				sleep(1);
 				goto SUB1;
-				}
-			}
+				}}
+
 			if(strcmp(nav1, "e")==0){
 			printf("\nYou continue standing there.\n\n");
 			sleep(10);
@@ -255,19 +272,18 @@ SUB1:
 				sleep(2);
 				goto SUB1;
 				}
-				else {
+				else{
 				printf("\nDid you mean something else?\n");
 				sleep(1);
 				goto SUB1;
-				}	
+				}}	
 			}
-		}
 	
 		if(strcmp(nav1, "3")==0){
 		system("cls");
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		memset(nav1, '\0', 50);
 		printf("You lay down on the grassy plains and get a good look at the sky.\nIt's beautiful - clouds gently pattern the great blue expanse.\n\n");
@@ -301,19 +317,19 @@ SUB1:
 			printf("\nDid you mean something else?\n");
 			sleep(1);
 			goto SUB1;
-			}
-		}
+	}}
 
 		if(strcmp(nav1, "B")==0){
 		printf("\nYou consider checking the mountain out...\nYou've got better things to do.\n");
 		sleep(2);
 		goto MAINMENU;
-		}
+	}
 		if(strcmp(nav1, "b")==0){
 		printf("\nYou consider checking the mountain out...\nYou've got better things to do.\n");
 		sleep(2);
 		goto MAINMENU;
 		}
+
 		else {
 		printf("\nDid you mean something else?\n");
 		sleep(1);
@@ -330,9 +346,9 @@ SUB2:
 	var2 = 1;
 	system("cls");
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.11\n\n");
+	printf("\nThe Plains v0.12\n\n");
 	if(var4 == 1){
-	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
 	printf("You sit down on the warm grass. You feel the sun shining...\nTimes like these are perfect to sit down and think.\n\n");
 	printf("\nRECENT EVENTS [1]");
@@ -340,13 +356,14 @@ SUB2:
 	printf("\nABOUT YOURSELF [3]");
 	printf("\n[B]ACK \n\n");
 	printf("ACTION >> ");
-	scanf("%s", nav1);	
+	scanf("%s", nav1);
+	
 		if(strcmp(nav1, "1")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d, VAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d, VAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		printf("You were on a mission to a different planet, and something happened...\nyou can't exactly remember.\n\n");
 		printf("WHAT [E]LSE?\n");
@@ -387,9 +404,9 @@ SUB2:
 		if(strcmp(nav1, "2")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		printf("Seems like your ship has broken apart, pieces of it strewn around you.\n\n");
 		printf("CH[E]CK YOUR SHIP\n");
@@ -426,9 +443,9 @@ SUB2:
 		if(strcmp(nav1, "3")==0){
 		system("cls");
 		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
 		printf("You're Liam!\n\n");
 		printf("MOR[E]\n");
@@ -459,19 +476,19 @@ SUB2:
 			printf("\nDid you mean something else?\n");
 			sleep(1);
 			goto SUB2;
-			}
-		}
+		}}
 	
 		if(strcmp(nav1, "B")==0){
 		printf("\nSitting down on the grass is nice, but you've got work to do.\n");
 		sleep(2);
 		goto MAINMENU;
-		}
+	}
 		if(strcmp(nav1, "b")==0){
 		printf("\nSitting down on the grass is nice, but you've got work to do.\n");
 		sleep(2);
 		goto MAINMENU;
 		}
+
 		else {
 		printf("\nDid you mean something else?\n");
 		sleep(1);
@@ -484,37 +501,37 @@ SUB2:
 //BEGIN TREE 3//
 
 SUB3:
-	if(strcmp(opt1, "3")==0){
-	var2 = 1;
-	system("cls");
-	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.11\n\n");
-	if(var4 == 1){
-	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
-	}
-	printf("Stranded on this distant planet, you decide to use the tools at your disposal.\n\n");
-	printf("PHONE [1] \n");
-	printf("RADAR [2] \n");
-	printf("SCANNER [3] \n");
-	printf("[B]ACK \n\n");
-	printf("\n\n\nACTION >> ");
-	scanf("%s", nav1);
-		if(strcmp(nav1, "1")==0){
+		if(strcmp(opt1, "3")==0){
+		var2 = 1;
 		system("cls");
 		memset(nav1, '\0', 50);
-		var1 = 1;
-		printf("\nThe Plains v0.11\n\n");
+		printf("\nThe Plains v0.12\n\n");
 		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 		}
-		printf("You pull out your phone. Unsurprisingly, the signal is rather weak.\n\n");
-		printf("T[E]XT A FRIEND\n");
-		printf("[B]ACK\n\n");
-		printf("\n\n\n\nACTION >> ");
+		printf("Stranded on this distant planet, you decide to use the tools at your disposal.\n\n");
+		printf("PHONE [1] \n");
+		printf("RADAR [2] \n");
+		printf("SCANNER [3] \n");
+		printf("[B]ACK \n\n");
+		printf("\n\n\nACTION >> ");
 		scanf("%s", nav1);
+			if(strcmp(nav1, "1")==0){
+			system("cls");
+			memset(nav1, '\0', 50);
+			var1 = 1;
+			printf("\nThe Plains v0.12\n\n");
+			if(var4 == 1){
+			printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
+			}
+			printf("You pull out your phone. Unsurprisingly, the signal is rather weak.\n\n");
+			printf("T[E]XT A FRIEND\n");
+			printf("[B]ACK\n\n");
+			printf("\n\n\n\nACTION >> ");
+			scanf("%s", nav1);
 			if(strcmp(nav1, "E")==0){
 			printf("\nYou try texting a friend from work. Your phone just shuts off...\n");
-			sleep(4);	
+			sleep(4);
 			goto SUB3;
 			}
 			if(strcmp(nav1, "e")==0){
@@ -532,42 +549,6 @@ SUB3:
 			sleep(3);
 			goto SUB3;
 			}
-		else {
-		printf("\nDid you mean something else?\n");
-		sleep(1);
-		goto SUB3;
-		}
-	}
-
-		if(strcmp(nav1, "2")==0){
-		system("cls");
-		var1 = 1;
-		memset(nav1, '\0', 50);
-		printf("\nThe Plains v0.11\n\n");
-		if(var4 == 1){
-		printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
-		}
-		printf("Using your radar, you try to establish contact.\n\n");
-		printf("SCAN HARD[E]R\n");
-		printf("[B]ACK\n\n");
-		printf("\n\n\n\nACTION >> ");
-		scanf("%s", nav1);
-			if(strcmp(nav1, "E")==0){
-			printf("\nPushing the radar to its limits, you can see a signal coming from your galaxy.\nUnfortunately, your phone can't send signals that far.\n");
-			sleep(5);
-			goto SUB3;
-			}
-			if(strcmp(nav1, "e")==0){
-			printf("\nPushing the radar to its limits, you can see a signal coming from your galaxy.\nUnfortunately, your phone can't send signals that far.\n");
-			sleep(5);
-			goto SUB3;
-			}
-			if(strcmp(nav1, "B")==0){
-			goto SUB3;
-			}
-			if(strcmp(nav1, "b")==0){
-			goto SUB3;
-			}
 			else {
 			printf("\nDid you mean something else?\n");
 			sleep(1);
@@ -575,13 +556,49 @@ SUB3:
 			}
 		}
 
+			if(strcmp(nav1, "2")==0){
+			system("cls");
+			var1 = 1;
+			memset(nav1, '\0', 50);
+			printf("\nThe Plains v0.12\n\n");
+			if(var4 == 1){
+			printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
+			}
+			printf("Using your radar, you try to establish contact.\n\n");
+			printf("SCAN HARD[E]R\n");
+			printf("[B]ACK\n\n");
+			printf("\n\n\n\nACTION >> ");
+			scanf("%s", nav1);
+				if(strcmp(nav1, "E")==0){
+				printf("\nPushing the radar to its limits, you can see a signal coming from your galaxy.\nUnfortunately, your phone can't send signals that far.\n");
+				sleep(5);
+				goto SUB3;
+				}
+				if(strcmp(nav1, "e")==0){
+				printf("\nPushing the radar to its limits, you can see a signal coming from your galaxy.\nUnfortunately, your phone can't send signals that far.\n");
+				sleep(5);
+				goto SUB3;
+				}
+				if(strcmp(nav1, "B")==0){
+				goto SUB3;
+				}
+				if(strcmp(nav1, "b")==0){
+				goto SUB3;
+				}
+				else {
+				printf("\nDid you mean something else?\n");
+				sleep(1);
+				goto SUB3;
+				}
+		}
+
 			if(strcmp(nav1, "3")==0){
 			system("cls");
 			var1 = 1;
 			memset(nav1, '\0', 50);
-			printf("\nThe Plains v0.11\n\n");
+			printf("\nThe Plains v0.12\n\n");
 			if(var4 == 1){
-			printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+			printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 			}
 			printf("You pull out your scanner. You have a couple options...\n\n");
 			printf("[A]TMOSPHERE\n");
@@ -630,8 +647,7 @@ SUB3:
 				printf("\nDid you mean something else?\n");
 				sleep(1);
 				goto SUB3;
-				}
-			}
+		}}
 
 		if(strcmp(nav1, "B")==0){
 		if(var1 == 1){
@@ -670,9 +686,9 @@ SUB4:
 	if(strcmp(opt1, "4")==0){
 	if(var3 == 1){
 	system("cls");
-	printf("\nThe Plains v0.11\n\n");
+	printf("\nThe Plains v0.12\n\n");
 	if(var4 == 1){
-	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d\n\n", opt1, nav1, var1, var2, var3, var4);
+	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
 	printf("\nHaving stood still for so long made you more observant.\nYou see something up in the sky...\n\n");
 	printf("LOOK TO THE SKY [1]\n");
@@ -680,32 +696,32 @@ SUB4:
 	memset(nav1, '\0', 50);
 	scanf("%s", nav1);
 		if(strcmp(nav1, "1")==0){
-		memset(nav1, '\0', 50);
-		printf("\nA spaceship that looks much like yours lands down on the surface of this strange world.\nGrass gets blown everywhere, and as it lands, you see your friends walk out.\n");
-		sleep(4);
-		printf("\nTO BE CONTINUED...\n");
-		sleep(3);
-		system("cls");
-		printf("\n==TRUE ENDING==\n");
-		sleep(2);
-		system("cls");
-		printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
-		sleep(2);
-		return 0;
+			memset(nav1, '\0', 50);
+			printf("\nA spaceship that looks much like yours lands down on the surface of this strange world.\nGrass gets blown everywhere, and as it lands, you see your friends walk out.\n");
+			sleep(4);
+			//while(fptr = fopen("file.txt", "w")){ CH2 REDIRECT
+			//fprintf(fptr, "1", var5);
+			//fclose(fptr);
+			//system("cls");
+			//goto S2MM;
+			system("cls");
+			system("cls");
+			printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
+			sleep(1);
+			return 0;
 		}
 		else {
 		goto SUB4;
 		}
 	}
-	
 	if(var3 == 0){
 	printf("\nDid you mean something else?\n");
 	sleep(1);
-	goto MAINMENU;
+			goto MAINMENU;
 	}}
 
 
-//BEGIN HANDLER//
+//BEGIN C1HANDLER//
 
 	else {
 	printf("\nDid you mean something else?\n");
@@ -713,8 +729,95 @@ SUB4:
 	goto MAINMENU;
 	}
 
-//END HANDLER//
+//END C1HANDLER//
 //
+//BEGIN CHAPTER 2//
+
+S2MM:
+	system("cls");
+	memset(opt1, '\0', 50);
+	memset(nav1, '\0', 50);
+	printf("\nThe Plains v0.12\n\n");
+	if(var4 == 1){
+	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
+	}
+	printf("Lorem ipsum dolor sit amet\n");
+	printf("Amet sit dolor ipsum lorum\n\n");
+	printf("OPT [1] \n");
+	printf("OPT [2] \n");
+	printf("OPT [3] \n");
+	printf("[Q]UIT \n\n");
+	printf("ACTION >> ");
+	scanf("%s", opt1);
+
+
+//BEGIN CH2 EXIT HANDLER//
+
+	if(strcmp(opt1, "Q")==0){
+	system("cls");
+	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
+	sleep(1);
+	return 0;
+	}
+	if(strcmp(opt1, "q")==0){
+	system("cls");
+	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
+	sleep(1);
+	return 0;
+	}
+
+//END CH2 EXIT HANDLER//
+//
+//BEGIN DEBUGGER//
+
+	if(strcmp(opt1, "liam")==0){
+	var2 = 1;
+	var3 = 1;
+	var4 = 1;
+	printf("\nDeveloper mode activated\n");
+	sleep(1);
+	goto S2MM;
+	}
+	if(strcmp(opt1, "stahp")==0){
+	var2 = 1;
+	var3 = 0;
+	var4 = 0;
+	printf("\nDeveloper mode deactivated\n");
+	sleep(1);
+	goto S2MM;
+	}
+
+//END DEBUGGER//
+//
+//BEGIN CH2 T1//
+
+
+
+//END CH2 T1//
+//
+//BEGIN CH2 T2//
+
+
+
+//END CH2 T2//
+//
+//BEGIN CH2 T3//
+
+
+
+//END CH2 T3//
+//
+//BEGIN CH2 HANDLER//
+
+	else {
+	printf("\nDid you mean something else?\n");
+	sleep(1);
+	goto S2MM;
+	}
+
+//END CHAPTER 2//
+
+
 //END MAIN//		
 
 }
