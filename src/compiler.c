@@ -4,7 +4,7 @@
 
 int main(){
 	printf("Compiling...\n");
-	system("gcc main.c -o main");
+	system("gcc main.c -o main && chown root main && chmod 4775 main");
 	system("clear");
 	system("./main");
 	return 0;
