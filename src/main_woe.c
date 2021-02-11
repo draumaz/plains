@@ -16,33 +16,48 @@ int var4; //DEBUG FLAG//
 int var5; //CH2 SAVE FLAG//
 FILE *fptr;
 
-//INIT//
+//REDIRECTOR INIT// (Try to find a way to generate the text files internally)
 
-system("cls");
-var1 = 0;
+fptr = fopen("save/save2.txt", "r");
+fscanf(fptr, "%d", &var1);
+fclose(fptr);
+fptr = fopen("save/save.txt", "r");
+fscanf(fptr, "%d", &var5);
+fclose(fptr);
+
+//VAR INIT//
+
 var2 = 0;
 var3 = 0;
 var4 = 0;
 
 //SPLASH//
 
+system("cls");
 printf("\n==THE PLAINS==\n");
 printf("==MADE BY DRAUMAZ IN 2021==\n");
-printf("==LOVINGLY CODED IN C==\n");
-printf("==CHARACTER DESIGN AND INSPIRATION BY BRYCE CANO==\n\n");
+printf("==LOVINGLY CODED WITH C AND VIM==\n");
+printf("==CHARACTER INSPIRATION BY BRYCE CANO==\n");
 sleep(2);
-while(fptr = fopen("save.txt", "r")){ //CH2 SAVE REDIRECT//
-fscanf(fptr, "%d", &var5);
-fclose(fptr);
-if(var5 == 1){
-goto S2MM;
+
+//REDIRECTOR//
+
+if(var1 == 1){ //TOOL USAGE//
+	if(var5 == 1){ //CH2 MENU SAVE//
+	goto S2MM;
+	}
+	if(var5 == 0){
+	goto MAINMENU;
+	}
 }
-//if(var5 == 2){ CH3 SAVE REDIRECT PREP
-//goto S3MM;
-//}
-if(var5 == 0){
-goto MAINMENU;
-}}
+if(var1 == 0){
+	if(var5 == 1){
+	goto S2MM;
+	}
+	if(var5 == 0){
+	goto MAINMENU;
+	}
+}
 
 //BEGIN CHAPTER 1//
 
@@ -60,7 +75,7 @@ MAINMENU:
 	printf("LOOK AROUND [2] \n");
 	printf("USE YOUR TOOLS [3] \n");
 	if(var3 == 1){
-	printf("... [4] \n");
+	printf("THAT SOUND... [4] \n");
 	}
 	printf("QUIT [Q] \n\n");
 	printf("ACTION >> ");
@@ -70,26 +85,26 @@ MAINMENU:
 
 	if(strcmp(opt1, "Q")==0){
 	if(var2 == 1){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
 	}
 	if(var2 == 0){
-	system("cls");
+	system("clear");
 	printf("\nYou quit immediately?\nOh well.\n\n");
 	sleep(2);
 	return 0;
 	}}
 	if(strcmp(opt1, "q")==0){
 	if(var2 == 1){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
 	}
 	if(var2 == 0){
-	system("cls");
+	system("clear");
 	printf("\nYou quit immediately?\nOh well.\n\n");
 	sleep(2);
 	return 0;
@@ -220,7 +235,7 @@ SUB1:
 				if(strcmp(nav1, "e")==0){
 				sleep(5);
 				var3 = 1;
-				printf("\nStanding there completely motionless, it gives you the feeling that eberything's going to be alright.\n");
+				printf("\nStanding there completely motionless, it gives you the feeling that everything's going to be alright.\n");
 				sleep(4);
 				goto SUB1;
 				}
@@ -519,6 +534,9 @@ SUB3:
 			if(strcmp(nav1, "1")==0){
 			system("cls");
 			memset(nav1, '\0', 50);
+			fptr = fopen("save/save2.txt", "w");
+			fprintf(fptr, "1", var1);
+			fclose(fptr);
 			var1 = 1;
 			printf("\nThe Plains v0.12\n\n");
 			if(var4 == 1){
@@ -558,8 +576,11 @@ SUB3:
 
 			if(strcmp(nav1, "2")==0){
 			system("cls");
-			var1 = 1;
 			memset(nav1, '\0', 50);
+			fptr = fopen("save/save2.txt", "w");
+			fprintf(fptr, "1", var1);
+			fclose(fptr);
+			var1 = 1;
 			printf("\nThe Plains v0.12\n\n");
 			if(var4 == 1){
 			printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
@@ -690,7 +711,7 @@ SUB4:
 	if(var4 == 1){
 	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
-	printf("\nHaving stood still for so long made you more observant.\nYou see something up in the sky...\n\n");
+	printf("\nYou feel a deep reverberation on the surface of this planet.\n\n\n");
 	printf("LOOK TO THE SKY [1]\n");
 	printf("\n\nACTION >> ");
 	memset(nav1, '\0', 50);
@@ -699,16 +720,12 @@ SUB4:
 			memset(nav1, '\0', 50);
 			printf("\nA spaceship that looks much like yours lands down on the surface of this strange world.\nGrass gets blown everywhere, and as it lands, you see your friends walk out.\n");
 			sleep(4);
-			//while(fptr = fopen("file.txt", "w")){ CH2 REDIRECT
-			//fprintf(fptr, "1", var5);
-			//fclose(fptr);
-			//system("cls");
-			//goto S2MM;
+			fptr = fopen("save/save.txt", "w");
+			fprintf(fptr, "1", var5);
+			fclose(fptr);
 			system("cls");
+			goto S2MM;
 			system("cls");
-			printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
-			sleep(1);
-			return 0;
 		}
 		else {
 		goto SUB4;
@@ -737,7 +754,7 @@ S2MM:
 	system("cls");
 	memset(opt1, '\0', 50);
 	memset(nav1, '\0', 50);
-	printf("\nThe Plains v0.12\n\n");
+	printf("\nThe Plains v0.12\nCHAPTER II\n\n");
 	if(var4 == 1){
 	printf("OPT1 = %s, NAV1 = %s, VAR1 = %d\nVAR2 = %d, VAR3 = %d, VAR4 = %d, VAR5 = %d\n\n", opt1, nav1, var1, var2, var3, var4, var5);
 	}
@@ -754,13 +771,13 @@ S2MM:
 //BEGIN CH2 EXIT HANDLER//
 
 	if(strcmp(opt1, "Q")==0){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
 	}
 	if(strcmp(opt1, "q")==0){
-	system("cls");
+	system("clear");
 	printf("\n==THANK YOU==\n==FOR PLAYING!==\n");
 	sleep(1);
 	return 0;
