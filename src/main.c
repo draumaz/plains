@@ -18,10 +18,16 @@ FILE *fptr;
 
 //REDIRECTOR INIT// (Try to find a way to generate the text files internally)
 
-fptr = fopen("save/save2.txt", "r");
+if((fptr = fopen("save/save2.txt", "r")) == NULL){
+	printf("\nLooks like 'save/save2.txt' and potentially also 'save/save.txt' is missing.\nMake sure you've got those.\n");
+	sleep(2);
+}
 fscanf(fptr, "%d", &var1);
 fclose(fptr);
-fptr = fopen("save/save.txt", "r");
+if((fptr = fopen("save/save.txt", "r")) == NULL){
+	printf("\n\nLooks like 'save/save.txt' and potentially also 'save/save2.txt' is missing.\nMake sure you've got those.\n");
+	sleep(2);
+}
 fscanf(fptr, "%d", &var5);
 fclose(fptr);
 
@@ -49,12 +55,18 @@ if(var1 == 1){ //TOOL USAGE//
 	if(var5 == 0){
 	goto MAINMENU;
 	}
+	else{
+	goto MAINMENU;
+	}
 }
 if(var1 == 0){
 	if(var5 == 1){
 	goto S2MM;
 	}
 	if(var5 == 0){
+	goto MAINMENU;
+	}
+	else{
 	goto MAINMENU;
 	}
 }
