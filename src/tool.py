@@ -2,6 +2,8 @@ import os
 import time
 import mm1
 from toolsel1 import *
+from toolsel2 import *
+from toolsel3 import *
 
 
 def tool():

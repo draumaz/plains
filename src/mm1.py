@@ -3,6 +3,7 @@ import time
 from config import *
 from hill import *
 from tool import *
+from ch1end import *
 
 def mainMenu1():
     os.system('clear')
@@ -23,19 +24,21 @@ def mainMenu1():
 
     if mainmenuSelect1 == 1:
         hill()
+
     if mainmenuSelect1 == 2:
         cave()
+
     if mainmenuSelect1 == 3:
         tool()
+
     if mainmenuSelect1 == 4:
         if var1 == 0:
             print('\nThanks for playing!')
             time.sleep(0.5)
             quit()
         if var1 == 1:
-            print('Placeholder for CH1 Ender')
-            time.sleep(2)
-            quit()
+            ch1End()
+
     if mainmenuSelect1 == 5:
         if var1 == 1:
             print('\nThanks for playing!')
