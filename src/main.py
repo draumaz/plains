@@ -1,7 +1,8 @@
 import os
 import time
-from config import *
+from config3 import *
 from mm1 import *
+from mm2 import *
 
 os.system('clear')
 print('\n==THE PLAINS==')
@@ -13,15 +14,13 @@ time.sleep(1.5)
 print('\nScanning save...')
 time.sleep(0.5)
 
-if var1 == 0:
+if var3 == 0:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
     mainMenu1()
-if var1 == 1:
+if var3 == 1:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
-    print('Not done with this part yet.')
-    time.sleep(2)
-    quit()
+    mm2.mainMenu2()

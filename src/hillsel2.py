@@ -14,7 +14,7 @@ def hillSel2():
     time.sleep(1)
     print('.')
     time.sleep(1)
-    print('Seems like a bit of a waste of time.')
+    print('\nSeems like a bit of a waste of time.')
     time.sleep(4)
     print('KEEP STANDING [1]')
     print('GO BACK [2]')
@@ -28,7 +28,7 @@ def hillSel2():
         time.sleep(1)
         print('.')
         time.sleep(1)
-        print('Standing there motionless, it gives you the feeling that everythings going to be alright.\n')
+        print('\nStanding there motionless, it gives you the feeling that everythings going to be alright.\n')
         fname = 'config.py'
         data = 1
         with open(fname, 'w') as f:
