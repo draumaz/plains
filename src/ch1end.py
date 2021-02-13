@@ -24,6 +24,7 @@ def ch1End():
         data = 1
         with open(fname, 'w') as f:
             f.write('var3 = {}'.format(data))
+            f.close()
         print('Saved.')
         time.sleep(1)
         os.system('clear')
