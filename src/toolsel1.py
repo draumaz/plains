@@ -21,6 +21,7 @@ def toolSel1():
         data = 1
         with open(fname, 'w') as f:
             f.write('var2 = {}'.format(data))
+            f.close()
         time.sleep(4)
         tool.tool()
     if toolSelect1 == 0:
