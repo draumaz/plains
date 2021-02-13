@@ -5,7 +5,7 @@ import mm2
 def ch1End():
     os.system('clear')
     print('\nThe Plains v0.13\n')
-    print("You didn't notice it at first, but alongside a strange noise, you see a black disk in the sky.\n")
+    print("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n")
     print('LOOK [1]')
     
     ch1EndSelect = int(input('\nACTION >> '))
@@ -13,7 +13,7 @@ def ch1End():
         ch1End()
 
     if ch1EndSelect == 1:
-        print('The black disc descends from the sky, and lands safely. A hatch opens, and your friends walk out.')
+        print('\nThe black disc descends from the sky, and lands safely. A hatch opens, and your friends walk out.')
         time.sleep(5)
         os.system('clear')
         print('\nCHAPTER I COMPLETE!\n')

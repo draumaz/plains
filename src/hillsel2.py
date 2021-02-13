@@ -14,9 +14,9 @@ def hillSel2():
     time.sleep(1)
     print('.')
     time.sleep(1)
-    print('\nSeems like a bit of a waste of time.')
+    print('Seems like a bit of a waste of time.')
     time.sleep(4)
-    print('KEEP STANDING [1]')
+    print('\nKEEP STANDING [1]')
     print('GO BACK [2]')
     
     hillSel2Select = int(input('\nACTION >> '))
@@ -33,9 +33,10 @@ def hillSel2():
         data = 1
         with open(fname, 'w') as f:
             f.write('var1 = {}'.format(data))
+            f.close()
         time.sleep(5)
         hill.hill()
-    if hillSel2Select == 0:
+    if hillSel2Select == 2:
         print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
         time.sleep(5)
         hill.hill()
