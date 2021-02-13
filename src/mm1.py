@@ -2,6 +2,7 @@ import os
 import time
 from config import *
 from hill import *
+from cave import *
 from tool import *
 from ch1end import *
 
