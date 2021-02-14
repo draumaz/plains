@@ -13,7 +13,7 @@ time.sleep(1.5)
 
 print('\nScanning save...')
 config = configparser.ConfigParser()
-config.read('config.ini')
+config.read('config3.ini')
 var3 = config.getint('ch2flag', 'var3')
 
 time.sleep(0.5)
