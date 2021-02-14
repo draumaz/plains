@@ -11,6 +11,7 @@ def toolSel3():
     print('BACK [2]')
 
     toolSelect3 = int(input('\nACTION >> '))
+
     while toolSelect3 < 1 or toolSelect3 > 2:
         print('\nDid you mean something else?')
         time.sleep(0.5)

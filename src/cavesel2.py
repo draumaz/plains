@@ -11,6 +11,7 @@ def caveSel2():
     print('BACK [2]')
 
     caveSelect2 = int(input('\nACTION >> '))
+    
     while caveSelect2 < 1 or caveSelect2 > 2:
         print('\nDid you mean something else?')
         time.sleep(0.5)

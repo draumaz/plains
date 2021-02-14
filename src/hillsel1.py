@@ -10,6 +10,7 @@ def hillSel1():
     print('BACK [2]')
 
     hillSelect1 = int(input('\nACTION >> '))
+
     while hillSelect1 < 1 or hillSelect1 > 2:
         print('Did you mean something else?')
         time.sleep(0.5)
@@ -29,6 +30,3 @@ def hillSel1():
         print('\nUpon seeing that the mountain is alive and ready to strike, you decide to head back.\n')
         time.sleep(4)
         hill.hill()
-
-    time.sleep(2)
-    quit()

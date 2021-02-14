@@ -12,6 +12,7 @@ def toolSel1():
     print('BACK [2]')
 
     toolSelect1 = int(input('\nACTION >> '))
+
     while toolSelect1 < 1 or toolSelect1 > 2:
         print('\nDid you mean something else?')
         time.sleep(0.5)
@@ -21,6 +22,7 @@ def toolSel1():
         print("\nThe message won't even go through...")
         time.sleep(4)
         toolflagger.toolFlagger()
+        
     if toolSelect1 == 2:
         print("\nWhat good's a phone without service?")
         time.sleep(3)

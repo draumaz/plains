@@ -23,6 +23,7 @@ if var2 == 0:
     time.sleep(0.5)
     os.system('clear')
     mainMenu1()
+    
 if var2 == 1:
     print('Save loaded.')
     time.sleep(0.5)
