@@ -1,10 +1,14 @@
 import os
 import time
-from config import *
-from hill import *
-from cave import *
-from tool import *
-from ch1end import *
+import configparser
+from hill import hill
+from cave import cave
+from tool import tool
+from ch1end import ch1End
+
+config = configparser.ConfigParser()
+config.read('config.ini')
+var1 = config.getint('ch1endflag', 'var1')
 
 def mainMenu1():
     os.system('clear')

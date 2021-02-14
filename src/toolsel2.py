@@ -1,6 +1,7 @@
 import os
 import time
 import tool
+import toolflagger
 
 def toolSel2():
     os.system('clear')
@@ -17,13 +18,8 @@ def toolSel2():
 
     if toolSelect2 == 1:
         print('You try establing contact...your radar just shuts off.')
-        fname = "config2.py"
-        data = 1
-        with open(fname, 'w') as f:
-            f.write('var2 = {}'.format(data))
-            f.close()
-        time.sleep(5)
-        tool.tool()
+        time.sleep(4)
+        toolflagger.toolFlagger()
     if toolSelect2 == 2:
         print("Probably wouldn't work, anyway.")
         time.sleep(2)

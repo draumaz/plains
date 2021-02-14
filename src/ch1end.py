@@ -20,11 +20,10 @@ def ch1End():
         time.sleep(2)
         os.system('clear')
         print('\nSaving...')
-        fname = "config3.py"
-        data = 1
-        with open(fname, 'w') as f:
-            f.write('var3 = {}'.format(data))
-            f.close()
+        config = configparser.ConfigParser()
+        config['ch2flag'] = {'var3': '1'}
+        with open('config.ini', 'w') as configfile:
+                config.write(configfile)
         print('Saved.')
         time.sleep(1)
         os.system('clear')

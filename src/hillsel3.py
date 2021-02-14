@@ -1,6 +1,5 @@
 import os
 import time
-import config2
 import mm1
 import hill
 

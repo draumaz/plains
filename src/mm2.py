@@ -1,6 +1,5 @@
 import os
 import time
-from config import *
 
 def mainMenu2():
     print('\nThe Plains v0.13\n')

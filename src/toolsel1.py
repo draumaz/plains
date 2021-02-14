@@ -1,6 +1,8 @@
 import os
 import time
+import configparser
 import tool
+import toolflagger
 
 def toolSel1():
     os.system('clear')
@@ -14,16 +16,10 @@ def toolSel1():
         print('Did you mean something else?')
         time.sleep(0.5)
         toolSel1()
-
     if toolSelect1 == 1:
         print("The message won't even go through...")
-        fname = "config2.py"
-        data = 1
-        with open(fname, 'w') as f:
-            f.write('var2 = {}'.format(data))
-            f.close()
         time.sleep(4)
-        tool.tool()
+        toolflagger.toolFlagger()
     if toolSelect1 == 0:
         print("What good's a phone without service?")
         time.sleep(3)

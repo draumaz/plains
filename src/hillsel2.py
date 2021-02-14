@@ -1,7 +1,7 @@
 import os
 import time
 import hill
-import config
+import ch2flagger
 
 def hillSel2():
     os.system('clear')
@@ -29,13 +29,8 @@ def hillSel2():
         print('.')
         time.sleep(1)
         print('\nStanding there motionless, it gives you the feeling that everythings going to be alright.\n')
-        fname = 'config.py'
-        data = 1
-        with open(fname, 'w') as f:
-            f.write('var1 = {}'.format(data))
-            f.close()
         time.sleep(5)
-        hill.hill()
+        ch2flagger.ch2Flagger()
     if hillSel2Select == 2:
         print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
         time.sleep(5)

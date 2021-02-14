@@ -1,8 +1,8 @@
 import os
 import time
-from config3 import *
+import configparser
 from mm1 import *
-from mm2 import *
+from mm2 import mainMenu2
 
 os.system('clear')
 print('\n==THE PLAINS==')
@@ -12,6 +12,10 @@ print('==CHARACTER BY BRYCE CANO==')
 time.sleep(1.5)
 
 print('\nScanning save...')
+config = configparser.ConfigParser()
+config.read('config.ini')
+var3 = config.getint('ch2flag', 'var3')
+
 time.sleep(0.5)
 
 if var3 == 0:
@@ -23,4 +27,4 @@ if var3 == 1:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
-    mm2.mainMenu2()
+    mainMenu2()

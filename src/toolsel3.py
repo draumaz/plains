@@ -1,6 +1,7 @@
 import os
 import time
 import tool
+import toolflagger
 
 def toolSel3():
     os.system('clear')
@@ -16,14 +17,10 @@ def toolSel3():
         toolSel3()
 
     if toolSelect3 == 1:
-        print('You try to send out a signal, and it looks like it was received!')
-        fname = "config2.py"
-        data = 1
-        with open(fname, 'w') as f:
-            f.write('var2 = {}'.format(data))
-            f.close()
+        print('You try to send out a signal, and it looks like it was received!\n')
         time.sleep(4)
-        tool.tool()
+        toolflagger.toolFlagger()
+
     if toolSelect3 == 2:
         print("Probably wouldn't work, anyway.")
         time.sleep(2)
