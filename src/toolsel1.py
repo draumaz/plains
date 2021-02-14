@@ -16,11 +16,12 @@ def toolSel1():
         print('\nDid you mean something else?')
         time.sleep(0.5)
         toolSel1()
+        
     if toolSelect1 == 1:
         print("\nThe message won't even go through...")
         time.sleep(4)
         toolflagger.toolFlagger()
-    if toolSelect1 == 0:
+    if toolSelect1 == 2:
         print("\nWhat good's a phone without service?")
         time.sleep(3)
         tool.tool()
