@@ -22,8 +22,8 @@ def ch1End():
         os.system('clear')
         print('\nSaving...')
         config = configparser.ConfigParser()
-        config['ch2flag'] = {'var3': '1'}
-        with open('config.ini', 'w') as configfile:
+        config['ch2flagger'] = {'var2': '1'}
+        with open('config2.ini', 'w') as configfile:
                 config.write(configfile)
         print('Saved.')
         time.sleep(1)
