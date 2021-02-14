@@ -37,6 +37,7 @@ def mainMenu1():
 
     if mainmenuSelect1 == 4:
         if var1 == 0:
+            os.system('clear')
             print('\nThanks for playing!')
             time.sleep(0.5)
             quit()

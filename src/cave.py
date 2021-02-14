@@ -15,7 +15,7 @@ def cave():
     print('BACK [4]')
     caveSelect = int(input('\nACTION >> '))
     while caveSelect < 1 or caveSelect > 4:
-        print('Did you mean something else?')
+        print('\nDid you mean something else?')
         time.sleep(0.5)
         cave()
     if caveSelect == 1:
@@ -25,6 +25,6 @@ def cave():
     if caveSelect == 3:
         caveSel3()
     if caveSelect == 4:
-        print('Seems pretty forboding...best to head back.')
+        print('\nSeems pretty forboding...best to head back.')
         time.sleep(3)
         mm1.mainMenu1()

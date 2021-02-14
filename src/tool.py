@@ -16,7 +16,7 @@ def tool():
     print('BACK [4]')
     toolSelect = int(input('\nACTION >> '))
     while toolSelect < 1 or toolSelect > 4:
-        print('Did you mean something else?')
+        print('\nDid you mean something else?')
         time.sleep(0.5)
         tool()
     if toolSelect == 1:

@@ -15,7 +15,7 @@ def hill():
     print('BACK [4]')
     hillSelect = int(input('\nACTION >> '))
     while hillSelect < 1 or hillSelect > 4:
-        print('Did you mean something else?')
+        print('\nDid you mean something else?')
         time.sleep(0.5)
     if hillSelect == 1:
         hillSel1()

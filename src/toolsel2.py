@@ -12,15 +12,15 @@ def toolSel2():
 
     toolSelect2 = int(input('\nACTION >> '))
     while toolSelect2 < 1 or toolSelect2 > 2:
-        print('Did you mean something else?')
+        print('\nDid you mean something else?')
         time.sleep(0.5)
         toolSel2()
 
     if toolSelect2 == 1:
-        print('You try establing contact...your radar just shuts off.')
+        print('\nYou try establishing contact...your radar just shuts off.')
         time.sleep(4)
         toolflagger.toolFlagger()
     if toolSelect2 == 2:
-        print("Probably wouldn't work, anyway.")
+        print("\nProbably wouldn't work, anyway.")
         time.sleep(2)
         tool.tool()

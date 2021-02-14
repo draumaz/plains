@@ -13,14 +13,14 @@ def toolSel1():
 
     toolSelect1 = int(input('\nACTION >> '))
     while toolSelect1 < 1 or toolSelect1 > 2:
-        print('Did you mean something else?')
+        print('\nDid you mean something else?')
         time.sleep(0.5)
         toolSel1()
     if toolSelect1 == 1:
-        print("The message won't even go through...")
+        print("\nThe message won't even go through...")
         time.sleep(4)
         toolflagger.toolFlagger()
     if toolSelect1 == 0:
-        print("What good's a phone without service?")
+        print("\nWhat good's a phone without service?")
         time.sleep(3)
         tool.tool()
