@@ -25,6 +25,7 @@ def ch1End():
         config['ch2flagger'] = {'var2': '1'}
         with open('config2.ini', 'w') as configfile:
                 config.write(configfile)
+        time.sleep(0.5)
         print('Saved.')
         time.sleep(1)
         os.system('clear')
