@@ -13,17 +13,17 @@ time.sleep(1.5)
 
 print('\nScanning save...')
 config = configparser.ConfigParser()
-config.read('config3.ini')
-var3 = config.getint('ch2flag', 'var3')
+config.read('config2.ini')
+var2 = config.getint('ch2flagger', 'var2')
 
 time.sleep(0.5)
 
-if var3 == 0:
+if var2 == 0:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
     mainMenu1()
-if var3 == 1:
+if var2 == 1:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')

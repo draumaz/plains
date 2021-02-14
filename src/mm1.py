@@ -9,7 +9,7 @@ from ch1end import ch1End
 def mainMenu1():
     os.system('clear')
     config = configparser.ConfigParser()
-    config.read('config2.ini')
+    config.read('config.ini')
     var1 = config.getint('ch1endflag', 'var1')
     print('\nThe Plains v0.13\n')
     print('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet.')

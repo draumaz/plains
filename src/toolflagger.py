@@ -5,7 +5,7 @@ import tool
 
 def toolFlagger():
 	config = configparser.ConfigParser()
-	config['toolflag'] = {'var2': '1'}
-	with open('config2.ini', 'w') as configfile:
+	config['toolflag'] = {'var3': '1'}
+	with open('config3.ini', 'w') as configfile:
 		config.write(configfile)
 	tool.tool()
