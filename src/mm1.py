@@ -26,6 +26,11 @@ def mainMenu1():
 
     mainmenuSelect1 = int(input('\nACTION >> '))
 
+    while mainmenuSelect1 < 1 or mainmenuSelect1 > 5:
+        print('\nDid you mean something else?')
+        time.sleep(0.5)
+        mainMenu1()
+
     if mainmenuSelect1 == 1:
         hill()
 
@@ -50,4 +55,6 @@ def mainMenu1():
             time.sleep(0.5)
             quit()
         if var1 == 0:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
             mainMenu1()
