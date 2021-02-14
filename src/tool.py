@@ -8,7 +8,7 @@ from toolsel3 import *
 
 def tool():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('Seeming to be completely stranded, you decide to use the tools at your disposal.\n')
     print('PHONE [1]')
     print('RADAR [2]')

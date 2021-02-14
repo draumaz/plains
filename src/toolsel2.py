@@ -5,7 +5,7 @@ import toolflagger
 
 def toolSel2():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')

@@ -5,7 +5,7 @@ import toolflagger
 
 def toolSel3():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('Looks like your scanner is functioning just fine.\n')
     print('SIGNAL [1]')
     print('BACK [2]')

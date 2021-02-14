@@ -7,7 +7,7 @@ from hillsel3 import *
 
 def hill():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.\n')
     print('GO TOWARDS [1]')
     print('STAND STILL [2]')

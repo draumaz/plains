@@ -5,7 +5,7 @@ import ch2flagger
 
 def hillSel2():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     time.sleep(2)
     print('.')
@@ -18,9 +18,9 @@ def hillSel2():
     time.sleep(4)
     print('\nKEEP STANDING [1]')
     print('GO BACK [2]')
-    
+
     hillSel2Select = int(input('\nACTION >> '))
-    
+
     if hillSel2Select == 1:
         print('.')
         time.sleep(1)

@@ -6,7 +6,7 @@ import toolflagger
 
 def toolSel1():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')
@@ -16,7 +16,7 @@ def toolSel1():
         print('\nDid you mean something else?')
         time.sleep(0.5)
         toolSel1()
-        
+
     if toolSelect1 == 1:
         print("\nThe message won't even go through...")
         time.sleep(4)

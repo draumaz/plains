@@ -4,7 +4,7 @@ import hill
 
 def hillSel1():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print('You walk towards the base of the mountain. You notice that the mountain seems to be moving!\n')
     print('FIGHT [1]')
     print('BACK [2]')

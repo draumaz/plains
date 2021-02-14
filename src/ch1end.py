@@ -5,10 +5,10 @@ import mm2
 
 def ch1End():
     os.system('clear')
-    print('\nThe Plains v0.13\n')
+    print('\nThe Plains v0.14\n')
     print("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n")
     print('LOOK [1]')
-    
+
     ch1EndSelect = int(input('\nACTION >> '))
     while ch1EndSelect < 1 or ch1EndSelect > 1:
         ch1End()
