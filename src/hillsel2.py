@@ -28,7 +28,7 @@ def hillSel2():
         time.sleep(1)
         print('.')
         time.sleep(1)
-        print('\nStanding there motionless, it gives you the feeling that everythings going to be alright.\n')
+        print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
         time.sleep(5)
         ch2flagger.ch2Flagger()
         
