@@ -1,9 +1,9 @@
 import os
 import time
 import mm1
-from cavesel1 import *
-from cavesel2 import *
-from cavesel3 import *
+import cavesel1
+import cavesel2
+import cavesel3
 
 def cave():
     os.system('clear')
@@ -22,14 +22,14 @@ def cave():
         cave()
 
     if caveSelect == 1:
-        caveSel1()
+        cavesel1.caveSel1()
 
     if caveSelect == 2:
-        caveSel2()
+        cavesel2.caveSel2()
 
     if caveSelect == 3:
-        caveSel3()
-        
+        cavesel3.caveSel3()
+
     if caveSelect == 4:
         print('\nSeems pretty forboding...best to head back.')
         time.sleep(3)

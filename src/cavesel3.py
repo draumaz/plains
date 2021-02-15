@@ -11,7 +11,7 @@ def caveSel3():
     print('BACK [2]')
 
     caveSelect3 = int(input('\nACTION >> '))
-    
+
     while caveSelect3 < 1 or caveSelect3 > 2:
         print('\nDid you mean something else?')
         time.sleep(0.5)
@@ -24,7 +24,7 @@ def caveSel3():
         time.sleep(2)
         cave.cave()
 
-    if caveSelect3 == 0:
+    if caveSelect3 == 2:
         print("\nYou figure that the rumbling is probably just natural noises.")
         time.sleep(2)
         cave.cave()

@@ -1,8 +1,8 @@
 import os
 import time
 import configparser
-from mm1 import *
-from mm2 import mainMenu2
+import mm1
+import mm2
 
 os.system('clear')
 print('\n==THE PLAINS==')
@@ -22,10 +22,10 @@ if var2 == 0:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
-    mainMenu1()
-    
+    mm1.mainMenu1()
+
 if var2 == 1:
     print('Save loaded.')
     time.sleep(0.5)
     os.system('clear')
-    mainMenu2()
+    mm2.mainMenu2()

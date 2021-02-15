@@ -1,6 +1,6 @@
 import os
 import time
-from talk import talk
+import talk
 
 def mainMenu2():
     os.system('clear')
@@ -15,7 +15,7 @@ def mainMenu2():
     mainmenuSelect2 = int(input('\nACTION >> '))
 
     if mainmenuSelect2 == 1:
-        talk()
+        talk.talk()
 
     if mainmenuSelect2 == 2:
         mainMenu2()

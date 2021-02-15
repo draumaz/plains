@@ -1,6 +1,5 @@
 import os
 import time
-import configparser
 import tool
 import toolflagger
 
@@ -22,7 +21,7 @@ def toolSel1():
         print("\nThe message won't even go through...")
         time.sleep(4)
         toolflagger.toolFlagger()
-        
+
     if toolSelect1 == 2:
         print("\nWhat good's a phone without service?")
         time.sleep(3)

@@ -1,9 +1,9 @@
 import os
 import time
 import mm1
-from hillsel1 import *
-from hillsel2 import *
-from hillsel3 import *
+import hillsel1
+import hillsel2
+import hillsel3
 
 def hill():
     os.system('clear')
@@ -21,13 +21,13 @@ def hill():
         time.sleep(0.5)
 
     if hillSelect == 1:
-        hillSel1()
+        hillsel1.hillSel1()
 
     if hillSelect == 2:
-        hillSel2()
+        hillsel2.hillSel2()
 
     if hillSelect == 3:
-        hillSel3()
+        hillsel3.hillSel3()
 
     if hillSelect == 4:
         print('\nBest to head back.')

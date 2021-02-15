@@ -31,7 +31,7 @@ def hillSel2():
         print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
         time.sleep(5)
         ch2flagger.ch2Flagger()
-        
+
     if hillSel2Select == 2:
         print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
         time.sleep(5)

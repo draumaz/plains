@@ -1,10 +1,10 @@
 import os
 import time
 import configparser
-from hill import hill
-from cave import cave
-from tool import tool
-from ch1end import ch1End
+import hill
+import cave
+import tool
+import ch1end
 
 def mainMenu1():
     os.system('clear')
@@ -32,13 +32,13 @@ def mainMenu1():
         mainMenu1()
 
     if mainmenuSelect1 == 1:
-        hill()
+        hill.hill()
 
     if mainmenuSelect1 == 2:
-        cave()
+        cave.cave()
 
     if mainmenuSelect1 == 3:
-        tool()
+        tool.tool()
 
     if mainmenuSelect1 == 4:
         if var1 == 0:

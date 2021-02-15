@@ -1,9 +1,9 @@
 import os
 import time
 import mm1
-from toolsel1 import *
-from toolsel2 import *
-from toolsel3 import *
+import toolsel1
+import toolsel2
+import toolsel3
 
 
 def tool():
@@ -23,13 +23,13 @@ def tool():
         tool()
 
     if toolSelect == 1:
-        toolSel1()
+        toolsel1.toolSel1()
 
     if toolSelect == 2:
-        toolSel2()
+        toolsel2.toolSel2()
 
     if toolSelect == 3:
-        toolSel3()
-        
+        toolsel3.toolSel3()
+
     if toolSelect == 4:
         mm1.mainMenu1()
