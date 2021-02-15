@@ -1,6 +1,5 @@
 import os
 import time
-import mm1
 import hill
 
 def hillSel3():
@@ -31,4 +30,4 @@ def hillSel3():
     if hillSel3Select == 2:
         print('\nYou decide that you have more important things to be doing.')
         time.sleep(2)
-        mm1.mainMenu1()
+        hill.hill()
