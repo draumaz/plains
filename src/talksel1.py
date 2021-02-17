@@ -3,11 +3,11 @@ import time
 import talk
 import configparser
 
-config = configparser.ConfigParser()
-config.read('config3.ini')
-var3 = config.getint('toolflag', 'var3')
-
 def talkSel1():
+    config = configparser.ConfigParser()
+    config.read('config3.ini')
+    var3 = config.getint('toolflag', 'var3')
+
     if var3 == 1:
         print("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.")
         time.sleep(5)
