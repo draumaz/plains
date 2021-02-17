@@ -22,7 +22,7 @@ def ch1End():
         time.sleep(2)
         os.system('clear')
         print('\nSaving...')
-        config = configparser.ConfigParser() #Move to seperate function
+        config = configparser.ConfigParser() #Move to separate function
         config['ch2flagger'] = {'var2': '1'}
         with open('save/config2.ini', 'w') as configfile:
                 config.write(configfile)
