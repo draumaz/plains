@@ -1,6 +1,7 @@
 import os
 import time
 import talk
+import friend1
 
 def mainMenu2():
     os.system('clear')
@@ -14,11 +15,16 @@ def mainMenu2():
 
     mainmenuSelect2 = int(input('\nACTION >> '))
 
+    while mainmenuSelect2 < 1 or mainmenuSelect2 > 5:
+        print('\nDid you mean something else?')
+        time.sleep(0.5)
+        mainMenu2()
+
     if mainmenuSelect2 == 1:
         talk.talk()
 
     if mainmenuSelect2 == 2:
-        mainMenu2()
+        friend1.friend1()
 
     if mainmenuSelect2 == 3:
         mainMenu2()
