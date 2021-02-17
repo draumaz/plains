@@ -3,7 +3,7 @@ import time
 import configparser
 import mm2
 
-def friendFlagger2():
+def friendFlagger2(): #Flirty Flag
     config = configparser.ConfigParser()
     config['friendflag'] = {'var4': '1'}
     with open('config4.ini', 'w') as configfile:
