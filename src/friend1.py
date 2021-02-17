@@ -7,7 +7,7 @@ import configparser
 
 def friend1():
     config = configparser.ConfigParser()
-    config.read('config4.ini')
+    config.read('save/config4.ini')
     var4 = config.getint('friendflag', 'var4')
 
     os.system('clear')

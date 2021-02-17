@@ -13,8 +13,8 @@ time.sleep(1.5)
 
 print('\nScanning save...')
 config = configparser.ConfigParser()
-config.read('config2.ini')
-var2 = config.getint('ch2flagger', 'var2')
+config.read('save/config2.ini')
+var2 = config.getint('chaptflagger', 'var2')
 
 time.sleep(0.5)
 

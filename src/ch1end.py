@@ -10,7 +10,7 @@ def ch1End():
     print('LOOK [1]')
 
     ch1EndSelect = int(input('\nACTION >> '))
-    
+
     while ch1EndSelect < 1 or ch1EndSelect > 1:
         ch1End()
 
@@ -22,9 +22,9 @@ def ch1End():
         time.sleep(2)
         os.system('clear')
         print('\nSaving...')
-        config = configparser.ConfigParser()
+        config = configparser.ConfigParser() #Move to seperate function
         config['ch2flagger'] = {'var2': '1'}
-        with open('config2.ini', 'w') as configfile:
+        with open('save/config2.ini', 'w') as configfile:
                 config.write(configfile)
         time.sleep(0.5)
         print('Saved.')

@@ -5,7 +5,7 @@ import configparser
 
 def talkSel1():
     config = configparser.ConfigParser()
-    config.read('config3.ini')
+    config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
 
     if var3 == 1:

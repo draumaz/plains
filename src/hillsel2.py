@@ -1,7 +1,7 @@
 import os
 import time
 import hill
-import ch2flagger
+import standflagger
 
 def hillSel2():
     os.system('clear')
@@ -30,7 +30,7 @@ def hillSel2():
         time.sleep(1)
         print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
         time.sleep(5)
-        ch2flagger.ch2Flagger()
+        standflagger.standFlagger()
 
     if hillSel2Select == 2:
         print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
