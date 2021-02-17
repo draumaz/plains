@@ -30,7 +30,7 @@ def talkSel1():
             print("\nYour friends let you know not to worry about it, but to remember to do so next time.")
             time.sleep(5)
             talk.talk()
-            
+
         if talkSel1Select == 2:
             print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
             time.sleep(5)

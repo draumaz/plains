@@ -10,8 +10,8 @@ def talk():
     print('\nThe Plains v0.14\n')
     print('Your friends seem to be excited to talk to you.\n')
     print('TALK ABOUT TOOLS [1]')
-    print('TALK ABOUT LOCATION [2]')
-    print('TALK ABOUT PH [3]')
+    #print('TALK ABOUT LOCATION [2]')
+    #print('TALK ABOUT PH [3]')
     print('BACK [4]')
 
     talkSelect = int(input('\nACTION >> '))
@@ -25,10 +25,12 @@ def talk():
         talksel1.talkSel1()
 
     if talkSelect == 2:
-        talksel2.talkSel2()
+        talk()
+        #talksel2.talkSel2()
 
     if talkSelect == 3:
-        talksel3.talkSel3()
+        talk()
+        #talksel3.talkSel3()
 
     if talkSelect == 4:
         print('\nYou tell your friends you need a minute.')

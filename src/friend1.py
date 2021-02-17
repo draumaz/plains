@@ -13,9 +13,9 @@ def friend1():
     os.system('clear')
     print('\nThe Plains v0.14\n')
     print('FRIEND1 asks you how you held up here.\n')
-    print('SPECIFICS [1]')
+    #print('SPECIFICS [1]')
     print('FLIRT [2]')
-    print('SOMETHING [3]')
+    #print('SOMETHING [3]')
     print('BACK [4]')
 
     friendSelect1 = int(input('\nACTION >> '))
@@ -26,8 +26,8 @@ def friend1():
         friend1()
 
     if friendSelect1 == 1:
-        print('Placeholder1')
-        time.sleep(0.5)
+        #print('Placeholder1')
+        #time.sleep(0.5)
         friend1()
 
     if friendSelect1 == 2:
@@ -47,8 +47,8 @@ def friend1():
             friendflagger1.friendFlagger1()
 
     if friendSelect1 == 3:
-        print('Placeholder3')
-        time.sleep(0.5)
+        #print('Placeholder3')
+        #time.sleep(0.5)
         friend1()
 
     if friendSelect1 == 4:

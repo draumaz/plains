@@ -10,7 +10,7 @@ def mainMenu2():
     print('Your friends walk out, and approach you.\n')
     print('TALK [1]')
     print('FRIEND1 [2]')
-    print('FRIEND2 [3]')
+    #print('FRIEND2 [3]')
     print('QUIT [4]')
 
     mainmenuSelect2 = int(input('\nACTION >> '))
