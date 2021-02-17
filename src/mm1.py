@@ -47,7 +47,7 @@ def mainMenu1():
             time.sleep(0.5)
             quit()
         if var1 == 1:
-            ch1End()
+            ch1end.ch1End()
 
     if mainmenuSelect1 == 5:
         if var1 == 1:
