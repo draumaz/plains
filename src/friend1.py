@@ -11,11 +11,11 @@ def friend1():
     var4 = config.getint('friendflag', 'var4')
 
     os.system('clear')
-    print('\nThe Plains v0.14\n')
-    print('FRIEND1 asks you how you held up here.\n')
-    #print('SPECIFICS [1]')
+    print('\nThe Plains v0.15\n')
+    print('FRIEND1 seems excited to talk to you.\n')
+    print('SPECIFICS [1]')
     print('FLIRT [2]')
-    #print('SOMETHING [3]')
+    print('SOMETHING [3]')
     print('BACK [4]')
 
     friendSelect1 = int(input('\nACTION >> '))

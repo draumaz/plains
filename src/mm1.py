@@ -11,7 +11,7 @@ def mainMenu1():
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
-    print('\nThe Plains v0.14\n')
+    print('\nThe Plains v0.15\n')
     print('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet.')
     print('You awaken, laying in a field of grass. You see hills, a cave, and strange flora.\n')
     print('HILL [1]')

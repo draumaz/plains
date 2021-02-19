@@ -9,7 +9,7 @@ def toolSel3():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('clear')
-    print('\nThe Plains v0.14\n')
+    print('\nThe Plains v0.15\n')
     print('Looks like your scanner is functioning just fine.\n')
     print('SIGNAL [1]')
     print('BACK [2]')
@@ -27,7 +27,7 @@ def toolSel3():
             time.sleep(4)
             toolflagger.toolFlagger()
         if var3 == 1:
-            print("You've already found success in the scanner.")
+            print("You've already made contact.")
             time.sleep(2)
             tool.tool()
 

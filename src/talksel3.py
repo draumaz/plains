@@ -4,7 +4,7 @@ import talk
 
 def talkSel3():
         os.system('clear')
-        print('\nThe Plains v0.14\n')
+        print('\nThe Plains v0.15\n')
         print("talkSel3 PH.\n")
         print('OPT1 [1]')
         print('BACK [2]')

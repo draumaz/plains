@@ -9,7 +9,7 @@ def toolSel2():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('clear')
-    print('\nThe Plains v0.14\n')
+    print('\nThe Plains v0.15\n')
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')
@@ -27,7 +27,7 @@ def toolSel2():
             time.sleep(4)
             toolflagger.toolFlagger()
         if var3 == 1:
-            print("You've already tried using the radar.")
+            print("You've already made contact.")
             time.sleep(2)
             tool.tool()
 

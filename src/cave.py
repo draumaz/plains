@@ -7,7 +7,7 @@ import cavesel3
 
 def cave():
     os.system('clear')
-    print('\nThe Plains v0.14\n')
+    print('\nThe Plains v0.15\n')
     print('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n')
     print('CONTINUE [1]')
     print('LOOK AROUND [2]')
