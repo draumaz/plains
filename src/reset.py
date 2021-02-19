@@ -40,10 +40,16 @@ def resetter():
         with open('save/config5.ini', 'w') as configfile:
             config.write(configfile)
 
+        config = configparser.ConfigParser()
+        config['lizard'] = {'var6': '0'}
+        with open('save/config6.ini', 'w') as configfile:
+            config.write(configfile)
+
         time.sleep(0.5)
 
         print('Reset.')
         time.sleep(1)
+        os.system('clear ')
         quit()
     if reSel1 == 2:
         print('\nThe game will now close. Your data was not altered.')

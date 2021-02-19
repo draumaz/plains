@@ -12,7 +12,14 @@ def splashScreen():
     print('==MADE BY DRAUMAZ IN 2021==')
     print('==WRITTEN IN PYTHON==')
     print('==CHARACTER BY BRYCE CANO==')
-    
+
+    time.sleep(1.5)
+
+    print('\nPLAY [1]')
+    print('RESET [2]')
+
+    bsSel1 = int(input('\nACTION >> '))
+
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
@@ -24,13 +31,6 @@ def splashScreen():
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
-
-    time.sleep(1.5)
-
-    print('\nPLAY [1]')
-    print('RESET [2]')
-
-    bsSel1 = int(input('\nACTION >> '))
 
     while bsSel1 < 1 or bsSel1 > 2:
         print('Did you mean something else?')
