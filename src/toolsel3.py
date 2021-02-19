@@ -9,7 +9,7 @@ def toolSel3():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print('Looks like your scanner is functioning just fine.\n')
     print('SIGNAL [1]')
     print('BACK [2]')

@@ -7,7 +7,7 @@ import talksel3
 
 def talk():
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print("Your friends seem relieved that you're alright.\n")
     print('TALK ABOUT YOUR SIGNAL [1]')
     #print('TALK ABOUT LOCATION [2]')

@@ -1,15 +1,15 @@
 import os
 import time
 import talk
-import friend1
+import saan
 
 def mainMenu2():
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print('A fancy, metallic ship lands a little ways from where you landed.')
     print('Your friends walk out, and approach you.\n')
     print('TALK [1]')
-    print('FRIEND1 [2]')
+    print('SAAN [2]')
     #print('FRIEND2 [3]')
     print('QUIT [4]')
 
@@ -24,7 +24,7 @@ def mainMenu2():
         talk.talk()
 
     if mainmenuSelect2 == 2:
-        friend1.friend1()
+        saan.saan()
 
     if mainmenuSelect2 == 3:
         mainMenu2()

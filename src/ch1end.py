@@ -5,7 +5,7 @@ import mm2
 
 def ch1End():
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n")
     print('LOOK [1]')
 

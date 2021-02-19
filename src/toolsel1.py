@@ -9,7 +9,7 @@ def toolSel1():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')

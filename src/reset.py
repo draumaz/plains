@@ -3,8 +3,6 @@ import time
 import configparser
 
 def resetter():
-    
-    os.system('clear')
     print('\nDoing this will reset everything. Are you sure?')
     print('\nRESET [1]')
     print('BACK [2]')
@@ -51,4 +49,3 @@ def resetter():
         print('\nThe game will now close. Your data was not altered.')
         time.sleep(2)
         quit()
-

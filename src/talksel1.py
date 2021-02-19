@@ -14,7 +14,7 @@ def talkSel1():
         talk.talk()
     if var3 == 0:
         os.system('clear')
-        print('\nThe Plains v0.15\n')
+        print('\nThe Plains v0.16\n')
         print("Your friends ask you why you didn't use any of your tools to contact them.\n")
         print('UH... [1]')
         print('BACK [2]')

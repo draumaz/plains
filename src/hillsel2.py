@@ -5,7 +5,7 @@ import standflagger
 
 def hillSel2():
     os.system('clear')
-    print('\nThe Plains v0.15\n')
+    print('\nThe Plains v0.16\n')
     print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     time.sleep(2)
     print('.')

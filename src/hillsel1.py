@@ -1,32 +1,29 @@
 import os
 import time
 import hill
+import mm1
+import hillsel1ext
+import configparser
 
 def hillSel1():
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+
+    config = configparser.ConfigParser()
+    config.read('save/config5.ini')
+    var5 = config.getint('reset', 'var5')
+
     os.system('clear')
-    print('\nThe Plains v0.15\n')
-    print('You walk towards the base of the mountain. You notice that the mountain seems to be moving!\n')
-    print('FIGHT [1]')
-    print('BACK [2]')
-
-    hillSelect1 = int(input('\nACTION >> '))
-
-    while hillSelect1 < 1 or hillSelect1 > 2:
-        print('Did you mean something else?')
-        time.sleep(0.5)
-        hillSel1()
-
-    if hillSelect1 == 1:
-        print('\nYou attempt to fight the giant mountain beast, and die almost instantly.')
-        time.sleep(2)
-        print('Nice going, genius.')
-        time.sleep(2)
-        os.system('clear')
-        print('\n==GAME OVER==\n')
-        time.sleep(1)
-        quit()
-
-    if hillSelect1 == 2:
-        print('\nUpon seeing that the mountain is alive and ready to strike, you decide to head back.\n')
-        time.sleep(4)
-        hill.hill()
+    print('\nThe Plains v0.16\n')
+    if var6 == 1:
+        if var5 == 0:
+            print('You killed him.')
+            time.sleep(5)
+            mm1.mainMenu1()
+        if var5 == 1:
+            print('You know what you did.')
+            time.sleep(5)
+            mm1.mainMenu1()
+    if var6 == 0:
+        hillsel1ext.hillSel1Ext()
