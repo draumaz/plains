@@ -25,11 +25,11 @@ def talk():
     print('\nThe Plains v0.16\n')
 
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
-        print("Your friends seem relieved that you're alright.\n")
+        print("Your friends are relieved that you're alright.\n")
     if var6 == 1 and var8 == 0: #Murder, pre-explain
         print('Your friends look at you with horrified expressions.\n')
     if var7 == 1 and var6 == 0: #Murdered before reset
-            print('Your friends seem worried.\n')
+            print('...they seem worried.\n')
     if var6 == 0 or var8 == 1: #Normal/post-explain
         print('TALK TO FRIENDS [1]')
     if var6 == 1 and var8 == 0 and var7 == 1: #Murder
