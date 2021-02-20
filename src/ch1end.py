@@ -1,7 +1,6 @@
 import os
 import time
-import configparser
-import mm2
+import ch1endb
 
 def ch1End():
     os.system('clear')
@@ -22,11 +21,4 @@ def ch1End():
         time.sleep(2)
         os.system('clear')
         print('\nSaving...')
-        config = configparser.ConfigParser() #Move to separate function
-        config['chaptflagger'] = {'var2': '1'}
-        with open('save/config2.ini', 'w') as configfile:
-                config.write(configfile)
-        time.sleep(0.5)
-        print('Saved.')
-        time.sleep(1)
-        mm2.mainMenu2()
+        ch1endb.ch1EndB()

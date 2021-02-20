@@ -4,12 +4,24 @@ import mm1
 import hillsel1
 import hillsel2
 import hillsel3
+import configparser
 
 def hill():
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+
     os.system('clear')
     print('\nThe Plains v0.16\n')
-    print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.\n')
-    print('GO TOWARDS [1]')
+    print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.')
+    if var6 == 0:
+        print('In the distance, you can see a creature moving about.\n')
+    if var6 == 1:
+        print('')
+    if var6 == 0:
+        print('GO TOWARDS THE CREATURE [1]')
+    if var6 == 1:
+        print('GO FORWARDS [1]')
     print('STAND STILL [2]')
     print('LOOK AT THE SKY [3]')
     print('BACK [4]')
