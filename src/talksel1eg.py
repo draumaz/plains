@@ -9,9 +9,3 @@ def talkSel1EG():
     with open('save/config8.ini', 'w') as configfile:
         config.write(configfile)
     talk.talk()
-
-
-
-#config = configparser.ConfigParser()
-#config.read('save/config8.ini')
-#var8 = config.getint('okay', 'var8')
