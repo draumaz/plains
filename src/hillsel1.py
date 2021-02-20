@@ -16,14 +16,18 @@ def hillSel1():
 
     os.system('clear')
     print('\nThe Plains v0.16\n')
+
     if var5 == 0 and var6 == 1:
         print('Nothing to see here but the remains of the reptilian that you murdered.\n')
         print('BACK [1]')
+
         HS = int(input('\nACTION >> '))
+
         while HS < 1 or HS > 1:
             print('\nDid you mean something else?')
             time.sleep(0.5)
             hillSel1()
+            
         if HS == 1:
             hill.hill()
     else:

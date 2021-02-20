@@ -35,10 +35,12 @@ def saan():
             print('Your friend appreciates the complements.')
             time.sleep(2)
             friend1()
+
         if var4 == 1:
             print('Your friend looks busy right now.')
             time.sleep(2)
             friend1()
+
         if var4 == 0:
             print('\nYou tell your friend he has nice eyes.')
             time.sleep(3)

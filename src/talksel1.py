@@ -18,13 +18,17 @@ def talkSel1():
     var8 = config.getint('okay', 'var8')
 
     if var3 == 1:
+
         if var7 == 0 or var8 == 1:
             print("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.")
             time.sleep(5)
             talk.talk()
+
         if var7 == 1 and var8 == 0:
             talksel1b.talkSel1B()
+            
     if var3 == 0:
+
         if var7 == 0 or var8 == 1:
             os.system('clear')
             print('\nThe Plains v0.16\n')

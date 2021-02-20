@@ -26,14 +26,19 @@ def talk():
 
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
         print("Your friends are relieved that you're alright.\n")
+
     if var6 == 1 and var8 == 0: #Murder, pre-explain
         print('Your friends look at you with horrified expressions.\n')
+
     if var7 == 1 and var6 == 0: #Murdered before reset
             print('...they seem worried.\n')
+
     if var6 == 0 or var8 == 1: #Normal/post-explain
         print('TALK TO FRIENDS [1]')
+
     if var6 == 1 and var8 == 0 and var7 == 1: #Murder
         print("WHAT'S WITH THAT LOOK? [1]")
+
     #print('TALK ABOUT LOCATION [2]')
     #print('TALK ABOUT PH [3]')
     print('BACK [4]')
@@ -50,6 +55,7 @@ def talk():
             talksel1e.talkSel1E()
         else:
             talksel1.talkSel1()
+
     if talkSelect == 2:
         talk()
         #talksel2.talkSel2()

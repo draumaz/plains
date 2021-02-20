@@ -49,7 +49,7 @@ def splashScreen():
             time.sleep(0.5)
             mm2.mainMenu2()
 
-    if bsSel1 == 2: #Resetter
+    if bsSel1 == 2: #Reset
         reset.resetter()
 
 splashScreen()

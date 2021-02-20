@@ -6,11 +6,14 @@ def resetter():
     print('\nDoing this will reset everything. Are you sure?')
     print('\nRESET [1]')
     print('BACK [2]')
+
     reSel1 = int(input('\nACTION >> '))
+
     while reSel1 < 1 or reSel1 > 2:
         print('\nDid you mean something else?')
         time.sleep(0.5)
         resetter()
+
     if reSel1 == 1:
 
         print('\nResetting...')
@@ -56,6 +59,7 @@ def resetter():
         time.sleep(1)
         os.system('clear ')
         quit()
+        
     if reSel1 == 2:
         print('\nThe game will now close. Your data was not altered.')
         time.sleep(2)

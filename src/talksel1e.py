@@ -22,11 +22,14 @@ def talkSel1E():
         print('"Liam, why are you covered in blood?"\n')
         time.sleep(2)
         print('EXPLAIN [1]')
+
         talkSel1ESelect = int(input('\nACTION >> '))
+
         while talkSel1ESelect < 1 or talkSel1ESelect > 1:
             print('\nDid you mean something else?')
             time.sleep(0.5)
             talkSel1E()
+            
         print('\nYou explain to your friends that it was self-defense.')
         time.sleep(2)
         print('They understand, and help you clean off.')
