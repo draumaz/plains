@@ -49,7 +49,7 @@ def resetter():
 
         print('Reset.')
         time.sleep(1)
-        os.system('clear')
+        os.system('clear ')
         quit()
     if reSel1 == 2:
         print('\nThe game will now close. Your data was not altered.')

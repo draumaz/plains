@@ -1,6 +1,7 @@
 import os
 import time
 import talk
+import talksel1b
 import configparser
 
 def talkSel1():
@@ -12,29 +13,19 @@ def talkSel1():
     config.read('save/config7.ini')
     var7 = config.getint('lizardext', 'var7')
 
+    config = configparser.ConfigParser()
+    config.read('save/config8.ini')
+    var8 = config.getint('okay', 'var8')
+
     if var3 == 1:
-        if var7 == 0:
+        if var7 == 0 or var8 == 1:
             print("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.")
             time.sleep(5)
             talk.talk()
-        if var7 == 1:
-            print('\nYour friends ask you a question.')
-            time.sleep(2)
-            print('"Liam, is everything alright?"\n')
-            time.sleep(2)
-            print('OPT1 [1]')
-            print('BACK [2]')
-            talkSel1ESelect2 = int(input('\nACTION >> '))
-            while talkSel1ESelect2 < 1 or talkSel1ESelect2 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                talkSel1E()
-            if talkSel1ESelect2 == 2:
-                print("\nYou consider telling them what you did...but they probably wouldn't understand.")
-                time.sleep(5)
-                talk.talk()
+        if var7 == 1 and var8 == 0:
+            talksel1b.talkSel1B()
     if var3 == 0:
-        if var7 == 0:
+        if var7 == 0 or var8 == 1:
             os.system('clear')
             print('\nThe Plains v0.16\n')
             print("Your friends ask you why you didn't use any of your tools to contact them.\n")
@@ -57,19 +48,6 @@ def talkSel1():
                 print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
                 time.sleep(5)
                 talk.talk()
-        if var7 == 1:
-            print('\nYour friends ask you a question.')
-            time.sleep(2)
-            print('"Liam, is everything alright?"\n')
-            time.sleep(2)
-            print('OPT1 [1]')
-            print('BACK [2]')
-            talkSel1ESelect2 = int(input('\nACTION >> '))
-            while talkSel1ESelect2 < 1 or talkSel1ESelect2 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                talkSel1E()
-            if talkSel1ESelect2 == 2:
-                print("\nYou consider telling them what you did...but they probably wouldn't understand.")
-                time.sleep(5)
-                talk.talk()
+
+        if var7 == 1 and var8 == 0:
+            talksel1b.talkSel1B()
