@@ -17,7 +17,7 @@ def hillSel1():
     os.system('clear')
     print('\nThe Plains v0.17\n')
 
-    if var5 == 0 and var6 == 1:
+    if var6 == 1:
         print('Nothing to see here but the remains of the reptilian that you murdered.\n')
         print('BACK [1]')
 
