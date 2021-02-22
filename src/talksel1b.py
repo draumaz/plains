@@ -23,6 +23,6 @@ def talkSel1B():
         talksel1eg.talkSel1EG()
 
     if talkSel1ESelect2 == 2:
-        print("\nYou consider telling them what you did...but they probably wouldn't understand.")
+        print("\nThey wouldn't get it.")
         time.sleep(5)
         talk.talk()
