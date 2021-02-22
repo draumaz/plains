@@ -36,7 +36,10 @@ def hillSel2():
         time.sleep(1)
         print('.')
         time.sleep(1)
-        print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
+        if var6 == 0:
+            print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
+        if var6 == 1:
+            print("\nThey're coming.")
         time.sleep(5)
         standflagger.standFlagger()
 

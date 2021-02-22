@@ -51,4 +51,7 @@ def Embark():
         else:
             print('\nYou and your friends lift off from the ground, and fly away.')
             time.sleep(4)
+            os.system('clear')
+            print('\nTHE END!')
+            time.sleep(0.5)
             quit()
