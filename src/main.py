@@ -3,7 +3,6 @@ import time
 import configparser
 import mm1
 import mm2
-import mainalt
 import mainext
 import reset
 
