@@ -12,7 +12,7 @@ def hill():
     var6 = config.getint('lizard', 'var6')
 
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
     print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.')
     if var6 == 0:
         print('In the distance, you can see a creature moving about.\n')

@@ -26,12 +26,12 @@ def talkSel1():
 
         if var7 == 1 and var8 == 0:
             talksel1b.talkSel1B()
-            
+
     if var3 == 0:
 
         if var7 == 0 or var8 == 1:
             os.system('clear')
-            print('\nThe Plains v0.16\n')
+            print('\nThe Plains v0.17\n')
             print("Your friends ask you why you didn't use any of your tools to contact them.\n")
             print('UH... [1]')
             print('BACK [2]')

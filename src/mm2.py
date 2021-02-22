@@ -2,15 +2,16 @@ import os
 import time
 import talk
 import saan
+import embark
 
 def mainMenu2():
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
     print('A fancy, metallic ship lands a little ways from where you landed.')
     print('Your friends walk out, and approach you.\n')
     print('TALK [1]')
     print('SAAN [2]')
-    print('FRIEND2 [3]')
+    print('EMBARK [3]')
     print('QUIT [4]')
 
     mainmenuSelect2 = int(input('\nACTION >> '))
@@ -27,7 +28,7 @@ def mainMenu2():
         saan.saan()
 
     if mainmenuSelect2 == 3:
-        mainMenu2()
+        embark.Embark()
 
     if mainmenuSelect2 == 4:
         os.system('clear')

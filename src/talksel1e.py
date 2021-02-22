@@ -14,7 +14,7 @@ def talkSel1E():
     var6 = config.getint('lizard', 'var6')
 
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
 
     if var6 == 1:
         print('Your friends barely stammer out a question.')
@@ -29,7 +29,7 @@ def talkSel1E():
             print('\nDid you mean something else?')
             time.sleep(0.5)
             talkSel1E()
-            
+
         print('\nYou explain to your friends that it was self-defense.')
         time.sleep(2)
         print('They understand, and help you clean off.')

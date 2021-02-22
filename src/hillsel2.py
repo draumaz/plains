@@ -2,10 +2,15 @@ import os
 import time
 import hill
 import standflagger
+import configparser
 
 def hillSel2():
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
     print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     time.sleep(2)
     print('.')
@@ -14,8 +19,11 @@ def hillSel2():
     time.sleep(1)
     print('.')
     time.sleep(1)
-    print('Seems like a bit of a waste of time.')
-    time.sleep(4)
+    if var6 == 0:
+        print('Seems like a bit of a waste of time.')
+    if var6 == 1:
+        print("You're wasting your time.")
+    time.sleep(2)
     print('\nKEEP STANDING [1]')
     print('GO BACK [2]')
 

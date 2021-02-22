@@ -9,7 +9,7 @@ def toolSel2():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')

@@ -11,7 +11,7 @@ def saan():
     var4 = config.getint('friendflag', 'var4')
 
     os.system('clear')
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
     print('Saan seems excited to talk to you.\n')
     print('SPECIFICS [1]')
     print('FLIRT [2]')

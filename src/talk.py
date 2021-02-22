@@ -22,7 +22,7 @@ def talk():
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
 
-    print('\nThe Plains v0.16\n')
+    print('\nThe Plains v0.17\n')
 
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
         print("Your friends are relieved that you're alright.\n")
