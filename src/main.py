@@ -40,7 +40,7 @@ def splashScreen():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
 
-    while bsSel1 < 1 or bsSel1 > 3:
+    while bsSel1 < 1 or bsSel1 > 2:
         print('Did you mean something else?')
         time.sleep(0.5)
         splashScreen()
@@ -60,13 +60,5 @@ def splashScreen():
 
     if bsSel1 == 2: #Reset
         reset.resetter()
-
-    if bsSel1 == 3:
-        if var9 == 0:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            splashScreen()
-        if var9 == 1:
-            mainalt.mainAlt()
 
 splashScreen()
