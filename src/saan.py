@@ -56,9 +56,9 @@ def saan():
                 friend1()
 
             if var4 == 0:
-                print('\nYou tell your friend he has nice eyes.')
+                print('\nYou tell Saan that he has cute eyes.')
                 time.sleep(3)
-                print('He seems happy.')
+                print('You made him blush!')
                 time.sleep(2)
                 friendflagger1.friendFlagger1()
 
