@@ -1,8 +1,10 @@
 import os
 import time
 import configparser
+import reset
 
 def mainAlt():
+    os.system('clear')
     print('\n...')
     time.sleep(2)
     print("\nDo you regret your actions?")
@@ -19,7 +21,25 @@ def mainAlt():
     if altSel == 1:
         print('\nSo you regret what you have done.')
         time.sleep(2)
-        print('Does this change anything?')
+        print('Do you really think this changes anything?')
+        time.sleep(2)
+        print("He's still dead.")
+        time.sleep(2)
+        print('You can reset the game all you like, but he knows that you are evil.')
+        time.sleep(5)
+        os.system('clear')
+        time.sleep(2)
+        print('\nThere is one way we can make things right.')
+        time.sleep(2)
+        print('Please, do the right thing.')
+        time.sleep(1)
+        config = configparser.ConfigParser()
+        config['badend'] = {'var9': '0'}
+        with open('save/config9.ini', 'w') as configfile:
+               config.write(configfile)
+        time.sleep(2)
+        reset.resetter()
+
     if altSel == 2:
         print('\nIs that so.')
         time.sleep(2)

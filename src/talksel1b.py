@@ -7,7 +7,7 @@ def talkSel1B():
     time.sleep(2)
     print('"Liam, is everything alright?"\n')
     time.sleep(2)
-    print('OPT1 [1]')
+    print('EXPLAIN [1]')
     print('BACK [2]')
 
     talkSel1ESelect2 = int(input('\nACTION >> '))
@@ -21,7 +21,7 @@ def talkSel1B():
         print("\nYou explain to them that you're just feeling off.")
         time.sleep(3)
         talksel1eg.talkSel1EG()
-        
+
     if talkSel1ESelect2 == 2:
         print("\nYou consider telling them what you did...but they probably wouldn't understand.")
         time.sleep(5)

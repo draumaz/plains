@@ -27,7 +27,7 @@ def splashScreen():
         print('==AAAAAAAA AAAAAAA AAAAAAA==')
         print('==KILLER KILLER KILLER==')
         print('==KILLER KILLER==')
-        time.sleep(0.5)
+        time.sleep(0.20)
         os.system('clear')
         print('\n==THE PLAINS==')
         print('==MADE BY DRAUMAZ IN 2021==')
