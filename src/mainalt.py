@@ -25,7 +25,7 @@ def mainAlt():
         time.sleep(2)
         print("He's still dead.")
         time.sleep(2)
-        print('You can reset the game all you like, but he knows that you are evil.')
+        print("Sure, you can reset. But I'm sure you can tell that they don't trust you.")
         time.sleep(5)
         os.system('clear')
         time.sleep(2)
