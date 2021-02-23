@@ -10,7 +10,7 @@ def Embark2():
     print('\nLEAVE [1]')
     print('STAY [2]')
 
-    embSelect2 == int(input('\nACTION >> '))
+    embSelect2 = int(input('\nACTION >> '))
 
     while embSelect2 < 1 or embSelect2 > 2:
         print('\nDid you mean something else?')
