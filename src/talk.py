@@ -65,6 +65,9 @@ def talk():
         #talksel3.talkSel3()
 
     if talkSelect == 4:
-        print('\nYou tell your friends you need a minute.')
-        time.sleep(2)
-        mm2.mainMenu2()
+        if var6 == 1:
+            mm2.mainMenu2()
+        if var6 == 0:
+            print('\nYou tell your friends you need a minute.')
+            time.sleep(2)
+            mm2.mainMenu2()

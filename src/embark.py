@@ -1,7 +1,9 @@
 import os
 import time
 import mm2
+import embark2
 import configparser
+import textwrap
 
 def Embark():
 
@@ -17,12 +19,11 @@ def Embark():
     print('\nThe Plains v0.17\n')
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and sit inside.')
-        time.sleep(3)
     if var6 == 0 or var8 == 1:
-        print("You walk to your friends' ship. They soon join you.")
+        print("You walk to your friends' ship.")
     print('\nACTION1 [1]')
     print('SET OFF [2]')
-    print('ACTION3 [3]')
+    print('BACK [3]')
 
     embSelect = int(input('\nACTION >> '))
 
@@ -33,7 +34,7 @@ def Embark():
 
     if embSelect == 2:
         if var6 == 1 and var8 == 0:
-            print('\nBlood still dripping from your clothes, you take off, leaving your friends behind.')
+            print(textwrap.fill('\nBlood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
             time.sleep(6)
             os.system('clear')
             time.sleep(5)
@@ -50,9 +51,8 @@ def Embark():
             os.system('clear')
             quit()
         else:
-            print('\nYou and your friends lift off from the ground, and fly away.')
-            time.sleep(4)
-            os.system('clear')
-            print('\nTHE END!')
-            time.sleep(0.5)
-            quit()
+            embark2.Embark2()
+
+    if embSelect == 3:
+        print("\nYou decide against leaving quite yet.")
+        mm2.mainMenu2()

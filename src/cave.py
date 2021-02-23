@@ -1,6 +1,7 @@
 import os
 import time
 import mm1
+import textwrap
 import cavesel1
 import cavesel2
 import cavesel3
@@ -8,8 +9,8 @@ import cavesel3
 def cave():
     os.system('clear')
     print('\nThe Plains v0.17\n')
-    print('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n')
-    print('CONTINUE [1]')
+    print(textwrap.fill('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n', 75))
+    print('\nCONTINUE [1]')
     print('LOOK AROUND [2]')
     print('LISTEN [3]')
     print('BACK [4]')

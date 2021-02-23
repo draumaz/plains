@@ -1,6 +1,7 @@
 import os
 import time
 import mm1
+import textwrap
 import hillsel1
 import hillsel2
 import hillsel3
@@ -13,7 +14,7 @@ def hill():
 
     os.system('clear')
     print('\nThe Plains v0.17\n')
-    print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.')
+    print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0:
         print('In the distance, you can see a creature moving about.\n')
         print('GO TOWARDS THE CREATURE [1]')

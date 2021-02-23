@@ -6,8 +6,6 @@ import mm2
 import mainext
 import reset
 
-
-
 def splashScreen():
 
     config = configparser.ConfigParser()
@@ -49,7 +47,6 @@ def splashScreen():
         if bsSel1 == 1: #Chapter Save Director (expandable)
             print('\nScanning save...')
             time.sleep(0.5)
-
             if var2 == 0:
                 print('Save loaded.')
                 time.sleep(0.5)

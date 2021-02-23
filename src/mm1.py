@@ -1,6 +1,7 @@
 import os
 import time
 import configparser
+import textwrap
 import hill
 import cave
 import tool
@@ -12,8 +13,8 @@ def mainMenu1():
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
     print('\nThe Plains v0.17\n')
-    print('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.\n')
-    print('HILL [1]')
+    print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
+    print('\nHILL [1]')
     print('CAVE [2]')
     print('TOOL [3]')
     if var1 == 0:

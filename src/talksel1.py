@@ -44,7 +44,7 @@ def talkSel1():
                 talkSel1()
 
             if talkSel1Select == 1:
-                print("\nYour friends let you know not to worry about it, but to remember to do so next time.")
+                print("\nYour friends tell you to not to worry about it.")
                 time.sleep(5)
                 talk.talk()
 

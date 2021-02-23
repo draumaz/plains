@@ -27,7 +27,7 @@ def toolSel3():
             time.sleep(4)
             toolflagger.toolFlagger()
         if var3 == 1:
-            print("You've already made contact.")
+            print("\nYou've already made contact.")
             time.sleep(2)
             tool.tool()
 

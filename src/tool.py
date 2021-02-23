@@ -1,6 +1,7 @@
 import os
 import time
 import mm1
+import textwrap
 import toolsel1
 import toolsel2
 import toolsel3
@@ -9,8 +10,8 @@ import toolsel3
 def tool():
     os.system('clear')
     print('\nThe Plains v0.17\n')
-    print('Seeming to be completely stranded, you decide to use the tools at your disposal.\n')
-    print('PHONE [1]')
+    print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
+    print('\nPHONE [1]')
     print('RADAR [2]')
     print('SCANNER [3]')
     print('BACK [4]')

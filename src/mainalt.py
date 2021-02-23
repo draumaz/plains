@@ -2,11 +2,12 @@ import os
 import time
 import configparser
 import reset
+import textwrap
 
 def mainAlt():
     os.system('clear')
     print('\n...')
-    time.sleep(2)
+    time.sleep(5)
     print("\nDo you regret your actions?")
     print('\nYES [1]')
     print('NO [2]')
@@ -23,14 +24,21 @@ def mainAlt():
         time.sleep(2)
         print('Do you really think this changes anything?')
         time.sleep(2)
-        print("He's still dead.")
+        print("You're a murderer.")
         time.sleep(2)
-        print("Sure, you can reset. But I'm sure you can tell that they don't trust you.")
-        time.sleep(5)
+        print(textwrap.fill("You have the ability to reset this world, over and over again..", 75))
+        time.sleep(3)
+        print("Does that make you feel good?")
+        time.sleep(4)
+        print("The ability to")
+        time.sleep(0.5)
+        print('Ḱ̴̪̰̬͉͎͙̯̝͓͉̖ͣ̔̾̓̍͐̓̋̏̽ͥ̍ͦ́͞͠I̧̡̦̣͓̬͚̪͚̻̳͙̰͖̭̭͚̭̥͓͕̊̂̿͛ͪ̒ͮ̍̓̈́̐̽͜L̛̘̟̘͎̘͙͚͍̖̦͍̠̹̠̠ͭͭ̅̌̄̓ͧͭ̈́͛̎̿̉͊͆L̛̫̮̳̼̦̦͓͚͖͇̑ͦ̿͋̆ͣ̑͆͂̀ͅ?̧̘̗͍͔͙̟̞̤̦͕̘͓̞̰̱̰ͮ̇ͥͪ̀ͅ')
+        time.sleep(4)
         os.system('clear')
         time.sleep(2)
+        print('\nBut you still have the chance to make things right.')
+        time.sleep(2)
         print('Please, do the right thing.')
-        time.sleep(1)
         config = configparser.ConfigParser()
         config['badend'] = {'var9': '0'}
         with open('save/config9.ini', 'w') as configfile:
