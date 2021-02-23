@@ -37,28 +37,28 @@ def saan():
         while friendSelect1 < 1 or friendSelect1 > 4:
             print('\nDid you mean something else?')
             time.sleep(0.5)
-            friend1()
+            saan()
 
         if friendSelect1 == 1:
             print('Placeholder1')
             time.sleep(0.5)
-            friend1()
+            saan()
 
         if friendSelect1 == 2:
             if var4 == 2:
-                print('Your friend appreciates the complements.')
+                print("You keep telling him how cute he is, and he keeps smiling.")
                 time.sleep(2)
-                friend1()
+                saan()
 
             if var4 == 1:
-                print('Your friend looks busy right now.')
+                print('He seems busy right now.')
                 time.sleep(2)
-                friend1()
+                saan()
 
             if var4 == 0:
                 print('\nYou tell Saan that he has cute eyes.')
                 time.sleep(3)
-                print('You made him blush!')
+                print("You're making him blush!")
                 time.sleep(2)
                 friendflagger1.friendFlagger1()
 

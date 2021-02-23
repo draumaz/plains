@@ -16,18 +16,22 @@ def mainExt():
     print('==WRITTEN IN PYTHON==')
     print('==CHARACTER BY BRYCE CANO==')
     time.sleep(4)
-    print('\nREPENT [1]')
-    print('RESET [2]')
-    time.sleep(0.15)
+    print('\n[3]')
+    extSel = int(input('\nACTION >> '))
+    while extSel < 3 or extSel > 3:
+        mainExt3()
+    if extSel == 3:
+        mainalt.mainAlt()
+
+def mainExt3():
     os.system('clear')
     print('\n==THE PLAINS==')
     print('==MADE BY DRAUMAZ IN 2021==')
     print('==WRITTEN IN PYTHON==')
     print('==CHARACTER BY BRYCE CANO==')
     print('\n[3]')
-
     extSel = int(input('\nACTION >> '))
     while extSel < 3 or extSel > 3:
-        mainExt()
+        mainExt3()
     if extSel == 3:
         mainalt.mainAlt()

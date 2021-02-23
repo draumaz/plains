@@ -17,13 +17,7 @@ def hillSel3():
         hillSel3()
 
     if hillSel3Select == 1:
-        print('\nYou feel truly refreshed. Perhaps crashlanding might have been just what you needed...')
-        time.sleep(2)
-        print('.')
-        time.sleep(1)
-        print('.')
-        time.sleep(1)
-        print('Wonder why your team has yet to contact you...')
+        print('\nLaying down on the grass, it makes you feel truly refreshed.')
         time.sleep(3)
         hill.hill()
 

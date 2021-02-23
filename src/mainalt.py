@@ -29,8 +29,6 @@ def mainAlt():
         time.sleep(5)
         os.system('clear')
         time.sleep(2)
-        print('\nThere is one way we can make things right.')
-        time.sleep(2)
         print('Please, do the right thing.')
         time.sleep(1)
         config = configparser.ConfigParser()

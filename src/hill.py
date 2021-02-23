@@ -16,11 +16,9 @@ def hill():
     print('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.')
     if var6 == 0:
         print('In the distance, you can see a creature moving about.\n')
-    if var6 == 1:
-        print('')
-    if var6 == 0:
         print('GO TOWARDS THE CREATURE [1]')
     if var6 == 1:
+        print('')
         print('GO FORWARDS [1]')
     print('STAND STILL [2]')
     print('LOOK AT THE SKY [3]')

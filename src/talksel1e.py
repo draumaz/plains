@@ -2,6 +2,7 @@ import os
 import time
 import talk
 import configparser
+import mm2
 import talksel1eg
 
 def talkSel1E():
@@ -22,19 +23,24 @@ def talkSel1E():
         print('"Liam, why are you covered in blood?"\n')
         time.sleep(2)
         print('EXPLAIN [1]')
+        print('RUN AWAY [2]')
 
         talkSel1ESelect = int(input('\nACTION >> '))
 
-        while talkSel1ESelect < 1 or talkSel1ESelect > 1:
+        while talkSel1ESelect < 1 or talkSel1ESelect > 2:
             print('\nDid you mean something else?')
             time.sleep(0.5)
             talkSel1E()
-
-        print('\nYou explain to your friends that it was self-defense.')
-        time.sleep(2)
-        print('They understand, and help you clean off.')
-        time.sleep(2)
-        talksel1eg.talkSel1EG()
+        if talkSel1ESelect == 1:
+            print('\nYou explain to your friends that it was self-defense.')
+            time.sleep(2)
+            print('They understand, and help you clean off.')
+            time.sleep(2)
+            talksel1eg.talkSel1EG()
+        if talkSel1ESelect == 2:
+            print("\nYou can't face them.")
+            time.sleep(2)
+            mm2.mainMenu2()
 
     if var6 == 0:
         talk.talk()
