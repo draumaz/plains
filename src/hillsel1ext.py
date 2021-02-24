@@ -10,7 +10,7 @@ def hillSel1Ext():
     config.read('save/config7.ini')
     var7 = config.getint('lizardext', 'var7')
 
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:

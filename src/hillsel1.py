@@ -14,7 +14,7 @@ def hillSel1():
     config.read('save/config5.ini')
     var5 = config.getint('reset', 'var5')
 
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
 
     if var6 == 1:

@@ -3,7 +3,7 @@ import time
 import talk
 
 def talkSel2():
-        os.system('clear')
+        os.system('cls')
         print('\nThe Plains v0.17\n')
         print("talkSel2 PH.\n")
         print('OPT1 [1]')

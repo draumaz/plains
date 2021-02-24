@@ -4,7 +4,7 @@ import tool
 import cave
 
 def caveSel1():
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print("You continue deeper down the cave. It's getting pretty difficult to see...\n")
     print('CONTINUE [1]')

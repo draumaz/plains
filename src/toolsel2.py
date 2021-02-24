@@ -8,7 +8,7 @@ def toolSel2():
     config = configparser.ConfigParser()
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')

@@ -3,7 +3,7 @@ import time
 import ch1endb
 
 def ch1End():
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n")
     print('LOOK [1]')
@@ -16,9 +16,9 @@ def ch1End():
     if ch1EndSelect == 1:
         print('\nThe black disc descends from the sky, and lands safely. A hatch opens, and your friends walk out.')
         time.sleep(5)
-        os.system('clear')
+        os.system('cls')
         print('\nCHAPTER I COMPLETE!\n')
         time.sleep(2)
-        os.system('clear')
+        os.system('cls')
         print('\nSaving...')
         ch1endb.ch1EndB()

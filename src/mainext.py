@@ -4,13 +4,13 @@ import mainalt
 import configparser
 
 def mainExt():
-    os.system('clear')
+    os.system('cls')
     print('\n==AAAAAAAAAA==')
     print('==AAAAAAAA AAAAAAA AAAAAAA==')
     print('==KILLER KILLER KILLER==')
     print('==KILLER KILLER==')
     time.sleep(0.20)
-    os.system('clear')
+    os.system('cls')
     print('\n==THE PLAINS==')
     print('==MADE BY DRAUMAZ IN 2021==')
     print('==WRITTEN IN PYTHON==')
@@ -24,7 +24,7 @@ def mainExt():
         mainalt.mainAlt()
 
 def mainExt3():
-    os.system('clear')
+    os.system('cls')
     print('\n==THE PLAINS==')
     print('==MADE BY DRAUMAZ IN 2021==')
     print('==WRITTEN IN PYTHON==')

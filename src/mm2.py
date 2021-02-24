@@ -5,7 +5,7 @@ import saan
 import embark
 
 def mainMenu2():
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print('A fancy, metallic ship lands a little ways from where you landed.')
     print('Your friends walk out, and approach you.\n')
@@ -31,7 +31,7 @@ def mainMenu2():
         embark.Embark()
 
     if mainmenuSelect2 == 4:
-        os.system('clear')
+        os.system('cls')
         print('\nThanks for playing!')
         time.sleep(0.5)
         quit()

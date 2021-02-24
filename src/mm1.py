@@ -8,7 +8,7 @@ import tool
 import ch1end
 
 def mainMenu1():
-    os.system('clear')
+    os.system('cls')
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
@@ -42,7 +42,7 @@ def mainMenu1():
 
     if mainmenuSelect1 == 4:
         if var1 == 0:
-            os.system('clear')
+            os.system('cls')
             print('\nThanks for playing!')
             time.sleep(0.5)
             quit()

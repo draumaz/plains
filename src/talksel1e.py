@@ -14,7 +14,7 @@ def talkSel1E():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
 
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
 
     if var6 == 1:

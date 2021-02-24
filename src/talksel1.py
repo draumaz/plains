@@ -30,7 +30,7 @@ def talkSel1():
     if var3 == 0:
 
         if var7 == 0 or var8 == 1:
-            os.system('clear')
+            os.system('cls')
             print('\nThe Plains v0.17\n')
             print("Your friends ask you why you didn't use any of your tools to contact them.\n")
             print('UH... [1]')

@@ -8,7 +8,7 @@ def toolSel1():
     config = configparser.ConfigParser()
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')

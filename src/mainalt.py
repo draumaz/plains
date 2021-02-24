@@ -5,7 +5,7 @@ import reset
 import textwrap
 
 def mainAlt():
-    os.system('clear')
+    os.system('cls')
     print('\n...')
     time.sleep(5)
     print("\nDo you regret your actions?")
@@ -34,7 +34,7 @@ def mainAlt():
         time.sleep(0.5)
         print('Ḱ̴̪̰̬͉͎͙̯̝͓͉̖ͣ̔̾̓̍͐̓̋̏̽ͥ̍ͦ́͞͠I̧̡̦̣͓̬͚̪͚̻̳͙̰͖̭̭͚̭̥͓͕̊̂̿͛ͪ̒ͮ̍̓̈́̐̽͜L̛̘̟̘͎̘͙͚͍̖̦͍̠̹̠̠ͭͭ̅̌̄̓ͧͭ̈́͛̎̿̉͊͆L̛̫̮̳̼̦̦͓͚͖͇̑ͦ̿͋̆ͣ̑͆͂̀ͅ?̧̘̗͍͔͙̟̞̤̦͕̘͓̞̰̱̰ͮ̇ͥͪ̀ͅ')
         time.sleep(4)
-        os.system('clear')
+        os.system('cls')
         time.sleep(2)
         print('\nBut you still have the chance to make things right.')
         time.sleep(2)

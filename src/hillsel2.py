@@ -9,7 +9,7 @@ def hillSel2():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
 
-    os.system('clear')
+    os.system('cls')
     print('\nThe Plains v0.17\n')
     print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     time.sleep(2)

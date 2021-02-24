@@ -8,7 +8,7 @@ import talksel1e
 import configparser
 
 def talk():
-    os.system('clear')
+    os.system('cls')
 
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
