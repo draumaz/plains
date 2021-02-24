@@ -1,5 +1,5 @@
 # The Plains
-![Screenshot](https://github.com/draumaz/plains/blob/main/art/screenshot.png?raw=true?raw=true "Screenshot")
+![Screenshot](https://github.com/draumaz/plains/blob/main/art/newsplash.png?raw=true?raw=true "Screenshot")
 
 The Plains - a CLI adventure game where your choices matter. You're Liam, a space traveler who has crash-landed on a mysterious planet. What will you find? What will you discover?
 
