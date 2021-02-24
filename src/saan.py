@@ -4,6 +4,7 @@ import mm2
 import friendflagger1
 import friendflagger2
 import configparser
+import textwrap
 
 def saan():
     config = configparser.ConfigParser()
@@ -27,9 +28,9 @@ def saan():
         os.system('cls')
         print('\nThe Plains v0.17\n')
         print('Saan seems excited to talk to you.\n')
-        print('SPECIFICS [1]')
+        #print('SPECIFICS [1]')
         print('FLIRT [2]')
-        print('SOMETHING [3]')
+        #print('SOMETHING [3]')
         print('BACK [4]')
 
         friendSelect1 = int(input('\nACTION >> '))
@@ -40,13 +41,14 @@ def saan():
             saan()
 
         if friendSelect1 == 1:
-            print('Placeholder1')
-            time.sleep(0.5)
+            #print('Placeholder1')
+            #time.sleep(0.5)
             saan()
 
         if friendSelect1 == 2:
             if var4 == 2:
-                print("You keep telling him how cute he is, and he keeps smiling.")
+                print('')
+                print(textwrap.fill("You keep telling him how cute he is. He looks happy.", 75))
                 time.sleep(2)
                 saan()
 
@@ -63,9 +65,9 @@ def saan():
                 friendflagger1.friendFlagger1()
 
         if friendSelect1 == 3:
-            print('Placeholder3')
-            time.sleep(0.5)
-            friend1()
+            #print('Placeholder3')
+            #time.sleep(0.5)
+            saan()
 
         if friendSelect1 == 4:
             if var4 <= 1:
@@ -73,6 +75,7 @@ def saan():
                 time.sleep(2)
                 friendflagger2.friendFlagger2()
             if var4 == 2:
-                print('\nYou walk back, your friend still blushing.')
+                print('')
+                print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
                 time.sleep(2)
                 mm2.mainMenu2()

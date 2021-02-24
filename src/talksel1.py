@@ -3,6 +3,7 @@ import time
 import talk
 import talksel1b
 import configparser
+import textwrap
 
 def talkSel1():
     config = configparser.ConfigParser()
@@ -20,7 +21,7 @@ def talkSel1():
     if var3 == 1:
 
         if var7 == 0 or var8 == 1:
-            print("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.")
+            print(textwrap.fill("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.", 75))
             time.sleep(5)
             talk.talk()
 

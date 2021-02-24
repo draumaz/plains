@@ -8,8 +8,6 @@ import talksel1e
 import configparser
 
 def talk():
-    os.system('cls')
-
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
@@ -21,7 +19,8 @@ def talk():
     config = configparser.ConfigParser()
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
-
+    
+    os.system('cls')
     print('\nThe Plains v0.17\n')
 
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
@@ -30,7 +29,7 @@ def talk():
     if var6 == 1 and var8 == 0: #Murder, pre-explain
         print('Your friends look at you with horrified expressions.\n')
 
-    if var7 == 1 and var6 == 0: #Murdered before reset
+    if var7 == 1 and var6 == 0 and var8 == 0: #Murdered before reset
             print('...they seem worried.\n')
 
     if var6 == 0 or var8 == 1: #Normal/post-explain

@@ -20,6 +20,8 @@ def talkSel1B():
     if talkSel1ESelect2 == 1:
         print("\nYou explain to them that you're just feeling off.")
         time.sleep(3)
+        print("\n:)")
+        time.sleep(0.15)
         talksel1eg.talkSel1EG()
 
     if talkSel1ESelect2 == 2:
