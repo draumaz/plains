@@ -45,6 +45,8 @@ def hillSel1Ext():
             time.sleep(2)
             print("You're far from home, aren'tcha?")
             time.sleep(2)
+            print("...not really very helpful. But he means well.")
+            time.sleep(3)
             hill.hill()
 
     if hillSel1ExtSel == 3:
