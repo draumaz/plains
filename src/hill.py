@@ -12,8 +12,8 @@ def hill():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
 
-    os.system('cls')
-    print('\nThe Plains v0.17\n')
+    os.system('cls||clear')
+    print('\nThe Plains v0.18\n')
     print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0:
         print('In the distance, you can see a creature moving about.\n')

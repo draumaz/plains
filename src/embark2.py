@@ -20,7 +20,7 @@ def Embark2():
     if embSelect2 == 1:
         print('\nYou decide to depart anyways, and your journey comes to an end.')
         time.sleep(3)
-        os.system('cls')
+        os.system('cls||clear')
         print('\n\nTHANK YOU SO MUCH FOR PLAYING!')
         time.sleep(4)
         quit()

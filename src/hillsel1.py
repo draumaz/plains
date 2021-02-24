@@ -14,8 +14,8 @@ def hillSel1():
     config.read('save/config5.ini')
     var5 = config.getint('reset', 'var5')
 
-    os.system('cls')
-    print('\nThe Plains v0.17\n')
+    os.system('cls||clear')
+    print('\nThe Plains v0.18\n')
 
     if var6 == 1:
         print('Nothing to see here but the remains of that reptilian you killed.\n')

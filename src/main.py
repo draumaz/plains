@@ -15,7 +15,7 @@ def splashScreen():
     if var9 == 1:
         mainext.mainExt()
     if var9 == 0:
-        os.system('cls')
+        os.system('cls||clear')
         print('\n==THE PLAINS==')
         print('==MADE BY DRAUMAZ IN 2021==')
         print('==WRITTEN IN PYTHON==')

@@ -8,11 +8,11 @@ import tool
 import ch1end
 
 def mainMenu1():
-    os.system('cls')
+    os.system('cls||clear')
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
-    print('\nThe Plains v0.17\n')
+    print('\nThe Plains v0.18\n')
     print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
     print('\nHILL [1]')
     print('CAVE [2]')
@@ -42,7 +42,7 @@ def mainMenu1():
 
     if mainmenuSelect1 == 4:
         if var1 == 0:
-            os.system('cls')
+            os.system('cls||clear')
             print('\nThanks for playing!')
             time.sleep(0.5)
             quit()

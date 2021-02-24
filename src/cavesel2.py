@@ -4,8 +4,8 @@ import tool
 import cave
 
 def caveSel2():
-    os.system('clear')
-    print('\nThe Plains v0.17\n')
+    os.system('cls||clear')
+    print('\nThe Plains v0.18\n')
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
     print('DECIPHER [1]')
     print('BACK [2]')

@@ -70,7 +70,7 @@ def resetter():
 
             print('Reset.')
             time.sleep(1)
-            os.system('cls')
+            os.system('cls||clear')
             quit()
 
     if reSel1 == 2:

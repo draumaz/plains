@@ -4,8 +4,8 @@ import time
 import os
 import configparser
 
-os.system('cls')
-print('\nThe Plains v0.17\n')
+os.system('cls||clear')
+print('\nThe Plains v0.18\n')
 print('CHAPTER 1 [1]')
 print('CHAPTER 2 [2]')
 print('PROD RESET [3]')
