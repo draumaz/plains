@@ -33,12 +33,12 @@ def talk():
             print('...they seem worried.\n')
 
     if var6 == 0 or var8 == 1: #Normal/post-explain
-        print('TALK TO FRIENDS [1]')
+        print('CHIT-CHAT [1]')
 
     if var6 == 1 and var8 == 0 and var7 == 1: #Murder
         print("WHAT'S WITH THAT LOOK? [1]")
 
-    #print('TALK ABOUT LOCATION [2]')
+    print('STARE [2]')
     #print('TALK ABOUT PH [3]')
     print('BACK [4]')
 
@@ -56,8 +56,7 @@ def talk():
             talksel1.talkSel1()
 
     if talkSelect == 2:
-        talk()
-        #talksel2.talkSel2()
+        talksel2.talkSel2()
 
     if talkSelect == 3:
         talk()

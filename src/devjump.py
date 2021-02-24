@@ -4,93 +4,119 @@ import time
 import os
 import configparser
 
-os.system('cls||clear')
-print('\nThe Plains v0.18\n')
-print('CHAPTER 1 [1]')
-print('CHAPTER 2 [2]')
-print('PROD RESET [3]')
-print('BAD END [4]')
+def devJump():
+    os.system('cls||clear')
+    print('\nThe Gay Goat Boy Room\n')
+    print('CHAPTER 1 [1]')
+    print('CHAPTER 2 [2]')
+    print('\nPROD RESET [3]')
+    print('')
+    print('BAD END FLAG [4]')
+    print('TOOLS USED FLAG [5]')
+    print('KILLED LIZARD FLAG [6]')
+    print('\nEXIT [7]')
 
-devSelect = int(input('\nACTION >> '))
-if devSelect == 1:
-    mm1.mainMenu1()
-if devSelect == 2:
-    config = configparser.ConfigParser()
-    config['ch1endflag'] = {'var1': '1'}
-    with open('save/config.ini', 'w') as configfile:
-           config.write(configfile)
-    config = configparser.ConfigParser()
-    config['chaptflagger'] = {'var2': '1'}
-    with open('save/config2.ini', 'w') as configfile:
-           config.write(configfile)
-    mm2.mainMenu2()
-if devSelect == 3:
-    print('\nProcessing...')
-    config = configparser.ConfigParser()
-    config['ch1endflag'] = {'var1': '0'}
-    with open('save/config.ini', 'w') as configfile:
-           config.write(configfile)
+    devSelect = int(input('\nACTION >> '))
 
-    config = configparser.ConfigParser()
-    config['chaptflagger'] = {'var2': '0'}
-    with open('save/config2.ini', 'w') as configfile:
-           config.write(configfile)
+    if devSelect == 1: #Chapter 1 Jump
+        mm1.mainMenu1()
 
-    config = configparser.ConfigParser()
-    config['toolflag'] = {'var3': '0'}
-    with open('save/config3.ini', 'w') as configfile:
-           config.write(configfile)
+    if devSelect == 2: #Chapter 2 Jump
+        config = configparser.ConfigParser()
+        config['ch1endflag'] = {'var1': '1'}
+        with open('save/config.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['chaptflagger'] = {'var2': '1'}
+        with open('save/config2.ini', 'w') as configfile:
+               config.write(configfile)
+        mm2.mainMenu2()
 
-    config = configparser.ConfigParser()
-    config['friendflag'] = {'var4': '0'}
-    with open('save/config4.ini', 'w') as configfile:
-           config.write(configfile)
+    if devSelect == 3: #Full Reset
+        print('\nProcessing...')
+        config = configparser.ConfigParser()
+        config['ch1endflag'] = {'var1': '0'}
+        with open('save/config.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['chaptflagger'] = {'var2': '0'}
+        with open('save/config2.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['toolflag'] = {'var3': '0'}
+        with open('save/config3.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['friendflag'] = {'var4': '0'}
+        with open('save/config4.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['reset'] = {'var5': '0'}
+        with open('save/config5.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['lizard'] = {'var6': '0'}
+        with open('save/config6.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['lizardext'] = {'var7': '0'}
+        with open('save/config7.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['okay'] = {'var8': '0'}
+        with open('save/config8.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['badend'] = {'var9': '0'}
+        with open('save/config9.ini', 'w') as configfile:
+            config.write(configfile)
+        time.sleep(0.05)
+        print('Complete.')
+        time.sleep(0.1)
+        devJump()
 
-    config = configparser.ConfigParser()
-    config['reset'] = {'var5': '0'}
-    with open('save/config5.ini', 'w') as configfile:
-        config.write(configfile)
+    if devSelect == 4: #Bad Ending
+        print('\nProcessing...')
+        config = configparser.ConfigParser()
+        config['badend'] = {'var9': '1'}
+        with open('save/config9.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['ch1endflag'] = {'var1': '1'}
+        with open('save/config.ini', 'w') as configfile:
+               config.write(configfile)
+        config = configparser.ConfigParser()
+        config['chaptflagger'] = {'var2': '1'}
+        with open('save/config2.ini', 'w') as configfile:
+               config.write(configfile)
+        print('Complete.')
+        time.sleep(0.25)
+        devJump()
 
-    config = configparser.ConfigParser()
-    config['lizard'] = {'var6': '0'}
-    with open('save/config6.ini', 'w') as configfile:
-        config.write(configfile)
+    if devSelect == 5:
+        config = configparser.ConfigParser()
+        config['toolflag'] = {'var3': '1'}
+        with open('save/config3.ini', 'w') as configfile:
+               config.write(configfile)
+        print('\nVariable set.')
+        time.sleep(0.2)
+        devJump()
 
-    config = configparser.ConfigParser()
-    config['lizardext'] = {'var7': '0'}
-    with open('save/config7.ini', 'w') as configfile:
-        config.write(configfile)
+    if devSelect == 6:
+        config = configparser.ConfigParser()
+        config['lizard'] = {'var6': '1'}
+        with open('save/config6.ini', 'w') as configfile:
+            config.write(configfile)
+        config = configparser.ConfigParser()
+        config['lizardext'] = {'var7': '1'}
+        with open('save/config7.ini', 'w') as configfile:
+            config.write(configfile)
+        print('\nVariables set.')
+        time.sleep(0.2)
+        devJump()
 
-    config = configparser.ConfigParser()
-    config['okay'] = {'var8': '0'}
-    with open('save/config8.ini', 'w') as configfile:
-        config.write(configfile)
+    if devSelect == 7:
+        os.system('cls||clear')
+        quit()
 
-    config = configparser.ConfigParser()
-    config['badend'] = {'var9': '0'}
-    with open('save/config9.ini', 'w') as configfile:
-        config.write(configfile)
-
-    time.sleep(0.25)
-    print('Complete.')
-    time.sleep(1)
-    quit()
-if devSelect == 4:
-    print('\nProcessing...')
-
-    config = configparser.ConfigParser()
-    config['badend'] = {'var9': '1'}
-    with open('save/config9.ini', 'w') as configfile:
-        config.write(configfile)
-    config = configparser.ConfigParser()
-    config['ch1endflag'] = {'var1': '1'}
-    with open('save/config.ini', 'w') as configfile:
-           config.write(configfile)
-    config = configparser.ConfigParser()
-    config['chaptflagger'] = {'var2': '1'}
-    with open('save/config2.ini', 'w') as configfile:
-           config.write(configfile)
-    time.sleep(0.25)
-    print('Complete.')
-    time.sleep(1)
-    quit()
+devJump()

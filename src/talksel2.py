@@ -1,13 +1,14 @@
 import os
 import time
 import talk
+import textwrap
 
 def talkSel2():
         os.system('cls||clear')
         print('\nThe Plains v0.18\n')
-        print("talkSel2 PH.\n")
-        print('OPT1 [1]')
-        print('BACK [2]')
+        print("You just...stare at them. They look bewildered.\n")
+        print('KEEP STARING [1]')
+        print('GO BACK [2]')
 
         talkSel2Select = int(input('\nACTION >> '))
 
@@ -17,11 +18,12 @@ def talkSel2():
             talkSel1()
 
         if talkSel2Select == 1:
-            print("\nOPT1.")
+            print('')
+            print(textwrap.fill("Your unblinking eyes eventually cause them to wonder if there's something seriously wrong with you.", 75))
             time.sleep(5)
             talk.talk()
 
         if talkSel2Select == 2:
-            print("\nBACK.")
+            print("\nYeah, this is pretty bizarre.")
             time.sleep(5)
             talk.talk()

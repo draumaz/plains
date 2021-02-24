@@ -34,7 +34,8 @@ def Embark():
 
     if embSelect == 2:
         if var6 == 1 and var8 == 0:
-            print(textwrap.fill('\nBlood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
+            print('')
+            print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
             time.sleep(6)
             os.system('cls||clear')
             time.sleep(5)
@@ -43,7 +44,11 @@ def Embark():
             print('MONSTER')
             time.sleep(0.05)
             print('MONSTER')
-            time.sleep(0.5)
+            time.sleep(0.05)
+            print('MONSTER')
+            time.sleep(0.05)
+            print('MONSTER')
+            time.sleep(0.15)
             config = configparser.ConfigParser()
             config['badend'] = {'var9': '1'}
             with open('save/config9.ini', 'w') as configfile:

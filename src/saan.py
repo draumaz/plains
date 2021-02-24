@@ -28,9 +28,9 @@ def saan():
         os.system('cls||clear')
         print('\nThe Plains v0.18\n')
         print('Saan seems excited to talk to you.\n')
-        #print('SPECIFICS [1]')
-        print('FLIRT [2]')
-        #print('SOMETHING [3]')
+        print('WHERE ARE WE? [1]')
+        print('FLIRT WITH HIM [2]')
+        print('SOMETHING [3]')
         print('BACK [4]')
 
         friendSelect1 = int(input('\nACTION >> '))
@@ -41,9 +41,9 @@ def saan():
             saan()
 
         if friendSelect1 == 1:
-            #print('Placeholder1')
-            #time.sleep(0.5)
-            saan()
+            print(textwrap.fill("\nSaan explains how far away you ended up. This planet is light years away from home..."))
+            time.sleep(5)
+            mm2.mainMenu2()
 
         if friendSelect1 == 2:
             if var4 == 2:
