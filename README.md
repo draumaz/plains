@@ -10,6 +10,3 @@ All rights reserved for "Liam" (created by Bryce Cano)
 ![Lizard](https://github.com/draumaz/plains/blob/main/art/lizard.jpg?raw=true?raw=true "Lizard")
 ![Concept1](https://github.com/draumaz/plains/blob/main/art/concept1.jpg?raw=true?raw=true "Concept 1")
 ![Concept2](https://github.com/draumaz/plains/blob/main/art/concept2.jpg?raw=true?raw=true "Concept 2")
-
-# Made by Draumaz
-![Draumaz](https://github.com/draumaz/plains/blob/main/art/banner.png?raw=true?raw=true "Banner")
