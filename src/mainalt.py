@@ -16,6 +16,11 @@ def mainAlt():
     mainAlt2()
 
 def mainAlt2():
+
+    config = configparser.ConfigParser()
+    config.read('save/config10.ini')
+    var10 = config.getint('badendext', 'var10')
+
     os.system('cls||clear')
     print("\nDo you regret it?")
     print('\nYES [1]')
@@ -56,10 +61,16 @@ def mainAlt2():
                 reset.resetter()
 
             if altSel == 2:
-                print('\nIs that so.')
-                time.sleep(2)
-                print('So be it.')
-                time.sleep(2)
-                reset.resetter()
+                if var10 == 1:
+                    time.sleep(0.75)
+                    print('\nError.')
+                    time.sleep(0.5)
+                    mainAlt2()
+                if var10 == 0:
+                    print('\nIs that so.')
+                    time.sleep(2)
+                    print("Here's your chance.")
+                    time.sleep(1)
+                    reset.resetter()
         except ValueError:
             mainAlt2()

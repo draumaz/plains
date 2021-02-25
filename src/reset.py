@@ -8,9 +8,12 @@ def resetter():
     config.read('save/config9.ini')
     var9 = config.getint('badend', 'var9')
 
-    print('\nDoing this will reset everything. Are you sure?')
-    print('\nRESET [1]')
-    print('BACK [2]')
+    if var9 == 0:
+        print('\nDoing this will reset everything. Are you sure?')
+        print('\nRESET [1]')
+        print('BACK [2]')
+    if var9 == 1:
+        print('\nRESET [1]')
 
     while True:
         try:
@@ -80,9 +83,12 @@ def resetter():
                     quit()
 
             if reSel1 == 2:
-                print('\nThe game will now close. Your data was not altered.')
-                time.sleep(2)
-                quit()
+                if var9 == 1:
+                    resetter()
+                if var9 == 0:
+                    print('\nThe game will now close. Your data was not altered.')
+                    time.sleep(2)
+                    quit()
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
