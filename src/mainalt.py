@@ -13,6 +13,10 @@ def mainAlt():
     os.system('cls||clear')
     print('\n...')
     time.sleep(2)
+    mainAlt2()
+
+def mainAlt2():
+    os.system('cls||clear')
     print("\nDo you regret it?")
     print('\nYES [1]')
     print('NO [2]')
@@ -22,9 +26,7 @@ def mainAlt():
             altSel = int(input('\nACTION >> '))
 
             while altSel < 1 or altSel > 2:
-                print('\nThis is not an acceptable response.')
-                time.sleep(2)
-                mainAlt()
+                mainAlt2()
 
             if altSel == 1:
                 print('\nSo you regret what you have done.')
@@ -58,6 +60,6 @@ def mainAlt():
                 time.sleep(2)
                 print('So be it.')
                 time.sleep(2)
-                quit()
+                reset.resetter()
         except ValueError:
-            mainAlt()
+            mainAlt2()

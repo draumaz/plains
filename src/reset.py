@@ -26,6 +26,10 @@ def resetter():
                     print('\nResetting...')
                     time.sleep(6)
                     print('Reset failed.')
+                    config = configparser.ConfigParser()
+                    config['badendext'] = {'var10': '1'}
+                    with open('save/config10.ini', 'w') as configfile:
+                        config.write(configfile)
                     time.sleep(2)
                     quit()
 
