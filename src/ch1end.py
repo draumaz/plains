@@ -1,12 +1,13 @@
 import os
 import time
 import ch1endb
+import textwrap
 
 def ch1End():
     os.system('cls||clear')
     print('\nThe Plains v0.18\n')
-    print("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n")
-    print('LOOK [1]')
+    print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))
+    print('\nLOOK [1]')
 
     while True:
         try:
@@ -16,7 +17,8 @@ def ch1End():
                 ch1End()
 
             if ch1EndSelect == 1:
-                print('\nThe black disc descends from the sky, and lands safely. A hatch opens, and your friends walk out.')
+                print('')
+                print(textwrap.fill('The black disc descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))
                 time.sleep(5)
                 os.system('cls||clear')
                 print('\nCHAPTER I COMPLETE!\n')

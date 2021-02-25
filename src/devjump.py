@@ -72,6 +72,10 @@ def devJump():
                 config['badend'] = {'var9': '0'}
                 with open('save/config9.ini', 'w') as configfile:
                     config.write(configfile)
+                config = configparser.ConfigParser()
+                config['badendext'] = {'var10': '0'}
+                with open('save/config10.ini', 'w') as configfile:
+                    config.write(configfile)
                 time.sleep(0.05)
                 print('Complete.')
                 time.sleep(0.1)

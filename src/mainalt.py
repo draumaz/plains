@@ -74,3 +74,5 @@ def mainAlt2():
                     reset.resetter()
         except ValueError:
             mainAlt2()
+        except KeyboardInterrupt:
+            mainAlt2()

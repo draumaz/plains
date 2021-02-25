@@ -10,9 +10,6 @@ def mainExt():
     print('==KILLER KILLER KILLER==')
     print('==KILLER KILLER==')
     time.sleep(0.05)
-    mainExt2()
-
-def mainExt2():
     os.system('cls||clear')
     print('\n==THE PLAINS==')
     print('==MADE BY DRAUMAZ IN 2021==')
