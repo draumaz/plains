@@ -20,12 +20,21 @@ def hillSel1():
     if var6 == 1:
         print('Nothing to see here but the remains of that reptilian you killed.\n')
         print('BACK [1]')
-        HS = int(input('\nACTION >> '))
-        while HS < 1 or HS > 1:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            hillSel1()
-        if HS == 1:
-            hill.hill()
+
+        while True:
+            try:
+                HS = int(input('\nACTION >> '))
+
+                while HS < 1 or HS > 1:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    hillSel1()
+                    
+                if HS == 1:
+                    hill.hill()
+            except ValueError:
+                print("\nDid you mean something else?")
+                time.sleep(0.5)
+                hillSel1()
     else:
         hillsel1ext.hillSel1Ext()

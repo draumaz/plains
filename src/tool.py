@@ -16,21 +16,27 @@ def tool():
     print('SCANNER [3]')
     print('BACK [4]')
 
-    toolSelect = int(input('\nACTION >> '))
+    while True:
+        try:
+            toolSelect = int(input('\nACTION >> '))
 
-    while toolSelect < 1 or toolSelect > 4:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        tool()
+            while toolSelect < 1 or toolSelect > 4:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                tool()
 
-    if toolSelect == 1:
-        toolsel1.toolSel1()
+            if toolSelect == 1:
+                toolsel1.toolSel1()
 
-    if toolSelect == 2:
-        toolsel2.toolSel2()
+            if toolSelect == 2:
+                toolsel2.toolSel2()
 
-    if toolSelect == 3:
-        toolsel3.toolSel3()
+            if toolSelect == 3:
+                toolsel3.toolSel3()
 
-    if toolSelect == 4:
-        mm1.mainMenu1()
+            if toolSelect == 4:
+                mm1.mainMenu1()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            tool()

@@ -14,24 +14,29 @@ def cave():
     print('LOOK AROUND [2]')
     print('LISTEN [3]')
     print('BACK [4]')
+    while True:
+        try:
+            caveSelect = int(input('\nACTION >> '))
 
-    caveSelect = int(input('\nACTION >> '))
+            while caveSelect < 1 or caveSelect > 4:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                cave()
 
-    while caveSelect < 1 or caveSelect > 4:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        cave()
+            if caveSelect == 1:
+                cavesel1.caveSel1()
 
-    if caveSelect == 1:
-        cavesel1.caveSel1()
+            if caveSelect == 2:
+                cavesel2.caveSel2()
 
-    if caveSelect == 2:
-        cavesel2.caveSel2()
+            if caveSelect == 3:
+                cavesel3.caveSel3()
 
-    if caveSelect == 3:
-        cavesel3.caveSel3()
-
-    if caveSelect == 4:
-        print('\nSeems pretty forboding...best to head back.')
-        time.sleep(3)
-        mm1.mainMenu1()
+            if caveSelect == 4:
+                print('\nSeems pretty forboding...best to head back.')
+                time.sleep(3)
+                mm1.mainMenu1()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            cave()

@@ -37,22 +37,28 @@ def talkSel1():
             print('UH... [1]')
             print('BACK [2]')
 
-            talkSel1Select = int(input('\nACTION >> '))
+            while True:
+                try:
+                    talkSel1Select = int(input('\nACTION >> '))
 
-            while talkSel1Select < 1 or talkSel1Select > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                talkSel1()
+                    while talkSel1Select < 1 or talkSel1Select > 2:
+                        print('\nDid you mean something else?')
+                        time.sleep(0.5)
+                        talkSel1()
 
-            if talkSel1Select == 1:
-                print("\nYour friends tell you to not to worry about it.")
-                time.sleep(5)
-                talk.talk()
+                    if talkSel1Select == 1:
+                        print("\nYour friends tell you to not to worry about it.")
+                        time.sleep(5)
+                        talk.talk()
 
-            if talkSel1Select == 2:
-                print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
-                time.sleep(5)
-                talk.talk()
+                    if talkSel1Select == 2:
+                        print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
+                        time.sleep(5)
+                        talk.talk()
+                except ValueError:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    talkSel1()
 
         if var7 == 1 and var8 == 0:
             talksel1b.talkSel1B()

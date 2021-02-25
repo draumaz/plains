@@ -9,19 +9,25 @@ def talkSel3():
         print('OPT1 [1]')
         print('BACK [2]')
 
-        talkSel3Select = int(input('\nACTION >> '))
+        while True:
+            try:
+                talkSel3Select = int(input('\nACTION >> '))
 
-        while talkSel3Select < 1 or talkSel3Select > 2:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            talkSel1()
+                while talkSel3Select < 1 or talkSel3Select > 2:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    talkSel1()
 
-        if talkSel3Select == 1:
-            print("\nOPT1.")
-            time.sleep(5)
-            talk.talk()
+                if talkSel3Select == 1:
+                    print("\nOPT1.")
+                    time.sleep(5)
+                    talk.talk()
 
-        if talkSel3Select == 2:
-            print("\nBACK.")
-            time.sleep(5)
-            talk.talk()
+                if talkSel3Select == 2:
+                    print("\nBACK.")
+                    time.sleep(5)
+                    talk.talk()
+            except ValueError:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                talkSel3()

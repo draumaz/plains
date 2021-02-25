@@ -17,11 +17,15 @@ def mainExt():
     print('==CHARACTER BY BRYCE CANO==')
     time.sleep(4)
     print('\n[3]')
-    extSel = int(input('\nACTION >> '))
-    while extSel < 3 or extSel > 3:
-        mainExt3()
-    if extSel == 3:
-        mainalt.mainAlt()
+    while True:
+        try:
+            extSel = int(input('\nACTION >> '))
+            while extSel < 3 or extSel > 3:
+                mainExt3()
+            if extSel == 3:
+                mainalt.mainAlt()
+        except ValueError:
+            mainExt3()
 
 def mainExt3():
     os.system('cls||clear')
@@ -30,8 +34,12 @@ def mainExt3():
     print('==WRITTEN IN PYTHON==')
     print('==CHARACTER BY BRYCE CANO==')
     print('\n[3]')
-    extSel = int(input('\nACTION >> '))
-    while extSel < 3 or extSel > 3:
-        mainExt3()
-    if extSel == 3:
-        mainalt.mainAlt()
+    while True:
+        try:
+            extSel = int(input('\nACTION >> '))
+            while extSel < 3 or extSel > 3:
+                mainExt3()
+            if extSel == 3:
+                mainalt.mainAlt()
+        except ValueError:
+            mainExt3()

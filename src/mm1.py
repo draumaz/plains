@@ -24,37 +24,43 @@ def mainMenu1():
     if var1 == 1:
         print('EXIT [5]')
 
-    mainmenuSelect1 = int(input('\nACTION >> '))
+    while True:
+        try:
+            mainmenuSelect1 = int(input('\nACTION >> '))
 
-    while mainmenuSelect1 < 1 or mainmenuSelect1 > 5:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        mainMenu1()
+            while mainmenuSelect1 < 1 or mainmenuSelect1 > 5:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                mainMenu1()
 
-    if mainmenuSelect1 == 1:
-        hill.hill()
+            if mainmenuSelect1 == 1:
+                hill.hill()
 
-    if mainmenuSelect1 == 2:
-        cave.cave()
+            if mainmenuSelect1 == 2:
+                cave.cave()
 
-    if mainmenuSelect1 == 3:
-        tool.tool()
+            if mainmenuSelect1 == 3:
+                tool.tool()
 
-    if mainmenuSelect1 == 4:
-        if var1 == 0:
-            os.system('cls||clear')
-            print('\nThanks for playing!')
-            time.sleep(0.5)
-            quit()
-        if var1 == 1:
-            ch1end.ch1End()
+            if mainmenuSelect1 == 4:
+                if var1 == 0:
+                    os.system('cls||clear')
+                    print('\nThanks for playing!')
+                    time.sleep(0.5)
+                    quit()
+                if var1 == 1:
+                    ch1end.ch1End()
 
-    if mainmenuSelect1 == 5:
-        if var1 == 1:
-            print('\nThanks for playing!')
-            time.sleep(0.5)
-            quit()
-        if var1 == 0:
+            if mainmenuSelect1 == 5:
+                if var1 == 1:
+                    print('\nThanks for playing!')
+                    time.sleep(0.5)
+                    quit()
+                if var1 == 0:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    mainMenu1()
+        except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
             mainMenu1()

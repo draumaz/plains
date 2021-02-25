@@ -9,19 +9,25 @@ def hillSel3():
     print('\nEXAMINE [1]')
     print('BACK [2]')
 
-    hillSel3Select = int(input('\nACTION >> '))
+    while True:
+        try:
+            hillSel3Select = int(input('\nACTION >> '))
 
-    while hillSel3Select < 1 or hillSel3Select > 2:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        hillSel3()
+            while hillSel3Select < 1 or hillSel3Select > 2:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                hillSel3()
 
-    if hillSel3Select == 1:
-        print('\nLaying down on the grass, it makes you feel truly refreshed.')
-        time.sleep(3)
-        hill.hill()
+            if hillSel3Select == 1:
+                print('\nLaying down on the grass, it makes you feel truly refreshed.')
+                time.sleep(3)
+                hill.hill()
 
-    if hillSel3Select == 2:
-        print('\nYou decide that you have more important things to be doing.')
-        time.sleep(2)
-        hill.hill()
+            if hillSel3Select == 2:
+                print('\nYou decide that you have more important things to be doing.')
+                time.sleep(2)
+                hill.hill()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            hillSel3()

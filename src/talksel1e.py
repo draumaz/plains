@@ -25,22 +25,28 @@ def talkSel1E():
         print('EXPLAIN [1]')
         print('RUN AWAY [2]')
 
-        talkSel1ESelect = int(input('\nACTION >> '))
+        while True:
+            try:
+                talkSel1ESelect = int(input('\nACTION >> '))
 
-        while talkSel1ESelect < 1 or talkSel1ESelect > 2:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            talkSel1E()
-        if talkSel1ESelect == 1:
-            print('\nYou explain to your friends that it was self-defense.')
-            time.sleep(2)
-            print('They understand, and help you clean off.')
-            time.sleep(2)
-            talksel1eg.talkSel1EG()
-        if talkSel1ESelect == 2:
-            print("\nYou can't face them.")
-            time.sleep(2)
-            mm2.mainMenu2()
+                while talkSel1ESelect < 1 or talkSel1ESelect > 2:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    talkSel1E()
+                if talkSel1ESelect == 1:
+                    print('\nYou explain to your friends that it was self-defense.')
+                    time.sleep(2)
+                    print('They understand, and help you clean off.')
+                    time.sleep(2)
+                    talksel1eg.talkSel1EG()
+                if talkSel1ESelect == 2:
+                    print("\nYou can't face them.")
+                    time.sleep(2)
+                    mm2.mainMenu2()
+            except ValueError:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                talkSel1E()
 
     if var6 == 0:
         talk.talk()

@@ -33,49 +33,55 @@ def saan():
         print('SOMETHING [3]')
         print('BACK [4]')
 
-        friendSelect1 = int(input('\nACTION >> '))
+        while True:
+            try:
+                friendSelect1 = int(input('\nACTION >> '))
 
-        while friendSelect1 < 1 or friendSelect1 > 4:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            saan()
+                while friendSelect1 < 1 or friendSelect1 > 4:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    saan()
 
-        if friendSelect1 == 1:
-            print(textwrap.fill("\nSaan explains how far away you ended up. This planet is light years away from home..."))
-            time.sleep(5)
-            mm2.mainMenu2()
+                if friendSelect1 == 1:
+                    print(textwrap.fill("\nSaan explains how far away you ended up. This planet is light years away from home..."))
+                    time.sleep(5)
+                    mm2.mainMenu2()
 
-        if friendSelect1 == 2:
-            if var4 == 2:
-                print('')
-                print(textwrap.fill("You keep telling him how cute he is. He looks happy.", 75))
-                time.sleep(2)
+                if friendSelect1 == 2:
+                    if var4 == 2:
+                        print('')
+                        print(textwrap.fill("You keep telling him how cute he is. He looks happy.", 75))
+                        time.sleep(2)
+                        saan()
+
+                    if var4 == 1:
+                        print('He seems busy right now.')
+                        time.sleep(2)
+                        saan()
+
+                    if var4 == 0:
+                        print('\nYou tell Saan that he has cute eyes.')
+                        time.sleep(3)
+                        print("You're making him blush!")
+                        time.sleep(2)
+                        friendflagger1.friendFlagger1()
+
+                if friendSelect1 == 3:
+                    #print('Placeholder3')
+                    #time.sleep(0.5)
+                    saan()
+
+                if friendSelect1 == 4:
+                    if var4 <= 1:
+                        print('\nYou walk back without talking...how rude.')
+                        time.sleep(2)
+                        friendflagger2.friendFlagger2()
+                    if var4 == 2:
+                        print('')
+                        print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
+                        time.sleep(2)
+                        mm2.mainMenu2()
+            except ValueError:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
                 saan()
-
-            if var4 == 1:
-                print('He seems busy right now.')
-                time.sleep(2)
-                saan()
-
-            if var4 == 0:
-                print('\nYou tell Saan that he has cute eyes.')
-                time.sleep(3)
-                print("You're making him blush!")
-                time.sleep(2)
-                friendflagger1.friendFlagger1()
-
-        if friendSelect1 == 3:
-            #print('Placeholder3')
-            #time.sleep(0.5)
-            saan()
-
-        if friendSelect1 == 4:
-            if var4 <= 1:
-                print('\nYou walk back without talking...how rude.')
-                time.sleep(2)
-                friendflagger2.friendFlagger2()
-            if var4 == 2:
-                print('')
-                print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
-                time.sleep(2)
-                mm2.mainMenu2()

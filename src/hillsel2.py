@@ -27,23 +27,29 @@ def hillSel2():
     print('\nKEEP STANDING [1]')
     print('GO BACK [2]')
 
-    hillSel2Select = int(input('\nACTION >> '))
+    while True:
+        try:
+            hillSel2Select = int(input('\nACTION >> '))
 
-    if hillSel2Select == 1:
-        print('.')
-        time.sleep(1)
-        print('.')
-        time.sleep(1)
-        print('.')
-        time.sleep(1)
-        if var6 == 0:
-            print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
-        if var6 == 1:
-            print("\nThey're coming.")
-        time.sleep(5)
-        standflagger.standFlagger()
+            if hillSel2Select == 1:
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                print('.')
+                time.sleep(1)
+                if var6 == 0:
+                    print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
+                if var6 == 1:
+                    print("\nThey're coming.")
+                time.sleep(5)
+                standflagger.standFlagger()
 
-    if hillSel2Select == 2:
-        print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
-        time.sleep(5)
-        hill.hill()
+            if hillSel2Select == 2:
+                print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
+                time.sleep(5)
+                hill.hill()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            hillSel2()

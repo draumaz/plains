@@ -42,30 +42,36 @@ def talk():
     #print('TALK ABOUT PH [3]')
     print('BACK [4]')
 
-    talkSelect = int(input('\nACTION >> '))
+    while True:
+        try:
+            talkSelect = int(input('\nACTION >> '))
 
-    while talkSelect < 1 or talkSelect > 4:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        talk()
+            while talkSelect < 1 or talkSelect > 4:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                talk()
 
-    if talkSelect == 1:
-        if var6 == 1 and var8 == 0:
-            talksel1e.talkSel1E()
-        else:
-            talksel1.talkSel1()
+            if talkSelect == 1:
+                if var6 == 1 and var8 == 0:
+                    talksel1e.talkSel1E()
+                else:
+                    talksel1.talkSel1()
 
-    if talkSelect == 2:
-        talksel2.talkSel2()
+            if talkSelect == 2:
+                talksel2.talkSel2()
 
-    if talkSelect == 3:
-        talk()
-        #talksel3.talkSel3()
+            if talkSelect == 3:
+                talk()
+                #talksel3.talkSel3()
 
-    if talkSelect == 4:
-        if var6 == 1:
-            mm2.mainMenu2()
-        if var6 == 0:
-            print('\nYou tell your friends you need a minute.')
-            time.sleep(2)
-            mm2.mainMenu2()
+            if talkSelect == 4:
+                if var6 == 1:
+                    mm2.mainMenu2()
+                if var6 == 0:
+                    print('\nYou tell your friends you need a minute.')
+                    time.sleep(2)
+                    mm2.mainMenu2()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            talk()

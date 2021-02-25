@@ -25,39 +25,45 @@ def Embark():
     print('SET OFF [2]')
     print('BACK [3]')
 
-    embSelect = int(input('\nACTION >> '))
+    while True:
+        try:
+            embSelect = int(input('\nACTION >> '))
 
-    while embSelect < 1 or embSelect > 3:
-        print('\nDid you mean something else?')
-        time.sleep(0.5)
-        Embark()
+            while embSelect < 1 or embSelect > 3:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                Embark()
 
-    if embSelect == 2:
-        if var6 == 1 and var8 == 0:
-            print('')
-            print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
-            time.sleep(6)
-            os.system('cls||clear')
-            time.sleep(5)
-            print('\nMONSTER')
-            time.sleep(0.05)
-            print('MONSTER')
-            time.sleep(0.05)
-            print('MONSTER')
-            time.sleep(0.05)
-            print('MONSTER')
-            time.sleep(0.05)
-            print('MONSTER')
-            time.sleep(0.15)
-            config = configparser.ConfigParser()
-            config['badend'] = {'var9': '1'}
-            with open('save/config9.ini', 'w') as configfile:
-                   config.write(configfile)
-            os.system('cls||clear')
-            quit()
-        else:
-            embark2.Embark2()
+            if embSelect == 2:
+                if var6 == 1 and var8 == 0:
+                    print('')
+                    print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
+                    time.sleep(6)
+                    os.system('cls||clear')
+                    time.sleep(5)
+                    print('\nMONSTER')
+                    time.sleep(0.05)
+                    print('MONSTER')
+                    time.sleep(0.05)
+                    print('MONSTER')
+                    time.sleep(0.05)
+                    print('MONSTER')
+                    time.sleep(0.05)
+                    print('MONSTER')
+                    time.sleep(0.15)
+                    config = configparser.ConfigParser()
+                    config['badend'] = {'var9': '1'}
+                    with open('save/config9.ini', 'w') as configfile:
+                           config.write(configfile)
+                    os.system('cls||clear')
+                    quit()
+                else:
+                    embark2.Embark2()
 
-    if embSelect == 3:
-        print("\nYou decide against leaving quite yet.")
-        mm2.mainMenu2()
+            if embSelect == 3:
+                print("\nYou decide against leaving quite yet.")
+                mm2.mainMenu2()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            Embark()
