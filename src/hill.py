@@ -14,7 +14,10 @@ def hill():
 
     os.system('cls||clear')
     print('\nThe Plains v0.18\n')
-    print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
+    if var6 == 0:
+        print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
+    if var6 == 1:
+        print('You should stand still.')
     if var6 == 0:
         print('In the distance, you can see a creature moving about.\n')
         print('GO TOWARDS THE CREATURE [1]')
@@ -43,9 +46,12 @@ def hill():
                 hillsel3.hillSel3()
 
             if hillSelect == 4:
-                print('\nBest to head back.')
-                time.sleep(2)
-                mm1.mainMenu1()
+                if var6 == 0:
+                    print('\nBest to head back.')
+                    time.sleep(2)
+                    mm1.mainMenu1()
+                if var6 == 1:
+                    mm1.mainMenu1()
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

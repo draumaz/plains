@@ -38,6 +38,8 @@ def talkSel1E():
                     time.sleep(2)
                     print('They understand, and help you clean off.')
                     time.sleep(2)
+                    print('They seriously bought that?')
+                    time.sleep(0.5)
                     talksel1eg.talkSel1EG()
                 if talkSel1ESelect == 2:
                     print("\nYou can't face them.")

@@ -14,7 +14,9 @@ def devJump():
     print('BAD END FLAG [4]')
     print('TOOLS USED FLAG [5]')
     print('KILLED LIZARD FLAG [6]')
-    print('\nEXIT [7]')
+    print('SPLASH OFF [7]')
+    print('SPLASH ON [8]')
+    print('\nEXIT [9]')
 
     while True:
         try:
@@ -122,6 +124,24 @@ def devJump():
                 devJump()
 
             if devSelect == 7:
+                config = configparser.ConfigParser()
+                config['splashskip'] = {'var11': '1'}
+                with open('save/config11.ini', 'w') as configfile:
+                    config.write(configfile)
+                print('\nVariables set.')
+                time.sleep(0.2)
+                devJump()
+
+            if devSelect == 8:
+                config = configparser.ConfigParser()
+                config['splashskip'] = {'var11': '0'}
+                with open('save/config11.ini', 'w') as configfile:
+                    config.write(configfile)
+                print('\nVariables set.')
+                time.sleep(0.2)
+                devJump()
+
+            if devSelect == 9:
                 os.system('cls||clear')
                 quit()
         except ValueError:

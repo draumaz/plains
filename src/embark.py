@@ -18,7 +18,7 @@ def Embark():
     os.system('cls||clear')
     print('\nThe Plains v0.18\n')
     if var6 == 1 and var8 == 0:
-        print('Ignoring your friends, you make your way to their spaceship and sit inside.')
+        print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:
         print("You walk to your friends' ship.")
     print('\nACTION1 [1]')

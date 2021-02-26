@@ -18,7 +18,7 @@ def hillSel1():
     print('\nThe Plains v0.18\n')
 
     if var6 == 1:
-        print('Nothing to see here but the remains of that reptilian you killed.\n')
+        print('Silence fills the air.\n')
         print('BACK [1]')
 
         while True:
@@ -29,7 +29,7 @@ def hillSel1():
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     hillSel1()
-                    
+
                 if HS == 1:
                     hill.hill()
             except ValueError:

@@ -22,16 +22,12 @@ def mainMenu2():
                 print('\nDid you mean something else?')
                 time.sleep(0.5)
                 mainMenu2()
-
             if mainmenuSelect2 == 1:
                 talk.talk()
-
             if mainmenuSelect2 == 2:
                 saan.saan()
-
             if mainmenuSelect2 == 3:
                 embark.Embark()
-
             if mainmenuSelect2 == 4:
                 os.system('cls||clear')
                 print('\nThanks for playing!')

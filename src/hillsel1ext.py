@@ -17,7 +17,7 @@ def hillSel1Ext():
         print('')
     if var7 == 1:
         time.sleep(2)
-        print("He looks like he's having a sense of déjà vu.\n")
+        print("Looks like he's having a sense of déjà vu.\n")
         time.sleep(3)
     print('KILL [1]')
     print('TALK [2]')
@@ -33,8 +33,10 @@ def hillSel1Ext():
                 hillSel1Ext()
 
             if hillSel1ExtSel == 1:
-                print('\nYou pull out your lazer gun and kill him.')
-                time.sleep(5)
+                print('\nYou run up to the lizard and stab him to death.')
+                time.sleep(3)
+                print('Blood stains your uniform.')
+                time.sleep(6)
                 lizardman.lizardMan()
 
             if hillSel1ExtSel == 2:
@@ -47,7 +49,7 @@ def hillSel1Ext():
                     time.sleep(2)
                     print("You're far from home, aren'tcha?")
                     time.sleep(2)
-                    print("...not really very helpful. But he means well.")
+                    print("...not really helpful. But he means well.")
                     time.sleep(3)
                     hill.hill()
 
