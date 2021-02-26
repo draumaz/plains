@@ -41,6 +41,10 @@ def hillSel1Ext():
 
             if hillSel1ExtSel == 2:
                 if var7 == 1:
+                    config = configparser.ConfigParser()
+                    config['lizarddx'] = {'var12': '1'}
+                    with open('save/config12.ini', 'w') as configfile:
+                        config.write(configfile)
                     print('\nThe reptilian man seems untrusting of you, and leaves the area pretty quickly.')
                     time.sleep(5)
                     hill.hill()
