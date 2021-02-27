@@ -47,6 +47,14 @@ def talkSel1():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
 
+    config = configparser.ConfigParser()
+    config.read('save/config7.ini')
+    var7 = config.getint('lizardext', 'var7')
+
+    config = configparser.ConfigParser()
+    config.read('save/config8.ini')
+    var8 = config.getint('okay', 'var8')
+
     if var3 == 1:
 
         if var7 == 0 or var8 == 1:
