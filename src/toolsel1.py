@@ -18,11 +18,6 @@ def toolSel1():
         try:
             toolSelect1 = int(input('\nACTION >> '))
 
-            while toolSelect1 < 1 or toolSelect1 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                toolSel1()
-
             if toolSelect1 == 1:
                 if var3 == 0:
                     print("\nThe message won't even go through...")
@@ -32,7 +27,6 @@ def toolSel1():
                     print("\nYou've already made contact.")
                     time.sleep(2)
                     tool.tool()
-
             if toolSelect1 == 2:
                 if var3 == 0:
                     print("\nWhat good's a phone without service?")
@@ -40,6 +34,7 @@ def toolSel1():
                     tool.tool()
                 if var3 == 1:
                     tool.tool()
+                    
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

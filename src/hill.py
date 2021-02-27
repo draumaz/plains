@@ -45,11 +45,6 @@ def hill():
         try:
             hillSelect = int(input('\nACTION >> '))
 
-            while hillSelect < 1 or hillSelect > 4:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                hill()
-
             if hillSelect == 1:
                 if var12 == 1:
                     print('\nDid you mean something else?')
@@ -57,7 +52,6 @@ def hill():
                     hill()
                 if var12 == 0:
                     hillsel1.hillSel1()
-
             if hillSelect == 2:
                 if var1 == 0:
                     hillsel2.hillSel2()
@@ -65,10 +59,8 @@ def hill():
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     hill()
-
             if hillSelect == 3:
                 hillsel3.hillSel3()
-
             if hillSelect == 4:
                 if var6 == 0:
                     print('\nBest to head back.')
@@ -76,6 +68,7 @@ def hill():
                     mm1.mainMenu1()
                 if var6 == 1:
                     mm1.mainMenu1()
+
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

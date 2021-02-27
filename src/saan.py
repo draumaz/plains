@@ -3,6 +3,7 @@ import time
 import mm2
 import friendflagger1
 import friendflagger2
+import friendflagger3
 import configparser
 import textwrap
 
@@ -41,24 +42,21 @@ def saan():
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     saan()
-
                 if friendSelect1 == 1:
-                    print(textwrap.fill("\nSaan explains how far away you ended up. This planet is light years away from home..."))
+                    print('')
+                    print(textwrap.fill("Saan explains how far away you ended up. This planet is light years away from home..."))
                     time.sleep(5)
-                    mm2.mainMenu2()
-
+                    friendflagger3()
                 if friendSelect1 == 2:
                     if var4 == 2:
                         print('')
                         print(textwrap.fill("You keep telling him how cute he is. He looks happy.", 75))
                         time.sleep(2)
                         saan()
-
                     if var4 == 1:
                         print('He seems busy right now.')
                         time.sleep(2)
                         saan()
-
                     if var4 == 0:
                         print('\nYou tell Saan that he has cute eyes.')
                         time.sleep(3)

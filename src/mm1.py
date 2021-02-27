@@ -12,9 +12,11 @@ def mainMenu1():
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
+
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
+    
     print('\nThe Plains v0.19\n')
     if var6 == 0:
         print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
@@ -34,20 +36,12 @@ def mainMenu1():
         try:
             mainmenuSelect1 = int(input('\nACTION >> '))
 
-            while mainmenuSelect1 < 1 or mainmenuSelect1 > 5:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                mainMenu1()
-
             if mainmenuSelect1 == 1:
                 hill.hill()
-
             if mainmenuSelect1 == 2:
                 cave.cave()
-
             if mainmenuSelect1 == 3:
                 tool.tool()
-
             if mainmenuSelect1 == 4:
                 if var1 == 0:
                     os.system('cls||clear')
@@ -56,7 +50,6 @@ def mainMenu1():
                     quit()
                 if var1 == 1:
                     ch1end.ch1End()
-
             if mainmenuSelect1 == 5:
                 if var1 == 1:
                     print('\nThanks for playing!')
@@ -66,6 +59,7 @@ def mainMenu1():
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     mainMenu1()
+
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

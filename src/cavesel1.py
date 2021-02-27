@@ -14,11 +14,6 @@ def caveSel1():
         try:
             caveSelect1 = int(input('\nACTION >> '))
 
-            while caveSelect1 < 1 or caveSelect1 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                caveSel1()
-
             if caveSelect1 == 1:
                 print('\nDespite the darkness, you keep walking, until you eventually hit a wall.')
                 time.sleep(4)
@@ -30,6 +25,7 @@ def caveSel1():
                 print("\nContinuing in a cave this dark is just asking for trouble.")
                 time.sleep(3)
                 cave.cave()
+                
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

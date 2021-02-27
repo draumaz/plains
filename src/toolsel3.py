@@ -18,11 +18,6 @@ def toolSel3():
         try:
             toolSelect3 = int(input('\nACTION >> '))
 
-            while toolSelect3 < 1 or toolSelect3 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                toolSel3()
-
             if toolSelect3 == 1:
                 if var3 == 0:
                     print('\nYou try to send out a signal, and it looks like it was received!\n')
@@ -32,7 +27,6 @@ def toolSel3():
                     print("\nYou've already made contact.")
                     time.sleep(2)
                     tool.tool()
-
             if toolSelect3 == 2:
                 if var3 == 0:
                     print("\nProbably wouldn't work, anyway.")
@@ -40,6 +34,7 @@ def toolSel3():
                     tool.tool()
                 if var3 == 1:
                     tool.tool()
+                    
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

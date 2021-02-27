@@ -18,10 +18,6 @@ def mainMenu2():
         try:
             mainmenuSelect2 = int(input('\nACTION >> '))
 
-            while mainmenuSelect2 < 1 or mainmenuSelect2 > 5:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                mainMenu2()
             if mainmenuSelect2 == 1:
                 talk.talk()
             if mainmenuSelect2 == 2:
@@ -33,6 +29,7 @@ def mainMenu2():
                 print('\nThanks for playing!')
                 time.sleep(0.5)
                 quit()
+                            
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

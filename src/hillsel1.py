@@ -25,13 +25,9 @@ def hillSel1():
             try:
                 HS = int(input('\nACTION >> '))
 
-                while HS < 1 or HS > 1:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    hillSel1()
-
                 if HS == 1:
                     hill.hill()
+                    
             except ValueError:
                 print("\nDid you mean something else?")
                 time.sleep(0.5)

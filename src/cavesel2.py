@@ -14,11 +14,6 @@ def caveSel2():
         try:
             caveSelect2 = int(input('\nACTION >> '))
 
-            while caveSelect2 < 1 or caveSelect2 > 2:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
-                caveSel2()
-
             if caveSelect2 == 1:
                 print('\nYou pull out your phone, and attempt to translate the symbols.')
                 time.sleep(4)
@@ -27,11 +22,11 @@ def caveSel2():
                 print('\nBetter safe than sorry.')
                 time.sleep(2)
                 cave.cave()
-
             if caveSelect2 == 2:
                 print("\nToo much work, anyways.")
                 time.sleep(2)
                 cave.cave()
+                
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

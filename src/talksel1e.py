@@ -29,10 +29,6 @@ def talkSel1E():
             try:
                 talkSel1ESelect = int(input('\nACTION >> '))
 
-                while talkSel1ESelect < 1 or talkSel1ESelect > 2:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    talkSel1E()
                 if talkSel1ESelect == 1:
                     print('\nYou explain to your friends that it was self-defense.')
                     time.sleep(2)
@@ -45,6 +41,7 @@ def talkSel1E():
                     print("\nYou can't face them.")
                     time.sleep(2)
                     mm2.mainMenu2()
+                    
             except ValueError:
                 print('\nDid you mean something else?')
                 time.sleep(0.5)

@@ -5,6 +5,10 @@ import standflagger
 import configparser
 
 def hs2Sub2():
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+    
     print('.')
     time.sleep(1)
     print('.')
