@@ -6,6 +6,7 @@ import mm2
 import mainalt
 import mainext
 import reset
+import settings
 import textwrap
 
 def preSplash():
@@ -14,12 +15,17 @@ def preSplash():
     var11 = config.getint('splashskip', 'var11')
 
     if var11 == 0:
+        config = configparser.ConfigParser() #Disable message on future plays
+        config['splashskip'] = {'var11': '1'}
+        with open('save/config11.ini', 'w') as configfile:
+            config.write(configfile)
+
         os.system('cls||clear')
         print('')
         print(textwrap.fill("A MESSAGE FROM THE DEVELOPER:", 75))
         time.sleep(1)
         print('')
-        print(textwrap.fill("Thank you for trying out The Plains! This is a major labor of love, and it happens to be my first long-form programming pursuit. The contents in this build are subject to change, as it is a beta build.", 75))
+        print(textwrap.fill("Thank you for trying out The Plains! This is a major labor of love, and it happens to be my first long-form programming pursuit. The contents in this game are subject to change, as it is a very, very early build.", 75))
         time.sleep(10)
         print('')
         print(textwrap.fill("Regardless, I hope you enjoy the game!", 75))
@@ -27,10 +33,7 @@ def preSplash():
         print('')
         print(textwrap.fill("-draumaz"))
         time.sleep(4)
-        config = configparser.ConfigParser()
-        config['splashskip'] = {'var11': '1'}
-        with open('save/config11.ini', 'w') as configfile:
-            config.write(configfile)
+
         os.system('cls||clear')
         time.sleep(1)
         splashScreen()
@@ -47,19 +50,26 @@ def splashScreen():
     config.read('save/config10.ini')
     var10 = config.getint('badendext', 'var10')
 
+    config = configparser.ConfigParser()
+    config.read('save/config13.ini')
+    var13 = config.getint('splashskip2', 'var13')
+
     if var10 == 1:
         mainalt.mainAlt2()
     if var9 == 1:
         mainext.mainExt()
 
     if var9 == 0:
-        os.system('cls||clear')
-        print('\n==THE PLAINS==')
-        print('==MADE BY DRAUMAZ IN 2021==')
-        print('==WRITTEN IN PYTHON==')
-        print('==CHARACTER BY BRYCE CANO==')
-        time.sleep(2)
-        splashScreen2()
+        if var13 == 0:
+            os.system('cls||clear')
+            print('\n==THE PLAINS==')
+            print('==MADE BY DRAUMAZ IN 2021==')
+            print('==WRITTEN IN PYTHON==')
+            print('==CHARACTER BY BRYCE CANO==')
+            time.sleep(2)
+            splashScreen2()
+        if var13 == 1:
+            splashScreen2()
 
 def splashScreen2():
     config = configparser.ConfigParser()
@@ -76,7 +86,7 @@ def splashScreen2():
         print('==WRITTEN IN PYTHON==')
         print('==CHARACTER BY BRYCE CANO==')
         print('\nPLAY [1]')
-        print('RESET [2]')
+        print('SETTINGS [2]')
 
         config = configparser.ConfigParser()
         config.read('save/config.ini')
@@ -94,7 +104,7 @@ def splashScreen2():
             try:
                 bsSel1 = int(input('\nACTION >> '))
 
-                while bsSel1 < 1 or bsSel1 > 2:
+                while bsSel1 < 1 or bsSel1 > 3:
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     splashScreen2()
@@ -111,8 +121,8 @@ def splashScreen2():
                         time.sleep(0.5)
                         mm2.mainMenu2()
 
-                if bsSel1 == 2: #Reset
-                    reset.resetter()
+                if bsSel1 == 2:
+                    settings.settingsMain()
 
             except ValueError:
                 print('\nDid you mean something else?')

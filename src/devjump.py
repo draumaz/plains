@@ -78,6 +78,18 @@ def devJump():
                 config['badendext'] = {'var10': '0'}
                 with open('save/config10.ini', 'w') as configfile:
                     config.write(configfile)
+                config = configparser.ConfigParser()
+                config['splashskip'] = {'var11': '0'}
+                with open('save/config11.ini', 'w') as configfile:
+                    config.write(configfile)
+                config = configparser.ConfigParser()
+                config['lizarddx'] = {'var12': '0'}
+                with open('save/config12.ini', 'w') as configfile:
+                    config.write(configfile)
+                config = configparser.ConfigParser()
+                config['splashskip2'] = {'var13': '0'}
+                with open('save/config13.ini', 'w') as configfile:
+                    config.write(configfile)
                 time.sleep(0.05)
                 print('Complete.')
                 time.sleep(0.1)

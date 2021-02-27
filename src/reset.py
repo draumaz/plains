@@ -34,6 +34,8 @@ def resetter():
                     with open('save/config10.ini', 'w') as configfile:
                         config.write(configfile)
                     time.sleep(2)
+                    print('\nPlease restart the game.')
+                    time.sleep(3)
                     quit()
 
                 if var9 == 0:
@@ -79,6 +81,8 @@ def resetter():
 
                     print('Reset.')
                     time.sleep(1)
+                    print('\nPlease restart the game.')
+                    time.sleep(3)
                     os.system('cls||clear')
                     quit()
 

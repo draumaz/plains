@@ -21,7 +21,7 @@ def talk():
     var8 = config.getint('okay', 'var8')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
 
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
         print("Your friends are relieved that you're alright.\n")

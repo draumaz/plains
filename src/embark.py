@@ -16,7 +16,7 @@ def Embark():
     var8 = config.getint('okay', 'var8')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:

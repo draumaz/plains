@@ -5,7 +5,7 @@ import cave
 
 def caveSel2():
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
     print('DECIPHER [1]')
     print('BACK [2]')

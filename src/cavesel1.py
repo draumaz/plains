@@ -5,7 +5,7 @@ import cave
 
 def caveSel1():
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
     print("You continue deeper down the cave. It's getting pretty difficult to see...\n")
     print('CONTINUE [1]')
     print('BACK [2]')

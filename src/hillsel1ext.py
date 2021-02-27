@@ -11,7 +11,7 @@ def hillSel1Ext():
     var7 = config.getint('lizardext', 'var7')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:
         print('')

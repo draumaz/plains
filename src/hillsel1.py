@@ -15,7 +15,7 @@ def hillSel1():
     var5 = config.getint('reset', 'var5')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
 
     if var6 == 1:
         print('Silence fills the air.\n')

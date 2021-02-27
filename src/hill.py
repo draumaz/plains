@@ -19,7 +19,7 @@ def hill():
     var12 = config.getint('lizarddx', 'var12')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.18\n')
+    print('\nThe Plains v0.19\n')
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
@@ -36,8 +36,9 @@ def hill():
     if var6 == 1:
         print('')
         print('GO FORWARDS [1]')
-    print('STAND STILL [2]')
-    print('LOOK AT THE SKY [3]')
+    if var1 == 0:
+        print('STAND STILL [2]')
+    print('TAKE A BREAK [3]')
     print('BACK [4]')
 
     while True:
@@ -58,7 +59,12 @@ def hill():
                     hillsel1.hillSel1()
 
             if hillSelect == 2:
-                hillsel2.hillSel2()
+                if var1 == 0:
+                    hillsel2.hillSel2()
+                if var1 == 1:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    hill()
 
             if hillSelect == 3:
                 hillsel3.hillSel3()
