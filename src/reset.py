@@ -77,6 +77,11 @@ def resetter():
                     with open('save/config8.ini', 'w') as configfile:
                         config.write(configfile)
 
+                    config = configparser.ConfigParser()
+                    config['gameover'] = {'var14': '0'}
+                    with open('save/config14.ini', 'w') as configfile:
+                        config.write(configfile)    
+
                     time.sleep(0.5)
 
                     print('Reset.')

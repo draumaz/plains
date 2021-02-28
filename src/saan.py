@@ -1,24 +1,39 @@
 import os
 import time
 import mm2
-import friendflagger1
-import friendflagger2
-import friendflagger3
 import configparser
 import textwrap
+
+def friendFlagger3(): #Neutral Flag
+    config = configparser.ConfigParser()
+    config['friendflag'] = {'var4': '3'}
+    with open('save/config4.ini', 'w') as configfile:
+        config.write(configfile)
+    saan()
+def friendFlagger2(): #Rude Flag
+    config = configparser.ConfigParser()
+    config['friendflag'] = {'var4': '1'}
+    with open('save/config4.ini', 'w') as configfile:
+        config.write(configfile)
+    mm2.mainMenu2()
+def friendFlagger1(): #Flirty Flag
+    config = configparser.ConfigParser()
+    config['friendflag'] = {'var4': '2'}
+    with open('save/config4.ini', 'w') as configfile:
+        config.write(configfile)
+    saan()
 
 def saan():
     config = configparser.ConfigParser()
     config.read('save/config4.ini')
     var4 = config.getint('friendflag', 'var4')
-
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
-
     config = configparser.ConfigParser()
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
+    
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
         print('\nThe Plains v0.19\n')
@@ -46,7 +61,7 @@ def saan():
                     print('')
                     print(textwrap.fill("Saan explains how far away you ended up. This planet is light years away from home..."))
                     time.sleep(5)
-                    friendflagger3()
+                    friendFlagger3()
                 if friendSelect1 == 2:
                     if var4 == 2:
                         print('')
@@ -57,12 +72,12 @@ def saan():
                         print('He seems busy right now.')
                         time.sleep(2)
                         saan()
-                    if var4 == 0:
+                    if var4 == 0 or 3:
                         print('\nYou tell Saan that he has cute eyes.')
                         time.sleep(3)
                         print("You're making him blush!")
                         time.sleep(2)
-                        friendflagger1.friendFlagger1()
+                        friendFlagger1()
 
                 if friendSelect1 == 3:
                     #print('Placeholder3')
@@ -73,7 +88,7 @@ def saan():
                     if var4 <= 1:
                         print('\nYou walk back without talking...how rude.')
                         time.sleep(2)
-                        friendflagger2.friendFlagger2()
+                        friendFlagger2()
                     if var4 == 2:
                         print('')
                         print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
