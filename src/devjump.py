@@ -90,6 +90,14 @@ def devJump():
                 config['splashskip2'] = {'var13': '0'}
                 with open('save/config13.ini', 'w') as configfile:
                     config.write(configfile)
+                config = configparser.ConfigParser()
+                config['gameover'] = {'var14': '0'}
+                with open('save/config14.ini', 'w') as configfile:
+                    config.write(configfile)
+                config = configparser.ConfigParser()
+                config['blade'] = {'var15': '0'}
+                with open('save/config15.ini', 'w') as configfile:
+                    config.write(configfile)
                 time.sleep(0.05)
                 print('Complete.')
                 time.sleep(0.1)
