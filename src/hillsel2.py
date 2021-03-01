@@ -1,8 +1,14 @@
 import os
 import time
 import hill
-import standflagger
 import configparser
+
+def standFlagger():
+        config = configparser.ConfigParser()
+        config['ch1endflag'] = {'var1': '1'}
+        with open('save/config.ini', 'w') as configfile:
+               config.write(configfile)
+        hill.hill()
 
 def hs2Sub2():
     config = configparser.ConfigParser()
@@ -20,7 +26,7 @@ def hs2Sub2():
     if var6 == 1:
         print("\nThey're coming.")
     time.sleep(5)
-    standflagger.standFlagger()
+    standFlagger()
 
 def hs2Sub():
     time.sleep(1)
@@ -32,7 +38,7 @@ def hs2Sub():
     time.sleep(1)
     print("\nThey're coming.")
     time.sleep(5)
-    standflagger.standFlagger()
+    standFlagger()
 
 def hillSel2():
     config = configparser.ConfigParser()

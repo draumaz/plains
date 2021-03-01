@@ -1,7 +1,7 @@
 import os
 import time
+import mm2
 import talk
-import talksel1b
 import configparser
 import textwrap
 
@@ -40,7 +40,87 @@ def talkSel1a():
                 talkSel1()
 
     if var7 == 1 and var8 == 0:
-        talksel1b.talkSel1B()
+        talkSel1B()
+
+def talkSel1B():
+    print('\nYour friends ask you a question.')
+    time.sleep(2)
+    print('"Liam, is everything alright?"\n')
+    time.sleep(2)
+    print('EXPLAIN [1]')
+    print('BACK [2]')
+
+    while True:
+        try:
+            talkSel1ESelect2 = int(input('\nACTION >> '))
+
+            if talkSel1ESelect2 == 1:
+                print("\nYou explain to them that you're just feeling off.")
+                time.sleep(3)
+                print("\n:)")
+                time.sleep(0.10)
+                talkSel1EG()
+            if talkSel1ESelect2 == 2:
+                print("\nThey wouldn't get it.")
+                time.sleep(5)
+                talk.talk()
+
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            talkSel1B()
+
+def talkSel1E():
+    config = configparser.ConfigParser()
+    config.read('save/config5.ini')
+    var5 = config.getint('reset', 'var5')
+
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+
+    os.system('cls||clear')
+    print('\nThe Plains v0.19\n')
+
+    if var6 == 1:
+        print('Your friends barely stammer out a question.')
+        time.sleep(2)
+        print('"Liam, why are you covered in blood?"\n')
+        time.sleep(2)
+        print('EXPLAIN [1]')
+        print('RUN AWAY [2]')
+
+        while True:
+            try:
+                talkSel1ESelect = int(input('\nACTION >> '))
+
+                if talkSel1ESelect == 1:
+                    print('\nYou explain to your friends that it was self-defense.')
+                    time.sleep(2)
+                    print('They understand, and help you clean off.')
+                    time.sleep(2)
+                    print('They seriously bought that?')
+                    time.sleep(0.5)
+                    talkSel1EG()
+                if talkSel1ESelect == 2:
+                    print("\nYou can't face them.")
+                    time.sleep(2)
+                    mm2.mainMenu2()
+                    
+            except ValueError:
+                print('\nDid you mean something else?')
+                time.sleep(0.5)
+                talkSel1E()
+
+    if var6 == 0:
+        talk.talk()
+
+def talkSel1EG():
+    config = configparser.ConfigParser()
+    config['okay'] = {'var8': '1'}
+    with open('save/config8.ini', 'w') as configfile:
+        config.write(configfile)
+    talk.talk()
 
 def talkSel1():
     config = configparser.ConfigParser()
@@ -63,7 +143,7 @@ def talkSel1():
             talk.talk()
 
         if var7 == 1 and var8 == 0:
-            talksel1b.talkSel1B()
+            talkSel1B()
 
     if var3 == 0:
         talkSel1a()

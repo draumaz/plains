@@ -4,7 +4,6 @@ import mm2
 import talksel1
 import talksel2
 import talksel3
-import talksel1e
 import configparser
 
 def talk():
@@ -53,7 +52,7 @@ def talk():
 
             if talkSelect == 1:
                 if var6 == 1 and var8 == 0:
-                    talksel1e.talkSel1E()
+                    talksel1.talkSel1E()
                 else:
                     talksel1.talkSel1()
 

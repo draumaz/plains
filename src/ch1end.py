@@ -1,7 +1,18 @@
 import os
 import time
-import ch1endb
+import mm2
+import configparser
 import textwrap
+
+def ch1EndB():
+    config = configparser.ConfigParser()
+    config['chaptflagger'] = {'var2': '1'}
+    with open('save/config2.ini', 'w') as configfile:
+            config.write(configfile)
+    time.sleep(0.5)
+    print('Saved.')
+    time.sleep(1)
+    mm2.mainMenu2()
 
 def ch1End():
     os.system('cls||clear')
@@ -25,6 +36,6 @@ def ch1End():
                 time.sleep(2)
                 os.system('cls||clear')
                 print('\nSaving...')
-                ch1endb.ch1EndB()
+                ch1EndB()
         except ValueError:
             ch1End()
