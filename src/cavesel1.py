@@ -11,7 +11,7 @@ def cs1Knife():
     config['blade'] = {'var15': '1'}
     with open('save/config15.ini', 'w') as configfile:
         config.write(configfile)
-
+    caveSel1()
 
 def caveSel1():
     os.system('cls||clear')
