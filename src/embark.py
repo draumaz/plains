@@ -7,26 +7,38 @@ from configparser import NoSectionError
 from configparser import NoOptionError
 import textwrap
 
+def emb2Handler():
+    while True:
+        try:
+            print("Save failed.")
+            time.sleep(1)
+            print('\nCONTINUE [1]')
+            print('QUIT [2]\n')
+            embSel2 = int(input('ACTION >> '))
+            if embSel2 == 1:
+                mm3.mainMenu3()
+            if embSel2 == 2:
+                quit()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            emb2Handler()
+
 def emb2Chap():
     os.system('cls||clear')
-    print('\nCHAPTER COMPLETE!')
-    time.sleep(2)
-    os.system('cls||clear')
-    print('Saving...')
+    print('\nSaving...')
     while True:
         try:
             config = configparser.ConfigParser()
             config['chaptflagger'] = {'var2': '2'}
             with open('save/config2.ini', 'w') as configfile:
                 config.write(configfile)
+            time.sleep(0.5)                
             print('Saved.')
-            time.sleep(0.5)
+            time.sleep(1)
             mm3.mainMenu3()
         except (NoOptionError, NoSectionError):
-            print('')
-            print(textwrap.fill("Save failed."))
-            print('')
-            mm3.mainMenu3()
+            emb2Handler()
 
 def emb2End():
     print('\nYou decide to depart anyways, and your journey comes to an end.')
@@ -87,7 +99,6 @@ def Embark1():
     quit()
 
 def Embark():
-
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
@@ -118,7 +129,6 @@ def Embark():
             if embSelect == 3:
                 print("\nYou decide against leaving quite yet.")
                 mm2.mainMenu2()
-
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

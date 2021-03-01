@@ -28,7 +28,6 @@ def mainMenu1():
     if var1 == 0:
         print('QUIT [4]')
     if var1 == 1:
-        if var6 == 0:
             print('SOUND [4] <--')
     if var1 == 1:
         print('EXIT [5]')
