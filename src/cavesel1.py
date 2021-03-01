@@ -14,10 +14,17 @@ def cs1Knife():
     caveSel1()
 
 def caveSel1():
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
     os.system('cls||clear')
     print('\nThe Plains v0.19\n')
-    print("You continue deeper down the cave. Looks like there's a knife laying in here.\n")
-    print('PICK UP [1]')
+    if var15 == 0:
+        print("You continue deeper down the cave. Looks like there's a knife laying in here.\n")
+    if var15 == 1:
+        print("Just a dingy old cave.\n")
+    if var15 == 0:
+        print('PICK UP [1]')
     print('BACK [2]')
 
     while True:
@@ -25,11 +32,17 @@ def caveSel1():
             caveSelect1 = int(input('\nACTION >> '))
 
             if caveSelect1 == 1:
-                cs1Knife()
+                if var15 == 0:
+                    cs1Knife()
+                if var15 == 1:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    caveSel1()
 
             if caveSelect1 == 2:
-                print("\nContinuing in a cave this dark is just asking for trouble.")
-                time.sleep(3)
+                if var15 == 0:
+                    print("\nContinuing in a cave this dark is just asking for trouble.")
+                    time.sleep(3)
                 cave.cave()
                 
         except ValueError:

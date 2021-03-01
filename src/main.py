@@ -14,7 +14,7 @@ import textwrap
 def fileTest():
    while True:
        try:
-            config = configparser.ConfigParser() #Verify config files are where they should be
+            config = configparser.ConfigParser() #Verify config files are found and valid
             config.read('save/config.ini')
             var1 = config.getint('ch1endflag', 'var1')
             config = configparser.ConfigParser()
