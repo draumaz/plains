@@ -5,6 +5,7 @@ from configparser import NoOptionError
 from configparser import NoSectionError
 import mm1
 import mm2
+import mm3
 import mainalt
 import mainext
 import reset
@@ -56,10 +57,14 @@ def fileTest():
             config = configparser.ConfigParser()
             config.read('save/config14.ini')
             var14 = config.getint('gameover', 'var14')
+            config = configparser.ConfigParser()
+            config.read('save/config15.ini')
+            var15 = config.getint('blade', 'var15')
             preSplash()
        except (NoOptionError, NoSectionError): 
           print('')
-          print(textwrap.fill("The game was not able to detect critical files. Please double check that the executable is in the same folder as the save directory, and restart the game.", 75))
+          print(textwrap.fill("The game was not able to detect critical files. Please double check that this file is in the same folder as the 'save' folder, and restart the game.", 75))
+          print('')
           quit()
 
 def preSplash():
@@ -78,7 +83,7 @@ def preSplash():
         print(textwrap.fill("A MESSAGE FROM THE DEVELOPER:", 75))
         time.sleep(1)
         print('')
-        print(textwrap.fill("Thank you for trying out The Plains! This is a major labor of love, and it happens to be my first long-form programming pursuit. The contents in this game are subject to change, as it is a very, very early build.", 75))
+        print(textwrap.fill("Thank you for trying out The Plains! This is a major labor of love, and it happens to be my first long-form programming pursuit. The contents in this game are subject to change, as this is a very, very early build.", 75))
         time.sleep(10)
         print('')
         print(textwrap.fill("Regardless, I hope you enjoy the game!", 75))
@@ -88,7 +93,6 @@ def preSplash():
         time.sleep(4)
 
         os.system('cls||clear')
-        time.sleep(1)
         splashScreen()
     if var11 == 1:
         splashScreen()
@@ -175,6 +179,10 @@ def splashScreen2(): #The real main menu
                             print('Save loaded.')
                             time.sleep(0.5)
                             mm2.mainMenu2()
+                        if var2 == 2:
+                            print('Save loaded.')
+                            time.sleep(0.5)
+                            mm3.mainMenu3()
                     if var14 == 1:
                         print('')
                         print(textwrap.fill('Your journey, at least in this world, has come to an end. Perhaps you would like to reset?', 75))
@@ -188,4 +196,4 @@ def splashScreen2(): #The real main menu
                 time.sleep(0.5)
                 splashScreen2()
 
-fileTest() #Called when executed
+fileTest() #Execution call

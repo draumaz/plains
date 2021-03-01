@@ -21,14 +21,15 @@ def mainMenu1():
     if var6 == 0:
         print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
     if var6 == 1:
-        print(textwrap.fill("You're covered in the blood of the innocent reptilian man that you killed. This world is your oyster.", 75))
+        print(textwrap.fill("You're covered in the blood of the innocent reptilian man that you killed. The sky rumbles.", 75))
     print('\nHILL [1]')
     print('CAVE [2]')
     print('TOOL [3]')
     if var1 == 0:
         print('QUIT [4]')
     if var1 == 1:
-        print('SOUND [4]')
+        if var6 == 0:
+            print('SOUND [4] <--')
     if var1 == 1:
         print('EXIT [5]')
 

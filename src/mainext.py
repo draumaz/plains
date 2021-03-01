@@ -28,8 +28,6 @@ def mainExt3():
     while True:
         try:
             extSel = int(input('\nACTION >> '))
-            while extSel < 3 or extSel > 3:
-                mainExt3()
             if extSel == 3:
                 mainalt.mainAlt()
         except ValueError:

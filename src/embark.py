@@ -1,8 +1,32 @@
 import os
 import time
 import mm2
+import mm3
 import configparser
+from configparser import NoSectionError
+from configparser import NoOptionError
 import textwrap
+
+def emb2Chap():
+    os.system('cls||clear')
+    print('\nCHAPTER COMPLETE!')
+    time.sleep(2)
+    os.system('cls||clear')
+    print('Saving...')
+    while True:
+        try:
+            config = configparser.ConfigParser()
+            config['chaptflagger'] = {'var2': '2'}
+            with open('save/config2.ini', 'w') as configfile:
+                config.write(configfile)
+            print('Saved.')
+            time.sleep(0.5)
+            mm3.mainMenu3()
+        except (NoOptionError, NoSectionError):
+            print('')
+            print(textwrap.fill("Save failed."))
+            print('')
+            mm3.mainMenu3()
 
 def emb2End():
     print('\nYou decide to depart anyways, and your journey comes to an end.')
@@ -31,9 +55,9 @@ def Embark2():
             if embSelect2 == 1:
                 emb2End()
             if embSelect2 == 2:
-                print('\nYour friends have a point. You decide to stick around.')
-                time.sleep(3)
-                mm2.mainMenu2()
+                print('\nYou and your friends disembark the ship, and walk into the distance.')
+                time.sleep(5)
+                emb2Chap()
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)

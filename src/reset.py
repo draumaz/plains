@@ -1,5 +1,6 @@
 import os
 import time
+import main
 import configparser
 
 def resetter():

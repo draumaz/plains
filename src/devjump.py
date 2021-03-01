@@ -1,3 +1,4 @@
+import mm3
 import mm2
 import mm1
 import time
@@ -9,14 +10,15 @@ def devJump():
     print('\nThe Gay Goat Boy Room\n')
     print('CHAPTER 1 [1]')
     print('CHAPTER 2 [2]')
-    print('\nPROD RESET [3]')
+    print('CHAPTER 3 [3]')
+    print('\nPROD RESET [4]')
     print('')
-    print('BAD END FLAG [4]')
-    print('TOOLS USED FLAG [5]')
-    print('KILLED LIZARD FLAG [6]')
-    print('SPLASH OFF [7]')
-    print('SPLASH ON [8]')
-    print('\nEXIT [9]')
+    print('BAD END FLAG [5]')
+    print('TOOLS USED FLAG [6]')
+    print('KILLED LIZARD FLAG [7]')
+    print('SPLASH OFF [8]')
+    print('SPLASH ON [9]')
+    print('\nEXIT [10]')
 
     while True:
         try:
@@ -36,7 +38,18 @@ def devJump():
                        config.write(configfile)
                 mm2.mainMenu2()
 
-            if devSelect == 3: #Full Reset
+            if devSelect == 3: #Chapter 3 Jump
+                config = configparser.ConfigParser()
+                config['ch1endflag'] = {'var1': '1'}
+                with open('save/config.ini', 'w') as configfile:
+                    config.write(configfile)
+                config = configparser.ConfigParser()
+                config['chaptflagger'] = {'var2': '2'}
+                with open('save/config2.ini', 'w') as configfile:
+                    config.write(configfile)
+                mm3.mainMenu3()
+
+            if devSelect == 4: #Full Reset
                 print('\nProcessing...')
                 config = configparser.ConfigParser()
                 config['ch1endflag'] = {'var1': '0'}
@@ -103,7 +116,7 @@ def devJump():
                 time.sleep(0.1)
                 devJump()
 
-            if devSelect == 4: #Bad Ending
+            if devSelect == 5: #Bad Ending
                 print('\nProcessing...')
                 config = configparser.ConfigParser()
                 config['badend'] = {'var9': '1'}
@@ -121,7 +134,7 @@ def devJump():
                 time.sleep(0.25)
                 devJump()
 
-            if devSelect == 5:
+            if devSelect == 6:
                 config = configparser.ConfigParser()
                 config['toolflag'] = {'var3': '1'}
                 with open('save/config3.ini', 'w') as configfile:
@@ -130,7 +143,7 @@ def devJump():
                 time.sleep(0.2)
                 devJump()
 
-            if devSelect == 6:
+            if devSelect == 7:
                 config = configparser.ConfigParser()
                 config['lizard'] = {'var6': '1'}
                 with open('save/config6.ini', 'w') as configfile:
@@ -143,7 +156,7 @@ def devJump():
                 time.sleep(0.2)
                 devJump()
 
-            if devSelect == 7:
+            if devSelect == 8:
                 config = configparser.ConfigParser()
                 config['splashskip'] = {'var11': '1'}
                 with open('save/config11.ini', 'w') as configfile:
@@ -152,7 +165,7 @@ def devJump():
                 time.sleep(0.2)
                 devJump()
 
-            if devSelect == 8:
+            if devSelect == 9:
                 config = configparser.ConfigParser()
                 config['splashskip'] = {'var11': '0'}
                 with open('save/config11.ini', 'w') as configfile:
@@ -161,7 +174,7 @@ def devJump():
                 time.sleep(0.2)
                 devJump()
 
-            if devSelect == 9:
+            if devSelect == 10:
                 os.system('cls||clear')
                 quit()
         except ValueError:
