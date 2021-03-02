@@ -28,7 +28,7 @@ def ch1EndB():
     while True:
         try:
             os.system('cls||clear')
-            print('Saving...')
+            print('\nSaving...')
             config = configparser.ConfigParser()
             config['chaptflagger'] = {'var2': '1'}
             with open('save/config2.ini', 'w') as configfile:

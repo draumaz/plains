@@ -24,7 +24,7 @@ def hs2Sub2():
     if var6 == 0:
         print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
     if var6 == 1:
-        print("\nThey're coming.")
+        print("They're coming.")
     time.sleep(5)
     standFlagger()
 

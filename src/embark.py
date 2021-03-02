@@ -111,14 +111,20 @@ def Embark():
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:
-        print("You walk to your friends' ship.")
-    print('\nACTION1 [1]')
+        print("You walk to your friends' ship. Your friends follow along.")
+    print('\nLOOK AROUND [1]')
     print('SET OFF [2]')
     print('BACK [3]')
 
     while True:
         try:
             embSelect = int(input('\nACTION >> '))
+
+            if embSelect == 1:
+                print('')
+                print(textwrap.fill("This ship is gorgeous. Complex, shiny white metal covers the interior.", 75))
+                time.sleep(5)
+                Embark()
 
             if embSelect == 2:
                 if var6 == 1 and var8 == 0:

@@ -5,7 +5,7 @@ import configparser
 import cave
 
 def cs1Knife():
-    print('\nYou decide to pick up the knife. Might come in handy later.')
+    print('\nYou open the box and find a knife. You put it in your pocket.')
     time.sleep(3)
     config = configparser.ConfigParser()
     config['blade'] = {'var15': '1'}
@@ -20,11 +20,11 @@ def caveSel1():
     os.system('cls||clear')
     print('\nThe Plains v0.20\n')
     if var15 == 0:
-        print("You continue deeper down the cave. Looks like there's a knife laying in here.\n")
+        print("You continue deeper down the cave. There's a small box sitting near the wall.\n")
     if var15 == 1:
         print("Just a dingy old cave.\n")
     if var15 == 0:
-        print('PICK UP [1]')
+        print('OPEN [1]')
     print('BACK [2]')
 
     while True:
