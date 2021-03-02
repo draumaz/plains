@@ -6,7 +6,7 @@ import embark
 
 def mainMenu2():
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print('A fancy, metallic ship lands a little ways from where you landed.')
     print('Your friends walk out, and approach you.\n')
     print('TALK [1]')

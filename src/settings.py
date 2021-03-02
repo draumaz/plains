@@ -28,7 +28,7 @@ def settings1():
 def settingsMain():
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19')
+    print('\nThe Plains v0.20')
     print('\nTOGGLE SPLASH SCREEN [1]')
     print('RESET [2]')
     print('QUIT [3]')

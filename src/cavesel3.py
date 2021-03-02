@@ -5,7 +5,7 @@ import cave
 
 def caveSel3():
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")
     print('DISCERN [1]')
     print('BACK [2]')

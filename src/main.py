@@ -91,22 +91,18 @@ def preSplash():
         print('')
         print(textwrap.fill("-draumaz"))
         time.sleep(4)
-
         os.system('cls||clear')
         splashScreen()
     if var11 == 1:
         splashScreen()
 
 def splashScreen():
-
     config = configparser.ConfigParser()
     config.read('save/config9.ini')
     var9 = config.getint('badend', 'var9')
-
     config = configparser.ConfigParser()
     config.read('save/config10.ini')
     var10 = config.getint('badendext', 'var10')
-
     config = configparser.ConfigParser()
     config.read('save/config13.ini')
     var13 = config.getint('splashskip2', 'var13')
@@ -135,10 +131,12 @@ def splashScreen2(): #The real main menu
     config = configparser.ConfigParser()
     config.read('save/config14.ini')
     var14 = config.getint('gameover', 'var14')
+    config = configparser.ConfigParser()
+    config.read('save/config2.ini')
+    var2 = config.getint('chaptflagger', 'var2')
 
     if var9 == 1:
         mainext.mainExt()
-
     if var9 == 0:
         os.system('cls||clear')
         print('\n==THE PLAINS==')
@@ -148,21 +146,8 @@ def splashScreen2(): #The real main menu
         if var14 == 0:
             print('\nPLAY [1]')
         if var14 == 1:
-            print('')
+            print('\nPLAY [1] ★')
         print('SETTINGS [2]')
-
-        config = configparser.ConfigParser()
-        config.read('save/config.ini')
-        var1 = config.getint('ch1endflag', 'var1')
-
-        config = configparser.ConfigParser()
-        config.read('save/config2.ini')
-        var2 = config.getint('chaptflagger', 'var2')
-
-        config = configparser.ConfigParser()
-        config.read('save/config6.ini')
-        var6 = config.getint('lizard', 'var6')
-
         while True:
             try:
                 bsSel1 = int(input('\nACTION >> '))
@@ -184,13 +169,13 @@ def splashScreen2(): #The real main menu
                             time.sleep(0.5)
                             mm3.mainMenu3()
                     if var14 == 1:
-                        print('')
-                        print(textwrap.fill('Your journey, at least in this world, has come to an end. Perhaps you would like to reset?', 75))
-                        time.sleep(4)
-                        splashScreen2()
+                        print('\nScanning save...')
+                        time.sleep(0.5)
+                        print('Save loaded.')
+                        time.sleep(0.5)
+                        mm3.mainMenu3()
                 if bsSel1 == 2:
                     settings.settingsMain()
-
             except ValueError:
                 print('\nDid you mean something else?')
                 time.sleep(0.5)

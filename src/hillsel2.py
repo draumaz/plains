@@ -46,7 +46,7 @@ def hillSel2():
     var6 = config.getint('lizard', 'var6')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     if var6 == 1:
         hs2Sub()

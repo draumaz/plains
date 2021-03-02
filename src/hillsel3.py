@@ -4,7 +4,7 @@ import hill
 
 def hillSel3():
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print('You sit down in the grassy plains and look at the sky. It is absolutely gorgeous.')
     print('\nEXAMINE [1]')
     print('BACK [2]')

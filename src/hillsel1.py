@@ -31,7 +31,7 @@ def hillSel1Ext():
     var15 = config.getint('blade', 'var15')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:
         print('')
@@ -97,7 +97,7 @@ def hillSel1():
     var5 = config.getint('reset', 'var5')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
 
     if var6 == 1:
         print('Silence fills the air.\n')

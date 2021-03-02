@@ -5,7 +5,7 @@ import textwrap
 
 def talkSel2():
         os.system('cls||clear')
-        print('\nThe Plains v0.19\n')
+        print('\nThe Plains v0.20\n')
         print("You just...stare at them. They look bewildered.\n")
         print('KEEP STARING [1]')
         print('GO BACK [2]')

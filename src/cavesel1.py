@@ -18,7 +18,7 @@ def caveSel1():
     config.read('save/config15.ini')
     var15 = config.getint('blade', 'var15')
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     if var15 == 0:
         print("You continue deeper down the cave. Looks like there's a knife laying in here.\n")
     if var15 == 1:

@@ -29,7 +29,7 @@ def toolEx():
 
 def tool():
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
     print('\nPHONE [1]')
     print('RADAR [2]')

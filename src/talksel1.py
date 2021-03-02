@@ -16,7 +16,7 @@ def talkSel1a():
 
     if var7 == 0 or var8 == 1:
         os.system('cls||clear')
-        print('\nThe Plains v0.19\n')
+        print('\nThe Plains v0.20\n')
         print("Your friends ask you why you didn't use any of your tools to contact them.\n")
         print('UH... [1]')
         print('BACK [2]')
@@ -27,7 +27,7 @@ def talkSel1a():
 
                 if talkSel1Select == 1:
                     print("\nYour friends tell you to not to worry about it.")
-                    time.sleep(5)
+                    time.sleep(2)
                     talk.talk()
                 if talkSel1Select == 2:
                     print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
@@ -80,7 +80,7 @@ def talkSel1E():
     var6 = config.getint('lizard', 'var6')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
 
     if var6 == 1:
         print('Your friends barely stammer out a question.')

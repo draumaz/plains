@@ -42,7 +42,7 @@ def ch1EndB():
 
 def ch1End():
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))
     print('\nLOOK [1]')
 

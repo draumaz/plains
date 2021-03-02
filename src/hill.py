@@ -19,7 +19,7 @@ def hill():
     var12 = config.getint('lizarddx', 'var12')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.19\n')
+    print('\nThe Plains v0.20\n')
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
