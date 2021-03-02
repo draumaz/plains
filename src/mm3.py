@@ -9,7 +9,7 @@ def mainMenu3(): #Placeholder director
     config['gameover'] = {'var14': '1'}
     with open('save/config14.ini', 'w') as configfile:
         config.write(configfile)
-    print('\n')
+    print('\nThe Plains v0.20\n')
     print(textwrap.fill("Thank you for playing! You've reached the end of this build - but much, much more is coming. Stay tuned!", 75))
     print('')
     print(textwrap.fill("Visit https://github.com/draumaz/plains to keep up with the game!", 75))
