@@ -3,7 +3,6 @@ import time
 import mm2
 import talksel1
 import talksel2
-import talksel3
 import configparser
 
 def talk():
@@ -38,8 +37,7 @@ def talk():
         print("WHAT'S WITH THAT LOOK? [1]")
 
     print('STARE [2]')
-    #print('TALK ABOUT PH [3]')
-    print('BACK [4]')
+    print('BACK [3]')
 
     while True:
         try:
@@ -60,10 +58,6 @@ def talk():
                 talksel2.talkSel2()
 
             if talkSelect == 3:
-                talk()
-                #talksel3.talkSel3()
-
-            if talkSelect == 4:
                 if var6 == 1:
                     mm2.mainMenu2()
                 if var6 == 0:

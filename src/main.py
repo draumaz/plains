@@ -1,14 +1,12 @@
 import os
 import time
 import configparser
-from configparser import NoOptionError
-from configparser import NoSectionError
+from configparser import NoOptionError, NoSectionError
 import mm1
 import mm2
 import mm3
 import mainalt
 import mainext
-import reset
 import settings
 import textwrap
 
@@ -124,17 +122,14 @@ def splashScreen():
         if var13 == 1:
             splashScreen2()
 
-def splashScreen2(): #The real main menu
+def splashScreen2(): #Main menu
     config = configparser.ConfigParser()
     config.read('save/config9.ini')
     var9 = config.getint('badend', 'var9')
     config = configparser.ConfigParser()
     config.read('save/config14.ini')
     var14 = config.getint('gameover', 'var14')
-    config = configparser.ConfigParser()
-    config.read('save/config2.ini')
-    var2 = config.getint('chaptflagger', 'var2')
-
+    
     if var9 == 1:
         mainext.mainExt()
     if var9 == 0:
@@ -151,34 +146,43 @@ def splashScreen2(): #The real main menu
         while True:
             try:
                 bsSel1 = int(input('\nACTION >> '))
-
-                if bsSel1 == 1: #Chapter Save Director (expandable)
-                    if var14 == 0:
-                        print('\nScanning save...')
-                        time.sleep(0.5)
-                        if var2 == 0:
-                            print('Save loaded.')
-                            time.sleep(0.5)
-                            mm1.mainMenu1()
-                        if var2 == 1:
-                            print('Save loaded.')
-                            time.sleep(0.5)
-                            mm2.mainMenu2()
-                        if var2 == 2:
-                            print('Save loaded.')
-                            time.sleep(0.5)
-                            mm3.mainMenu3()
-                    if var14 == 1:
-                        print('\nScanning save...')
-                        time.sleep(0.5)
-                        print('Save loaded.')
-                        time.sleep(0.5)
-                        mm3.mainMenu3()
+                if bsSel1 == 1:
+                    saveLoader()
                 if bsSel1 == 2:
                     settings.settingsMain()
             except ValueError:
                 print('\nDid you mean something else?')
                 time.sleep(0.5)
                 splashScreen2()
+def saveLoader():
+    config = configparser.ConfigParser()
+    config.read('save/config14.ini')
+    var14 = config.getint('gameover', 'var14')
+    if var14 == 0:
+        print('\nScanning save...')
+        
+        config = configparser.ConfigParser()
+        config.read('save/config2.ini')
+        var2 = config.getint('chaptflagger', 'var2')
+        time.sleep(0.15)
+
+        if var2 == 0: #Chapter 1
+            print('Save loaded.')
+            time.sleep(0.5)
+            mm1.mainMenu1()
+        if var2 == 1: #Chapter 2
+            print('Save loaded.')
+            time.sleep(0.5)
+            mm2.mainMenu2()
+        if var2 == 2: #Chapter 3
+            print('Save loaded.')
+            time.sleep(0.5)
+            mm3.mainMenu3()
+    if var14 == 1:
+        print('\nScanning save...')
+        time.sleep(0.25)
+        print('Save loaded.')
+        time.sleep(0.5)
+        mm3.mainMenu3()
 
 fileTest() #Execution call

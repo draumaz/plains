@@ -46,7 +46,7 @@ def saan():
         print('Saan seems excited to talk to you.\n')
         print('WHERE ARE WE? [1]')
         print('FLIRT WITH HIM [2]')
-        print('SOMETHING [3]')
+        #print(' [3]')
         print('BACK [4]')
 
         while True:
@@ -82,6 +82,8 @@ def saan():
                 if friendSelect1 == 3:
                     #print('Placeholder3')
                     #time.sleep(0.5)
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
                     saan()
 
                 if friendSelect1 == 4:
