@@ -154,6 +154,7 @@ def splashScreen2(): #Main menu
                 print('\nDid you mean something else?')
                 time.sleep(0.5)
                 splashScreen2()
+                  
 def saveLoader():
     config = configparser.ConfigParser()
     config.read('save/config14.ini')
