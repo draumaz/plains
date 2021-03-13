@@ -133,8 +133,8 @@ def saveGenerator():
             save.write('\nvar15 = 0')
             save.close()
             fileTest()
-        except ValueError:
-            pass
+        except FileExistsError:
+            fileTest()
 
 def preSplash():
     config = configparser.ConfigParser()
