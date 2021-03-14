@@ -4,44 +4,67 @@ import configparser
 import reset
 import textwrap
 
+def mainAlt5():
+    os.system('cls||clear')
+    time.sleep(5)
+    print('\nFATAL ERROR ENCOUNTERED')
+    time.sleep(2)
+    dest = open('plains.txt', 'w+')
+    dest.write('EVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\n')
+    dest.close()
+    quit()
+
+
+def mainAlt4():
+    os.system('cls||clear')
+    print('Will you?')
+    print('\nYES [1]')
+    print('NO [2]')
+    while True:
+        try:
+            schl = int(input('\nACTION >> '))
+            if schl == 1:
+                config = configparser.ConfigParser()
+                config['badend'] = {'var9': '0'}
+                with open('save/config9.ini', 'w') as configfile:
+                       config.write(configfile)
+                config = configparser.ConfigParser()
+                config['badendext'] = {'var10': '0'}
+                with open('save/config10.ini', 'w') as configfile:
+                    config.write(configfile)
+                time.sleep(2)
+                reset.resetter()
+            if schl == 2:
+                mainAlt5()
+        except ValueError:
+            mainAlt4()
+
 def mainAlt3():
     print('\nSo you regret what you have done.')
     time.sleep(2)
-    print('Do you really think this changes anything?')
+    print('You know, that changes nothing.')
     time.sleep(2)
-    print("You're a murderer.")
+    print("You killed him.")
     time.sleep(2)
-    print(textwrap.fill("You have the ability to reset this world, over and over again..", 75))
+    print(textwrap.fill("Think about what that means. You downloaded a game, just to kill an innocent creature.", 75))
     time.sleep(3)
     print("Does that make you feel good?")
     time.sleep(4)
     print("The ability to hurt others, without recourse?")
     time.sleep(4)
-    print("Just because it's a video game.")
-    time.sleep(4)
     os.system('cls||clear')
     time.sleep(2)
     print('\nYou still have the chance to make things right.')
     time.sleep(2)
-    print('Please, do the right thing.')
-
-    config = configparser.ConfigParser()
-    config['badend'] = {'var9': '0'}
-    with open('save/config9.ini', 'w') as configfile:
-           config.write(configfile)
-    config = configparser.ConfigParser()
-    config['badendext'] = {'var10': '0'}
-    with open('save/config10.ini', 'w') as configfile:
-        config.write(configfile)
-        
+    print('You can go back there, and make things right.')
     time.sleep(2)
-    reset.resetter()
+    mainAlt4()
 
 def mainAlt():
     os.system('cls||clear')
     print('\n...')
     time.sleep(5)
-    print("\nWhat you did...it's inexcusable.")
+    print("\nYou killed him.")
     time.sleep(3)
     os.system('cls||clear')
     print('\n...')
@@ -72,7 +95,7 @@ def mainAlt2():
                     time.sleep(0.5)
                     mainAlt2()
                 if var10 == 0:
-                    print('\nIs that so.')
+                    print("You're proud of it.")
                     time.sleep(2)
                     print("Here's your chance.")
                     time.sleep(1)

@@ -10,6 +10,16 @@ import mainext
 import settings
 import textwrap
 
+def breakTest():
+    while True:
+        try:
+            file = open('plains.txt', 'r')
+            print('\nFATAL ERROR\n')
+            file.close()
+            quit()
+        except FileNotFoundError:
+            fileTest()
+
 def fileTest():
    while True:
        try:
@@ -59,7 +69,7 @@ def fileTest():
             config.read('save/config15.ini')
             var15 = config.getint('blade', 'var15')
             preSplash()
-       except (NoOptionError, NoSectionError): 
+       except (NoOptionError, NoSectionError):
           saveDirGenerator()
 
 def saveDirGenerator():
@@ -200,7 +210,7 @@ def splashScreen2(): #Main menu
     config = configparser.ConfigParser()
     config.read('save/config14.ini')
     var14 = config.getint('gameover', 'var14')
-    
+
     if var9 == 1:
         mainext.mainExt()
     if var9 == 0:
@@ -225,14 +235,14 @@ def splashScreen2(): #Main menu
                 print('\nDid you mean something else?')
                 time.sleep(0.5)
                 splashScreen2()
-                  
+
 def saveLoader():
     config = configparser.ConfigParser()
     config.read('save/config14.ini')
     var14 = config.getint('gameover', 'var14')
     if var14 == 0:
         print('\nScanning save...')
-        
+
         config = configparser.ConfigParser()
         config.read('save/config2.ini')
         var2 = config.getint('chaptflagger', 'var2')
@@ -257,4 +267,4 @@ def saveLoader():
         time.sleep(0.5)
         mm3.mainMenu3()
 
-fileTest() #Execution call
+breakTest() #Execution call
