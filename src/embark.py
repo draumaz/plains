@@ -32,7 +32,7 @@ def emb2Chap():
             config['chaptflagger'] = {'var2': '2'}
             with open('save/config2.ini', 'w') as configfile:
                 config.write(configfile)
-            time.sleep(0.5)                
+            time.sleep(0.5)
             print('Saved.')
             time.sleep(1)
             mm3.mainMenu3()
@@ -107,7 +107,7 @@ def Embark():
     var8 = config.getint('okay', 'var8')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.20\n')
+    print('\nThe Plains v0.21\n')
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:

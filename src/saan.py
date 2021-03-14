@@ -33,16 +33,16 @@ def saan():
     config = configparser.ConfigParser()
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
-    
+
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
-        print('\nThe Plains v0.20\n')
+        print('\nThe Plains v0.21\n')
         print("Saan won't even look you in the eye.")
         time.sleep(4)
         mm2.mainMenu2()
     else:
         os.system('cls||clear')
-        print('\nThe Plains v0.20\n')
+        print('\nThe Plains v0.21\n')
         print('Saan seems excited to talk to you.\n')
         print('WHERE ARE WE? [1]')
         print('FLIRT WITH HIM [2]')
