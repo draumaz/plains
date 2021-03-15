@@ -6,6 +6,10 @@ import textwrap
 
 def mainAlt5():
     os.system('cls||clear')
+    config = configparser.ConfigParser()
+    config['badendext'] = {'var10': '1'}
+    with open('save/config10.ini', 'w') as configfile:
+        config.write(configfile)
     time.sleep(5)
     print('\nFATAL ERROR ENCOUNTERED')
     time.sleep(2)
