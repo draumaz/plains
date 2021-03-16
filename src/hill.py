@@ -89,6 +89,14 @@ def hs1e2():
     time.sleep(3)
     hill()
 
+def hs1e3():
+    print('')
+    print(textwrap.fill('The reptilian tells you that everyone seems to be scared of him, except for you.', 75))
+    time.sleep(3)
+    print('He looks really happy.')
+    time.sleep(2)
+    hill()
+
 def hillSel1Ext():
     config = configparser.ConfigParser()
     config.read('save/config7.ini')
@@ -96,6 +104,9 @@ def hillSel1Ext():
     config = configparser.ConfigParser()
     config.read('save/config15.ini')
     var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
 
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
@@ -109,7 +120,14 @@ def hillSel1Ext():
     if var15 == 1:
         print('KILL [1]')
     print('TALK [2]')
-    print('BACK [3]')
+    if var16 == 0:
+        print('BACK [3]')
+    if var16 == 1:
+        print('GIVE FLOWER [3]')
+        print('BACK [4]')
+    if var16 == 2:
+        print('BACK [3]')
+
 
     while True:
         try:
@@ -127,14 +145,39 @@ def hillSel1Ext():
                     time.sleep(0.5)
                     hillSel1Ext()
             if hillSel1ExtSel == 2:
+                if var7 == 0 and var16 == 2:
+                    hs1e3()
                 if var7 == 1:
                     hs1e1()
                 if var7 == 0:
                     hs1e2()
             if hillSel1ExtSel == 3:
-                print('\nUpon seeing the towering lizard, you decide to head back.')
-                time.sleep(2)
-                hill()
+                if var16 == 0:
+                    print('\nUpon seeing the towering lizard, you decide to head back.')
+                    time.sleep(2)
+                    hill()
+                if var16 == 1:
+                    print('\nYou give the lizard man the flower. He smiles at you.')
+                    time.sleep(3)
+                    config = configparser.ConfigParser()
+                    config['flower'] = {'var16': '2'}
+                    with open('save/config16.ini', 'w') as configfile:
+                        config.write(configfile)
+                    hillSel1Ext()
+                if var16 == 2:
+                    print('')
+                    print(textwrap.fill("That lizard looks like nobody's shown him kindness before this in a long while...", 75))
+                    time.sleep(4)
+                    hill()
+            if hillSel1ExtSel == 4:
+                if var16 == 0:
+                    print('\nDid you mean something else?')
+                    time.sleep(0.5)
+                    hillSel1Ext()
+                if var16 == 1:
+                    print('\nUpon seeing the towering lizard, you decide to head back.')
+                    time.sleep(2)
+                    hill()
 
         except ValueError:
             print('\nDid you mean something else?')
@@ -257,21 +300,39 @@ def hillSel2():
                 hillSel2()
 
 def hillSel3():
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
-    print('You sit down in the grassy plains and look at the sky. It is absolutely gorgeous.')
-    print('\nEXAMINE [1]')
-    print('BACK [2]')
+    print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
+    if var16 == 0:
+         print("There's a strange flower sitting there.")
+    if var16 == 0:
+        print('\nPICK [1]')
+    if var16 == 1:
+        print('')
+    print('LAY DOWN [2]')
+    print('BACK [3]')
 
     while True:
         try:
             hillSel3Select = int(input('\nACTION >> '))
 
             if hillSel3Select == 1:
+                print('')
+                print(textwrap.fill('The flower comes off its root without hesitation. You put it in your pocket.', 75))
+                config = configparser.ConfigParser()
+                config['flower'] = {'var16': '1'}
+                with open('save/config16.ini', 'w') as configfile:
+                    config.write(configfile)
+                time.sleep(3)
+                hillSel3()
+            if hillSel3Select == 2:
                 print('\nLaying down on the grass, it makes you feel truly refreshed.')
                 time.sleep(3)
                 hill()
-            if hillSel3Select == 2:
+            if hillSel3Select == 3:
                 print('\nYou decide that you have more important things to be doing.')
                 time.sleep(2)
                 hill()

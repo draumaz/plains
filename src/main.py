@@ -68,6 +68,9 @@ def fileTest():
             config = configparser.ConfigParser()
             config.read('save/config15.ini')
             var15 = config.getint('blade', 'var15')
+            config = configparser.ConfigParser()
+            config.read('save/config16.ini')
+            var16 = config.getint('flower', 'var16')
             preSplash()
        except (NoOptionError, NoSectionError):
           saveDirGenerator()
@@ -141,6 +144,10 @@ def saveGenerator():
             save = open("save/config15.ini", "w+")
             save.write('[blade]')
             save.write('\nvar15 = 0')
+            save.close()
+            save = open("save/config16.ini", "w+")
+            save.write('[flower]')
+            save.write('\nvar16 = 0')
             save.close()
             fileTest()
         except FileExistsError:

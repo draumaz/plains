@@ -111,6 +111,10 @@ def devJump():
                 config['blade'] = {'var15': '0'}
                 with open('save/config15.ini', 'w') as configfile:
                     config.write(configfile)
+                config = configparser.ConfigParser()
+                config['flower'] = {'var16': '0'}
+                with open('save/config16.ini', 'w') as configfile:
+                    config.write(configfile)
                 time.sleep(0.05)
                 print('Complete.')
                 time.sleep(0.1)
