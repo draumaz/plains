@@ -5,8 +5,6 @@ from configparser import NoOptionError, NoSectionError
 import mm1
 import mm2
 import mm3
-import mainalt
-import mainext
 import reset
 import textwrap
 
@@ -72,11 +70,11 @@ def fileTest():
             config = configparser.ConfigParser()
             config.read('save/config16.ini')
             var16 = config.getint('flower', 'var16')
-            preSplash()
+            splashScreen()
        except (NoOptionError, NoSectionError):
           saveDirGenerator()
 
-def saveDirGenerator():
+def saveDirGenerator(): #Generate save sub-directory
     while True:
         try:
             os.mkdir('save')
@@ -84,7 +82,7 @@ def saveDirGenerator():
         except FileExistsError:
             saveGenerator()
 
-def saveGenerator():
+def saveGenerator(): #Generate save files
     while True:
         try:
             save = open("save/config.ini", "w+")
@@ -155,13 +153,7 @@ def saveGenerator():
         except FileExistsError:
             fileTest()
 
-def preSplash():
-    config = configparser.ConfigParser()
-    config.read('save/config11.ini')
-    var11 = config.getint('splashskip', 'var11')
-    splashScreen()
-
-def splashScreen():
+def splashScreen(): #Main menu
     config = configparser.ConfigParser()
     config.read('save/config9.ini')
     var9 = config.getint('badend', 'var9')
@@ -169,26 +161,13 @@ def splashScreen():
     config.read('save/config10.ini')
     var10 = config.getint('badendext', 'var10')
     config = configparser.ConfigParser()
-    config.read('save/config13.ini')
-    var13 = config.getint('splashskip2', 'var13')
-
-    if var10 == 1:
-        mainalt.mainAlt2()
-    if var9 == 1:
-        mainext.mainExt()
-    if var9 == 0:
-        splashScreen2()
-
-def splashScreen2(): #Main menu
-    config = configparser.ConfigParser()
-    config.read('save/config9.ini')
-    var9 = config.getint('badend', 'var9')
-    config = configparser.ConfigParser()
     config.read('save/config14.ini')
     var14 = config.getint('gameover', 'var14')
 
+    if var10 == 1:
+        mainAlt2()
     if var9 == 1:
-        mainext.mainExt()
+        mainExt()
     if var9 == 0:
         os.system('cls||clear')
         print('\n==THE PLAINS==')
@@ -212,7 +191,7 @@ def splashScreen2(): #Main menu
             except ValueError:
                 print('\nDid you mean something else?')
                 time.sleep(0.5)
-                splashScreen2()
+                splashScreen()
 
 def saveLoader():
     config = configparser.ConfigParser()
@@ -237,5 +216,139 @@ def saveLoader():
         print('Save loaded.')
         time.sleep(0.5)
         mm3.mainMenu3()
+
+##==ALTERNATE ENDINGS==##
+
+def mainExt():
+    os.system('cls||clear')
+    print('\n==AAAAAAAAAA==')
+    print('==AAAAAAAA AAAAAAA AAAAAAA==')
+    print('==KILLER KILLER KILLER==')
+    print('==KILLER KILLER==')
+    time.sleep(0.05)
+    os.system('cls||clear')
+    print('\n==THE PLAINS==')
+    print('==MADE BY DRAUMAZ IN 2021==')
+    print('==WRITTEN IN PYTHON==')
+    print('==CHARACTER BY BRYCE CANO==')
+    time.sleep(5)
+    mainExt2()
+
+def mainExt2():
+    os.system('cls||clear')
+    print('\n==THE PLAINS==')
+    print('==MADE BY DRAUMAZ IN 2021==')
+    print('==WRITTEN IN PYTHON==')
+    print('==CHARACTER BY BRYCE CANO==')
+    print('\n[3]')
+    while True:
+        try:
+            extSel = int(input('\nACTION >> '))
+            if extSel == 3:
+                mainAlt()
+        except ValueError:
+            mainExt2()
+
+def mainAlt():
+    os.system('cls||clear')
+    print('\n...')
+    time.sleep(5)
+    print("\nYou killed him.")
+    time.sleep(3)
+    print("You abandoned your friends.")
+    time.sleep(3)
+    os.system('cls||clear')
+    print('\n...')
+    time.sleep(2)
+    mainAlt2()
+
+def mainAlt2():
+    config = configparser.ConfigParser()
+    config.read('save/config10.ini')
+    var10 = config.getint('badendext', 'var10')
+    os.system('cls||clear')
+    print("\nDo you regret it?")
+    print('\nYES [1]')
+    print('NO [2]')
+    while True:
+        try:
+            altSel = int(input('\nACTION >> '))
+            if altSel == 1:
+                mainAlt3()
+            if altSel == 2:
+                if var10 == 1:
+                    time.sleep(0.75)
+                    print('\nError.')
+                    time.sleep(0.5)
+                    mainAlt2()
+                if var10 == 0:
+                    print("You're proud of it.")
+                    time.sleep(2)
+                    print("Here's your chance.")
+                    time.sleep(1)
+                    reset.resetter()
+        except ValueError:
+            mainAlt2()
+        except KeyboardInterrupt:
+            mainAlt2()
+
+def mainAlt3():
+    print('\nSo you regret what you have done.')
+    time.sleep(2)
+    print('You know, that changes nothing.')
+    time.sleep(2)
+    print("You killed him.")
+    time.sleep(2)
+    print(textwrap.fill("Think about what that means. You downloaded a game, just to kill an innocent creature.", 75))
+    time.sleep(3)
+    print("Does that make you feel good?")
+    time.sleep(4)
+    print("The ability to hurt others, without recourse?")
+    time.sleep(4)
+    os.system('cls||clear')
+    time.sleep(2)
+    print('\nYou still have the chance to make things right.')
+    time.sleep(2)
+    print('You can go back there, do the right thing.')
+    time.sleep(2)
+    mainAlt4()
+
+def mainAlt4():
+    os.system('cls||clear')
+    print('\nWill you?')
+    print('\nYES [1]')
+    print('NO [2]')
+    while True:
+        try:
+            schl = int(input('\nACTION >> '))
+            if schl == 1:
+                config = configparser.ConfigParser()
+                config['badend'] = {'var9': '0'}
+                with open('save/config9.ini', 'w') as configfile:
+                       config.write(configfile)
+                config = configparser.ConfigParser()
+                config['badendext'] = {'var10': '0'}
+                with open('save/config10.ini', 'w') as configfile:
+                    config.write(configfile)
+                time.sleep(2)
+                reset.resetter()
+            if schl == 2:
+                mainAlt5()
+        except ValueError:
+            mainAlt4()
+
+def mainAlt5():
+    os.system('cls||clear')
+    config = configparser.ConfigParser()
+    config['badendext'] = {'var10': '1'}
+    with open('save/config10.ini', 'w') as configfile:
+        config.write(configfile)
+    time.sleep(5)
+    print('\nFATAL ERROR ENCOUNTERED')
+    time.sleep(2)
+    dest = open('plains.txt', 'w+')
+    dest.write('EVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\n')
+    dest.close()
+    quit()
 
 breakTest() #Execution call

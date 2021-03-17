@@ -12,7 +12,6 @@ def mainMenu1():
     config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
-
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
@@ -35,7 +34,6 @@ def mainMenu1():
     while True:
         try:
             mainmenuSelect1 = int(input('\nACTION >> '))
-
             if mainmenuSelect1 == 1:
                 hill.hill()
             if mainmenuSelect1 == 2:
@@ -44,23 +42,26 @@ def mainMenu1():
                 tool.tool()
             if mainmenuSelect1 == 4:
                 if var1 == 0:
-                    os.system('cls||clear')
-                    print('\nThanks for playing!')
-                    time.sleep(0.5)
-                    quit()
+                    exitHandler()
                 if var1 == 1:
                     ch1end.ch1End()
             if mainmenuSelect1 == 5:
                 if var1 == 1:
-                    print('\nThanks for playing!')
-                    time.sleep(0.5)
-                    quit()
+                    exitHandler()
                 if var1 == 0:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    mainMenu1()
+                    errorHandler()
 
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
             mainMenu1()
+
+def errorHandler():
+    print('\nDid you mean something else?')
+    time.sleep(0.5)
+    mainMenu1()
+
+def exitHandler():
+    print('\nThanks for playing!')
+    time.sleep(0.5)
+    quit()
