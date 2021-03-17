@@ -14,8 +14,9 @@ def breakTest():
     while True:
         try:
             file = open('plains.txt', 'r')
-            print('\nFATAL ERROR\n')
             file.close()
+            os.system('cls||clear')
+            reset.resetter()
             quit()
         except FileNotFoundError:
             fileTest()

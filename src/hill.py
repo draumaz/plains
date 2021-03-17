@@ -245,6 +245,12 @@ def hs2Sub2():
     if var6 == 0:
         print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
     if var6 == 1:
+        print('.')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
+        print('.')
+        time.sleep(1)
         print("They're coming.")
     time.sleep(5)
     standFlagger()
@@ -268,7 +274,8 @@ def hillSel2():
 
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
-    print('Despite the massive mountain ahead of you, you decide to simply stand still.')
+    if var6 != 0:
+        print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     if var6 == 1:
         hs2Sub()
     if var6 == 0:

@@ -21,7 +21,7 @@ def mainAlt5():
 
 def mainAlt4():
     os.system('cls||clear')
-    print('Will you?')
+    print('\nWill you?')
     print('\nYES [1]')
     print('NO [2]')
     while True:
@@ -69,6 +69,8 @@ def mainAlt():
     print('\n...')
     time.sleep(5)
     print("\nYou killed him.")
+    time.sleep(3)
+    print("You abandoned your friends.")
     time.sleep(3)
     os.system('cls||clear')
     print('\n...')
