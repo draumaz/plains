@@ -175,7 +175,6 @@ def splashScreen():
         mainalt.mainAlt2()
     if var9 == 1:
         mainext.mainExt()
-
     if var9 == 0:
         splashScreen2()
 
