@@ -18,7 +18,8 @@ def devJump():
     print('KILLED LIZARD FLAG [7]')
     print('SPLASH OFF [8]')
     print('SPLASH ON [9]')
-    print('\nEXIT [10]')
+    print('FLOWER [10]')
+    print('\nEXIT [11]')
 
     while True:
         try:
@@ -179,6 +180,12 @@ def devJump():
                 devJump()
 
             if devSelect == 10:
+                config = configparser.ConfigParser()
+                config['flower'] = {'var16': '1'}
+                with open('save/config16.ini', 'w') as configfile:
+                    config.write(configfile)
+
+            if devSelect == 11:
                 os.system('cls||clear')
                 quit()
         except ValueError:

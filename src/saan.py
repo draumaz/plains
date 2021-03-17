@@ -23,6 +23,13 @@ def friendFlagger1(): #Flirty Flag
         config.write(configfile)
     saan()
 
+def flowerFlag():
+    config = configparser.ConfigParser()
+    config['flower'] = {'var16': '3'}
+    with open('save/config16.ini', 'w') as configfile:
+        config.write(configfile)
+    saan()
+
 def saan():
     config = configparser.ConfigParser()
     config.read('save/config4.ini')
@@ -33,6 +40,9 @@ def saan():
     config = configparser.ConfigParser()
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
 
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
@@ -43,11 +53,18 @@ def saan():
     else:
         os.system('cls||clear')
         print('\nThe Plains v0.21\n')
-        print('Saan seems excited to talk to you.\n')
+        if var4 == 1:
+            print('Saan seems distant.\n')
+        if var4 != 1:
+            print('Saan seems excited to talk to you.\n')
         print('WHERE ARE WE? [1]')
         print('FLIRT WITH HIM [2]')
         #print(' [3]')
-        print('BACK [4]')
+        if var16 == 1:
+            print('GIVE FLOWER [3]')
+            print('BACK [4]')
+        if var16 == 0 or var16 == 2 or var16 == 3:
+            print('BACK [3]')
 
         while True:
             try:
@@ -69,7 +86,7 @@ def saan():
                         time.sleep(2)
                         saan()
                     if var4 == 1:
-                        print('He seems busy right now.')
+                        print('\nHe seems busy right now.')
                         time.sleep(2)
                         saan()
                     if var4 == 0 or 3:
@@ -80,12 +97,26 @@ def saan():
                         friendFlagger1()
 
                 if friendSelect1 == 3:
-                    #print('Placeholder3')
-                    #time.sleep(0.5)
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    saan()
-
+                    if var16 == 0 or var16 == 2:
+                        print('\nDid you mean something else?')
+                        time.sleep(0.5)
+                        saan()
+                    if var16 == 1 and var4 == 1: #flower, rude
+                        print('\nSaan reluctantly takes the flower. He looks confused.')
+                        time.sleep(3)
+                        flowerFlag()
+                    if var16 == 1 and var4 == 2: #flower, flirty
+                        print("\nSaan looks borderline embarassed, you've made him blush quite a bit.")
+                        time.sleep(3)
+                        flowerFlag()
+                    if var16 == 1 and var4 == 3 or var16 == 1 and var4 == 0: #flower, neutral
+                        print("\nSaan appreciates the flower. He admires its petals and form.")
+                        time.sleep(3)
+                        flowerFlag()
+                    if var16 == 3:
+                        print("\nSaan follows you back to where you started, looking at the flower all the way.")
+                        time.sleep(3)
+                        mm2.mainMenu2()
                 if friendSelect1 == 4:
                     if var4 <= 1:
                         print('\nYou walk back without talking...how rude.')

@@ -307,7 +307,7 @@ def hillSel3():
     print('\nThe Plains v0.21\n')
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
     if var16 == 0:
-         print("There's a strange flower sitting there.")
+         print("There's a beautiful flower sitting there.")
     if var16 == 0:
         print('\nPICK [1]')
     if var16 == 1:
