@@ -22,7 +22,6 @@ def friendFlagger1(): #Flirty Flag
     with open('save/config4.ini', 'w') as configfile:
         config.write(configfile)
     saan()
-
 def flowerFlag():
     config = configparser.ConfigParser()
     config['flower'] = {'var16': '3'}
