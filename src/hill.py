@@ -14,7 +14,6 @@ def hill():
     config = configparser.ConfigParser()
     config.read('save/config12.ini')
     var12 = config.getint('lizarddx', 'var12')
-
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
     if var6 == 0 and var1 == 0:
