@@ -3,12 +3,19 @@ import time
 import talk
 import saan
 import embark
+import configparser
 
 def mainMenu2():
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
     print('A fancy, metallic ship lands a little ways from where you landed.')
-    print('Your friends walk out, and approach you.\n')
+    if var6 == 0:
+        print('Your friends walk out, and approach you.\n')
+    if var6 == 1:
+        print('Your friends seem like they want to keep their distance.\n')
     print('TALK [1]')
     print('SAAN [2]')
     print('EMBARK [3]')

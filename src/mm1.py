@@ -50,7 +50,6 @@ def mainMenu1():
                     exitHandler()
                 if var1 == 0:
                     errorHandler()
-
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
