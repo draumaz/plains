@@ -5,6 +5,7 @@ import configparser
 from configparser import NoSectionError
 from configparser import NoOptionError
 import textwrap
+import inventory
 
 def ch1EndBHandler():
     while True:
@@ -41,25 +42,9 @@ def ch1EndB():
             ch1EndBHandler()
 
 def ch1End():
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
-    if var16 == 0:
-        flower = ""
-    if var16 == 1:
-        flower = "1x Flower"
-    if var16 == 2:
-        flower = "0x Flower"
-    if var15 == 0:
-        blade = ""
-    if var15 == 1:
-        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
-    print("INV:", flower, blade, '\n', sep=" | ")
+    inventory.invDisplay()
     print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))
     print('\nLOOK [1]')
 

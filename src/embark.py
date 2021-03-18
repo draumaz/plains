@@ -6,6 +6,7 @@ import configparser
 from configparser import NoSectionError
 from configparser import NoOptionError
 import textwrap
+import inventory
 
 def emb2Handler():
     while True:
@@ -106,25 +107,9 @@ def Embark():
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
 
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
-    if var16 == 0:
-        flower = ""
-    if var16 == 1:
-        flower = "1x Flower"
-    if var16 == 2:
-        flower = "0x Flower"
-    if var15 == 0:
-        blade = ""
-    if var15 == 1:
-        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
-    print("INV:", flower, blade, '\n', sep=" | ")
+    inventory.invDisplay()
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:
@@ -138,10 +123,16 @@ def Embark():
             embSelect = int(input('\nACTION >> '))
 
             if embSelect == 1:
-                print('')
-                print(textwrap.fill("This ship is gorgeous. Complex, shiny white metal covers the interior.", 75))
-                time.sleep(5)
-                Embark()
+                if var6 == 0:
+                    print('')
+                    print(textwrap.fill("This ship is gorgeous. Complex, shiny white metal covers the interior.", 75))
+                    time.sleep(5)
+                    Embark()
+                if var6 == 1:
+                    print('')
+                    print(textwrap.fill("The ship doesn't matter, it's a getaway vehicle.", 75))
+                    time.sleep(3)
+                    Embark()
 
             if embSelect == 2:
                 if var6 == 1 and var8 == 0:

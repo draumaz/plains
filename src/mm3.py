@@ -2,6 +2,7 @@ import os
 import time
 import textwrap
 import configparser
+import inventory
 
 def mainMenu3(): #Placeholder director
     os.system('cls||clear')
@@ -10,6 +11,7 @@ def mainMenu3(): #Placeholder director
     with open('save/config14.ini', 'w') as configfile:
         config.write(configfile)
     print('\nThe Plains v0.21\n')
+    inventory.invDisplay()
     print(textwrap.fill("Thank you for playing! You've reached the end of this build - but much, much more is coming. Stay tuned!", 75))
     print('')
     print(textwrap.fill("Visit https://github.com/draumaz/plains to keep up with the game!", 75))

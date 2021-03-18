@@ -3,6 +3,7 @@ import time
 import mm2
 import configparser
 import textwrap
+import inventory
 
 def friendFlagger3(): #Neutral Flag
     config = configparser.ConfigParser()
@@ -46,29 +47,14 @@ def saan():
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
         print('\nThe Plains v0.21\n')
+        inventory.invDisplay()
         print("Saan won't even look you in the eye.")
         time.sleep(4)
         mm2.mainMenu2()
 
     os.system('cls||clear')
-    config = configparser.ConfigParser()
-    config.read('save/config.ini')
-    var1 = config.getint('ch1endflag', 'var1')
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
-    if var16 == 0:
-        flower = ""
-    if var16 == 1:
-        flower = "1x Flower"
-    if var16 == 2:
-        flower = "0x Flower"
-    if var15 == 0:
-        blade = ""
-    if var15 == 1:
-        blade = "1x Knife"
     print('\nThe Plains v0.21\n')
-    print("INV:", flower, blade, '\n', sep=" | ")
+    inventory.invDisplay()
     if var4 == 1:
         print('Saan seems distant.\n')
     if var4 != 1:
