@@ -1,5 +1,4 @@
 import configparser
-import os
 
 def invDisplay():
     config = configparser.ConfigParser()
