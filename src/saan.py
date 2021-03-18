@@ -104,7 +104,15 @@ def saan2():
                     time.sleep(2)
                     friendFlagger1()
             if friendSelect1 == 3:
-                if var16 == 0 or var16 == 2:
+                if var16 == 0 and var4 == 2:
+                    print('\nSaan follows you back to where you started, looking happy.')
+                    time.sleep(3)
+                    mm2.mainMenu2()
+                if var16 == 0 and var4 == 0:
+                    print('\nSaan follows you back to where you started.')
+                    time.sleep(3)
+                    mm2.mainMenu2()
+                if var16 == 2:
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
                     saan()

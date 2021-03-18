@@ -165,7 +165,8 @@ def talkSel1():
 
     if var3 == 1:
         if var7 == 0 or var8 == 1:
-            print(textwrap.fill("\nYour friends mentioned that they heard your scanner signal, and knew to come find you.", 75))
+            print('')
+            print(textwrap.fill("Your friends mentioned that they heard your scanner signal, and knew to come find you.", 75))
             time.sleep(5)
             talk()
         if var7 == 1 and var8 == 0:
