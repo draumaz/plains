@@ -6,16 +6,36 @@ import configparser
 
 def hill():
     config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
     config.read('save/config.ini')
     var1 = config.getint('ch1endflag', 'var1')
     config = configparser.ConfigParser()
     config.read('save/config12.ini')
     var12 = config.getint('lizarddx', 'var12')
+    config = configparser.ConfigParser()
+    config.read('save/config.ini')
+    var1 = config.getint('ch1endflag', 'var1')
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
@@ -106,9 +126,19 @@ def hillSel1Ext():
     config = configparser.ConfigParser()
     config.read('save/config16.ini')
     var16 = config.getint('flower', 'var16')
-
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:
         print('')
@@ -271,9 +301,25 @@ def hillSel2():
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
-
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     if var6 == 0:
         print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     if var6 == 1:
@@ -307,10 +353,24 @@ def hillSel2():
 
 def hillSel3():
     config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
     config.read('save/config16.ini')
     var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
     if var16 == 0:
          print("There's a beautiful flower sitting there.")

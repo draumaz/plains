@@ -80,9 +80,9 @@ def normalReset():
         with open('save/config15.ini', 'w') as configfile:
             config.write(configfile)
         config = configparser.ConfigParser()
-        config['flower'] = {'var16': '1'}
+        config['flower'] = {'var16': '0'}
         with open('save/config16.ini', 'w') as configfile:
             config.write(configfile)
-        print('Reset.')
+        print('\nReset.')
         print('\nPlease re-open the game.\n')
         quit()

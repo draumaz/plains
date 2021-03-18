@@ -5,8 +5,25 @@ import textwrap
 import configparser
 
 def cave():
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print(textwrap.fill('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n', 75))
     print('\nCONTINUE [1]')
     print('LOOK AROUND [2]')
@@ -36,8 +53,22 @@ def caveSel1():
     config = configparser.ConfigParser()
     config.read('save/config15.ini')
     var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     if var15 == 0:
         print("You continue deeper down the cave. There's a small box sitting near the wall.\n")
         print('OPEN [1]')
@@ -78,8 +109,25 @@ def cs1Knife():
     caveSel1()
 
 def caveSel2():
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
     print('DECIPHER [1]')
     print('BACK [2]')
@@ -107,8 +155,25 @@ def caveSel2():
             caveSel2()
 
 def caveSel3():
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")
     print('DISCERN [1]')
     print('BACK [2]')

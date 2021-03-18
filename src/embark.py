@@ -106,8 +106,25 @@ def Embark():
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
 
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:

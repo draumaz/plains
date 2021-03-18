@@ -26,7 +26,30 @@ def toolEx():
 
 def tool():
     os.system('cls||clear')
+    config = configparser.ConfigParser()
+    config.read('save/config.ini')
+    var1 = config.getint('ch1endflag', 'var1')
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
     print('\nPHONE [1]')
     print('RADAR [2]')
@@ -55,8 +78,31 @@ def toolSel1():
     config = configparser.ConfigParser()
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
+    config = configparser.ConfigParser()
+    config.read('save/config.ini')
+    var1 = config.getint('ch1endflag', 'var1')
+    config = configparser.ConfigParser()
+    config.read('save/config6.ini')
+    var6 = config.getint('lizard', 'var6')
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    config = configparser.ConfigParser()
+    config.read('save/config16.ini')
+    var16 = config.getint('flower', 'var16')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     os.system('cls||clear')
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')

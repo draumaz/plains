@@ -51,7 +51,24 @@ def saan():
         mm2.mainMenu2()
 
     os.system('cls||clear')
+    config = configparser.ConfigParser()
+    config.read('save/config.ini')
+    var1 = config.getint('ch1endflag', 'var1')
+    config = configparser.ConfigParser()
+    config.read('save/config15.ini')
+    var15 = config.getint('blade', 'var15')
+    if var16 == 0:
+        flower = ""
+    if var16 == 1:
+        flower = "1x Flower"
+    if var16 == 2:
+        flower = "0x Flower"
+    if var15 == 0:
+        blade = ""
+    if var15 == 1:
+        blade = "1x Knife"
     print('\nThe Plains v0.21\n')
+    print("INV:", flower, blade, '\n', sep=" | ")
     if var4 == 1:
         print('Saan seems distant.\n')
     if var4 != 1:
