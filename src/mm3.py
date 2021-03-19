@@ -10,7 +10,6 @@ def mainMenu3(): #Placeholder director
     config['gameover'] = {'var14': '1'}
     with open('save/config14.ini', 'w') as configfile:
         config.write(configfile)
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print(textwrap.fill("Thank you for playing! You've reached the end of this build - but much, much more is coming. Stay tuned!", 75))
     print('')
@@ -21,7 +20,7 @@ def mainMenu3(): #Placeholder director
 
 def mainMenu3R(): #WIP (main mm3)
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
+    inventory.invDisplay()
     print('Placeholder\n')
     print('OPT1 [1]')
     print('OPT2 [2]')

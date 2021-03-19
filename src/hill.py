@@ -16,7 +16,6 @@ def hill():
     config.read('save/config12.ini')
     var12 = config.getint('lizarddx', 'var12')
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
@@ -110,7 +109,6 @@ def hillSel1Ext():
     var16 = config.getint('flower', 'var16')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:
@@ -145,11 +143,11 @@ def hillSel1Ext():
                     time.sleep(2)
                     hill()
                 if var15 == 1:
+                    lizardMan()
                     print('\nYou run up to the lizard and stab him to death.')
                     time.sleep(3)
                     print('Blood stains your uniform.')
                     time.sleep(6)
-                    lizardMan()
                 if var15 == 0:
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
@@ -203,19 +201,15 @@ def lizardMan():
     config['lizardext'] = {'var7': '1'}
     with open('save/config7.ini', 'w') as configfile:
         config.write(configfile)
-    hill()
 
 def hillSel1():
     config = configparser.ConfigParser()
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
-
     config = configparser.ConfigParser()
     config.read('save/config5.ini')
     var5 = config.getint('reset', 'var5')
-
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
 
     if var6 == 1:
@@ -285,7 +279,6 @@ def hillSel2():
     var6 = config.getint('lizard', 'var6')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var6 == 0:
         print('Despite the massive mountain ahead of you, you decide to simply stand still.')
@@ -323,7 +316,6 @@ def hillSel3():
     config.read('save/config16.ini')
     var16 = config.getint('flower', 'var16')
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
     if var16 == 0:

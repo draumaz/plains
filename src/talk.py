@@ -16,7 +16,6 @@ def talk():
     config.read('save/config8.ini')
     var8 = config.getint('okay', 'var8')
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
         print("Your friends are relieved that you're alright.\n")
@@ -63,7 +62,6 @@ def talkSel1a():
 
     if var7 == 0 or var8 == 1:
         os.system('cls||clear')
-        print('\nThe Plains v0.21\n')
         inventory.invDisplay()
         print("Your friends ask you why you didn't use any of your tools to contact them.\n")
         print('UH... [1]')
@@ -117,7 +115,6 @@ def talkSel1E():
     var6 = config.getint('lizard', 'var6')
 
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var6 == 1:
         print('Your friends barely stammer out a question.')
@@ -179,7 +176,6 @@ def talkSel1():
 
 def talkSel2():
         os.system('cls||clear')
-        print('\nThe Plains v0.21\n')
         inventory.invDisplay()
         print("You just...stare at them. They look bewildered.\n")
         print('KEEP STARING [1]')
@@ -203,7 +199,6 @@ def talkSel2():
 
 def talkSel3():
         os.system('cls||clear')
-        print('\nThe Plains v0.21\n')
         inventory.invDisplay()
         print("talkSel3 PH.\n")
         print('OPT1 [1]')

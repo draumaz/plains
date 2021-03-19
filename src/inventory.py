@@ -13,10 +13,12 @@ def invDisplay():
         blade = "EMPTY"
     if var16 == 1:
         flower = "1x FLOWER"
-    if var16 == 2 or var16 == 3:
+    if var16 == 2 or 3:
         flower = "0x FLOWER"
     if var15 == 1:
         blade = "1x KNIFE"
     if var15 == 2:
         blade = "0x KNIFE"
-    print("INV:", flower, blade, '\n', sep=" | ")
+    print('\nThe Plains v0.22\n') #Version
+    print("INV:", flower, blade, '\n', sep=" | ") #Inventory display
+    return

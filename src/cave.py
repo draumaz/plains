@@ -7,7 +7,6 @@ import inventory
 
 def cave():
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print(textwrap.fill('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n', 75))
     print('\nCONTINUE [1]')
@@ -39,7 +38,6 @@ def caveSel1():
     config.read('save/config15.ini')
     var15 = config.getint('blade', 'var15')
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var15 == 0:
         print("You continue deeper down the cave. There's a small box sitting near the wall.\n")
@@ -104,7 +102,6 @@ def cs1KnifeBack():
 
 def caveSel2():
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
     print('DECIPHER [1]')
@@ -134,7 +131,6 @@ def caveSel2():
 
 def caveSel3():
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")
     print('DISCERN [1]')

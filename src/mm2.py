@@ -17,7 +17,6 @@ def mainMenu2():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
     os.system('clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     print('A fancy, metallic ship lands a little ways from where you landed.')
     if var6 == 0:

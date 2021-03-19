@@ -46,14 +46,12 @@ def saan():
 
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
-        print('\nThe Plains v0.21\n')
         inventory.invDisplay()
         print("Saan won't even look you in the eye.")
         time.sleep(4)
         mm2.mainMenu2()
 
     os.system('cls||clear')
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var4 == 1:
         print('Saan seems distant.\n')

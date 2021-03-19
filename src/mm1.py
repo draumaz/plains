@@ -17,7 +17,6 @@ def mainMenu1():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
     config = configparser.ConfigParser()
-    print('\nThe Plains v0.21\n')
     inventory.invDisplay()
     if var6 == 0:
         print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
