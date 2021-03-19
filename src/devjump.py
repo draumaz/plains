@@ -7,7 +7,7 @@ import configparser
 
 def devJump():
     os.system('cls||clear')
-    print('\nThe Gay Goat Boy Room\n')
+    print('\nDevelopment Hopper\n')
     print('CHAPTER 1 [1]')
     print('CHAPTER 2 [2]')
     print('CHAPTER 3 [3]')
