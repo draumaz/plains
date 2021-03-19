@@ -107,11 +107,13 @@ def saan2():
                     time.sleep(2)
                     friendFlagger1()
             if friendSelect1 == 3:
-                if var16 == 0 and var4 == 2:
+                if var16 == 0 and var4 == 1 or var16 == 2 and var4 == 1: #back|no flower, rude
+                    mm2.mainMenu2()
+                if var16 == 0 and var4 == 2 or var16 == 2 and var4 == 2: #back|no flower, flirty
                     print('\nSaan follows you back to where you started, looking happy.')
                     time.sleep(3)
                     mm2.mainMenu2()
-                if var16 == 0 and var4 == 0: #no flower, neutral
+                if var16 == 0 and var4 == 0 or var16 == 0 and var4 == 3: #back|no flower, neutral
                     print('\nSaan follows you back to where you started.')
                     time.sleep(3)
                     mm2.mainMenu2()
@@ -128,16 +130,20 @@ def saan2():
                     print("\nSaan appreciates the flower. He admires its petals and form.")
                     time.sleep(3)
                     flowerFlag()
-                if var16 == 3 and var4 == 1 or var16 == 3 and var4 == 3: #back|flower, neutral/rude
-                    print("\nSaan follows you back to where you started, looking at the flower all the way.")
+                if var16 == 3 and var4 == 1: #back|flower, rude
+                    print('\nSaan follows you back.')
+                    time.sleep(2)
+                    mm2.mainMenu2()
+                if var16 == 3 and var4 == 3: #back|flower, neutral
+                    print('\nSaan follows you back to where you started, admiring the flower.')
                     time.sleep(3)
                     mm2.mainMenu2()
                 if var16 == 3 and var4 == 2: #back|flower, flirty
                     print('')
                     print(textwrap.fill("Saan happily follows you back to where you started, looking at his flower as he walks.", 75))
                     time.sleep(5)
-                    mm2.mainMenu2()
-                else:
+                    mm2.mainMenu2()   
+                else: #Unpredictable scenario handler
                     print("\nYou and Saan head back.")
                     time.sleep(3)
                     mm2.mainMenu2()
