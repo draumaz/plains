@@ -136,9 +136,11 @@ def hillSel1Ext():
             hillSel1ExtSel = int(input('\nACTION >> '))
 
             if hillSel1ExtSel == 1:
-                if var16 == 2 and var15 == 0:
-                    print('\nI genuinely do not have the heart to program a scenario for this. Sorry!')
-                    time.sleep(1)
+                if var16 == 2 and var15 == 1:
+                    print('\nI genuinely do not have the heart to program a scenario for this.')
+                    time.sleep(2)
+                    print('Sorry!')
+                    time.sleep(0.25)
                     print('-draumaz')
                     time.sleep(2)
                     hill()

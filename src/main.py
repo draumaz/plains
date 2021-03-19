@@ -202,19 +202,12 @@ def saveLoader():
     var2 = config.getint('chaptflagger', 'var2')
     if var14 == 0:
         if var2 == 0: #Chapter 1
-            os.system('cls||clear')
             mm1.mainMenu1()
         if var2 == 1: #Chapter 2
-            os.system('cls||clear')
             mm2.mainMenu2()
         if var2 == 2: #Chapter 3
-            os.system('cls||clear')
             mm3.mainMenu3()
     if var14 == 1:
-        print('\nScanning save...')
-        time.sleep(0.25)
-        print('Save loaded.')
-        time.sleep(0.5)
         mm3.mainMenu3()
 
 ##==ALTERNATE ENDINGS==##

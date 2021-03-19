@@ -46,6 +46,10 @@ def caveSel1():
         print('OPEN [1]')
     if var15 == 1:
         print("Just a dingy old cave.\n")
+        print("PUT KNIFE BACK [1]")
+    if var15 == 2:
+        print("You're deep into the cave. There's that box with the knife you put back.\n")
+        print('TAKE [1]')
     print('BACK [2]')
 
     while True:
@@ -56,9 +60,9 @@ def caveSel1():
                 if var15 == 0:
                     cs1Knife()
                 if var15 == 1:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    caveSel1()
+                    cs1KnifeBack()
+                if var15 == 2:
+                    cs1Knife2()
 
             if caveSelect1 == 2:
                 if var15 == 0:
@@ -75,6 +79,24 @@ def cs1Knife():
     print('\nYou open the box and find a knife. You put it in your pocket.')
     config = configparser.ConfigParser()
     config['blade'] = {'var15': '1'}
+    with open('save/config15.ini', 'w') as configfile:
+        config.write(configfile)
+    time.sleep(3)
+    caveSel1()
+
+def cs1Knife2():
+    print('\nYou take the knife back.')
+    config = configparser.ConfigParser()
+    config['blade'] = {'var15': '1'}
+    with open('save/config15.ini', 'w') as configfile:
+        config.write(configfile)
+    time.sleep(3)
+    caveSel1()
+
+def cs1KnifeBack():
+    print('\nYou open the box and put the knife back.')
+    config = configparser.ConfigParser()
+    config['blade'] = {'var15': '2'}
     with open('save/config15.ini', 'w') as configfile:
         config.write(configfile)
     time.sleep(3)

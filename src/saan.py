@@ -115,10 +115,6 @@ def saan2():
                     print('\nSaan follows you back to where you started.')
                     time.sleep(3)
                     mm2.mainMenu2()
-                if var16 == 2:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
-                    saan()
                 if var16 == 1 and var4 == 1: #flower, rude
                     print('\nSaan reluctantly takes the flower. He looks confused.')
                     time.sleep(3)
@@ -131,8 +127,12 @@ def saan2():
                     print("\nSaan appreciates the flower. He admires its petals and form.")
                     time.sleep(3)
                     flowerFlag()
-                if var16 == 3:
+                if var16 == 3 or var16 == 2:
                     print("\nSaan follows you back to where you started, looking at the flower all the way.")
+                    time.sleep(3)
+                    mm2.mainMenu2()
+                else:
+                    print("\nYou and Saan head back.")
                     time.sleep(3)
                     mm2.mainMenu2()
             if friendSelect1 == 4:
