@@ -2,6 +2,7 @@ import os
 import time
 import configparser
 import textwrap
+import handig
 
 def resetter():
     config = configparser.ConfigParser()
@@ -21,12 +22,15 @@ def resetter():
             reSel1 = int(input('\nACTION >> '))
             if reSel1 == 1:
                 if var9 == 1:
+                    handig.savePull()
                     print('\nReset failed.\n')
+                    time.sleep(1)
                     if var10 == 0:
                         config = configparser.ConfigParser()
                         config['badendext'] = {'var10': '1'}
                         with open('save/config10.ini', 'w') as configfile:
                             config.write(configfile)
+                    handig.spookPull()
                     quit()
                 if var9 == 0:
                     normalReset()
