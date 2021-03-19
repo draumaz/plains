@@ -139,6 +139,7 @@ def hillSel1Ext():
                     time.sleep(3)
                     print('Blood stains your uniform.')
                     time.sleep(6)
+                    hill()
                 if var15 == 0:
                     print('\nDid you mean something else?')
                     time.sleep(0.5)
@@ -198,6 +199,7 @@ def hillSel1():
     var5 = save[4]
     var6 = save[5]
     os.system('cls||clear')
+    handig.versionHeader()
     handig.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')

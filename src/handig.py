@@ -8,6 +8,7 @@ def spookPull():
             file = open('plains.txt', 'r')
             lines = file.readlines()
             ee = lines[0]
+            file.close()
             print(ee)
             time.sleep(0.25)
             os.system('cls||clear')
