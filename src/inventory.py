@@ -13,7 +13,7 @@ def invDisplay():
         blade = "EMPTY"
     if var16 == 1:
         flower = "1x FLOWER"
-    if var16 == 2 or 3:
+    if var16 == 2 or var16 == 3:
         flower = "0x FLOWER"
     if var15 == 1:
         blade = "1x KNIFE"
