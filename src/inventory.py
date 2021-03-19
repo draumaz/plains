@@ -20,4 +20,3 @@ def invDisplay():
     if var15 == 2:
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")
-    return
