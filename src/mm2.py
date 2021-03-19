@@ -4,7 +4,7 @@ import talk
 import saan
 import embark
 import configparser
-import inventory
+import handig
 
 def mainMenu2():
     config = configparser.ConfigParser()
@@ -17,7 +17,8 @@ def mainMenu2():
     config.read('save/config6.ini')
     var6 = config.getint('lizard', 'var6')
     os.system('clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('A fancy, metallic ship lands a little ways from where you landed.')
     if var6 == 0:
         print('Your friends walk out, and approach you.\n')

@@ -6,7 +6,7 @@ import configparser
 from configparser import NoSectionError
 from configparser import NoOptionError
 import textwrap
-import inventory
+import handig
 
 def emb2Handler():
     while True:
@@ -108,7 +108,8 @@ def Embark():
     var8 = config.getint('okay', 'var8')
 
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:

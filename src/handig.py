@@ -1,5 +1,9 @@
 import configparser
 
+def versionHeader():
+    print('\nThe Plains v0.22\n')
+    return
+
 def invDisplay():
     config = configparser.ConfigParser()
     config.read('save/config15.ini')
@@ -19,6 +23,5 @@ def invDisplay():
         blade = "1x KNIFE"
     if var15 == 2:
         blade = "0x KNIFE"
-    print('\nThe Plains v0.22\n') #Version
     print("INV:", flower, blade, '\n', sep=" | ") #Inventory display
     return

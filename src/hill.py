@@ -3,7 +3,7 @@ import time
 import mm1
 import textwrap
 import configparser
-import inventory
+import handig
 
 def hill():
     config = configparser.ConfigParser()
@@ -16,7 +16,7 @@ def hill():
     config.read('save/config12.ini')
     var12 = config.getint('lizarddx', 'var12')
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.invDisplay()
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
@@ -109,7 +109,8 @@ def hillSel1Ext():
     var16 = config.getint('flower', 'var16')
 
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('The huge reptilian sees you, and approaches.')
     if var7 == 0:
         print('')
@@ -279,7 +280,8 @@ def hillSel2():
     var6 = config.getint('lizard', 'var6')
 
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     if var6 == 0:
         print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     if var6 == 1:
@@ -316,7 +318,8 @@ def hillSel3():
     config.read('save/config16.ini')
     var16 = config.getint('flower', 'var16')
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
     if var16 == 0:
          print("There's a beautiful flower sitting there.")

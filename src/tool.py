@@ -3,7 +3,7 @@ import time
 import mm1
 import textwrap
 import configparser
-import inventory
+import handig
 
 def toolEx():
     config = configparser.ConfigParser()
@@ -27,7 +27,8 @@ def toolEx():
 
 def tool():
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
     print('\nPHONE [1]')
     print('RADAR [2]')
@@ -57,7 +58,8 @@ def toolSel1():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')
@@ -93,7 +95,8 @@ def toolSel2():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')
@@ -129,7 +132,8 @@ def toolSel3():
     config.read('save/config3.ini')
     var3 = config.getint('toolflag', 'var3')
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('Looks like your scanner is functioning just fine.\n')
     print('SIGNAL [1]')
     print('BACK [2]')

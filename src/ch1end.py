@@ -5,7 +5,7 @@ import configparser
 from configparser import NoSectionError
 from configparser import NoOptionError
 import textwrap
-import inventory
+import handig
 
 def ch1EndBHandler():
     while True:
@@ -43,7 +43,8 @@ def ch1EndB():
 
 def ch1End():
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))
     print('\nLOOK [1]')
 

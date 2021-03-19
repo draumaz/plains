@@ -2,7 +2,7 @@ import os
 import time
 import textwrap
 import configparser
-import inventory
+import handig
 
 def mainMenu3(): #Placeholder director
     os.system('cls||clear')
@@ -10,7 +10,8 @@ def mainMenu3(): #Placeholder director
     config['gameover'] = {'var14': '1'}
     with open('save/config14.ini', 'w') as configfile:
         config.write(configfile)
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print(textwrap.fill("Thank you for playing! You've reached the end of this build - but much, much more is coming. Stay tuned!", 75))
     print('')
     print(textwrap.fill("Visit https://github.com/draumaz/plains to keep up with the game!", 75))
@@ -20,7 +21,8 @@ def mainMenu3(): #Placeholder director
 
 def mainMenu3R(): #WIP (main mm3)
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     print('Placeholder\n')
     print('OPT1 [1]')
     print('OPT2 [2]')

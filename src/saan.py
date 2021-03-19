@@ -3,7 +3,7 @@ import time
 import mm2
 import configparser
 import textwrap
-import inventory
+import handig
 
 def friendFlagger3(): #Neutral Flag
     config = configparser.ConfigParser()
@@ -46,13 +46,15 @@ def saan():
 
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
-        inventory.invDisplay()
+        handig.versionHeader()
+        handig.invDisplay()
         print("Saan won't even look you in the eye.")
         time.sleep(4)
         mm2.mainMenu2()
 
     os.system('cls||clear')
-    inventory.invDisplay()
+    handig.versionHeader()
+    handig.invDisplay()
     if var4 == 1:
         print('Saan seems distant.\n')
     if var4 != 1:
