@@ -7,6 +7,7 @@ import mm2
 import mm3
 import reset
 import textwrap
+import handig
 
 def breakTest():
     while True:
@@ -23,56 +24,25 @@ def breakTest():
 def fileTest():
    while True:
        try:
-            config = configparser.ConfigParser() #Verify config files are found and valid
-            config.read('save/config.ini')
-            var1 = config.getint('ch1endflag', 'var1')
-            config = configparser.ConfigParser()
-            config.read('save/config2.ini')
-            var2 = config.getint('chaptflagger', 'var2')
-            config = configparser.ConfigParser()
-            config.read('save/config3.ini')
-            var3 = config.getint('toolflag', 'var3')
-            config = configparser.ConfigParser()
-            config.read('save/config4.ini')
-            var4 = config.getint('friendflag', 'var4')
-            config = configparser.ConfigParser()
-            config.read('save/config5.ini')
-            var5 = config.getint('reset', 'var5')
-            config = configparser.ConfigParser()
-            config.read('save/config6.ini')
-            var6 = config.getint('lizard', 'var6')
-            config = configparser.ConfigParser()
-            config.read('save/config7.ini')
-            var7 = config.getint('lizardext', 'var7')
-            config = configparser.ConfigParser()
-            config.read('save/config8.ini')
-            var8 = config.getint('okay', 'var8')
-            config = configparser.ConfigParser()
-            config.read('save/config9.ini')
-            var9 = config.getint('badend', 'var9')
-            config = configparser.ConfigParser()
-            config.read('save/config10.ini')
-            var10 = config.getint('badendext', 'var10')
-            config = configparser.ConfigParser()
-            config.read('save/config11.ini')
-            var11 = config.getint('splashskip', 'var11')
-            config = configparser.ConfigParser()
-            config.read('save/config12.ini')
-            var12 = config.getint('lizarddx', 'var12')
-            config = configparser.ConfigParser()
-            config.read('save/config13.ini')
-            var13 = config.getint('splashskip2', 'var13')
-            config = configparser.ConfigParser()
-            config.read('save/config14.ini')
-            var14 = config.getint('gameover', 'var14')
-            config = configparser.ConfigParser()
-            config.read('save/config15.ini')
-            var15 = config.getint('blade', 'var15')
-            config = configparser.ConfigParser()
-            config.read('save/config16.ini')
-            var16 = config.getint('flower', 'var16')
+            saves = handig.savePull()
+            var1 = saves[0]
+            var2 = saves[1]
+            var3 = saves[2]
+            var4 = saves[3]
+            var5 = saves[4]
+            var6 = saves[5]
+            var7 = saves[6]
+            var8 = saves[7]
+            var9 = saves[8]
+            var10 = saves[9]
+            var11 = saves[10]
+            var12 = saves[11]
+            var13 = saves[12]
+            var14 = saves[13]
+            var15 = saves[14]
+            var16 = saves[15]
             splashScreen()
-       except (NoOptionError, NoSectionError):
+       except (NoOptionError, NoSectionError, NameError, IndexError):
           saveDirGenerator()
 
 def saveDirGenerator(): #Generate save sub-directory
@@ -155,16 +125,10 @@ def saveGenerator(): #Generate save files
             fileTest()
 
 def splashScreen(): #Main menu
-    config = configparser.ConfigParser()
-    config.read('save/config9.ini')
-    var9 = config.getint('badend', 'var9')
-    config = configparser.ConfigParser()
-    config.read('save/config10.ini')
-    var10 = config.getint('badendext', 'var10')
-    config = configparser.ConfigParser()
-    config.read('save/config14.ini')
-    var14 = config.getint('gameover', 'var14')
-
+    save = handig.savePull()
+    var9 = save[8]
+    var10 = save[9]
+    var14 = save[13]
     if var10 == 1:
         mainAlt2()
     if var9 == 1:
@@ -195,12 +159,9 @@ def splashScreen(): #Main menu
                 splashScreen()
 
 def saveLoader():
-    config = configparser.ConfigParser()
-    config.read('save/config14.ini')
-    var14 = config.getint('gameover', 'var14')
-    config = configparser.ConfigParser()
-    config.read('save/config2.ini')
-    var2 = config.getint('chaptflagger', 'var2')
+    save = handig.savePull()
+    var2 = save[1]
+    var14 = save[13]
     if var14 == 0:
         if var2 == 0: #Chapter 1
             mm1.mainMenu1()
@@ -257,9 +218,8 @@ def mainAlt():
     mainAlt2()
 
 def mainAlt2():
-    config = configparser.ConfigParser()
-    config.read('save/config10.ini')
-    var10 = config.getint('badendext', 'var10')
+    save = handig.savePull()
+    var10 = save[9]
     os.system('cls||clear')
     print("\nDo you regret it?")
     print('\nYES [1]')

@@ -6,10 +6,8 @@ import configparser
 import handig
 
 def toolEx():
-    config = configparser.ConfigParser()
-    config.read('save/config3.ini')
-    var3 = config.getint('toolflag', 'var3')
-
+    save = handig.savePull()
+    var3 = save[2]
     if var3 == 0:
         print('')
         print(textwrap.fill("You decide that checking your tools isn't worth your time or effort.", 75))
@@ -54,9 +52,8 @@ def tool():
             tool()
 
 def toolSel1():
-    config = configparser.ConfigParser()
-    config.read('save/config3.ini')
-    var3 = config.getint('toolflag', 'var3')
+    save = handig.savePull()
+    var3 = save[2]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -91,9 +88,8 @@ def toolSel1():
             toolSel1()
 
 def toolSel2():
-    config = configparser.ConfigParser()
-    config.read('save/config3.ini')
-    var3 = config.getint('toolflag', 'var3')
+    save = handig.savePull()
+    var3 = save[2]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -128,9 +124,8 @@ def toolSel2():
             toolSel2()
 
 def toolSel3():
-    config = configparser.ConfigParser()
-    config.read('save/config3.ini')
-    var3 = config.getint('toolflag', 'var3')
+    save = handig.savePull()
+    var3 = save[2]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()

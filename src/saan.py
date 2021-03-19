@@ -31,19 +31,11 @@ def flowerFlag(): #Gave Flower Flag
     saan()
 
 def saan():
-    config = configparser.ConfigParser()
-    config.read('save/config4.ini')
-    var4 = config.getint('friendflag', 'var4')
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
-
+    save = handig.savePull()
+    var4 = save[3]
+    var6 = save[5]
+    var8 = save[7]
+    var16 = save[15]
     if var8 == 0 and var6 == 1:
         os.system('cls||clear')
         handig.versionHeader()
@@ -70,18 +62,11 @@ def saan():
     saan2()
 
 def saan2():
-    config = configparser.ConfigParser()
-    config.read('save/config4.ini')
-    var4 = config.getint('friendflag', 'var4')
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
+    save = handig.savePull()
+    var4 = save[3]
+    var6 = save[5]
+    var8 = save[7]
+    var16 = save[15]
     while True:
         try:
             friendSelect1 = int(input('\nACTION >> '))

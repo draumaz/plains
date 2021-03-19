@@ -35,9 +35,8 @@ def cave():
             cave()
 
 def caveSel1():
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
+    save = handig.savePull()
+    var15 = save[14]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()

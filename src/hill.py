@@ -6,16 +6,12 @@ import configparser
 import handig
 
 def hill():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config.ini')
-    var1 = config.getint('ch1endflag', 'var1')
-    config = configparser.ConfigParser()
-    config.read('save/config12.ini')
-    var12 = config.getint('lizarddx', 'var12')
+    save = handig.savePull()
+    var1 = save[0]
+    var6 = save[5]
+    var12 = save[11]
     os.system('cls||clear')
+    handig.versionHeader()
     handig.invDisplay()
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
@@ -98,16 +94,10 @@ def hs1e3():
     hill()
 
 def hillSel1Ext():
-    config = configparser.ConfigParser()
-    config.read('save/config7.ini')
-    var7 = config.getint('lizardext', 'var7')
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
-
+    save = handig.savePull()
+    var7 = save[6]
+    var15 = save[14]
+    var16 = save[15]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -204,32 +194,24 @@ def lizardMan():
         config.write(configfile)
 
 def hillSel1():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config5.ini')
-    var5 = config.getint('reset', 'var5')
+    save = handig.savePull()
+    var5 = save[4]
+    var6 = save[5]
     os.system('cls||clear')
-    inventory.invDisplay()
-
+    handig.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')
         print('BACK [1]')
-
         while True:
             try:
                 HS = int(input('\nACTION >> '))
-
                 if HS == 1:
                     hill()
-
             except ValueError:
                 print("\nDid you mean something else?")
                 time.sleep(0.5)
                 hillSel1()
-    else:
-        hillSel1Ext()
+    hillSel1Ext()
 
 def standFlagger():
         config = configparser.ConfigParser()
@@ -239,10 +221,8 @@ def standFlagger():
         hill()
 
 def hs2Sub2():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-
+    save = handig.savePull()
+    var6 = save[5]
     print('.')
     time.sleep(1)
     print('.')
@@ -275,10 +255,8 @@ def hs2Sub():
     standFlagger()
 
 def hillSel2():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-
+    save = handig.savePull()
+    var6 = save[5]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -314,9 +292,8 @@ def hillSel2():
                 hillSel2()
 
 def hillSel3():
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
+    save = handig.savePull()
+    var16 = save[15]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()

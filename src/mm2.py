@@ -7,15 +7,9 @@ import configparser
 import handig
 
 def mainMenu2():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config.ini')
-    var1 = config.getint('ch1endflag', 'var1')
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
+    save = handig.savePull()
+    var1 = save[0]
+    var6 = save[5]
     os.system('clear')
     handig.versionHeader()
     handig.invDisplay()

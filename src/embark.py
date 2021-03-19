@@ -99,14 +99,9 @@ def Embark1():
     quit()
 
 def Embark():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
-
+    save = handig.savePull()
+    var6 = save[5]
+    var8 = save[7]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()

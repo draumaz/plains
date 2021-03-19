@@ -5,12 +5,9 @@ import textwrap
 import handig
 
 def resetter():
-    config = configparser.ConfigParser()
-    config.read('save/config9.ini')
-    var9 = config.getint('badend', 'var9')
-    config = configparser.ConfigParser()
-    config.read('save/config10.ini')
-    var10 = config.getint('badendext', 'var10')
+    save = handig.savePull()
+    var9 = save[8]
+    var10 = save[9]
     if var9 == 0:
         print('\nDoing this will reset everything. Are you sure?')
         print('\nRESET [1]')

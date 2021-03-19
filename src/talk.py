@@ -6,15 +6,10 @@ import textwrap
 import handig
 
 def talk():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-    config = configparser.ConfigParser()
-    config.read('save/config7.ini')
-    var7 = config.getint('lizardext', 'var7')
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
+    save = handig.savePull()
+    var6 = save[5]
+    var7 = save[6]
+    var8 = save[7]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -54,13 +49,9 @@ def talk():
             talk()
 
 def talkSel1a():
-    config = configparser.ConfigParser()
-    config.read('save/config7.ini')
-    var7 = config.getint('lizardext', 'var7')
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
-
+    save = handig.savePull()
+    var7 = save[6]
+    var8 = save[7]
     if var7 == 0 or var8 == 1:
         os.system('cls||clear')
         handig.versionHeader()
@@ -112,10 +103,8 @@ def talkSel1B():
             talkSel1B()
 
 def talkSel1E():
-    config = configparser.ConfigParser()
-    config.read('save/config6.ini')
-    var6 = config.getint('lizard', 'var6')
-
+    save = handig.savePull()
+    var6 = save[5]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -156,16 +145,10 @@ def talkSel1EG():
     talk()
 
 def talkSel1():
-    config = configparser.ConfigParser()
-    config.read('save/config3.ini')
-    var3 = config.getint('toolflag', 'var3')
-    config = configparser.ConfigParser()
-    config.read('save/config7.ini')
-    var7 = config.getint('lizardext', 'var7')
-    config = configparser.ConfigParser()
-    config.read('save/config8.ini')
-    var8 = config.getint('okay', 'var8')
-
+    save = handig.savePull()
+    var3 = save[2]
+    var7 = save[6]
+    var8 = save[7]
     if var3 == 1:
         if var7 == 0 or var8 == 1:
             print('')
