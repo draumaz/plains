@@ -10,6 +10,7 @@ def hill():
     var1 = save[0]
     var6 = save[5]
     var12 = save[11]
+    var16 = save[15]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -21,9 +22,12 @@ def hill():
         print('You should stand still.')
     if var6 == 1 and var1 == 1:
         print("They're coming. Go back.")
-    if var6 == 0 and var12 == 0:
+    if var6 == 0 and var12 == 0 and var16 != 2:
         print('In the distance, you can see a creature moving about.\n')
         print('GO TOWARDS THE CREATURE [1]')
+    if var16 == 2:
+        print('You can see the lizard sitting down, enjoying the sun.\n')
+        print('VISIT HIM [1]')
     if var12 == 1:
         print('')
     if var6 == 1:
@@ -101,7 +105,10 @@ def hillSel1Ext():
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
-    print('The huge reptilian sees you, and approaches.')
+    if var16 != 2:
+        print('The huge reptilian sees you, and approaches.')
+    if var16 == 2:
+        print('The reptilian waves and smiles at you.')
     if var7 == 0:
         print('')
     if var7 == 1:
@@ -123,7 +130,6 @@ def hillSel1Ext():
     while True:
         try:
             hillSel1ExtSel = int(input('\nACTION >> '))
-
             if hillSel1ExtSel == 1:
                 if var16 == 2 and var15 == 1:
                     print('\nI genuinely do not have the heart to program a scenario for this.')
@@ -178,7 +184,6 @@ def hillSel1Ext():
                     print('\nUpon seeing the towering lizard, you decide to head back.')
                     time.sleep(2)
                     hill()
-
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
@@ -315,7 +320,8 @@ def hillSel3():
 
             if hillSel3Select == 1:
                 print('')
-                print(textwrap.fill('The flower comes off its root without hesitation. You put it in your pocket.', 75))
+                print(textwrap.fill('The flower comes off its root without hesitation.', 75))
+                print(textwrap.fill('You put it in your pocket.', 75))
                 config = configparser.ConfigParser()
                 config['flower'] = {'var16': '1'}
                 with open('save/config16.ini', 'w') as configfile:

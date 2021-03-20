@@ -27,8 +27,7 @@ def mainMenu1():
     if var1 == 1:
         print('SOUND [4] <--')
     if var1 == 1:
-        print('EXIT [5]')
-
+        print('QUIT [5]')
     while True:
         try:
             mainmenuSelect1 = int(input('\nACTION >> '))
