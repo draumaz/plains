@@ -1,7 +1,7 @@
 # The Plains
 ![Screenshot](https://github.com/draumaz/plains/blob/main/art/skreench.png?raw=true?raw=true "Screenshot")
 <p align="center">
-  <b>THE PLAINS</b><br>
+  <b></b><br>
   <a href="https://github.com/draumaz/plains/releases/tag/v0.21">Download</a>
   <br><br>
   
