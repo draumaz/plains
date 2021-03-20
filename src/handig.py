@@ -6,59 +6,11 @@ def spookPull():
     while True:
         try:
             file = open('plains.txt', 'r')
-            lines = file.readlines()
-            ee = lines[0]
             file.close()
-            print(ee)
+            print('EVIL')
             time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
-            print(ee)
-            time.sleep(0.25)
-            os.system('cls||clear')
-            time.sleep(0.5)
         except FileNotFoundError:
-            return
+            quit()
 
 def savePull():
     while True:
@@ -138,5 +90,5 @@ def invDisplay():
         blade = "1x KNIFE"
     if var15 == 2:
         blade = "0x KNIFE"
-    print("INV:", flower, blade, '\n', sep=" | ") #Inventory display
+    print("INV:", flower, blade, '\n', sep=" | ")
     return

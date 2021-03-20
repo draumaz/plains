@@ -17,7 +17,6 @@ def cave():
     while True:
         try:
             caveSelect = int(input('\nACTION >> '))
-
             if caveSelect == 1:
                 caveSel1()
             if caveSelect == 2:
@@ -28,7 +27,6 @@ def cave():
                 print('\nSeems pretty forboding...best to head back.')
                 time.sleep(3)
                 mm1.mainMenu1()
-
         except ValueError:
             print('\nDid you mean something else?')
             time.sleep(0.5)
