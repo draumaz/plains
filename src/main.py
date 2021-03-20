@@ -151,7 +151,6 @@ def splashScreen(): #Main menu
                     saveLoader()
                 if bsSel1 == 2:
                     os.system('cls||clear')
-                    print('\nThe Plains v0.21')
                     reset.resetter()
             except ValueError:
                 print('\nDid you mean something else?')
