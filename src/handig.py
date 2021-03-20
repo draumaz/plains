@@ -2,7 +2,11 @@ import configparser
 import time
 import os
 
-def spookPull():
+#HANDIG#
+#Tool reference script 
+#Widely referenced in all other functions
+
+def spookPull(): #Worst ending looper
     while True:
         try:
             file = open('plains.txt', 'r')
@@ -12,7 +16,7 @@ def spookPull():
         except FileNotFoundError:
             quit()
 
-def savePull():
+def savePull(): #Retrieves save states and returns them
     while True:
         try:
             config = configparser.ConfigParser() #Verify config files are found and valid
@@ -67,11 +71,11 @@ def savePull():
         except ValueError:
             return
 
-def versionHeader():
+def versionHeader(): #Displays the title and version
     print('\nThe Plains v0.22\n')
     return
 
-def invDisplay():
+def invDisplay(): #Displays inventory
     config = configparser.ConfigParser()
     config.read('save/config15.ini')
     var15 = config.getint('blade', 'var15')
