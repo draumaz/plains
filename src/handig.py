@@ -5,7 +5,7 @@ import time
 #Tool reference script 
 #Widely referenced in all other functions
 
-def saveWriter(line_ext, state_ext):
+def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instances pass through this function
     file = open('data.txt', 'r')
     line = file.readlines()
     line[line_ext] = state_ext
@@ -14,13 +14,13 @@ def saveWriter(line_ext, state_ext):
     file.close()
     return
 
-def saveGenerator():
+def saveGenerator(): #Creates save file if it doesn't already exist
     save = open('data.txt', 'w+')
     save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
     save.close()
     return
 
-def savePull():
+def savePull(): #Pulls and retrieves all variables and returns into an array
     while True:
         try:
             save = open('data.txt', 'r')
@@ -79,7 +79,7 @@ def quitHandler(): #Handles quit actions
     os.system('cls||clear')
     quit()
 
-def inpErrorHandler():
+def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')
     time.sleep(0.5)
     return
