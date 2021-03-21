@@ -114,7 +114,7 @@ def caveSel2():
                 time.sleep(4)
                 print('\nBetter safe than sorry.')
                 time.sleep(2)
-                cave.cave()
+                cave()
             if caveSelect2 == 2:
                 print("\nToo much work, anyways.")
                 time.sleep(2)

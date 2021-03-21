@@ -31,7 +31,7 @@ def emb2Chap():
         try:
             line_ext = 1
             state_ext = '1\n'
-            handig.saveWriter()
+            handig.saveWriter(line_ext, state_ext)
             mm3.mainMenu3()
         except (NoOptionError, NoSectionError):
             emb2Handler()
