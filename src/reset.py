@@ -27,7 +27,6 @@ def resetter():
                         config['badendext'] = {'var10': '1'}
                         with open('save/config10.ini', 'w') as configfile:
                             config.write(configfile)
-                    handig.spookPull()
                     quit()
                 if var9 == 0:
                     normalReset()

@@ -1,20 +1,8 @@
 import configparser
-import time
-import os
 
 #HANDIG#
 #Tool reference script 
 #Widely referenced in all other functions
-
-def spookPull(): #Worst ending looper
-    while True:
-        try:
-            file = open('plains.txt', 'r')
-            file.close()
-            print('EVIL')
-            time.sleep(0.25)
-        except FileNotFoundError:
-            quit()
 
 def savePull(): #Retrieves save states and returns them
     while True:
@@ -76,12 +64,9 @@ def versionHeader(): #Displays the title and version
     return
 
 def invDisplay(): #Displays inventory
-    config = configparser.ConfigParser()
-    config.read('save/config15.ini')
-    var15 = config.getint('blade', 'var15')
-    config = configparser.ConfigParser()
-    config.read('save/config16.ini')
-    var16 = config.getint('flower', 'var16')
+    save = savePull()
+    var15 = save[14]
+    var16 = save[15]
     if var16 == 0:
         flower = "EMPTY"
     if var15 == 0:
@@ -96,3 +81,7 @@ def invDisplay(): #Displays inventory
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")
     return
+
+def quitHandler():
+    os.system('cls||clear')
+    quit()

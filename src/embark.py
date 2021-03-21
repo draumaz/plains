@@ -25,17 +25,12 @@ def emb2Handler():
             emb2Handler()
 
 def emb2Chap():
-    os.system('cls||clear')
-    print('\nSaving...')
     while True:
         try:
             config = configparser.ConfigParser()
             config['chaptflagger'] = {'var2': '2'}
             with open('save/config2.ini', 'w') as configfile:
                 config.write(configfile)
-            time.sleep(0.5)
-            print('Saved.')
-            time.sleep(1)
             mm3.mainMenu3()
         except (NoOptionError, NoSectionError):
             emb2Handler()
@@ -67,8 +62,8 @@ def Embark2():
             if embSelect2 == 1:
                 emb2End()
             if embSelect2 == 2:
-                print('\nYou and your friends disembark the ship, and walk into the distance.')
-                time.sleep(5)
+                print('\nYou and your friends disembark, and take a walk.')
+                time.sleep(3)
                 emb2Chap()
         except ValueError:
             print('\nDid you mean something else?')

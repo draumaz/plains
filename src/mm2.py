@@ -34,10 +34,7 @@ def mainMenu2():
             if mainmenuSelect2 == 3:
                 embark.Embark()
             if mainmenuSelect2 == 4:
-                os.system('cls||clear')
-                print('\nThanks for playing!')
-                time.sleep(0.5)
-                quit()
+                handig.quitHandler()
 
         except ValueError:
             print('\nDid you mean something else?')

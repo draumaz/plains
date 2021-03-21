@@ -39,25 +39,18 @@ def mainMenu1():
                 tool.tool()
             if mainmenuSelect1 == 4:
                 if var1 == 0:
-                    exitHandler()
+                    handig.quitHandler()
                 if var1 == 1:
                     ch1end.ch1End()
             if mainmenuSelect1 == 5:
                 if var1 == 1:
-                    exitHandler()
+                    handig.quitHandler()
                 if var1 == 0:
                     errorHandler()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            mainMenu1()
+            errorHandler()
 
 def errorHandler():
     print('\nDid you mean something else?')
     time.sleep(0.5)
     mainMenu1()
-
-def exitHandler():
-    print('\nThanks for playing!')
-    time.sleep(0.5)
-    quit()

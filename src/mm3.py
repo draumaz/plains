@@ -4,7 +4,33 @@ import textwrap
 import configparser
 import handig
 
-def mainMenu3(): #Placeholder director
+def mainMenu3(): #WIP (main mm3)
+    os.system('cls||clear')
+    handig.versionHeader()
+    handig.invDisplay()
+    print(textwrap.fill("You and your friends are walking through a field of yellow-red grass.", 75))
+    print(textwrap.fill("There's so many strange things to see on this planet.", 75))
+    print('\nOPT1 [1]')
+    print('OPT2 [2]')
+    print('OPT3 [3]')
+    print('QUIT [4]')
+    while True:
+        try:
+            mainmenuSelect2 = int(input('\nACTION >> '))
+            if mainmenuSelect2 == 1:
+                pass
+            if mainmenuSelect2 == 2:
+                pass
+            if mainmenuSelect2 == 3:
+                pass
+            if mainmenuSelect2 == 4:
+                handig.quitHandler()
+        except ValueError:
+            print('\nDid you mean something else?')
+            time.sleep(0.5)
+            mainMenu3()
+
+def mainMenu3P(): #Placeholder director
     os.system('cls||clear')
     config = configparser.ConfigParser()
     config['gameover'] = {'var14': '1'}
@@ -18,29 +44,3 @@ def mainMenu3(): #Placeholder director
     print('')
     time.sleep(5)
     quit()
-
-def mainMenu3R(): #WIP (main mm3)
-    os.system('cls||clear')
-    handig.versionHeader()
-    handig.invDisplay()
-    print('Placeholder\n')
-    print('OPT1 [1]')
-    print('OPT2 [2]')
-    print('OPT3 [3]')
-    print('OPT4 [4]')
-    while True:
-        try:
-            mainmenuSelect2 = int(input('\nACTION >> '))
-            #if mainmenuSelect2 == 1:
-            #    opt1()
-            #if mainmenuSelect2 == 2:
-            #    opt2()
-            #if mainmenuSelect2 == 3:
-            #    opt3()
-            #if mainmenuSelect2 == 4:
-            #    quit()
-
-        except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            mainMenu3()

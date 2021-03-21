@@ -15,7 +15,7 @@ def breakTest():
             file = open('plains.txt', 'r')
             file.close()
             os.system('cls||clear')
-            print('\nFATAL ERROR OCCURRED')
+            print('\nFATAL ERROR OCCURRED\n')
             reset.resetter()
             quit()
         except FileNotFoundError:
@@ -171,7 +171,7 @@ def saveLoader():
     if var14 == 1:
         mm3.mainMenu3()
 
-##==ALTERNATE ENDINGS==##
+##BAD ENDING FUNCTIONS##
 
 def mainExt():
     os.system('cls||clear')
@@ -241,8 +241,6 @@ def mainAlt2():
                     time.sleep(1)
                     reset.resetter()
         except ValueError:
-            mainAlt2()
-        except KeyboardInterrupt:
             mainAlt2()
 
 def mainAlt3():
