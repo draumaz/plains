@@ -16,14 +16,10 @@ def saveWriter(line_ext, state_ext):
     return
 
 def saveGenerator():
-    while True:
-        try:
-            save = open('data.txt', 'w+')
-            save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
-            save.close()
-            return
-        except ValueError:
-            pass
+    save = open('data.txt', 'w+')
+    save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+    save.close()
+    return
 
 def savePull():
     while True:
