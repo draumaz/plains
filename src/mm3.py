@@ -34,10 +34,9 @@ def mainMenu3(): #WIP (main mm3)
 
 def mainMenu3P(): #Placeholder director
     os.system('cls||clear')
-    config = configparser.ConfigParser()
-    config['gameover'] = {'var14': '1'}
-    with open('save/config14.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 13
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill("Thank you for playing! You've reached the end of this build - but much, much more is coming. Stay tuned!", 75))

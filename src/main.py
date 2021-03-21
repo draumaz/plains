@@ -22,8 +22,8 @@ def breakTest():
             fileTest()
 
 def fileTest():
-   while True:
-       try:
+    while True:
+        try:
             saves = handig.savePull()
             var1 = saves[0]
             var2 = saves[1]
@@ -42,86 +42,8 @@ def fileTest():
             var15 = saves[14]
             var16 = saves[15]
             splashScreen()
-       except (NoOptionError, NoSectionError, NameError, IndexError):
-          saveDirGenerator()
-
-def saveDirGenerator(): #Generate save sub-directory
-    while True:
-        try:
-            os.mkdir('save')
-            saveGenerator()
-        except FileExistsError:
-            saveGenerator()
-
-def saveGenerator(): #Generate save files
-    while True:
-        try:
-            save = open("save/config.ini", "w+")
-            save.write('[ch1endflag]')
-            save.write('\nvar1 = 0')
-            save.close()
-            save = open("save/config2.ini", "w+")
-            save.write('[chaptflagger]')
-            save.write('\nvar2 = 0')
-            save.close()
-            save = open("save/config3.ini", "w+")
-            save.write('[toolflag]')
-            save.write('\nvar3 = 0')
-            save.close()
-            save = open("save/config4.ini", "w+")
-            save.write('[friendflag]')
-            save.write('\nvar4 = 0')
-            save.close()
-            save = open("save/config5.ini", "w+")
-            save.write('[reset]')
-            save.write('\nvar5 = 0')
-            save.close()
-            save = open("save/config6.ini", "w+")
-            save.write('[lizard]')
-            save.write('\nvar6 = 0')
-            save.close()
-            save = open("save/config7.ini", "w+")
-            save.write('[lizardext]')
-            save.write('\nvar7 = 0')
-            save.close()
-            save = open("save/config8.ini", "w+")
-            save.write('[okay]')
-            save.write('\nvar8 = 0')
-            save.close()
-            save = open("save/config9.ini", "w+")
-            save.write('[badend]')
-            save.write('\nvar9 = 0')
-            save.close()
-            save = open("save/config10.ini", "w+")
-            save.write('[badendext]')
-            save.write('\nvar10 = 0')
-            save.close()
-            save = open("save/config11.ini", "w+")
-            save.write('[splashskip]')
-            save.write('\nvar11 = 0')
-            save.close()
-            save = open("save/config12.ini", "w+")
-            save.write('[lizarddx]')
-            save.write('\nvar12 = 0')
-            save.close()
-            save = open("save/config13.ini", "w+")
-            save.write('[splashskip2]')
-            save.write('\nvar13 = 0')
-            save.close()
-            save = open("save/config14.ini", "w+")
-            save.write('[gameover]')
-            save.write('\nvar14 = 0')
-            save.close()
-            save = open("save/config15.ini", "w+")
-            save.write('[blade]')
-            save.write('\nvar15 = 0')
-            save.close()
-            save = open("save/config16.ini", "w+")
-            save.write('[flower]')
-            save.write('\nvar16 = 0')
-            save.close()
-            fileTest()
-        except FileExistsError:
+        except (NameError, IndexError):
+            handig.saveGenerator()
             fileTest()
 
 def splashScreen(): #Main menu
@@ -273,14 +195,12 @@ def mainAlt4():
         try:
             schl = int(input('\nACTION >> '))
             if schl == 1:
-                config = configparser.ConfigParser()
-                config['badend'] = {'var9': '0'}
-                with open('save/config9.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['badendext'] = {'var10': '0'}
-                with open('save/config10.ini', 'w') as configfile:
-                    config.write(configfile)
+                line_ext = 8
+                state_ext = '0\n'
+                handig.saveWriter(line_ext, state_ext)
+                line_ext = 9
+                state_ext = '0\n'
+                handig.saveWriter(line_ext, state_ext)
                 time.sleep(2)
                 reset.resetter()
             if schl == 2:
@@ -290,10 +210,9 @@ def mainAlt4():
 
 def mainAlt5():
     os.system('cls||clear')
-    config = configparser.ConfigParser()
-    config['badendext'] = {'var10': '1'}
-    with open('save/config10.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 9
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     time.sleep(5)
     print('\nFATAL ERROR ENCOUNTERED')
     time.sleep(2)

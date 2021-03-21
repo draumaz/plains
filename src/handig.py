@@ -6,60 +6,53 @@ import time
 #Tool reference script 
 #Widely referenced in all other functions
 
-def savePull(): #Retrieves save states and returns them
+def saveWriter(line_ext, state_ext):
+    file = open('data.txt', 'r')
+    line = file.readlines()
+    line[line_ext] = state_ext
+    file = open('data.txt', 'w')
+    file.writelines(line)
+    file.close()
+    return
+
+def saveGenerator():
     while True:
         try:
-            config = configparser.ConfigParser() #Verify config files are found and valid
-            config.read('save/config.ini')
-            var1 = config.getint('ch1endflag', 'var1')
-            config = configparser.ConfigParser()
-            config.read('save/config2.ini')
-            var2 = config.getint('chaptflagger', 'var2')
-            config = configparser.ConfigParser()
-            config.read('save/config3.ini')
-            var3 = config.getint('toolflag', 'var3')
-            config = configparser.ConfigParser()
-            config.read('save/config4.ini')
-            var4 = config.getint('friendflag', 'var4')
-            config = configparser.ConfigParser()
-            config.read('save/config5.ini')
-            var5 = config.getint('reset', 'var5')
-            config = configparser.ConfigParser()
-            config.read('save/config6.ini')
-            var6 = config.getint('lizard', 'var6')
-            config = configparser.ConfigParser()
-            config.read('save/config7.ini')
-            var7 = config.getint('lizardext', 'var7')
-            config = configparser.ConfigParser()
-            config.read('save/config8.ini')
-            var8 = config.getint('okay', 'var8')
-            config = configparser.ConfigParser()
-            config.read('save/config9.ini')
-            var9 = config.getint('badend', 'var9')
-            config = configparser.ConfigParser()
-            config.read('save/config10.ini')
-            var10 = config.getint('badendext', 'var10')
-            config = configparser.ConfigParser()
-            config.read('save/config11.ini')
-            var11 = config.getint('splashskip', 'var11')
-            config = configparser.ConfigParser()
-            config.read('save/config12.ini')
-            var12 = config.getint('lizarddx', 'var12')
-            config = configparser.ConfigParser()
-            config.read('save/config13.ini')
-            var13 = config.getint('splashskip2', 'var13')
-            config = configparser.ConfigParser()
-            config.read('save/config14.ini')
-            var14 = config.getint('gameover', 'var14')
-            config = configparser.ConfigParser()
-            config.read('save/config15.ini')
-            var15 = config.getint('blade', 'var15')
-            config = configparser.ConfigParser()
-            config.read('save/config16.ini')
-            var16 = config.getint('flower', 'var16')
+            save = open('data.txt', 'w+')
+            save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+            save.close()
+            return
+        except ValueError:
+            pass
+
+def savePull():
+    while True:
+        try:
+            save = open('data.txt', 'r')
+            lines = save.readlines()
+            var1 = int(lines[0])
+            var2 = int(lines[1])
+            var3 = int(lines[2])
+            var4 = int(lines[3])
+            var5 = int(lines[4])
+            var6 = int(lines[5])
+            var7 = int(lines[6])
+            var8 = int(lines[7])
+            var9 = int(lines[8])
+            var10 = int(lines[9])
+            var11 = int(lines[10])
+            var12 = int(lines[11])
+            var13 = int(lines[12])
+            var14 = int(lines[13])
+            var15 = int(lines[14])
+            var16 = int(lines[15])
+            save.close()
             return var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16
         except ValueError:
-            return
+            print('Save read failed. Please check your save.')
+            quit()
+        except FileNotFoundError:
+            saveGenerator()
 
 def versionHeader(): #Displays the title and version
     print('\nThe Plains v0.22\n')
@@ -67,6 +60,7 @@ def versionHeader(): #Displays the title and version
 
 def invDisplay(): #Displays inventory
     save = savePull()
+    var7 = save[6]
     var15 = save[14]
     var16 = save[15]
     if var16 == 0:
@@ -75,10 +69,12 @@ def invDisplay(): #Displays inventory
         blade = "EMPTY"
     if var16 == 1:
         flower = "1x FLOWER"
-    if var16 == 2 or var16 == 3:
+    if var16 == 2 or var16 == 3 or var16 == 4:
         flower = "0x FLOWER"
-    if var15 == 1:
+    if var15 == 1 and var7 == 0:
         blade = "1x KNIFE"
+    if var15 == 1 and var7 == 1:
+        blade = "1x KNIFE (BLOODIED)"
     if var15 == 2:
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")

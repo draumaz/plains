@@ -6,28 +6,24 @@ import textwrap
 import handig
 
 def friendFlagger3(): #Neutral Flag
-    config = configparser.ConfigParser()
-    config['friendflag'] = {'var4': '3'}
-    with open('save/config4.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 3
+    state_ext = '3\n'
+    handig.saveWriter(line_ext, state_ext)
     saan()
 def friendFlagger2(): #Rude Flag
-    config = configparser.ConfigParser()
-    config['friendflag'] = {'var4': '1'}
-    with open('save/config4.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 3
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     mm2.mainMenu2()
 def friendFlagger1(): #Flirty Flag
-    config = configparser.ConfigParser()
-    config['friendflag'] = {'var4': '2'}
-    with open('save/config4.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 3
+    state_ext = '2\n'
+    handig.saveWriter(line_ext, state_ext)
     saan()
 def flowerFlag(): #Gave Flower Flag
-    config = configparser.ConfigParser()
-    config['flower'] = {'var16': '3'}
-    with open('save/config16.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 15
+    state_ext = '3\n'
+    handig.saveWriter(line_ext, state_ext)
     saan()
 
 def saan():
@@ -52,7 +48,6 @@ def saan():
         print('Saan seems excited to talk to you.\n')
     print('WHERE ARE WE? [1]')
     print('FLIRT WITH HIM [2]')
-    #print(' [3]')
     if var16 == 1:
         print('GIVE FLOWER [3]')
         print('BACK [4]')

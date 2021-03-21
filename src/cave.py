@@ -74,28 +74,25 @@ def caveSel1():
 
 def cs1Knife():
     print('\nYou open the box and find a knife. You put it in your pocket.')
-    config = configparser.ConfigParser()
-    config['blade'] = {'var15': '1'}
-    with open('save/config15.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 14
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     time.sleep(3)
     caveSel1()
 
 def cs1Knife2():
     print('\nYou take the knife back.')
-    config = configparser.ConfigParser()
-    config['blade'] = {'var15': '1'}
-    with open('save/config15.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 14
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     time.sleep(3)
     caveSel1()
 
 def cs1KnifeBack():
     print('\nYou open the box and put the knife back.')
-    config = configparser.ConfigParser()
-    config['blade'] = {'var15': '2'}
-    with open('save/config15.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 14
+    state_ext = '2\n'
+    handig.saveWriter(line_ext, state_ext)
     time.sleep(3)
     caveSel1()
 

@@ -25,7 +25,6 @@ def talk():
         print("WHAT'S WITH THAT LOOK? [1]")
     print('STARE [2]')
     print('BACK [3]')
-
     while True:
         try:
             talkSelect = int(input('\nACTION >> '))
@@ -146,10 +145,9 @@ def talkSel1E():
         talk()
 
 def talkSel1EG():
-    config = configparser.ConfigParser()
-    config['okay'] = {'var8': '1'}
-    with open('save/config8.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 7
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     talk()
 
 def talkSel1():

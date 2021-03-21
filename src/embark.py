@@ -29,10 +29,9 @@ def emb2Handler():
 def emb2Chap():
     while True:
         try:
-            config = configparser.ConfigParser()
-            config['chaptflagger'] = {'var2': '2'}
-            with open('save/config2.ini', 'w') as configfile:
-                config.write(configfile)
+            line_ext = 1
+            state_ext = '1\n'
+            handig.saveWriter()
             mm3.mainMenu3()
         except (NoOptionError, NoSectionError):
             emb2Handler()
@@ -43,10 +42,9 @@ def emb2End():
     os.system('cls||clear')
     print('\n\nTHANK YOU SO MUCH FOR PLAYING!')
     time.sleep(4)
-    config = configparser.ConfigParser()
-    config['gameover'] = {'var14': '1'}
-    with open('save/config14.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 13
+    state_ext = '1\n'
+    handig.saveWriter()
     quit()
 
 def Embark2():
@@ -88,10 +86,9 @@ def Embark1():
     time.sleep(0.05)
     print('MONSTER')
     time.sleep(0.15)
-    config = configparser.ConfigParser()
-    config['badend'] = {'var9': '1'}
-    with open('save/config9.ini', 'w') as configfile:
-           config.write(configfile)
+    line_ext = 8
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     os.system('cls||clear')
     quit()
 

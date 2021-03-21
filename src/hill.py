@@ -69,10 +69,9 @@ def hill():
             hill()
 
 def hs1e1():
-    config = configparser.ConfigParser()
-    config['lizarddx'] = {'var12': '1'}
-    with open('save/config12.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = line[11]
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     print('\nThe reptilian man seems untrusting of you, and leaves the area pretty quickly.')
     time.sleep(5)
     hill()
@@ -122,8 +121,6 @@ def hillSel1Ext():
         print('BACK [4]')
     if var16 == 2:
         print('BACK [3]')
-
-
     while True:
         try:
             hillSel1ExtSel = int(input('\nACTION >> '))
@@ -160,11 +157,10 @@ def hillSel1Ext():
                     hill()
                 if var16 == 1:
                     print('\nYou give the lizard man the flower. He smiles at you.')
+                    line_ext = 15
+                    state_ext = '2\n'
+                    handig.saveWriter(line_ext, state_ext)
                     time.sleep(3)
-                    config = configparser.ConfigParser()
-                    config['flower'] = {'var16': '2'}
-                    with open('save/config16.ini', 'w') as configfile:
-                        config.write(configfile)
                     hillSel1Ext()
                 if var16 == 2:
                     print('')
@@ -187,31 +183,39 @@ def hillSel1Ext():
             hillSel1Ext()
 
 def lizardMan():
-    config = configparser.ConfigParser() #Live
-    config['lizard'] = {'var6': '1'}
-    with open('save/config6.ini', 'w') as configfile:
-        config.write(configfile)
-    config = configparser.ConfigParser() #Persist
-    config['lizardext'] = {'var7': '1'}
-    with open('save/config7.ini', 'w') as configfile:
-        config.write(configfile)
+    line_ext = 5
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 6
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
 
 def hillSel1():
     save = handig.savePull()
     var5 = save[4]
     var6 = save[5]
+    var16 = save[15]
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')
-        print('BACK [1]')
+        print('FLOWER [1]')
+        print('BACK [2]')
         while True:
             try:
                 HS = int(input('\nACTION >> '))
                 if HS == 1:
+                    line_ext = 15
+                    state_ext = '4\n'
+                    handig.saveWriter(line_ext, state_ext)
+                    print('')
+                    print(textwrap.fill('You lay the flower down next to his lifeless corpse.', 75))
+                    time.sleep(2)
                     hill()
-                if HS > 1 or HS < 0:
+                if HS == 2:
+                    hill()
+                if HS > 2 or HS < 0:
                     handig.inpErrorHandler()
                     hillSel1()
             except ValueError:
@@ -220,11 +224,10 @@ def hillSel1():
     hillSel1Ext()
 
 def standFlagger():
-        config = configparser.ConfigParser()
-        config['ch1endflag'] = {'var1': '1'}
-        with open('save/config.ini', 'w') as configfile:
-               config.write(configfile)
-        hill()
+    line_ext = 0
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
+    hill()
 
 def hs2Sub2():
     save = handig.savePull()
@@ -313,7 +316,6 @@ def hillSel3():
         print('')
     print('LAY DOWN [2]')
     print('BACK [3]')
-
     while True:
         try:
             hillSel3Select = int(input('\nACTION >> '))
@@ -321,10 +323,9 @@ def hillSel3():
                 print('')
                 print(textwrap.fill('The flower comes off its root without hesitation.', 75))
                 print(textwrap.fill('You put it in your pocket.', 75))
-                config = configparser.ConfigParser()
-                config['flower'] = {'var16': '1'}
-                with open('save/config16.ini', 'w') as configfile:
-                    config.write(configfile)
+                line_ext = 15
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 time.sleep(3)
                 hillSel3()
             if hillSel3Select == 2:

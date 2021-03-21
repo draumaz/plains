@@ -52,70 +52,9 @@ def devJump():
 
             if devSelect == 4: #Full Reset
                 print('\nProcessing...')
-                config = configparser.ConfigParser()
-                config['ch1endflag'] = {'var1': '0'}
-                with open('save/config.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['chaptflagger'] = {'var2': '0'}
-                with open('save/config2.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['toolflag'] = {'var3': '0'}
-                with open('save/config3.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['friendflag'] = {'var4': '0'}
-                with open('save/config4.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['reset'] = {'var5': '0'}
-                with open('save/config5.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['lizard'] = {'var6': '0'}
-                with open('save/config6.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['lizardext'] = {'var7': '0'}
-                with open('save/config7.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['okay'] = {'var8': '0'}
-                with open('save/config8.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['badend'] = {'var9': '0'}
-                with open('save/config9.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['badendext'] = {'var10': '0'}
-                with open('save/config10.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['splashskip'] = {'var11': '0'}
-                with open('save/config11.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['lizarddx'] = {'var12': '0'}
-                with open('save/config12.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['splashskip2'] = {'var13': '0'}
-                with open('save/config13.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['gameover'] = {'var14': '0'}
-                with open('save/config14.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['blade'] = {'var15': '0'}
-                with open('save/config15.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['flower'] = {'var16': '0'}
-                with open('save/config16.ini', 'w') as configfile:
-                    config.write(configfile)
+                save = open('data.txt', 'w+')
+                save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+                save.close()
                 time.sleep(0.05)
                 print('Complete.')
                 time.sleep(0.1)

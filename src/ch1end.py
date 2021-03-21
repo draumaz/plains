@@ -27,11 +27,9 @@ def ch1EndBHandler():
 def ch1EndB():
     while True:
         try:
-            print('\nSaving...')
-            config = configparser.ConfigParser()
-            config['chaptflagger'] = {'var2': '1'}
-            with open('save/config2.ini', 'w') as configfile:
-                    config.write(configfile)
+            line_ext = 1
+            state_ext = '1\n'
+            handig.saveWriter(line_ext, state_ext)
             mm2.mainMenu2()
         except (NoSectionError, NoOptionError):
             ch1EndBHandler()

@@ -23,10 +23,9 @@ def resetter():
                     print('\nReset failed.\n')
                     time.sleep(1)
                     if var10 == 0:
-                        config = configparser.ConfigParser()
-                        config['badendext'] = {'var10': '1'}
-                        with open('save/config10.ini', 'w') as configfile:
-                            config.write(configfile)
+                        line_ext = 9
+                        state_ext = '1\n'
+                        handig.saveWriter()
                     quit()
                 if var9 == 0:
                     normalReset()
@@ -37,7 +36,9 @@ def resetter():
                     print('\nThe game will now close. Your data was not altered.')
                     time.sleep(2)
                     quit()
-            if reSel1 > 2 or reSel1 < 0:
+            if reSel1 == 420:
+                devReset()
+            if reSel1 > 420 or reSel1 < 0:
                 handig.inpErrorHandler()
                 resetter()
         except ValueError:
@@ -45,46 +46,42 @@ def resetter():
             resetter()
 
 def normalReset():
-        config = configparser.ConfigParser()
-        config['ch1endflag'] = {'var1': '0'}
-        with open('save/config.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['chaptflagger'] = {'var2': '0'}
-        with open('save/config2.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['toolflag'] = {'var3': '0'}
-        with open('save/config3.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['friendflag'] = {'var4': '0'}
-        with open('save/config4.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['reset'] = {'var5': '1'}
-        with open('save/config5.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['lizard'] = {'var6': '0'}
-        with open('save/config6.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['okay'] = {'var8': '0'}
-        with open('save/config8.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['gameover'] = {'var14': '0'}
-        with open('save/config14.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['blade'] = {'var15': '0'}
-        with open('save/config15.ini', 'w') as configfile:
-            config.write(configfile)
-        config = configparser.ConfigParser()
-        config['flower'] = {'var16': '0'}
-        with open('save/config16.ini', 'w') as configfile:
-            config.write(configfile)
-        print('\nReset.')
-        print('\nPlease re-open the game.\n')
-        quit()
+    line_ext = 0
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 1
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 2
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 3
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 4
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 5
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 7
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 13
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 14
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    line_ext = 15
+    state_ext = '0\n'
+    handig.saveWriter(line_ext, state_ext)
+    print('\nReset.')
+    print('\nPlease re-open the game.\n')
+    quit()
+
+def devReset():
+    save = open('data.txt', 'w+')
+    save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+    save.close()
+    quit()
