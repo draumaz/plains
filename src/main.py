@@ -1,7 +1,5 @@
 import os
 import time
-import configparser
-from configparser import NoOptionError, NoSectionError
 import mm1
 import mm2
 import mm3

@@ -2,7 +2,6 @@ import os
 import time
 import mm1
 import textwrap
-import configparser
 import handig
 
 def hill():
@@ -200,19 +199,23 @@ def hillSel1():
     handig.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')
-        print('FLOWER [1]')
+        if var16 == 1:
+            print('FLOWER [1]')
         print('BACK [2]')
         while True:
             try:
                 HS = int(input('\nACTION >> '))
                 if HS == 1:
-                    line_ext = 15
-                    state_ext = '4\n'
-                    handig.saveWriter(line_ext, state_ext)
-                    print('')
-                    print(textwrap.fill('You lay the flower down next to his lifeless corpse.', 75))
-                    time.sleep(2)
-                    hill()
+                    if var16 == 1:
+                        line_ext = 15
+                        state_ext = '4\n'
+                        handig.saveWriter(line_ext, state_ext)
+                        print('')
+                        print(textwrap.fill('You lay the flower down next to his lifeless corpse.', 75))
+                        time.sleep(3)
+                        hill()
+                    if var16 == 4:
+                        hillSel1()
                 if HS == 2:
                     hill()
                 if HS > 2 or HS < 0:
@@ -223,15 +226,12 @@ def hillSel1():
                 hillSel1()
     hillSel1Ext()
 
-def standFlagger():
-    line_ext = 0
-    state_ext = '1\n'
-    handig.saveWriter(line_ext, state_ext)
-    hill()
-
 def hs2Sub2():
     save = handig.savePull()
     var6 = save[5]
+    line_ext = 0
+    state_ext = '1\n'
+    handig.saveWriter(line_ext, state_ext)
     print('.')
     time.sleep(1)
     print('.')
@@ -249,7 +249,7 @@ def hs2Sub2():
         time.sleep(1)
         print("They're coming.")
     time.sleep(5)
-    standFlagger()
+    hill()
 
 def hs2Sub():
     time.sleep(1)

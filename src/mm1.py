@@ -1,6 +1,5 @@
 import os
 import time
-import configparser
 import textwrap
 import hill
 import cave

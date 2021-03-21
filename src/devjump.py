@@ -3,6 +3,7 @@ import mm2
 import mm1
 import time
 import os
+import handig
 import configparser
 
 def devJump():
@@ -27,103 +28,66 @@ def devJump():
 
             if devSelect == 1: #Chapter 1 Jump
                 mm1.mainMenu1()
-
             if devSelect == 2: #Chapter 2 Jump
-                config = configparser.ConfigParser()
-                config['ch1endflag'] = {'var1': '1'}
-                with open('save/config.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['chaptflagger'] = {'var2': '1'}
-                with open('save/config2.ini', 'w') as configfile:
-                       config.write(configfile)
+                line_ext = 0
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
+                line_ext = 0
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 mm2.mainMenu2()
-
             if devSelect == 3: #Chapter 3 Jump
-                config = configparser.ConfigParser()
-                config['ch1endflag'] = {'var1': '1'}
-                with open('save/config.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['chaptflagger'] = {'var2': '2'}
-                with open('save/config2.ini', 'w') as configfile:
-                    config.write(configfile)
+                line_ext = 0
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
+                mm2.mainMenu2()
+                line_ext = 1
+                state_ext = '2\n'
+                handig.saveWriter(line_ext, state_ext)
                 mm3.mainMenu3()
-
             if devSelect == 4: #Full Reset
-                print('\nProcessing...')
                 save = open('data.txt', 'w+')
                 save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
                 save.close()
-                time.sleep(0.05)
-                print('Complete.')
-                time.sleep(0.1)
                 devJump()
-
             if devSelect == 5: #Bad Ending
-                print('\nProcessing...')
-                config = configparser.ConfigParser()
-                config['badend'] = {'var9': '1'}
-                with open('save/config9.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['ch1endflag'] = {'var1': '1'}
-                with open('save/config.ini', 'w') as configfile:
-                       config.write(configfile)
-                config = configparser.ConfigParser()
-                config['chaptflagger'] = {'var2': '1'}
-                with open('save/config2.ini', 'w') as configfile:
-                       config.write(configfile)
-                print('Complete.')
-                time.sleep(0.25)
+                line_ext = 8
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
+                line_ext = 0
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
+                line_ext = 1
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 devJump()
-
-            if devSelect == 6:
-                config = configparser.ConfigParser()
-                config['toolflag'] = {'var3': '1'}
-                with open('save/config3.ini', 'w') as configfile:
-                       config.write(configfile)
-                print('\nVariable set.')
-                time.sleep(0.2)
+            if devSelect == 6: #Tools used flag
+                line_ext = 2
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 devJump()
-
-            if devSelect == 7:
-                config = configparser.ConfigParser()
-                config['lizard'] = {'var6': '1'}
-                with open('save/config6.ini', 'w') as configfile:
-                    config.write(configfile)
-                config = configparser.ConfigParser()
-                config['lizardext'] = {'var7': '1'}
-                with open('save/config7.ini', 'w') as configfile:
-                    config.write(configfile)
-                print('\nVariables set.')
-                time.sleep(0.2)
+            if devSelect == 7: #Lizard murder flag
+                line_ext = 5
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
+                line_ext = 6
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 devJump()
-
             if devSelect == 8:
-                config = configparser.ConfigParser()
-                config['splashskip'] = {'var11': '1'}
-                with open('save/config11.ini', 'w') as configfile:
-                    config.write(configfile)
-                print('\nVariables set.')
-                time.sleep(0.2)
+                line_ext = 10
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 devJump()
-
             if devSelect == 9:
-                config = configparser.ConfigParser()
-                config['splashskip'] = {'var11': '0'}
-                with open('save/config11.ini', 'w') as configfile:
-                    config.write(configfile)
-                print('\nVariables set.')
-                time.sleep(0.2)
+                line_ext = 10
+                state_ext = '0\n'
+                handig.saveWriter(line_ext, state_ext)
                 devJump()
-
             if devSelect == 10:
-                config = configparser.ConfigParser()
-                config['flower'] = {'var16': '1'}
-                with open('save/config16.ini', 'w') as configfile:
-                    config.write(configfile)
-
+                line_ext = 15
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
             if devSelect == 11:
                 os.system('cls||clear')
                 quit()

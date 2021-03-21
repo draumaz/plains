@@ -1,38 +1,8 @@
 import os
 import time
 import mm2
-import configparser
-from configparser import NoSectionError
-from configparser import NoOptionError
 import textwrap
 import handig
-
-def ch1EndBHandler():
-    while True:
-        try:
-            print('Save failed.')
-            time.sleep(1)
-            print('\nCONTINUE [1]')
-            print('QUIT [2]\n')
-            ch1EndSel = int(input('ACTION >> '))
-            if ch1EndSel == 1:
-                mm2.mainMenu2()
-            if ch1EndSel == 2:
-                quit()
-        except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
-            ch1EndBHandler()
-
-def ch1EndB():
-    while True:
-        try:
-            line_ext = 1
-            state_ext = '1\n'
-            handig.saveWriter(line_ext, state_ext)
-            mm2.mainMenu2()
-        except (NoSectionError, NoOptionError):
-            ch1EndBHandler()
 
 def ch1End():
     os.system('cls||clear')
@@ -44,10 +14,13 @@ def ch1End():
         try:
             ch1EndSelect = int(input('\nACTION >> '))
             if ch1EndSelect == 1:
+                line_ext = 1
+                state_ext = '1\n'
+                handig.saveWriter(line_ext, state_ext)
                 print('')
                 print(textwrap.fill('The spacecraft descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))
                 time.sleep(5)
-                ch1EndB()
+                mm2.mainMenu2()
             if ch1EndSelect > 1 or ch1EndSelect < 0:
                 ch1End()
         except ValueError:

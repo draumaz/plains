@@ -1,7 +1,6 @@
 import os
 import time
 import mm2
-import configparser
 import textwrap
 import handig
 

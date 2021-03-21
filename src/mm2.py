@@ -3,7 +3,6 @@ import time
 import talk
 import saan
 import embark
-import configparser
 import handig
 
 def mainMenu2():

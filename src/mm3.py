@@ -1,7 +1,6 @@
 import os
 import time
 import textwrap
-import configparser
 import handig
 
 def mainMenu3(): #WIP (main mm3)

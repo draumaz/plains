@@ -2,9 +2,6 @@ import os
 import time
 import mm2
 import mm3
-import configparser
-from configparser import NoSectionError
-from configparser import NoOptionError
 import textwrap
 import handig
 
