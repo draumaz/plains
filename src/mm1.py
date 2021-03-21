@@ -46,11 +46,10 @@ def mainMenu1():
                 if var1 == 1:
                     handig.quitHandler()
                 if var1 == 0:
-                    errorHandler()
+                    handig.inpErrorHandler()
+            if mainmenuSelect1 > 5 or mainmenuSelect1 < 0:
+                handig.inpErrorHandler()
+                mainMenu1()
         except ValueError:
-            errorHandler()
-
-def errorHandler():
-    print('\nDid you mean something else?')
-    time.sleep(0.5)
-    mainMenu1()
+            handig.inpErrorHandler()
+            mainMenu1()

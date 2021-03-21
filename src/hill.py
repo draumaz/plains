@@ -37,15 +37,12 @@ def hill():
         print('STAND STILL [2]')
     print('TAKE A BREAK [3]')
     print('BACK [4]')
-
     while True:
         try:
             hillSelect = int(input('\nACTION >> '))
-
             if hillSelect == 1:
                 if var12 == 1:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
+                    handig.inpErrorHandler()
                     hill()
                 if var12 == 0:
                     hillSel1()
@@ -53,8 +50,7 @@ def hill():
                 if var1 == 0:
                     hillSel2()
                 if var1 == 1:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
+                    handig.inpErrorHandler()
                     hill()
             if hillSelect == 3:
                 hillSel3()
@@ -65,10 +61,11 @@ def hill():
                     mm1.mainMenu1()
                 if var6 == 1:
                     mm1.mainMenu1()
-
+            if hillSelect > 4 or hillSelect < 0:
+                handig.inpErrorHandler()
+                hill()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             hill()
 
 def hs1e1():
@@ -147,8 +144,7 @@ def hillSel1Ext():
                     time.sleep(6)
                     hill()
                 if var15 == 0:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
+                    handig.inpErrorHandler()
                     hillSel1Ext()
             if hillSel1ExtSel == 2:
                 if var7 == 0 and var16 == 2:
@@ -177,16 +173,17 @@ def hillSel1Ext():
                     hill()
             if hillSel1ExtSel == 4:
                 if var16 == 0:
-                    print('\nDid you mean something else?')
-                    time.sleep(0.5)
+                    handig.inpErrorHandler()
                     hillSel1Ext()
                 if var16 == 1:
                     print('\nUpon seeing the towering lizard, you decide to head back.')
                     time.sleep(2)
                     hill()
+            if hillSel1ExtSel > 4 or hillSel1ExtSel < 0:
+                handig.inpErrorHandler()
+                hillSel1Ext()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             hillSel1Ext()
 
 def lizardMan():
@@ -214,9 +211,11 @@ def hillSel1():
                 HS = int(input('\nACTION >> '))
                 if HS == 1:
                     hill()
+                if HS > 1 or HS < 0:
+                    handig.inpErrorHandler()
+                    hillSel1()
             except ValueError:
-                print("\nDid you mean something else?")
-                time.sleep(0.5)
+                handig.inpErrorHandler()
                 hillSel1()
     hillSel1Ext()
 
@@ -283,7 +282,6 @@ def hillSel2():
         time.sleep(2)
         print('\nKEEP STANDING [1]')
         print('GO BACK [2]')
-
         while True:
             try:
                 hillSel2Select = int(input('\nACTION >> '))
@@ -293,9 +291,11 @@ def hillSel2():
                     print('\nYou decide to stop being motionless, and return to a life full of motion.\n')
                     time.sleep(5)
                     hill()
+                if hillSel2Select > 2 or hillSel2Select < 0:
+                    handig.inpErrorHandler()
+                    hillSel2()
             except ValueError:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
+                handig.inpErrorHandler()
                 hillSel2()
 
 def hillSel3():
@@ -317,7 +317,6 @@ def hillSel3():
     while True:
         try:
             hillSel3Select = int(input('\nACTION >> '))
-
             if hillSel3Select == 1:
                 print('')
                 print(textwrap.fill('The flower comes off its root without hesitation.', 75))
@@ -336,8 +335,9 @@ def hillSel3():
                 print('\nYou decide that you have more important things to be doing.')
                 time.sleep(2)
                 hill()
-
+            if hillSel3Select > 3 or hillSel3Select < 0:
+                handig.inpErrorHandler()
+                hillSel3()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             hillSel3()

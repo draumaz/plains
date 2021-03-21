@@ -43,7 +43,6 @@ def saan():
         print("Saan won't even look you in the eye.")
         time.sleep(4)
         mm2.mainMenu2()
-
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -142,7 +141,9 @@ def saan2():
                     print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
                     time.sleep(2)
                     mm2.mainMenu2()
+            if friendSelect1 > 4 or friendSelect1 < 0:
+                handig.inpErrorHandler()
+                saan()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             saan()

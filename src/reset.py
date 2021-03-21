@@ -37,9 +37,11 @@ def resetter():
                     print('\nThe game will now close. Your data was not altered.')
                     time.sleep(2)
                     quit()
+            if reSel1 > 2 or reSel1 < 0:
+                handig.inpErrorHandler()
+                resetter()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             resetter()
 
 def normalReset():

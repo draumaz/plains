@@ -32,11 +32,9 @@ def tool():
     print('RADAR [2]')
     print('SCANNER [3]')
     print('BACK [4]')
-
     while True:
         try:
             toolSelect = int(input('\nACTION >> '))
-
             if toolSelect == 1:
                 toolSel1()
             if toolSelect == 2:
@@ -45,10 +43,11 @@ def tool():
                 toolSel3()
             if toolSelect == 4:
                 toolEx()
-
+            if toolSelect > 4 or toolSelect < 0:
+                handig.inpErrorHandler()
+                tool()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             tool()
 
 def toolSel1():
@@ -60,11 +59,9 @@ def toolSel1():
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')
-
     while True:
         try:
             toolSelect1 = int(input('\nACTION >> '))
-
             if toolSelect1 == 1:
                 if var3 == 0:
                     print("\nThe message won't even go through...")
@@ -81,10 +78,11 @@ def toolSel1():
                     tool()
                 if var3 == 1:
                     tool()
-
+            if toolSelect1 > 2 or toolSelect1 < 0:
+                handig.inpErrorHandler()
+                toolSel1()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             toolSel1()
 
 def toolSel2():
@@ -96,11 +94,9 @@ def toolSel2():
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')
-
     while True:
         try:
             toolSelect2 = int(input('\nACTION >> '))
-
             if toolSelect2 == 1:
                 if var3 == 0:
                     print('\nYou try establishing contact...your radar just shuts off.')
@@ -117,10 +113,11 @@ def toolSel2():
                     tool()
                 if var3 == 1:
                     tool()
-
+            if toolSelect2 > 2 or toolSelect2 < 0:
+                handig.inpErrorHandler()
+                toolSel2()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             toolSel2()
 
 def toolSel3():
@@ -136,7 +133,6 @@ def toolSel3():
     while True:
         try:
             toolSelect3 = int(input('\nACTION >> '))
-
             if toolSelect3 == 1:
                 if var3 == 0:
                     print('\nYou try to send out a signal, and it looks like it was received!\n')
@@ -153,10 +149,11 @@ def toolSel3():
                     tool()
                 if var3 == 1:
                     tool()
-
+            if toolSelect3 > 2 or toolSelect3 < 0:
+                handig.inpErrorHandler()
+                toolSel3()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             toolSel3()
 
 def toolFlagger():

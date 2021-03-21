@@ -19,9 +19,11 @@ def emb2Handler():
                 mm3.mainMenu3()
             if embSel2 == 2:
                 quit()
+            if embSel2 > 2 or embSel2 < 0:
+                handig.inpErrorHandler()
+                emb2Handler()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             emb2Handler()
 
 def emb2Chap():
@@ -54,20 +56,20 @@ def Embark2():
     time.sleep(2)
     print('\nLEAVE [1]')
     print('STAY [2]')
-
     while True:
         try:
             embSelect2 = int(input('\nACTION >> '))
-
             if embSelect2 == 1:
                 emb2End()
             if embSelect2 == 2:
                 print('\nYou and your friends disembark, and take a walk.')
                 time.sleep(3)
                 emb2Chap()
+            if embSelect2 > 2 or embSelect2 < 0:
+                handig.inpErrorHandler()
+                Embark2()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             Embark2()
 
 def Embark1():
@@ -107,11 +109,9 @@ def Embark():
     print('\nLOOK AROUND [1]')
     print('SET OFF [2]')
     print('BACK [3]')
-
     while True:
         try:
             embSelect = int(input('\nACTION >> '))
-
             if embSelect == 1:
                 if var6 == 0:
                     print('')
@@ -123,7 +123,6 @@ def Embark():
                     print(textwrap.fill("The ship doesn't matter, it's a getaway vehicle.", 75))
                     time.sleep(3)
                     Embark()
-
             if embSelect == 2:
                 if var6 == 1 and var8 == 0:
                     Embark1()
@@ -132,7 +131,9 @@ def Embark():
             if embSelect == 3:
                 print("\nYou decide against leaving quite yet.")
                 mm2.mainMenu2()
+            if embSelect > 3 or embSelect < 0:
+                handig.inpErrorHandler()
+                Embark()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             Embark()

@@ -25,9 +25,11 @@ def mainMenu3(): #WIP (main mm3)
                 pass
             if mainmenuSelect2 == 4:
                 handig.quitHandler()
+            if mainmenuSelect2 > 4 or mainmenuSelect2 < 0:
+                handig.inpErrorHandler()
+                mainMenu3()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             mainMenu3()
 
 def mainMenu3P(): #Placeholder director

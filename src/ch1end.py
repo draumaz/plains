@@ -24,7 +24,6 @@ def ch1EndBHandler():
             time.sleep(0.5)
             ch1EndBHandler()
 
-
 def ch1EndB():
     while True:
         try:
@@ -43,16 +42,15 @@ def ch1End():
     handig.invDisplay()
     print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))
     print('\nLOOK [1]')
-
     while True:
         try:
             ch1EndSelect = int(input('\nACTION >> '))
-
             if ch1EndSelect == 1:
                 print('')
                 print(textwrap.fill('The spacecraft descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))
                 time.sleep(5)
                 ch1EndB()
-
+            if ch1EndSelect > 1 or ch1EndSelect < 0:
+                ch1End()
         except ValueError:
             ch1End()

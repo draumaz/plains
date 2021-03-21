@@ -27,9 +27,11 @@ def cave():
                 print('\nSeems pretty forboding...best to head back.')
                 time.sleep(3)
                 mm1.mainMenu1()
+            if caveSelect > 4 or caveselect < 0:
+                handig.inpErrorHandler()
+                cave()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             cave()
 
 def caveSel1():
@@ -48,11 +50,9 @@ def caveSel1():
         print("You're deep into the cave. There's that box with the knife you put back.\n")
         print('TAKE [1]')
     print('BACK [2]')
-
     while True:
         try:
             caveSelect1 = int(input('\nACTION >> '))
-
             if caveSelect1 == 1:
                 if var15 == 0:
                     cs1Knife()
@@ -60,16 +60,16 @@ def caveSel1():
                     cs1KnifeBack()
                 if var15 == 2:
                     cs1Knife2()
-
             if caveSelect1 == 2:
                 if var15 == 0:
                     print("\nContinuing in a cave this dark is just asking for trouble.")
                     time.sleep(3)
                 cave()
-
+            if caveSelect1 > 2 or caveSelect1 < 0:
+                handig.inpErrorHandler()
+                caveSel1()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             caveSel1()
 
 def cs1Knife():
@@ -106,7 +106,6 @@ def caveSel2():
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
     print('DECIPHER [1]')
     print('BACK [2]')
-
     while True:
         try:
             caveSelect2 = int(input('\nACTION >> '))
@@ -123,10 +122,11 @@ def caveSel2():
                 print("\nToo much work, anyways.")
                 time.sleep(2)
                 cave()
-
+            if caveSelect2 > 2 or caveSelect2 < 0:
+                handig.inpErrorHandler()
+                caveSel2()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             caveSel2()
 
 def caveSel3():
@@ -136,11 +136,9 @@ def caveSel3():
     print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")
     print('DISCERN [1]')
     print('BACK [2]')
-
     while True:
         try:
             caveSelect3 = int(input('\nACTION >> '))
-
             if caveSelect3 == 1:
                 print('\nYou listen as hard as you can, in an attempt to discern words.')
                 time.sleep(4)
@@ -151,7 +149,9 @@ def caveSel3():
                 print("\nYou figure that the rumbling is probably just natural noises.")
                 time.sleep(2)
                 cave()
+            if caveSelect3 > 2 or caveSelect3 < 0:
+                handig.inpErrorHandler()
+                caveSel3()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             caveSel3()

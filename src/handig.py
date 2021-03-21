@@ -1,5 +1,6 @@
 import configparser
 import os
+import time
 
 #HANDIG#
 #Tool reference script 
@@ -83,6 +84,11 @@ def invDisplay(): #Displays inventory
     print("INV:", flower, blade, '\n', sep=" | ")
     return
 
-def quitHandler():
+def quitHandler(): #Handles quit actions
     os.system('cls||clear')
     quit()
+
+def inpErrorHandler():
+    print('\nDid you mean something else?')
+    time.sleep(0.5)
+    return

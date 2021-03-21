@@ -22,11 +22,9 @@ def mainMenu2():
     print('SAAN [2]')
     print('EMBARK [3]')
     print('QUIT [4]')
-
     while True:
         try:
             mainmenuSelect2 = int(input('\nACTION >> '))
-
             if mainmenuSelect2 == 1:
                 talk.talk()
             if mainmenuSelect2 == 2:
@@ -35,8 +33,9 @@ def mainMenu2():
                 embark.Embark()
             if mainmenuSelect2 == 4:
                 handig.quitHandler()
-
+            if mainmenuSelect2 > 4 or mainmenuSelect2 < 0:
+                handig.inpErrorHandler()
+                mainMenu2()
         except ValueError:
-            print('\nDid you mean something else?')
-            time.sleep(0.5)
+            handig.inpErrorHandler()
             mainMenu2()
