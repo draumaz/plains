@@ -1,4 +1,5 @@
 import configparser
+import os
 
 #HANDIG#
 #Tool reference script 
