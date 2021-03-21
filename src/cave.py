@@ -2,7 +2,6 @@ import os
 import time
 import mm1
 import textwrap
-import configparser
 import handig
 
 def cave():
