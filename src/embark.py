@@ -27,7 +27,7 @@ def emb2Chap():
     while True:
         try:
             line_ext = 1
-            state_ext = '1\n'
+            state_ext = 1
             handig.saveWriter(line_ext, state_ext)
             mm3.mainMenu3()
         except (NoOptionError, NoSectionError):
@@ -40,7 +40,7 @@ def emb2End():
     print('\n\nTHANK YOU SO MUCH FOR PLAYING!')
     time.sleep(4)
     line_ext = 13
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter()
     quit()
 
@@ -84,7 +84,7 @@ def Embark1():
     print('MONSTER')
     time.sleep(0.15)
     line_ext = 8
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     os.system('cls||clear')
     quit()

@@ -194,10 +194,10 @@ def mainAlt4():
             schl = int(input('\nACTION >> '))
             if schl == 1:
                 line_ext = 8
-                state_ext = '0\n'
+                state_ext = 0
                 handig.saveWriter(line_ext, state_ext)
                 line_ext = 9
-                state_ext = '0\n'
+                state_ext = 0
                 handig.saveWriter(line_ext, state_ext)
                 time.sleep(2)
                 reset.resetter()
@@ -209,7 +209,7 @@ def mainAlt4():
 def mainAlt5():
     os.system('cls||clear')
     line_ext = 9
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     time.sleep(5)
     print('\nFATAL ERROR ENCOUNTERED')

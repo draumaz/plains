@@ -6,9 +6,10 @@ import time
 #Widely referenced in all other functions
 
 def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instances pass through this function
+    state_ext_wr = str(state_ext) + '\n'
     file = open('data.txt', 'r')
     line = file.readlines()
-    line[line_ext] = state_ext
+    line[line_ext] = state_ext_wr
     file = open('data.txt', 'w')
     file.writelines(line)
     file.close()

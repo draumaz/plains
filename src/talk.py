@@ -145,7 +145,7 @@ def talkSel1E():
 
 def talkSel1EG():
     line_ext = 7
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     talk()
 

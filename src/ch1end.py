@@ -15,7 +15,7 @@ def ch1End():
             ch1EndSelect = int(input('\nACTION >> '))
             if ch1EndSelect == 1:
                 line_ext = 1
-                state_ext = '1\n'
+                state_ext = 1
                 handig.saveWriter(line_ext, state_ext)
                 print('')
                 print(textwrap.fill('The spacecraft descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))

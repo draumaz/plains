@@ -6,22 +6,23 @@ import handig
 
 def friendFlagger3(): #Neutral Flag
     line_ext = 3
-    state_ext = '3\n'
+    state_ext = 3
     handig.saveWriter(line_ext, state_ext)
     saan()
 def friendFlagger2(): #Rude Flag
     line_ext = 3
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     mm2.mainMenu2()
 def friendFlagger1(): #Flirty Flag
     line_ext = 3
-    state_ext = '2\n'
+    state_ext = 2
     handig.saveWriter(line_ext, state_ext)
     saan()
+    
 def flowerFlag(): #Gave Flower Flag
     line_ext = 15
-    state_ext = '3\n'
+    state_ext = 3
     handig.saveWriter(line_ext, state_ext)
     saan()
 

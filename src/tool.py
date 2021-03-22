@@ -157,6 +157,6 @@ def toolSel3():
 
 def toolFlagger():
     line_ext = 2
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     tool()

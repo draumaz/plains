@@ -69,7 +69,7 @@ def hill():
 
 def hs1e1():
     line_ext = line[11]
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     print('\nThe reptilian man seems untrusting of you, and leaves the area pretty quickly.')
     time.sleep(5)
@@ -157,7 +157,7 @@ def hillSel1Ext():
                 if var16 == 1:
                     print('\nYou give the lizard man the flower. He smiles at you.')
                     line_ext = 15
-                    state_ext = '2\n'
+                    state_ext = 2
                     handig.saveWriter(line_ext, state_ext)
                     time.sleep(3)
                     hillSel1Ext()
@@ -183,10 +183,10 @@ def hillSel1Ext():
 
 def lizardMan():
     line_ext = 5
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     line_ext = 6
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
 
 def hillSel1():
@@ -208,7 +208,7 @@ def hillSel1():
                 if HS == 1:
                     if var16 == 1:
                         line_ext = 15
-                        state_ext = '4\n'
+                        state_ext = 4
                         handig.saveWriter(line_ext, state_ext)
                         print('')
                         print(textwrap.fill('You lay the flower down next to his lifeless corpse.', 75))
@@ -230,7 +230,7 @@ def hs2Sub2():
     save = handig.savePull()
     var6 = save[5]
     line_ext = 0
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     print('.')
     time.sleep(1)
@@ -252,6 +252,9 @@ def hs2Sub2():
     hill()
 
 def hs2Sub():
+    line_ext = 0
+    state_ext = 1
+    handig.saveWriter(line_ext, state_ext)
     time.sleep(1)
     print('.')
     time.sleep(1)
@@ -261,7 +264,6 @@ def hs2Sub():
     time.sleep(1)
     print("\nThey're coming.")
     time.sleep(5)
-    standFlagger()
 
 def hillSel2():
     save = handig.savePull()
@@ -324,7 +326,7 @@ def hillSel3():
                 print(textwrap.fill('The flower comes off its root without hesitation.', 75))
                 print(textwrap.fill('You put it in your pocket.', 75))
                 line_ext = 15
-                state_ext = '1\n'
+                state_ext = 1
                 handig.saveWriter(line_ext, state_ext)
                 time.sleep(3)
                 hillSel3()

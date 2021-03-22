@@ -34,7 +34,7 @@ def mainMenu3(): #WIP (main mm3)
 def mainMenu3P(): #Placeholder director
     os.system('cls||clear')
     line_ext = 13
-    state_ext = '1\n'
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     handig.versionHeader()
     handig.invDisplay()
