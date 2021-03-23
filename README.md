@@ -9,8 +9,6 @@
 
 The Plains - a CLI adventure game where your choices matter. You're Liam, a space traveler who has crash-landed on a mysterious planet. What will you find? What will you discover?
 
-All rights reserved.
-
 # Concept Art
 ![LiamArt](https://github.com/draumaz/plains/blob/main/art/liambody.png?raw=true "Goat Boy")
 ![Concept3](https://github.com/draumaz/plains/blob/main/art/concept3.jpg?raw=true "Concept 3")
