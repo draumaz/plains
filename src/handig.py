@@ -82,5 +82,5 @@ def quitHandler(): #Handles quit actions
 
 def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')
-    time.sleep(0.5)
+    time.sleep(0.25)
     return
