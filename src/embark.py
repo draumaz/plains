@@ -68,6 +68,9 @@ def Embark2():
             Embark2()
 
 def Embark1():
+    line_ext = 8
+    state_ext = 1
+    handig.saveWriter(line_ext, state_ext)
     print('')
     print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
     time.sleep(6)
@@ -83,9 +86,6 @@ def Embark1():
     time.sleep(0.05)
     print('MONSTER')
     time.sleep(0.15)
-    line_ext = 8
-    state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
     os.system('cls||clear')
     quit()
 

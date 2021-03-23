@@ -36,9 +36,8 @@ def resetter():
                     time.sleep(2)
                     quit()
             if reSel1 == 420:
-                devReset()
-            if reSel1 > 420 or reSel1 < 0:
-                handig.inpErrorHandler()
+                print('')
+                handig.easterEgg()
                 resetter()
         except ValueError:
             handig.inpErrorHandler()
@@ -58,7 +57,7 @@ def normalReset():
     state_ext = 0
     handig.saveWriter(line_ext, state_ext)
     line_ext = 4
-    state_ext = 0
+    state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     line_ext = 5
     state_ext = 0

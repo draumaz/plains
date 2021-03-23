@@ -84,3 +84,26 @@ def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')
     time.sleep(0.25)
     return
+
+def easterEgg():
+    print("                   .-') _    ('-. .-.   ('-.                  ")
+    print("                  (  OO) )  ( OO )  / _(  OO)                 ")
+    print("                  /     '._ ,--. ,--.(,------.                ")
+    print("                  |'--...__)|  | |  | |  .---'                ")
+    print("                  '--.  .--'|   .|  | |  |                    ")
+    print("                     |  |   |       |(|  '--.                 ")
+    print("                     |  |   |  .-.  | |  .--'                 ")
+    print("                     |  |   |  | |  | |  `---.                ")
+    print("                     `--'   `--' `--' `------'                ")
+    print("   _ (`-.              ('-.                  .-') _   .-')    ")
+    print("  ( (OO  )            ( OO ).-.             ( OO ) ) ( OO ).  ")
+    print(" _.`     \ ,--.       / . --. /  ,-.-') ,--./ ,--,' (_)---\_) ")
+    print("(__...--'' |  |.-')   | \-.  \   |  |OO)|   \ |  |\ /    _ |  ")
+    print(" |  /  | | |  | OO ).-'-'  |  |  |  |  \|    \|  | )\  :` `.  ")
+    print(" |  |_.' | |  |`-' | \| |_.'  |  |  |(_/|  .     |/  '..`''.) ")
+    print(" |  .___.'(|  '---.'  |  .-.  | ,|  |_.'|  |\    |  .-._)   \ ")
+    print(" |  |      |      |   |  | |  |(_|  |   |  | \   |  \       / ")
+    print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
+    time.sleep(2)
+    os.system('cls||clear')
+    return

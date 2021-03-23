@@ -44,6 +44,13 @@ def fileTest():
             handig.saveGenerator()
             fileTest()
 
+def splashDisp():
+    print('\n==THE PLAINS==')
+    print('==MADE BY DRAUMAZ IN 2021==')
+    print('==WRITTEN IN PYTHON==')
+    print('==CHARACTER BY BRYCE CANO==')
+    return
+
 def splashScreen(): #Main menu
     save = handig.savePull()
     var9 = save[8]
@@ -55,10 +62,7 @@ def splashScreen(): #Main menu
         mainExt()
     if var9 == 0:
         os.system('cls||clear')
-        print('\n==THE PLAINS==')
-        print('==MADE BY DRAUMAZ IN 2021==')
-        print('==WRITTEN IN PYTHON==')
-        print('==CHARACTER BY BRYCE CANO==')
+        splashDisp()
         if var14 == 0:
             print('\nPLAY [1]')
         if var14 == 1:
@@ -72,9 +76,11 @@ def splashScreen(): #Main menu
                 if bsSel1 == 2:
                     os.system('cls||clear')
                     reset.resetter()
+                if bsSel1 < 1 or bsSel1 > 2:
+                    handig.inpErrorHandler()
+                    splashScreen()
             except ValueError:
-                print('\nDid you mean something else?')
-                time.sleep(0.5)
+                handig.inpErrorHandler()
                 splashScreen()
 
 def saveLoader():
@@ -101,19 +107,13 @@ def mainExt():
     print('==KILLER KILLER==')
     time.sleep(0.05)
     os.system('cls||clear')
-    print('\n==THE PLAINS==')
-    print('==MADE BY DRAUMAZ IN 2021==')
-    print('==WRITTEN IN PYTHON==')
-    print('==CHARACTER BY BRYCE CANO==')
+    splashDisp()
     time.sleep(5)
     mainExt2()
 
 def mainExt2():
     os.system('cls||clear')
-    print('\n==THE PLAINS==')
-    print('==MADE BY DRAUMAZ IN 2021==')
-    print('==WRITTEN IN PYTHON==')
-    print('==CHARACTER BY BRYCE CANO==')
+    splashDisp()
     print('\n[3]')
     while True:
         try:

@@ -1,4 +1,5 @@
-def display(): ##variable meaning reference script
+
+def display():
     print('')
     print('VAR1: CH1ENDFLAG')
     print('VAR2: CHAPTFLAG')
