@@ -73,9 +73,11 @@ def splashScreen(): #Main menu
                 bsSel1 = int(input('\nACTION >> '))
                 if bsSel1 == 1:
                     saveLoader()
+                    splashScreen()
                 if bsSel1 == 2:
                     os.system('cls||clear')
                     reset.resetter()
+                    splashScreen()
                 if bsSel1 < 1 or bsSel1 > 2:
                     handig.inpErrorHandler()
                     splashScreen()

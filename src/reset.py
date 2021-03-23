@@ -30,11 +30,9 @@ def resetter():
                     normalReset()
             if reSel1 == 2:
                 if var9 == 1:
-                    resetter()
-                if var9 == 0:
-                    print('\nThe game will now close. Your data was not altered.')
-                    time.sleep(2)
                     quit()
+                if var9 == 0:
+                    return
             if reSel1 == 420:
                 print('')
                 handig.easterEgg()

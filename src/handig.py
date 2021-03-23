@@ -21,7 +21,7 @@ def saveGenerator(): #Creates save file if it doesn't already exist
     save.close()
     return
 
-def savePull(): #Retrieves all variables and returns into tuplet
+def savePull(): #Retrieves all variables and returns into an array
     while True:
         try:
             save = open('data.txt', 'r')
