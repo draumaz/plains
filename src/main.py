@@ -73,14 +73,12 @@ def splashScreen(): #Main menu
                 bsSel1 = int(input('\nACTION >> '))
                 if bsSel1 == 1:
                     saveLoader()
-                    splashScreen()
                 if bsSel1 == 2:
                     os.system('cls||clear')
                     reset.resetter()
                     splashScreen()
                 if bsSel1 < 1 or bsSel1 > 2:
                     handig.inpErrorHandler()
-                    splashScreen()
             except ValueError:
                 handig.inpErrorHandler()
                 splashScreen()
@@ -95,6 +93,9 @@ def saveLoader():
         if var2 == 1: #Chapter 2
             mm2.mainMenu2()
         if var2 == 2: #Chapter 3
+            print('')
+            print(textwrap.fill('WARNING: This chapter is NOT ready! Only proceed if you are prepared for some seriously in-progress work...', 75))
+            time.sleep(4)
             mm3.mainMenu3()
     if var14 == 1:
         mm3.mainMenu3()

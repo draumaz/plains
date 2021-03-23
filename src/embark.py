@@ -23,16 +23,6 @@ def emb2Handler():
             handig.inpErrorHandler()
             emb2Handler()
 
-def emb2Chap():
-    while True:
-        try:
-            line_ext = 1
-            state_ext = 1
-            handig.saveWriter(line_ext, state_ext)
-            mm3.mainMenu3()
-        except (NoOptionError, NoSectionError):
-            emb2Handler()
-
 def emb2End():
     print('\nYou decide to depart anyways, and your journey comes to an end.')
     time.sleep(3)
@@ -59,7 +49,10 @@ def Embark2():
             if embSelect2 == 2:
                 print('\nYou and your friends disembark, and take a walk.')
                 time.sleep(3)
-                emb2Chap()
+                line_ext = 1
+                state_ext = 2
+                handig.saveWriter(line_ext, state_ext)
+                mm3.mainMenu3()
             if embSelect2 > 2 or embSelect2 < 0:
                 handig.inpErrorHandler()
                 Embark2()
