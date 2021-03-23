@@ -68,7 +68,7 @@ def hill():
             hill()
 
 def hs1e1():
-    line_ext = line[11]
+    line_ext = 11
     state_ext = 1
     handig.saveWriter(line_ext, state_ext)
     print('\nThe reptilian man seems untrusting of you, and leaves the area pretty quickly.')
