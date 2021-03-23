@@ -79,6 +79,7 @@ def splashScreen(): #Main menu
                     splashScreen()
                 if bsSel1 < 1 or bsSel1 > 2:
                     handig.inpErrorHandler()
+                    splashScreen()
             except ValueError:
                 handig.inpErrorHandler()
                 splashScreen()
