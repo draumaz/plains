@@ -73,5 +73,4 @@ def normalReset():
     state_ext = 0
     handig.saveWriter(line_ext, state_ext)
     print('\nReset.')
-    print('\nPlease re-open the game.\n')
-    quit()
+    return

@@ -68,7 +68,7 @@ def talkSel1a():
                     talk()
                 if talkSel1Select == 2:
                     print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
-                    time.sleep(5)
+                    time.sleep(4)
                     talk()
                 if talkSel1Select > 2 or talkSel1Select < 0:
                     handig.inpErrorHandler()
@@ -90,11 +90,13 @@ def talkSel1B():
         try:
             talkSel1ESelect2 = int(input('\nACTION >> '))
             if talkSel1ESelect2 == 1:
+                line_ext = 7
+                state_ext = 1
+                handig.saveWriter(line_ext, state_ext)
+                talk()
                 print("\nYou explain to them that you're just feeling off.")
                 time.sleep(3)
                 print("\n:)")
-                time.sleep(0.10)
-                talkSel1EG()
             if talkSel1ESelect2 == 2:
                 print("\nThey wouldn't get it.")
                 time.sleep(5)
@@ -142,12 +144,6 @@ def talkSel1E():
                 talkSel1E()
     if var6 == 0:
         talk()
-
-def talkSel1EG():
-    line_ext = 7
-    state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
-    talk()
 
 def talkSel1():
     save = handig.savePull()
