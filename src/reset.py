@@ -77,9 +77,3 @@ def normalReset():
     print('\nReset.')
     print('\nPlease re-open the game.\n')
     quit()
-
-def devReset():
-    save = open('data.txt', 'w+')
-    save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
-    save.close()
-    quit()
