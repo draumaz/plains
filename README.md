@@ -21,6 +21,8 @@ Mid Febuary 2021 - The Plains was fully rewritten in Python due to complications
 
 Ruby enables me to make The Plains more efficient and distributable than on Python.
 
+You can follow the development process of the new codebase [here](https://github.com/draumaz/plains-rb)!
+
 # Concept Art
 ![LiamArt](https://github.com/draumaz/plains/blob/main/art/liambody.png?raw=true "Goat Boy")
 ![Concept3](https://github.com/draumaz/plains/blob/main/art/concept3.jpg?raw=true "Concept 3")
