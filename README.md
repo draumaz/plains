@@ -9,6 +9,18 @@
 
 The Plains - a CLI adventure game where your choices matter. You're Liam, a space traveler who has crash-landed on a mysterious planet. What will you find? What will you discover?
 
+# Development Timeline
+
+Late January 2021 - The idea was conceived, and written in C.
+
+Mid Febuary 2021 - The Plains was fully rewritten in Python due to complications with C
+
+**Early April 2021 (planned) - The Plains will be fully rewritten in Ruby.**
+
+# Why is The Plains switching to a Ruby codebase?
+
+Ruby enables me to make The Plains more efficient and distributable than on Python.
+
 # Concept Art
 ![LiamArt](https://github.com/draumaz/plains/blob/main/art/liambody.png?raw=true "Goat Boy")
 ![Concept3](https://github.com/draumaz/plains/blob/main/art/concept3.jpg?raw=true "Concept 3")
