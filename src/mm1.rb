@@ -8,10 +8,9 @@ def mainMenu1
     begin
         system('cls||clear')
         var1 = saveRead[0]
-        var6 = saveRead[5]
         versionHeader
         invDisplay
-        puts "\nYou are Liam. An astronaut by trade, you took a bad turn on the Space Belt," 
+        puts "\nYou are Liam. An astronaut by trade, you took a bad turn on the Space Belt,"
         puts "and landed on a strange planet. You awaken, laying in a field of grass."
         puts "You see hills, a cave, and strange flora all around you.\n\n"
         puts "HILL [1]"

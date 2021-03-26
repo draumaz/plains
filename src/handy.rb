@@ -1,16 +1,14 @@
 def saveGen
-    file = File.open("data.txt", "w")
+    File.open("data.txt", "w")
     File.write("data.txt", "0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
-    return
 end
 
 def saveWrite(line_ext, state_ext)
-    save = File.open('data.txt', 'r+') do |file|
+    File.open('data.txt', 'r+') do |file|
         lines = file.each_line.to_a
         lines[line_ext] = state_ext, "\n"
         file.rewind
         file.write(lines.join)
-        return
     end
 end
 
@@ -48,7 +46,7 @@ def saveRead
     save = File.open('data.txt', 'r')
     var16 = Integer(save.readlines[15])
     save.close
-    return var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16
+    [var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16]
 end
 
 def splashDisplay
@@ -56,17 +54,14 @@ def splashDisplay
     puts '==MADE BY DRAUMAZ IN 2021=='
     puts '==MADE IN RUBY!============'
     puts '==CHARACTER BY BRYCE CANO=='
-    return
 end
 
 def screenClear
     system("cls||clear")
-    return
 end
 
 def versionHeader
     puts "\nThe Plains v0.23\n"
-    return
 end
 
 def invDisplay
@@ -96,7 +91,6 @@ def invDisplay
     end
     print "\nINV: ", flower, ' | ', blade
     puts ""
-    return
 end
 
 def quitHandler
@@ -106,7 +100,6 @@ end
 def inpErHandler
     puts "\nDid you mean something else?"
     sleep(0.5)
-    return
 end
 
 def easterEgg
@@ -129,5 +122,4 @@ def easterEgg
     puts " |  |      |      |   |  | |  |(_|  |   |  | \   |  \       / "
     puts " `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  "
     sleep(4)
-    return
 end

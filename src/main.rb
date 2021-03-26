@@ -23,8 +23,6 @@ end
 def choose
         begin
                 var2 = saveRead[1]
-                var9 = saveRead[8]
-                var10 = saveRead[9]
                 var14 = saveRead[13]
                 if var14 != 2
                         puts "\nPLAY [1]"
@@ -69,7 +67,7 @@ end
 def launch
         fileEnsure
         screenClear
-        puts ""
+        puts ''
         splashDisplay
         choose
 end

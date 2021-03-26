@@ -153,7 +153,6 @@ end
 
 def talkSel1C
   begin
-    var6 = saveRead[5]
     screenClear
     versionHeader
     invDisplay

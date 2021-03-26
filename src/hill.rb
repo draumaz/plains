@@ -82,7 +82,6 @@ end
 
 def hillSel1
     begin
-        var5 = saveRead[4]
         var6 = saveRead[5]
         var7 = saveRead[6]
         var15 = saveRead[14]

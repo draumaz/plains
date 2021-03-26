@@ -125,26 +125,22 @@ def rudetoSaan
     line_ext = 3
     state_ext = 1
     saveWrite(line_ext, state_ext)
-    return
 end
 
 def flirtytoSaan
     line_ext = 3
     state_ext = 2
     saveWrite(line_ext, state_ext)
-    return
 end
 
 def neutraltoSaan
     line_ext = 3
     state_ext = 3
     saveWrite(line_ext, state_ext)
-    return
 end
 
 def flowertoSaan
     line_ext = 15
     state_ext = 3
     saveWrite(line_ext, state_ext)
-    return
 end

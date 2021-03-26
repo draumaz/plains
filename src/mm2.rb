@@ -5,8 +5,6 @@ require './embark'
 
 def mainMenu2
     begin
-        var1 = saveRead[0]
-        var6 = saveRead[5]
         screenClear
         versionHeader
         invDisplay

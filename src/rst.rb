@@ -30,11 +30,7 @@ def reset
                 resetProc
                 puts "\nReset."
                 sleep(0.25)
-                return
             end
-        end
-        if choose == 2
-            return
         end
         if choose == 420
             easterEgg
@@ -81,5 +77,4 @@ def resetProc
     line_ext = 15
     state_ext = 0
     saveWrite(line_ext, state_ext)
-    return
 end
