@@ -119,7 +119,7 @@ def hillSel1
                 end
             end
             if choose == 2
-                puts "two"
+                hill
             end
             if choose > 2 or choose < 1
                 inpErHandler
@@ -183,7 +183,14 @@ def hillSel1
             end
         end
         if choose == 2
-            puts "two"
+          puts "\nThe reptilian comes to you, and gives you some information."
+          sleep(2)
+          print '"', "Far from home, arent'cha?", '"'
+          puts ''
+          sleep(2)
+          puts "...not really helpful. But he means well."
+          sleep(3)
+          hill
         end
         if choose == 3
             if var16 == 0
