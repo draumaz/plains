@@ -19,7 +19,6 @@ def friendFlagger1(): #Flirty Flag
     state_ext = 2
     handig.saveWriter(line_ext, state_ext)
     saan()
-    
 def flowerFlag(): #Gave Flower Flag
     line_ext = 15
     state_ext = 3
@@ -27,42 +26,34 @@ def flowerFlag(): #Gave Flower Flag
     saan()
 
 def saan():
-    save = handig.savePull()
-    var4 = save[3]
-    var6 = save[5]
-    var8 = save[7]
-    var16 = save[15]
-    if var8 == 0 and var6 == 1:
-        os.system('cls||clear')
-        handig.versionHeader()
-        handig.invDisplay()
-        print("Saan won't even look you in the eye.")
-        time.sleep(4)
-        mm2.mainMenu2()
-    os.system('cls||clear')
-    handig.versionHeader()
-    handig.invDisplay()
-    if var4 == 1:
-        print('Saan seems distant.\n')
-    if var4 != 1:
-        print('Saan seems excited to talk to you.\n')
-    print('WHERE ARE WE? [1]')
-    print('FLIRT WITH HIM [2]')
-    if var16 == 1:
-        print('GIVE FLOWER [3]')
-        print('BACK [4]')
-    if var16 == 0 or var16 == 2 or var16 == 3:
-        print('BACK [3]')
-    saan2()
-
-def saan2():
-    save = handig.savePull()
-    var4 = save[3]
-    var6 = save[5]
-    var8 = save[7]
-    var16 = save[15]
     while True:
         try:
+            save = handig.savePull()
+            var4 = save[3]
+            var6 = save[5]
+            var8 = save[7]
+            var16 = save[15]
+            if var8 == 0 and var6 == 1:
+                os.system('cls||clear')
+                handig.versionHeader()
+                handig.invDisplay()
+                print("Saan won't even look you in the eye.")
+                time.sleep(4)
+                mm2.mainMenu2()
+            os.system('cls||clear')
+            handig.versionHeader()
+            handig.invDisplay()
+            if var4 == 1:
+                print('Saan seems distant.\n')
+            if var4 != 1:
+                print('Saan seems excited to talk to you.\n')
+            print('WHERE ARE WE? [1]')
+            print('FLIRT WITH HIM [2]')
+            if var16 == 1:
+                print('GIVE FLOWER [3]')
+                print('BACK [4]')
+            if var16 == 0 or var16 == 2 or var16 == 3:
+                print('BACK [3]')
             choose = int(input('\nACTION >> '))
             if choose == 1:
                 print('')

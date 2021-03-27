@@ -6,6 +6,7 @@ import handig
 
 def toolEx():
     save = handig.savePull()
+    var1 = save[0]
     var3 = save[2]
     if var3 == 0:
         print('')
@@ -16,7 +17,8 @@ def toolEx():
         print('')
         print("With your friends contacted, you decide to head back.")
         time.sleep(2)
-        print(textwrap.fill("Seems like a good time to stand in front of a hill for a while.", 75))
+        if var1 != 1:
+            print(textwrap.fill("Seems like a good time to stand in front of a hill for a while.", 75))
         time.sleep(4)
         print(";)")
         time.sleep(0.05)
@@ -134,9 +136,15 @@ def toolSel3():
             choose = int(input('\nACTION >> '))
             if choose == 1:
                 if var3 == 0:
+                    line_ext = 2
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
+                    line_ext = 0
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
                     print('\nYou try to send out a signal, and it looks like it was received!\n')
                     time.sleep(4)
-                    toolFlagger()
+                    tool()
                 if var3 == 1:
                     print("\nYou've already made contact.")
                     time.sleep(2)
@@ -154,9 +162,3 @@ def toolSel3():
         except ValueError:
             handig.inpErrorHandler()
             toolSel3()
-
-def toolFlagger():
-    line_ext = 2
-    state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
-    tool()
