@@ -3,7 +3,7 @@ import time
 import textwrap
 import handig
 
-def mainMenu3(): #WIP (main mm3)
+def mainMenu3W(): #WIP (main mm3)
     os.system('cls||clear')
     handig.versionHeader()
     handig.invDisplay()
@@ -31,7 +31,7 @@ def mainMenu3(): #WIP (main mm3)
             handig.inpErrorHandler()
             mainMenu3()
 
-def mainMenu3P(): #Placeholder director
+def mainMenu3(): #Placeholder director
     os.system('cls||clear')
     line_ext = 13
     state_ext = 1

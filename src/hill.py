@@ -229,14 +229,11 @@ def hs2Sub2():
     line_ext = 0
     state_ext = 1
     handig.saveWriter(line_ext, state_ext)
-    print('.')
-    time.sleep(1)
-    print('.')
-    time.sleep(1)
-    print('.')
-    time.sleep(1)
+    print('...')
     if var6 == 0:
-        print("\nStanding there motionless, it gives you the feeling that everything's going to be alright.\n")
+        print("\nYou're completely motionless.")
+        sleep(2)
+        print(textwrap.fill("And then suddenly, you hear a sound. Perhaps heading back will reveal its source.", 75))
     if var6 == 1:
         print('.')
         time.sleep(1)

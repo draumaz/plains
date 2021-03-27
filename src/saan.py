@@ -111,7 +111,8 @@ def saan():
                 saan()
         except ValueError:
             handig.inpErrorHandler()
-            saan()
+            saan()
+
             
 def friendFlagger3(): #Neutral Flag
     line_ext = 3
