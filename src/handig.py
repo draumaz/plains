@@ -45,7 +45,7 @@ def savePull(): #Retrieves all variables and returns into an array
             saveGenerator()
 
 def versionHeader(): #Displays the title and version
-    print('\nThe Plains v0.22\n')
+    print('\nThe Plains v0.23\n')
 
 def invDisplay(): #Displays inventory
     save = savePull()

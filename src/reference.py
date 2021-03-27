@@ -2,6 +2,8 @@ import handig
 import os
 import reset
 
+##Cleaning and reference scripts for internal usage##
+
 def display():
     save = handig.savePull()
     var1 = save[0]
@@ -74,6 +76,11 @@ def landing():
         except ValueError:
             print('\n\n\n\n\n\n\n\n\n\n')
             landing()
-    
 
-landing()
+def clean():
+    os.system('rm -r __pycache__')
+    os.system('rm -r data.txt')
+    quit()
+
+clean()
+#landing() uncomment for var list
