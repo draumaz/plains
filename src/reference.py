@@ -80,6 +80,7 @@ def landing():
 def clean():
     os.system('rm -r __pycache__')
     os.system('rm -r data.txt')
+    os.system('rm -r .DS_Store')
     quit()
 
 clean()
