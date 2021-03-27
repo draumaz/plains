@@ -1,7 +1,7 @@
 import os
 import time
 
-def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instances pass through this function
+def saveWriter(line_ext, state_ext): #Save write bus
     state_ext_wr = str(state_ext) + '\n'
     file = open('data.txt', 'r')
     line = file.readlines()
@@ -10,12 +10,12 @@ def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instan
     file.writelines(line)
     file.close()
 
-def saveGenerator(): #Creates save file if it doesn't already exist
+def saveGenerator(): #Creates blank save file
     save = open('data.txt', 'w+')
     save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
     save.close()
 
-def savePull(): #Retrieves all variables and returns into an array
+def savePull(): #Retrieves variables and returns an array
     while True:
         try:
             save = open('data.txt', 'r')
@@ -39,10 +39,32 @@ def savePull(): #Retrieves all variables and returns into an array
             save.close()
             return [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen]
         except ValueError:
-            print('Save read failed. Please check your save.')
-            quit()
+            saveCorruptHandler()
         except FileNotFoundError:
             saveGenerator()
+
+def saveCorruptHandler():
+    while True:
+        try:
+            os.system('cls||clear')
+            print('\nYour save file is corrupted.')
+            print('Would you like to reset?')
+            print('\nYES [1]')
+            print('NO [2]')
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
+                os.remove('data.txt')
+                saveGenerator()
+                print('\nSave reset. Please restart the game.')
+                quit()
+            if choose == 2:
+                quit()
+            if choose > 2 or choose < 1:
+                inpErrorHandler()
+                saveCorruptHandler()
+        except ValueError:
+            inpErrorHandler()
+            saveCorruptHandler()
 
 def versionHeader(): #Displays the title and version
     print('\nThe Plains v0.23\n')
