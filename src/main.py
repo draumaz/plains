@@ -70,14 +70,14 @@ def splashScreen(): #Main menu
         print('RESET [2]')
         while True:
             try:
-                bsSel1 = int(input('\nACTION >> '))
-                if bsSel1 == 1:
+                choose = int(input('\nACTION >> '))
+                if choose == 1:
                     saveLoader()
-                if bsSel1 == 2:
+                if choose == 2:
                     os.system('cls||clear')
                     reset.resetter()
                     splashScreen()
-                if bsSel1 < 1 or bsSel1 > 2:
+                if choose < 1 or choose > 2:
                     handig.inpErrorHandler()
                     splashScreen()
             except ValueError:
@@ -121,8 +121,8 @@ def mainExt2():
     print('\n[3]')
     while True:
         try:
-            extSel = int(input('\nACTION >> '))
-            if extSel == 3:
+            choose = int(input('\nACTION >> '))
+            if choose == 3:
                 mainAlt()
         except ValueError:
             mainExt2()
@@ -149,10 +149,10 @@ def mainAlt2():
     print('NO [2]')
     while True:
         try:
-            altSel = int(input('\nACTION >> '))
-            if altSel == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 mainAlt3()
-            if altSel == 2:
+            if choose == 2:
                 if var10 == 1:
                     time.sleep(0.75)
                     print('\nError.')
@@ -195,8 +195,8 @@ def mainAlt4():
     print('NO [2]')
     while True:
         try:
-            schl = int(input('\nACTION >> '))
-            if schl == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 line_ext = 8
                 state_ext = 0
                 handig.saveWriter(line_ext, state_ext)
@@ -205,7 +205,7 @@ def mainAlt4():
                 handig.saveWriter(line_ext, state_ext)
                 time.sleep(2)
                 reset.resetter()
-            if schl == 2:
+            if choose == 2:
                 mainAlt5()
         except ValueError:
             mainAlt4()

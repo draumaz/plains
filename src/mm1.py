@@ -29,24 +29,24 @@ def mainMenu1():
         print('QUIT [5]')
     while True:
         try:
-            mainmenuSelect1 = int(input('\nACTION >> '))
-            if mainmenuSelect1 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 hill.hill()
-            if mainmenuSelect1 == 2:
+            if choose == 2:
                 cave.cave()
-            if mainmenuSelect1 == 3:
+            if choose == 3:
                 tool.tool()
-            if mainmenuSelect1 == 4:
+            if choose == 4:
                 if var1 == 0:
                     handig.quitHandler()
                 if var1 == 1:
                     ch1end.ch1End()
-            if mainmenuSelect1 == 5:
+            if choose == 5:
                 if var1 == 1:
                     handig.quitHandler()
                 if var1 == 0:
                     handig.inpErrorHandler()
-            if mainmenuSelect1 > 5 or mainmenuSelect1 < 0:
+            if choose > 5 or choose < 0:
                 handig.inpErrorHandler()
                 mainMenu1()
         except ValueError:

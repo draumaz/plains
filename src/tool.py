@@ -33,16 +33,16 @@ def tool():
     print('BACK [4]')
     while True:
         try:
-            toolSelect = int(input('\nACTION >> '))
-            if toolSelect == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 toolSel1()
-            if toolSelect == 2:
+            if choose == 2:
                 toolSel2()
-            if toolSelect == 3:
+            if choose == 3:
                 toolSel3()
-            if toolSelect == 4:
+            if choose == 4:
                 toolEx()
-            if toolSelect > 4 or toolSelect < 0:
+            if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 tool()
         except ValueError:
@@ -60,8 +60,8 @@ def toolSel1():
     print('BACK [2]')
     while True:
         try:
-            toolSelect1 = int(input('\nACTION >> '))
-            if toolSelect1 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var3 == 0:
                     print("\nThe message won't even go through...")
                     time.sleep(4)
@@ -70,14 +70,14 @@ def toolSel1():
                     print("\nYou've already made contact.")
                     time.sleep(2)
                     tool()
-            if toolSelect1 == 2:
+            if choose == 2:
                 if var3 == 0:
                     print("\nWhat good's a phone without service?")
                     time.sleep(3)
                     tool()
                 if var3 == 1:
                     tool()
-            if toolSelect1 > 2 or toolSelect1 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 toolSel1()
         except ValueError:
@@ -95,8 +95,8 @@ def toolSel2():
     print('BACK [2]')
     while True:
         try:
-            toolSelect2 = int(input('\nACTION >> '))
-            if toolSelect2 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var3 == 0:
                     print('\nYou try establishing contact...your radar just shuts off.')
                     time.sleep(4)
@@ -105,14 +105,14 @@ def toolSel2():
                     print("\nYou've already made contact.")
                     time.sleep(2)
                     tool()
-            if toolSelect2 == 2:
+            if choose == 2:
                 if var3 == 0:
                     print("\nProbably wouldn't work, anyway.")
                     time.sleep(2)
                     tool()
                 if var3 == 1:
                     tool()
-            if toolSelect2 > 2 or toolSelect2 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 toolSel2()
         except ValueError:
@@ -131,8 +131,8 @@ def toolSel3():
 
     while True:
         try:
-            toolSelect3 = int(input('\nACTION >> '))
-            if toolSelect3 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var3 == 0:
                     print('\nYou try to send out a signal, and it looks like it was received!\n')
                     time.sleep(4)
@@ -141,14 +141,14 @@ def toolSel3():
                     print("\nYou've already made contact.")
                     time.sleep(2)
                     tool()
-            if toolSelect3 == 2:
+            if choose == 2:
                 if var3 == 0:
                     print("\nProbably wouldn't work, anyway.")
                     time.sleep(2)
                     tool()
                 if var3 == 1:
                     tool()
-            if toolSelect3 > 2 or toolSelect3 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 toolSel3()
         except ValueError:

@@ -63,13 +63,13 @@ def saan2():
     var16 = save[15]
     while True:
         try:
-            friendSelect1 = int(input('\nACTION >> '))
-            if friendSelect1 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 print('')
                 print(textwrap.fill("Saan explains how far away you ended up. This planet is light years away from home..."))
                 time.sleep(5)
                 friendFlagger3()
-            if friendSelect1 == 2:
+            if choose == 2:
                 if var4 == 2:
                     print('')
                     print(textwrap.fill("You keep telling him how cute he is. He looks happy.", 75))
@@ -85,7 +85,7 @@ def saan2():
                     print("You're making him blush!")
                     time.sleep(2)
                     friendFlagger1()
-            if friendSelect1 == 3:
+            if choose == 3:
                 if var16 == 0 and var4 == 1 or var16 == 2 and var4 == 1: #back|no flower, rude
                     mm2.mainMenu2()
                 if var16 == 0 and var4 == 2 or var16 == 2 and var4 == 2: #back|no flower, flirty
@@ -126,7 +126,7 @@ def saan2():
                     print("\nYou and Saan head back.")
                     time.sleep(3)
                     mm2.mainMenu2()
-            if friendSelect1 == 4:
+            if choose == 4:
                 if var4 <= 1:
                     print('\nYou walk back without talking...how rude.')
                     time.sleep(2)
@@ -136,7 +136,7 @@ def saan2():
                     print(textwrap.fill('You head back to the rest of your friends, Saan still blushing.', 75))
                     time.sleep(2)
                     mm2.mainMenu2()
-            if friendSelect1 > 4 or friendSelect1 < 0:
+            if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 saan()
         except ValueError:

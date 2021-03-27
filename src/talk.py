@@ -26,29 +26,29 @@ def talk():
     print('BACK [3]')
     while True:
         try:
-            talkSelect = int(input('\nACTION >> '))
-            if talkSelect == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var6 == 1 and var8 == 0:
-                    talkSel1E()
+                    talkSel1C()
                 else:
                     talkSel1()
-            if talkSelect == 2:
+            if choose == 2:
                 talkSel2()
-            if talkSelect == 3:
+            if choose == 3:
                 if var6 == 1:
                     mm2.mainMenu2()
                 if var6 == 0:
                     print('\nYou tell your friends you need a minute.')
                     time.sleep(2)
                     mm2.mainMenu2()
-            if talkSelect > 4 or talkSelect < 0:
+            if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 talk()
         except ValueError:
             handig.inpErrorHandler()
             talk()
 
-def talkSel1a():
+def talkSel1A():
     save = handig.savePull()
     var7 = save[6]
     var8 = save[7]
@@ -61,16 +61,16 @@ def talkSel1a():
         print('BACK [2]')
         while True:
             try:
-                talkSel1Select = int(input('\nACTION >> '))
-                if talkSel1Select == 1:
+                choose = int(input('\nACTION >> '))
+                if choose == 1:
                     print("\nYour friends tell you to not to worry about it.")
                     time.sleep(2)
                     talk()
-                if talkSel1Select == 2:
+                if choose == 2:
                     print("\nYou pretend that you're getting a call on your phone to avoid this awkward conversation.")
                     time.sleep(4)
                     talk()
-                if talkSel1Select > 2 or talkSel1Select < 0:
+                if choose > 2 or choose < 0:
                     handig.inpErrorHandler()
                     talkSel1()
             except ValueError:
@@ -88,8 +88,8 @@ def talkSel1B():
     print('BACK [2]')
     while True:
         try:
-            talkSel1ESelect2 = int(input('\nACTION >> '))
-            if talkSel1ESelect2 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 line_ext = 7
                 state_ext = 1
                 handig.saveWriter(line_ext, state_ext)
@@ -97,18 +97,19 @@ def talkSel1B():
                 print("\nYou explain to them that you're just feeling off.")
                 time.sleep(3)
                 print("\n:)")
-            if talkSel1ESelect2 == 2:
+                talk()
+            if choose == 2:
                 print("\nThey wouldn't get it.")
                 time.sleep(5)
                 talk()
-            if talkSel1ESelect2 > 2 or talkSel1ESelect2 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 talkSel1B()
         except ValueError:
             handig.inpErrorHandler()
             talkSel1B()
 
-def talkSel1E():
+def talkSel1C():
     save = handig.savePull()
     var6 = save[5]
     os.system('cls||clear')
@@ -123,25 +124,25 @@ def talkSel1E():
         print('RUN AWAY [2]')
         while True:
             try:
-                talkSel1ESelect = int(input('\nACTION >> '))
-                if talkSel1ESelect == 1:
+                choose = int(input('\nACTION >> '))
+                if choose == 1:
                     print('\nYou explain to your friends that it was self-defense.')
                     time.sleep(2)
                     print('They understand, and help you clean off.')
                     time.sleep(2)
                     print('They seriously bought that?')
                     time.sleep(0.5)
-                    talkSel1EG()
-                if talkSel1ESelect == 2:
+                    talkSel1CG()
+                if choose == 2:
                     print("\nYou can't face them.")
                     time.sleep(2)
                     mm2.mainMenu2()
-                if talkSel1ESelect > 2 or talkSel1ESelect < 0:
+                if choose > 2 or choose < 0:
                     handig.inpErrorHandler()
-                    talkSel1E()
+                    talkSel1C()
             except ValueError:
                 handig.inpErrorHandler()
-                talkSel1E()
+                talkSel1C()
     if var6 == 0:
         talk()
 
@@ -159,7 +160,7 @@ def talkSel1():
         if var7 == 1 and var8 == 0:
             talkSel1B()
     if var3 == 0:
-        talkSel1a()
+        talkSel1A()
 
 def talkSel2():
         os.system('cls||clear')
@@ -170,44 +171,19 @@ def talkSel2():
         print('GO BACK [2]')
         while True:
             try:
-                talkSel2Select = int(input('\nACTION >> '))
-                if talkSel2Select == 1:
+                choose = int(input('\nACTION >> '))
+                if choose == 1:
                     print('')
                     print(textwrap.fill("Your unblinking eyes eventually cause them to wonder if there's something seriously wrong with you.", 75))
                     time.sleep(5)
                     talk()
-                if talkSel2Select == 2:
+                if choose == 2:
                     print("\nYeah, this is pretty bizarre.")
                     time.sleep(1.5)
                     talk()
-                if talkSel2Select > 2 or talkSel2Select < 0:
+                if choose > 2 or choose < 0:
                     handig.inpErrorHandler()
                     talkSel2()
             except ValueError:
                 handig.inpErrorHandler()
                 talkSel2()
-
-def talkSel3():
-        os.system('cls||clear')
-        handig.versionHeader()
-        handig.invDisplay()
-        print("talkSel3 PH.\n")
-        print('OPT1 [1]')
-        print('BACK [2]')
-        while True:
-            try:
-                talkSel3Select = int(input('\nACTION >> '))
-                if talkSel3Select == 1:
-                    print("\nOPT1.")
-                    time.sleep(5)
-                    talk()
-                if talkSel3Select == 2:
-                    print("\nBACK.")
-                    time.sleep(5)
-                    talk()
-                if talkSel3Select > 2 or talkSel3Select < 0:
-                    handig.inpErrorHandler()
-                    talkSel3()
-            except ValueError:
-                handig.inpErrorHandler()
-                talkSel3()

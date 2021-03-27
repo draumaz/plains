@@ -12,8 +12,8 @@ def ch1End():
     print('\nLOOK [1]')
     while True:
         try:
-            ch1EndSelect = int(input('\nACTION >> '))
-            if ch1EndSelect == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 line_ext = 1
                 state_ext = 1
                 handig.saveWriter(line_ext, state_ext)
@@ -21,7 +21,7 @@ def ch1End():
                 print(textwrap.fill('The spacecraft descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))
                 time.sleep(5)
                 mm2.mainMenu2()
-            if ch1EndSelect > 1 or ch1EndSelect < 0:
+            if choose > 1 or choose < 0:
                 ch1End()
         except ValueError:
             ch1End()

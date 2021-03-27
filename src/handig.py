@@ -1,10 +1,6 @@
 import os
 import time
 
-#HANDIG#
-#Tool reference script 
-#Widely referenced in all other functions
-
 def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instances pass through this function
     state_ext_wr = str(state_ext) + '\n'
     file = open('data.txt', 'r')
@@ -13,37 +9,35 @@ def saveWriter(line_ext, state_ext): #Save writing bus: all variable save instan
     file = open('data.txt', 'w')
     file.writelines(line)
     file.close()
-    return
 
 def saveGenerator(): #Creates save file if it doesn't already exist
     save = open('data.txt', 'w+')
     save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
     save.close()
-    return
 
 def savePull(): #Retrieves all variables and returns into an array
     while True:
         try:
             save = open('data.txt', 'r')
             lines = save.readlines()
-            var1 = int(lines[0])
-            var2 = int(lines[1])
-            var3 = int(lines[2])
-            var4 = int(lines[3])
-            var5 = int(lines[4])
-            var6 = int(lines[5])
-            var7 = int(lines[6])
-            var8 = int(lines[7])
-            var9 = int(lines[8])
-            var10 = int(lines[9])
-            var11 = int(lines[10])
-            var12 = int(lines[11])
-            var13 = int(lines[12])
-            var14 = int(lines[13])
-            var15 = int(lines[14])
-            var16 = int(lines[15])
+            one = int(lines[0])
+            two = int(lines[1])
+            three = int(lines[2])
+            four = int(lines[3])
+            five = int(lines[4])
+            six = int(lines[5])
+            seven = int(lines[6])
+            eight = int(lines[7])
+            nine = int(lines[8])
+            ten = int(lines[9])
+            eleven = int(lines[10])
+            twelve = int(lines[11])
+            thirteen = int(lines[12])
+            fourteen = int(lines[13])
+            fifteen = int(lines[14])
+            sixteen = int(lines[15])
             save.close()
-            return var1, var2, var3, var4, var5, var6, var7, var8, var9, var10, var11, var12, var13, var14, var15, var16
+            return [one, two, three, four, five, six, seven, eight, nine, ten, eleven, twelve, thirteen, fourteen, fifteen, sixteen]
         except ValueError:
             print('Save read failed. Please check your save.')
             quit()
@@ -52,7 +46,6 @@ def savePull(): #Retrieves all variables and returns into an array
 
 def versionHeader(): #Displays the title and version
     print('\nThe Plains v0.22\n')
-    return
 
 def invDisplay(): #Displays inventory
     save = savePull()
@@ -74,7 +67,6 @@ def invDisplay(): #Displays inventory
     if var15 == 2:
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")
-    return
 
 def quitHandler(): #Handles quit actions
     os.system('cls||clear')
@@ -83,7 +75,6 @@ def quitHandler(): #Handles quit actions
 def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')
     time.sleep(0.25)
-    return
 
 def easterEgg():
     print("                   .-') _    ('-. .-.   ('-.                  ")
@@ -106,4 +97,3 @@ def easterEgg():
     print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
     time.sleep(2)
     os.system('cls||clear')
-    return

@@ -15,18 +15,18 @@ def cave():
     print('BACK [4]')
     while True:
         try:
-            caveSelect = int(input('\nACTION >> '))
-            if caveSelect == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 caveSel1()
-            if caveSelect == 2:
+            if choose == 2:
                 caveSel2()
-            if caveSelect == 3:
+            if choose == 3:
                 caveSel3()
-            if caveSelect == 4:
+            if choose == 4:
                 print('\nSeems pretty forboding...best to head back.')
                 time.sleep(3)
                 mm1.mainMenu1()
-            if caveSelect > 4 or caveselect < 0:
+            if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 cave()
         except ValueError:
@@ -51,20 +51,20 @@ def caveSel1():
     print('BACK [2]')
     while True:
         try:
-            caveSelect1 = int(input('\nACTION >> '))
-            if caveSelect1 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var15 == 0:
                     cs1Knife()
                 if var15 == 1:
                     cs1KnifeBack()
                 if var15 == 2:
                     cs1Knife2()
-            if caveSelect1 == 2:
+            if choose == 2:
                 if var15 == 0:
                     print("\nContinuing in a cave this dark is just asking for trouble.")
                     time.sleep(3)
                 cave()
-            if caveSelect1 > 2 or caveSelect1 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 caveSel1()
         except ValueError:
@@ -104,9 +104,9 @@ def caveSel2():
     print('BACK [2]')
     while True:
         try:
-            caveSelect2 = int(input('\nACTION >> '))
+            choose = int(input('\nACTION >> '))
 
-            if caveSelect2 == 1:
+            if choose == 1:
                 print('\nYou pull out your phone, and attempt to translate the symbols.')
                 time.sleep(4)
                 print('...looks like it says "Abandon all hope, ye who enter here".')
@@ -114,11 +114,11 @@ def caveSel2():
                 print('\nBetter safe than sorry.')
                 time.sleep(2)
                 cave()
-            if caveSelect2 == 2:
+            if choose == 2:
                 print("\nToo much work, anyways.")
                 time.sleep(2)
                 cave()
-            if caveSelect2 > 2 or caveSelect2 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 caveSel2()
         except ValueError:
@@ -134,18 +134,18 @@ def caveSel3():
     print('BACK [2]')
     while True:
         try:
-            caveSelect3 = int(input('\nACTION >> '))
-            if caveSelect3 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 print('\nYou listen as hard as you can, in an attempt to discern words.')
                 time.sleep(4)
                 print("...that's certainly not any language you know.")
                 time.sleep(2)
                 cave()
-            if caveSelect3 == 2:
+            if choose == 2:
                 print("\nYou figure that the rumbling is probably just natural noises.")
                 time.sleep(2)
                 cave()
-            if caveSelect3 > 2 or caveSelect3 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 caveSel3()
         except ValueError:

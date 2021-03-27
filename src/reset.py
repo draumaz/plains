@@ -15,8 +15,8 @@ def resetter():
         print('\nRESET [1]')
     while True:
         try:
-            reSel1 = int(input('\nACTION >> '))
-            if reSel1 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var9 == 1:
                     handig.savePull()
                     print('\nReset failed.\n')
@@ -28,12 +28,12 @@ def resetter():
                     quit()
                 if var9 == 0:
                     normalReset()
-            if reSel1 == 2:
+            if choose == 2:
                 if var9 == 1:
                     quit()
                 if var9 == 0:
                     return
-            if reSel1 == 420:
+            if choose == 420:
                 print('')
                 handig.easterEgg()
                 resetter()

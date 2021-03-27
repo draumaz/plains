@@ -15,16 +15,16 @@ def mainMenu3(): #WIP (main mm3)
     print('QUIT [4]')
     while True:
         try:
-            mainmenuSelect2 = int(input('\nACTION >> '))
-            if mainmenuSelect2 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 pass
-            if mainmenuSelect2 == 2:
+            if choose == 2:
                 pass
-            if mainmenuSelect2 == 3:
+            if choose == 3:
                 pass
-            if mainmenuSelect2 == 4:
+            if choose == 4:
                 handig.quitHandler()
-            if mainmenuSelect2 > 4 or mainmenuSelect2 < 0:
+            if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 mainMenu3()
         except ValueError:

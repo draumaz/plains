@@ -11,12 +11,12 @@ def emb2Handler():
             print("Save failed.")
             print('\nCONTINUE [1]')
             print('QUIT [2]\n')
-            embSel2 = int(input('ACTION >> '))
-            if embSel2 == 1:
+            choose = int(input('ACTION >> '))
+            if choose == 1:
                 mm3.mainMenu3()
-            if embSel2 == 2:
+            if choose == 2:
                 quit()
-            if embSel2 > 2 or embSel2 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 emb2Handler()
         except ValueError:
@@ -43,17 +43,17 @@ def Embark2():
     print('STAY [2]')
     while True:
         try:
-            embSelect2 = int(input('\nACTION >> '))
-            if embSelect2 == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 emb2End()
-            if embSelect2 == 2:
+            if choose == 2:
                 print('\nYou and your friends disembark, and take a walk.')
                 time.sleep(3)
                 line_ext = 1
                 state_ext = 2
                 handig.saveWriter(line_ext, state_ext)
                 mm3.mainMenu3()
-            if embSelect2 > 2 or embSelect2 < 0:
+            if choose > 2 or choose < 0:
                 handig.inpErrorHandler()
                 Embark2()
         except ValueError:
@@ -98,8 +98,8 @@ def Embark():
     print('BACK [3]')
     while True:
         try:
-            embSelect = int(input('\nACTION >> '))
-            if embSelect == 1:
+            choose = int(input('\nACTION >> '))
+            if choose == 1:
                 if var6 == 0:
                     print('')
                     print(textwrap.fill("This ship is gorgeous. Complex, shiny white metal covers the interior.", 75))
@@ -110,15 +110,15 @@ def Embark():
                     print(textwrap.fill("The ship doesn't matter, it's a getaway vehicle.", 75))
                     time.sleep(3)
                     Embark()
-            if embSelect == 2:
+            if choose == 2:
                 if var6 == 1 and var8 == 0:
                     Embark1()
                 else:
                     Embark2()
-            if embSelect == 3:
+            if choose == 3:
                 print("\nYou decide against leaving quite yet.")
                 mm2.mainMenu2()
-            if embSelect > 3 or embSelect < 0:
+            if choose > 3 or choose < 0:
                 handig.inpErrorHandler()
                 Embark()
         except ValueError:
