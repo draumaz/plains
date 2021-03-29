@@ -67,7 +67,7 @@ def saveCorruptHandler():
             saveCorruptHandler()
 
 def screenClear():
-    os.system('clear')
+    os.system('cls||clear')
 
 def versionHeader(): #Displays the title and version
     print('\nThe Plains v0.23_01\n')
