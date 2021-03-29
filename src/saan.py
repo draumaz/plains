@@ -13,13 +13,13 @@ def saan():
             var8 = save[7]
             var16 = save[15]
             if var8 == 0 and var6 == 1:
-                os.system('cls||clear')
+                handig.screenClear()
                 handig.versionHeader()
                 handig.invDisplay()
                 print("Saan won't even look you in the eye.")
                 time.sleep(4)
                 mm2.mainMenu2()
-            os.system('cls||clear')
+            handig.screenClear()
             handig.versionHeader()
             handig.invDisplay()
             if var4 == 1:

@@ -9,7 +9,7 @@ def mainMenu2():
     save = handig.savePull()
     var1 = save[0]
     var6 = save[5]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print('A fancy, metallic ship lands a little ways from where you landed.')

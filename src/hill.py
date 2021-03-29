@@ -10,7 +10,7 @@ def hill():
     var6 = save[5]
     var12 = save[11]
     var16 = save[15]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 0 and var1 == 0:
@@ -97,7 +97,7 @@ def hillSel1Ext():
     var7 = save[6]
     var15 = save[14]
     var16 = save[15]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var16 != 2:
@@ -191,7 +191,7 @@ def hillSel1():
     var5 = save[4]
     var6 = save[5]
     var16 = save[15]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 1:
@@ -262,7 +262,7 @@ def hs2Sub():
 def hillSel2():
     save = handig.savePull()
     var6 = save[5]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 0:
@@ -296,7 +296,7 @@ def hillSel2():
 def hillSel3():
     save = handig.savePull()
     var16 = save[15]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))

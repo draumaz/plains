@@ -25,7 +25,7 @@ def toolEx():
         mm1.mainMenu1()
 
 def tool():
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
@@ -54,7 +54,7 @@ def tool():
 def toolSel1():
     save = handig.savePull()
     var3 = save[2]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
@@ -89,7 +89,7 @@ def toolSel1():
 def toolSel2():
     save = handig.savePull()
     var3 = save[2]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print('Using your radar, you can attempt to establish contact.\n')
@@ -124,7 +124,7 @@ def toolSel2():
 def toolSel3():
     save = handig.savePull()
     var3 = save[2]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print('Looks like your scanner is functioning just fine.\n')

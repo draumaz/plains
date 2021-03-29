@@ -5,7 +5,7 @@ import textwrap
 import handig
 
 def ch1End():
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill("You didn't notice it at first, but alongside a strange noise, you see a black disc in the sky.\n", 75))

@@ -26,7 +26,7 @@ def emb2Handler():
 def emb2End():
     print('\nYou decide to depart anyways, and your journey comes to an end.')
     time.sleep(3)
-    os.system('cls||clear')
+    handig.screenClear()
     print('\n\nTHANK YOU SO MUCH FOR PLAYING!')
     time.sleep(4)
     line_ext = 13
@@ -67,7 +67,7 @@ def Embark1():
     print('')
     print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
     time.sleep(6)
-    os.system('cls||clear')
+    handig.screenClear()
     time.sleep(5)
     print('\nMONSTER')
     time.sleep(0.05)
@@ -79,14 +79,14 @@ def Embark1():
     time.sleep(0.05)
     print('MONSTER')
     time.sleep(0.15)
-    os.system('cls||clear')
+    handig.screenClear()
     quit()
 
 def Embark():
     save = handig.savePull()
     var6 = save[5]
     var8 = save[7]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 1 and var8 == 0:

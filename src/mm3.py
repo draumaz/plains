@@ -4,7 +4,7 @@ import textwrap
 import handig
 
 def mainMenu3W(): #WIP (main mm3)
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill("You and your friends are walking through a field of yellow-red grass.", 75))
@@ -32,7 +32,7 @@ def mainMenu3W(): #WIP (main mm3)
             mainMenu3()
 
 def mainMenu3(): #Placeholder director
-    os.system('cls||clear')
+    handig.screenClear()
     line_ext = 13
     state_ext = 1
     handig.saveWriter(line_ext, state_ext)

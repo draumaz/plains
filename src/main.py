@@ -12,7 +12,7 @@ def breakTest():
         try:
             file = open('plains.txt', 'r')
             file.close()
-            os.system('cls||clear')
+            handig.screenClear()
             print('\nFATAL ERROR OCCURRED\n')
             reset.resetter()
             quit()
@@ -61,7 +61,7 @@ def splashScreen(): #Main menu
     if var9 == 1:
         mainExt()
     if var9 == 0:
-        os.system('cls||clear')
+        handig.screenClear()
         splashDisp()
         if var14 == 0:
             print('\nPLAY [1]')
@@ -74,7 +74,7 @@ def splashScreen(): #Main menu
                 if choose == 1:
                     saveLoader()
                 if choose == 2:
-                    os.system('cls||clear')
+                    handig.screenClear()
                     reset.resetter()
                     splashScreen()
                 if choose < 1 or choose > 2:
@@ -104,19 +104,19 @@ def saveLoader():
 ##BAD ENDING FUNCTIONS##
 
 def mainExt():
-    os.system('cls||clear')
+    handig.screenClear()
     print('\n==AAAAAAAAAA==')
     print('==AAAAAAAA AAAAAAA AAAAAAA==')
     print('==KILLER KILLER KILLER==')
     print('==KILLER KILLER==')
     time.sleep(0.08)
-    os.system('cls||clear')
+    handig.screenClear()
     splashDisp()
     time.sleep(5)
     mainExt2()
 
 def mainExt2():
-    os.system('cls||clear')
+    handig.screenClear()
     splashDisp()
     print('\n[3]')
     while True:
@@ -128,14 +128,14 @@ def mainExt2():
             mainExt2()
 
 def mainAlt():
-    os.system('cls||clear')
+    handig.screenClear()
     print('\n...')
     time.sleep(5)
     print("\nYou killed him.")
     time.sleep(3)
     print("You abandoned your friends.")
     time.sleep(3)
-    os.system('cls||clear')
+    handig.screenClear()
     print('\n...')
     time.sleep(2)
     mainAlt2()
@@ -143,7 +143,7 @@ def mainAlt():
 def mainAlt2():
     save = handig.savePull()
     var10 = save[9]
-    os.system('cls||clear')
+    handig.screenClear()
     print("\nDo you regret it?")
     print('\nYES [1]')
     print('NO [2]')
@@ -180,7 +180,7 @@ def mainAlt3():
     time.sleep(4)
     print("The ability to hurt others, without recourse?")
     time.sleep(4)
-    os.system('cls||clear')
+    handig.screenClear()
     time.sleep(2)
     print('\nYou still have the chance to make things right.')
     time.sleep(2)
@@ -189,7 +189,7 @@ def mainAlt3():
     mainAlt4()
 
 def mainAlt4():
-    os.system('cls||clear')
+    handig.screenClear()
     print('\nWill you?')
     print('\nYES [1]')
     print('NO [2]')
@@ -211,7 +211,7 @@ def mainAlt4():
             mainAlt4()
 
 def mainAlt5():
-    os.system('cls||clear')
+    handig.screenClear()
     line_ext = 9
     state_ext = 1
     handig.saveWriter(line_ext, state_ext)

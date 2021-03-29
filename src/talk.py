@@ -9,7 +9,7 @@ def talk():
     var6 = save[5]
     var7 = save[6]
     var8 = save[7]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
@@ -53,7 +53,7 @@ def talkSel1A():
     var7 = save[6]
     var8 = save[7]
     if var7 == 0 or var8 == 1:
-        os.system('cls||clear')
+        handig.screenClear()
         handig.versionHeader()
         handig.invDisplay()
         print("Your friends ask you why you didn't use any of your tools to contact them.\n")
@@ -112,7 +112,7 @@ def talkSel1B():
 def talkSel1C():
     save = handig.savePull()
     var6 = save[5]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var6 == 1:
@@ -163,7 +163,7 @@ def talkSel1():
         talkSel1A()
 
 def talkSel2():
-        os.system('cls||clear')
+        handig.screenClear()
         handig.versionHeader()
         handig.invDisplay()
         print("You just...stare at them. They look bewildered.\n")

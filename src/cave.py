@@ -5,7 +5,7 @@ import textwrap
 import handig
 
 def cave():
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n', 75))
@@ -36,7 +36,7 @@ def cave():
 def caveSel1():
     save = handig.savePull()
     var15 = save[14]
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     if var15 == 0:
@@ -96,7 +96,7 @@ def cs1KnifeBack():
     caveSel1()
 
 def caveSel2():
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print("Up against the entrance is a sign. It's written in a strange, alien system.\n")
@@ -126,7 +126,7 @@ def caveSel2():
             caveSel2()
 
 def caveSel3():
-    os.system('cls||clear')
+    handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
     print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")

@@ -7,7 +7,7 @@ import handig
 import configparser
 
 def devJump():
-    os.system('cls||clear')
+    handig.screenClear()
     print('\nDevelopment Hopper\n')
     print('CHAPTER 1 [1]')
     print('CHAPTER 2 [2]')
@@ -88,7 +88,7 @@ def devJump():
                 state_ext = 1
                 handig.saveWriter(line_ext, state_ext)
             if choose == 11:
-                os.system('cls||clear')
+                handig.screenClear()
                 quit()
         except ValueError:
             devJump()
