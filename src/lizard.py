@@ -14,7 +14,7 @@ def Lizard():
 			var7 = vars[6]
 			var15 = vars[14]
 			var16 = vars[15]
-			print('You and your friends walk towards the lizard.', end=' ')
+			print('You and your friends walk towards the lizard. ', end='')
 			if var16 == 2:
 				print('He waves at you all, inviting you over!')
 			if var16 == 0 or 1 or 3:
