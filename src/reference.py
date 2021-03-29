@@ -40,19 +40,17 @@ def display():
     print('VAR15: BLADE', '          |', 'STATE:', var15)
     print('VAR16: FLOWER', '         |', 'STATE:', var16)
     print('')
-    return
 
 def varMod():
-    mod_var = input('\nSelect variable to change (ex. for var12, write 12): ')
+    mod_var = input('\nSelect variable to change (ex. for var12, write 11 (this is not a typo)): ')
     print('Writing to var', mod_var, sep='')
     print('')
-    mod_st = input('Variable to write (number): ')
+    mod_st = input('Variable to write (ex. for 5, write 5): ')
     print('')
     line_ext = int(mod_var)
     state_ext = int(mod_st)
     handig.saveWriter(line_ext, state_ext)
     print('★★★ Wrote variable', state_ext, 'to line', line_ext)
-    return
     
 def landing():
     print('')
@@ -85,4 +83,4 @@ def clean():
     quit()
 
 clean()
-#landing() uncomment for var list
+#landing() #uncomment for var list

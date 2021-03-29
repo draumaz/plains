@@ -2,15 +2,19 @@ import os
 import time
 import textwrap
 import handig
+import lizard
 
-def mainMenu3W(): #WIP (main mm3)
+def mainMenu3(): #WIP (main mm3)
     handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
+    vars = handig.savePull()
+    var6 = vars[5]
     print(textwrap.fill("You and your friends are walking through a field of yellow-red grass.", 75))
     print(textwrap.fill("There's so many strange things to see on this planet.", 75))
     print('\nOPT1 [1]')
-    print('OPT2 [2]')
+    if var6 != 1:
+        print('LIZARD [2]')
     print('OPT3 [3]')
     print('QUIT [4]')
     while True:
@@ -19,7 +23,7 @@ def mainMenu3W(): #WIP (main mm3)
             if choose == 1:
                 pass
             if choose == 2:
-                pass
+                lizard.Lizard()
             if choose == 3:
                 pass
             if choose == 4:
@@ -31,7 +35,7 @@ def mainMenu3W(): #WIP (main mm3)
             handig.inpErrorHandler()
             mainMenu3()
 
-def mainMenu3(): #Placeholder director
+def mainMenu3W(): #Placeholder director
     handig.screenClear()
     line_ext = 13
     state_ext = 1
