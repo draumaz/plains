@@ -46,7 +46,7 @@ def savePull(): #Retrieves variables and returns an array
 def saveCorruptHandler():
     while True:
         try:
-            os.system('cls||clear')
+            handig.screenClear()
             print('\nYour save file is corrupted.')
             print('Would you like to reset?')
             print('\nYES [1]')
@@ -67,10 +67,10 @@ def saveCorruptHandler():
             saveCorruptHandler()
 
 def screenClear():
-    os.system('clear')
+    os.system('cls||clear')
 
 def versionHeader(): #Displays the title and version
-    print('\nThe Plains v0.23\n')
+    print('\nThe Plains v0.23_01\n')
 
 def invDisplay(): #Displays inventory
     save = savePull()
@@ -94,7 +94,7 @@ def invDisplay(): #Displays inventory
     print("INV:", flower, blade, '\n', sep=" | ")
 
 def quitHandler(): #Handles quit actions
-    os.system('cls||clear')
+    handig.screenClear()
     quit()
 
 def inpErrorHandler(): #ValueError exception handler
@@ -121,4 +121,4 @@ def easterEgg():
     print(" |  |      |      |   |  | |  |(_|  |   |  | \   |  \       / ")
     print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
     time.sleep(2)
-    os.system('cls||clear')
+    handig.screenClear()
