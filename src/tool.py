@@ -67,7 +67,7 @@ def toolSel1():
                 if var3 == 0:
                     print("\nThe message won't even go through...")
                     time.sleep(4)
-                    toolFlagger()
+                    tool()
                 if var3 == 1:
                     print("\nYou've already made contact.")
                     time.sleep(2)
@@ -102,7 +102,7 @@ def toolSel2():
                 if var3 == 0:
                     print('\nYou try establishing contact...your radar just shuts off.')
                     time.sleep(4)
-                    toolFlagger()
+                    tool()
                 if var3 == 1:
                     print("\nYou've already made contact.")
                     time.sleep(2)
