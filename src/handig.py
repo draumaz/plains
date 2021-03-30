@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 
 def saveWriter(line_ext, state_ext): #Save write bus
@@ -92,6 +93,10 @@ def invDisplay(): #Displays inventory
     if var15 == 2:
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")
+
+def quitHandler():
+    screenClear()
+    sys.exit()
 
 def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')

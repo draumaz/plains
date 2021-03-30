@@ -31,8 +31,7 @@ def mainMenu2():
             if choose == 3:
                 embark.Embark()
             if choose == 4:
-                handig.screenClear()
-                quit()
+                handig.quitHandler()
             if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 mainMenu2()
