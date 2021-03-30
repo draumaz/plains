@@ -70,7 +70,7 @@ def screenClear():
     os.system('cls||clear')
 
 def versionHeader(): #Displays the title and version
-    print('\nThe Plains v0.23_01\n')
+    print('\nThe Plains v0.23_02\n')
 
 def invDisplay(): #Displays inventory
     save = savePull()
