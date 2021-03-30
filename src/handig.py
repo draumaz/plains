@@ -93,10 +93,6 @@ def invDisplay(): #Displays inventory
         blade = "0x KNIFE"
     print("INV:", flower, blade, '\n', sep=" | ")
 
-def quitHandler(): #Handles quit actions
-    handig.screenClear()
-    quit()
-
 def inpErrorHandler(): #ValueError exception handler
     print('\nDid you mean something else?')
     time.sleep(0.25)

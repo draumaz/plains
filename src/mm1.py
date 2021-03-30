@@ -38,12 +38,14 @@ def mainMenu1():
                 tool.tool()
             if choose == 4:
                 if var1 == 0:
-                    handig.quitHandler()
+                    handig.screenClear()
+                    quit()
                 if var1 == 1:
                     ch1end.ch1End()
             if choose == 5:
                 if var1 == 1:
-                    handig.quitHandler()
+                    handig.screenClear()
+                    quit()
                 if var1 == 0:
                     handig.inpErrorHandler()
             if choose > 5 or choose < 0:
