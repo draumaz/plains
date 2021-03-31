@@ -128,7 +128,12 @@ def caveSel3():
         print("There's that chest where you found the bottle.\n")
     if var17 == 2:
         print("There's that chest with the bottle.\n")
-    print('OPEN [1]')
+    if var17 == 0:
+        print('OPEN [1]')
+    if var17 == 1:
+        print('PUT BACK [1]')
+    if var17 == 2:
+        print("TAKE BACK [1]")
     print('BACK [2]')
     while True:
         try:
@@ -142,19 +147,19 @@ def caveSel3():
                     time.sleep(2)
                     caveSel3()
                 if var17 == 1:
-                    line_ext == 16
+                    line_ext = 16
                     state_ext = 2
                     handig.saveWriter(line_ext, state_ext)
-                    print('You decide to put the bottle back in the chest.')
+                    print('\nYou decide to put the bottle back in the chest.')
                     time.sleep(2)
-                    cave()
+                    caveSel3()
                 if var17 == 2:
-                    line_ext == 16
+                    line_ext = 16
                     state_ext = 1
                     handig.saveWriter(line_ext, state_ext)
-                    print("You take the bottle back. Could be useful, after all.")
+                    print("\nYou take the bottle back. Could be useful, after all.")
                     time.sleep(3)
-                    cave()
+                    caveSel3()
             if choose == 2:
                 cave()
             if choose > 2 or choose < 1:
