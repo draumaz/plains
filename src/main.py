@@ -46,11 +46,10 @@ def fileTest():
             fileTest()
 
 def splashDisp():
-    print('\n==THE PLAINS==')
+    print('\n==THE PLAINS===============')
     print('==MADE BY DRAUMAZ IN 2021==')
-    print('==WRITTEN IN PYTHON==')
+    print('==WRITTEN IN PYTHON!=======')
     print('==CHARACTER BY BRYCE CANO==')
-    return
 
 def splashScreen(): #Main menu
     save = handig.savePull()
