@@ -12,15 +12,15 @@ def saveWriter(line_ext, state_ext): #Save write bus
     file.close()
 
 def saveGenerator(): #Creates blank save file
-    save = open('data.txt', 'w+')
-    save.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
-    save.close()
+    file = open('data.txt', 'w+')
+    file.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+    file.close()
 
 def savePull(): #Retrieves variables and returns an array
     while True:
         try:
-            save = open('data.txt', 'r')
-            lines = save.readlines()
+            file = open('data.txt', 'r')
+            lines = file.readlines()
             a = int(lines[0])
             b = int(lines[1])
             c = int(lines[2])
@@ -37,8 +37,9 @@ def savePull(): #Retrieves variables and returns an array
             n = int(lines[13])
             o = int(lines[14])
             p = int(lines[15])
-            save.close()
-            return [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p]
+            q = int(lines[16])
+            file.close()
+            return [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q]
         except ValueError:
             saveCorruptHandler()
         except FileNotFoundError:
@@ -68,31 +69,36 @@ def saveCorruptHandler():
             saveCorruptHandler()
 
 def screenClear():
-    os.system('clear')
+    os.system('cls||clear')
 
 def versionHeader(): #Displays the title and version
-    print('\nThe Plains v0.23_02\n')
+    print('\nThe Plains v0.24\n')
 
 def invDisplay(): #Displays inventory
     save = savePull()
-    var7 = save[6]
-    var15 = save[14]
-    var16 = save[15]
-    if var16 == 0:
-        flower = "EMPTY"
-    if var15 == 0:
-        blade = "EMPTY"
-    if var16 == 1:
+    did_murder = save[6]
+    blade_state = save[14]
+    flower_state = save[15]
+    bottle_state = save[16]
+    if flower_state == 0:
+        flower = ''
+    if flower_state == 1:
         flower = "1x FLOWER"
-    if var16 == 2 or var16 == 3 or var16 == 4:
+    if flower_state != 1 and flower_state != 0:
         flower = "0x FLOWER"
-    if var15 == 1 and var7 == 0:
+    if blade_state  == 0:
+        blade = ''
+    if blade_state == 1 and did_murder == 0:
         blade = "1x KNIFE"
-    if var15 == 1 and var7 == 1:
+    if blade_state == 1 and did_murder == 1:
         blade = "1x KNIFE (BLOODIED)"
-    if var15 == 2:
+    if blade_state == 2:
         blade = "0x KNIFE"
-    print("INV:", flower, blade, '\n', sep=" | ")
+    if bottle_state == 0:
+        bottle = ''
+    if bottle_state == 1:
+        bottle = "1x BOTTLE"
+    print("INV:", flower, blade, bottle, '\n', sep=" | ")
 
 def quitHandler():
     screenClear()
@@ -123,3 +129,5 @@ def easterEgg():
     print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
     time.sleep(2)
     handig.screenClear()
+    
+invDisplay()

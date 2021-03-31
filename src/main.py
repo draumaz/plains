@@ -39,6 +39,7 @@ def fileTest():
             var14 = saves[13]
             var15 = saves[14]
             var16 = saves[15]
+            var17 = saves[16]
             splashScreen()
         except (NameError, IndexError):
             handig.saveGenerator()

@@ -9,9 +9,9 @@ def cave():
     handig.versionHeader()
     handig.invDisplay()
     print(textwrap.fill('You make your way towards a deep, dark cave. You can barely see anything past the entrance.\n', 75))
-    print('\nCONTINUE [1]')
+    print('\nGO FORWARDS [1]')
     print('LOOK AROUND [2]')
-    print('LISTEN [3]')
+    print('GO RIGHT [3]')
     print('BACK [4]')
     while True:
         try:
@@ -54,11 +54,26 @@ def caveSel1():
             choose = int(input('\nACTION >> '))
             if choose == 1:
                 if var15 == 0:
-                    cs1Knife()
+                    line_ext = 14
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
+                    print('\nYou open the box and find a knife. You put it in your pocket.')
+                    time.sleep(2)
+                    caveSel1()
                 if var15 == 1:
-                    cs1KnifeBack()
+                    line_ext = 14
+                    state_ext = 2
+                    handig.saveWriter(line_ext, state_ext)
+                    print('\nYou open the box and put the knife back.')
+                    time.sleep(2)
+                    caveSel1()
                 if var15 == 2:
-                    cs1Knife2()
+                    line_ext = 14
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
+                    print('\nYou take the knife back.')
+                    time.sleep(1)
+                    caveSel1()
             if choose == 2:
                 if var15 == 0:
                     print("\nContinuing in a cave this dark is just asking for trouble.")
@@ -70,30 +85,6 @@ def caveSel1():
         except ValueError:
             handig.inpErrorHandler()
             caveSel1()
-
-def cs1Knife():
-    print('\nYou open the box and find a knife. You put it in your pocket.')
-    line_ext = 14
-    state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
-    time.sleep(3)
-    caveSel1()
-
-def cs1Knife2():
-    print('\nYou take the knife back.')
-    line_ext = 14
-    state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
-    time.sleep(3)
-    caveSel1()
-
-def cs1KnifeBack():
-    print('\nYou open the box and put the knife back.')
-    line_ext = 14
-    state_ext = 2
-    handig.saveWriter(line_ext, state_ext)
-    time.sleep(3)
-    caveSel1()
 
 def caveSel2():
     handig.screenClear()
@@ -118,7 +109,7 @@ def caveSel2():
                 print("\nToo much work, anyways.")
                 time.sleep(2)
                 cave()
-            if choose > 2 or choose < 0:
+            if choose > 2 or choose < 1:
                 handig.inpErrorHandler()
                 caveSel2()
         except ValueError:
@@ -129,23 +120,44 @@ def caveSel3():
     handig.screenClear()
     handig.versionHeader()
     handig.invDisplay()
-    print("You focus your listening on the cave. You can hear a faint rumbling noise coming from within.\n")
-    print('DISCERN [1]')
+    save = handig.savePull()
+    var17 = save[16]
+    if var17 == 0:
+        print("You come across another locked chest. Sitting beside is a dusty old desk.\n")
+    if var17 == 1:
+        print("There's that chest where you found the bottle.\n")
+    if var17 == 2:
+        print("There's that chest with the bottle.\n")
+    print('OPEN [1]')
     print('BACK [2]')
     while True:
         try:
             choose = int(input('\nACTION >> '))
             if choose == 1:
-                print('\nYou listen as hard as you can, in an attempt to discern words.')
-                time.sleep(4)
-                print("...that's certainly not any language you know.")
-                time.sleep(2)
-                cave()
+                if var17 == 0:
+                    line_ext = 16
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
+                    print('\nYou open the chest and find an empty bottle.')
+                    time.sleep(2)
+                    caveSel3()
+                if var17 == 1:
+                    line_ext == 16
+                    state_ext = 2
+                    handig.saveWriter(line_ext, state_ext)
+                    print('You decide to put the bottle back in the chest.')
+                    time.sleep(2)
+                    cave()
+                if var17 == 2:
+                    line_ext == 16
+                    state_ext = 1
+                    handig.saveWriter(line_ext, state_ext)
+                    print("You take the bottle back. Could be useful, after all.")
+                    time.sleep(3)
+                    cave()
             if choose == 2:
-                print("\nYou figure that the rumbling is probably just natural noises.")
-                time.sleep(2)
                 cave()
-            if choose > 2 or choose < 0:
+            if choose > 2 or choose < 1:
                 handig.inpErrorHandler()
                 caveSel3()
         except ValueError:
