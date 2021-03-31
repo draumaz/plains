@@ -125,5 +125,3 @@ def easterEgg():
     print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
     time.sleep(2)
     handig.screenClear()
-    
-invDisplay()
