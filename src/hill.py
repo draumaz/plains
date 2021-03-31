@@ -156,9 +156,7 @@ def hillSel1Ext():
                     hs1e2()
             if choose == 3:
                 if var16 == 0:
-                    print('\nUpon seeing the towering lizard, you decide to head back.')
-                    time.sleep(2)
-                    hill()
+                    lizardBack()
                 if var16 == 1:
                     print('\nYou give the lizard man the flower. He smiles at you.')
                     line_ext = 15
@@ -176,15 +174,19 @@ def hillSel1Ext():
                     handig.inpErrorHandler()
                     hillSel1Ext()
                 if var16 == 1:
-                    print('\nUpon seeing the towering lizard, you decide to head back.')
-                    time.sleep(2)
-                    hill()
+                    lizardBack()
             if choose > 4 or choose < 0:
                 handig.inpErrorHandler()
                 hillSel1Ext()
         except ValueError:
             handig.inpErrorHandler()
             hillSel1Ext()
+
+def lizardBack():
+    print('\nUpon seeing the towering lizard, you decide to head back.')
+    time.sleep(2)
+    hill()
+    
 
 def hillSel1():
     save = handig.savePull()

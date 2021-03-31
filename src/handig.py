@@ -80,6 +80,10 @@ def invDisplay(): #Displays inventory
     blade_state = save[14]
     flower_state = save[15]
     bottle_state = save[16]
+    if blade_state == 1 or flower_state == 1 or bottle_state == 1 or blade_state == 2 or flower_state == 2 or bottle_state == 2:
+        visibility = 1
+    else:
+        visibility = 0
     if flower_state == 0 or flower_state == 2:
         flower = ''
     if flower_state == 1:
@@ -94,8 +98,11 @@ def invDisplay(): #Displays inventory
         bottle = ''
     if bottle_state == 1:
         bottle = "1x BOTTLE"
-    print("INV:", flower, blade, bottle, '\n', sep=" | ")
-
+    if visibility == 1:
+        print("INV:", flower, blade, bottle, '\n', sep=" | ")
+    if visibility == 0:
+        print(end='')
+        
 def quitHandler():
     screenClear()
     sys.exit()
@@ -125,3 +132,5 @@ def easterEgg():
     print(" `--'      `------'   `--' `--'  `--'   `--'  `--'   `-----'  ")
     time.sleep(2)
     handig.screenClear()
+
+invDisplay()
