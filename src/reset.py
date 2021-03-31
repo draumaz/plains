@@ -28,6 +28,7 @@ def resetter():
                     quit()
                 if var9 == 0:
                     normalReset()
+                    return
             if choose == 2:
                 if var9 == 1:
                     quit()
@@ -72,5 +73,5 @@ def normalReset():
     line_ext = 15
     state_ext = 0
     handig.saveWriter(line_ext, state_ext)
-    print('Reset. Please restart the game.')
-    quit()
+    print('\nReset.')
+    time.sleep(0.5)
