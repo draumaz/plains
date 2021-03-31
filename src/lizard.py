@@ -1,15 +1,15 @@
 import os
 import time
-import handig
+import scripts
 import mm3
 
 def Lizard():
 	while True:
 		try:
-			handig.screenClear()
-			handig.versionHeader()
-			handig.invDisplay()
-			vars = handig.savePull()
+			scripts.screenClear()
+			scripts.versionHeader()
+			scripts.invDisplay()
+			vars = scripts.savePull()
 			var5 = vars[4]
 			var7 = vars[6]
 			var15 = vars[14]
@@ -34,8 +34,8 @@ def Lizard():
 				time.sleep(2)
 				mm3.mainMenu3()
 			if choose > 3 or choose < 1:
-				handig.inpErrorHandler()
+				scripts.inpErrorHandler()
 				Lizard()
 		except ValueError:
-			handig.inpErrorHandler()
+			scripts.inpErrorHandler()
 			Lizard()

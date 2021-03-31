@@ -2,10 +2,10 @@ import os
 import time
 import mm1
 import textwrap
-import handig
+import scripts
 
 def toolEx():
-    save = handig.savePull()
+    save = scripts.savePull()
     var1 = save[0]
     var3 = save[2]
     if var3 == 0:
@@ -25,9 +25,9 @@ def toolEx():
         mm1.mainMenu1()
 
 def tool():
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print(textwrap.fill('Seeming to be completely stranded, you decide to use the tools at your disposal.\n', 75))
     print('\nPHONE [1]')
     print('RADAR [2]')
@@ -45,18 +45,18 @@ def tool():
             if choose == 4:
                 toolEx()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 tool()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             tool()
 
 def toolSel1():
-    save = handig.savePull()
+    save = scripts.savePull()
     var3 = save[2]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print('You pull out your phone. Unsurprisingly, the signal is rather weak.\n')
     print('MESSAGE A FRIEND [1]')
     print('BACK [2]')
@@ -80,18 +80,18 @@ def toolSel1():
                 if var3 == 1:
                     tool()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 toolSel1()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             toolSel1()
 
 def toolSel2():
-    save = handig.savePull()
+    save = scripts.savePull()
     var3 = save[2]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print('Using your radar, you can attempt to establish contact.\n')
     print('SCAN [1]')
     print('BACK [2]')
@@ -115,18 +115,18 @@ def toolSel2():
                 if var3 == 1:
                     tool()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 toolSel2()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             toolSel2()
 
 def toolSel3():
-    save = handig.savePull()
+    save = scripts.savePull()
     var3 = save[2]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print('Looks like your scanner is functioning just fine.\n')
     print('SIGNAL [1]')
     print('BACK [2]')
@@ -138,10 +138,10 @@ def toolSel3():
                 if var3 == 0:
                     line_ext = 2
                     state_ext = 1
-                    handig.saveWriter(line_ext, state_ext)
+                    scripts.saveWriter(line_ext, state_ext)
                     line_ext = 0
                     state_ext = 1
-                    handig.saveWriter(line_ext, state_ext)
+                    scripts.saveWriter(line_ext, state_ext)
                     print('\nYou try to send out a signal, and it looks like it was received!\n')
                     time.sleep(4)
                     tool()
@@ -157,8 +157,8 @@ def toolSel3():
                 if var3 == 1:
                     tool()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 toolSel3()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             toolSel3()

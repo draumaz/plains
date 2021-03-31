@@ -3,7 +3,7 @@ import time
 import mm2
 import mm3
 import textwrap
-import handig
+import scripts
 
 def emb2Handler():
     while True:
@@ -17,21 +17,21 @@ def emb2Handler():
             if choose == 2:
                 quit()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 emb2Handler()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             emb2Handler()
 
 def emb2End():
     print('\nYou decide to depart anyways, and your journey comes to an end.')
     time.sleep(3)
-    handig.screenClear()
+    scripts.screenClear()
     print('\n\nTHANK YOU SO MUCH FOR PLAYING!')
     time.sleep(4)
     line_ext = 13
     state_ext = 1
-    handig.saveWriter()
+    scripts.saveWriter()
     quit()
 
 def Embark2():
@@ -51,23 +51,23 @@ def Embark2():
                 time.sleep(3)
                 line_ext = 1
                 state_ext = 2
-                handig.saveWriter(line_ext, state_ext)
+                scripts.saveWriter(line_ext, state_ext)
                 mm3.mainMenu3()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 Embark2()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             Embark2()
 
 def Embark1():
     line_ext = 8
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     print('')
     print(textwrap.fill('Blood still dripping from your clothes, you lock the doors and take off, leaving your friends behind.', 75))
     time.sleep(6)
-    handig.screenClear()
+    scripts.screenClear()
     time.sleep(5)
     print('\nMONSTER')
     time.sleep(0.05)
@@ -79,16 +79,16 @@ def Embark1():
     time.sleep(0.05)
     print('MONSTER')
     time.sleep(0.15)
-    handig.screenClear()
+    scripts.screenClear()
     quit()
 
 def Embark():
-    save = handig.savePull()
+    save = scripts.savePull()
     var6 = save[5]
     var8 = save[7]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 1 and var8 == 0:
         print('Ignoring your friends, you make your way to their spaceship and lock the doors.')
     if var6 == 0 or var8 == 1:
@@ -119,8 +119,8 @@ def Embark():
                 print("\nYou decide against leaving quite yet.")
                 mm2.mainMenu2()
             if choose > 3 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 Embark()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             Embark()

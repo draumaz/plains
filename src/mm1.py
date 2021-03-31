@@ -5,15 +5,15 @@ import hill
 import cave
 import tool
 import ch1end
-import handig
+import scripts
 
 def mainMenu1():
-    save = handig.savePull()
+    save = scripts.savePull()
     var1 = save[0]
     var6 = save[5]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 0:
         print(textwrap.fill('You are Liam. An astronaut by trade, you took a bad turn on the Space Belt and landed on a strange planet. You awaken, laying in a field of grass. You see hills, a cave, and strange flora.', 75))
     if var6 == 1:
@@ -38,17 +38,17 @@ def mainMenu1():
                 tool.tool()
             if choose == 4:
                 if var1 == 0:
-                    handig.quitHandler()
+                    scripts.quitHandler()
                 if var1 == 1:
                     ch1end.ch1End()
             if choose == 5:
                 if var1 == 1:
-                    handig.quitHandler()
+                    scripts.quitHandler()
                 if var1 == 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
             if choose > 5 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 mainMenu1()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             mainMenu1()

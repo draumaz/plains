@@ -1,11 +1,11 @@
-import handig
+import scripts
 import os
 import reset
 
 ##Cleaning and reference scripts for internal usage##
 
 def display():
-    save = handig.savePull()
+    save = scripts.savePull()
     var1 = save[0]
     var2 = save[1]
     var3 = save[2]
@@ -49,7 +49,7 @@ def varMod():
     print('')
     line_ext = int(mod_var)
     state_ext = int(mod_st)
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     print('★★★ Wrote variable', state_ext, 'to line', line_ext)
     
 def landing():
@@ -68,7 +68,7 @@ def landing():
                 landing()
             if lan == 3:
                 os.remove('data.txt')
-                handig.saveGenerator()
+                scripts.saveGenerator()
                 print('\nFile reset')
                 landing()
         except ValueError:

@@ -2,26 +2,26 @@ import os
 import time
 import mm2
 import textwrap
-import handig
+import scripts
 
 def saan():
     while True:
         try:
-            save = handig.savePull()
+            save = scripts.savePull()
             var4 = save[3]
             var6 = save[5]
             var8 = save[7]
             var16 = save[15]
             if var8 == 0 and var6 == 1:
-                handig.screenClear()
-                handig.versionHeader()
-                handig.invDisplay()
+                scripts.screenClear()
+                scripts.versionHeader()
+                scripts.invDisplay()
                 print("Saan won't even look you in the eye.")
                 time.sleep(4)
                 mm2.mainMenu2()
-            handig.screenClear()
-            handig.versionHeader()
-            handig.invDisplay()
+            scripts.screenClear()
+            scripts.versionHeader()
+            scripts.invDisplay()
             if var4 == 1:
                 print('Saan seems distant.\n')
             if var4 != 1:
@@ -107,30 +107,30 @@ def saan():
                     time.sleep(2)
                     mm2.mainMenu2()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 saan()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             saan()
 
             
 def friendFlagger3(): #Neutral Flag
     line_ext = 3
     state_ext = 3
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     saan()
 def friendFlagger2(): #Rude Flag
     line_ext = 3
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     mm2.mainMenu2()
 def friendFlagger1(): #Flirty Flag
     line_ext = 3
     state_ext = 2
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     saan()
 def flowerFlag(): #Gave Flower Flag
     line_ext = 15
     state_ext = 3
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     saan()

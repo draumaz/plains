@@ -2,16 +2,16 @@ import os
 import time
 import mm2
 import textwrap
-import handig
+import scripts
 
 def talk():
-    save = handig.savePull()
+    save = scripts.savePull()
     var6 = save[5]
     var7 = save[6]
     var8 = save[7]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 0 or var7 == 0 or var8 == 1: #Normal/post-explain
         print("Your friends are relieved that you're alright.\n")
     if var6 == 1 and var8 == 0: #Murder, pre-explain
@@ -42,20 +42,20 @@ def talk():
                     time.sleep(2)
                     mm2.mainMenu2()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 talk()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             talk()
 
 def talkSel1A():
-    save = handig.savePull()
+    save = scripts.savePull()
     var7 = save[6]
     var8 = save[7]
     if var7 == 0 or var8 == 1:
-        handig.screenClear()
-        handig.versionHeader()
-        handig.invDisplay()
+        scripts.screenClear()
+        scripts.versionHeader()
+        scripts.invDisplay()
         print("Your friends ask you why you didn't use any of your tools to contact them.\n")
         print('UH... [1]')
         print('BACK [2]')
@@ -71,10 +71,10 @@ def talkSel1A():
                     time.sleep(4)
                     talk()
                 if choose > 2 or choose < 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     talkSel1()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 talkSel1()
     if var7 == 1 and var8 == 0:
         talkSel1B()
@@ -92,7 +92,7 @@ def talkSel1B():
             if choose == 1:
                 line_ext = 7
                 state_ext = 1
-                handig.saveWriter(line_ext, state_ext)
+                scripts.saveWriter(line_ext, state_ext)
                 talk()
                 print("\nYou explain to them that you're just feeling off.")
                 time.sleep(3)
@@ -103,18 +103,18 @@ def talkSel1B():
                 time.sleep(5)
                 talk()
             if choose > 2 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 talkSel1B()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             talkSel1B()
 
 def talkSel1C():
-    save = handig.savePull()
+    save = scripts.savePull()
     var6 = save[5]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 1:
         print('Your friends barely stammer out a question.')
         time.sleep(2)
@@ -138,16 +138,16 @@ def talkSel1C():
                     time.sleep(2)
                     mm2.mainMenu2()
                 if choose > 2 or choose < 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     talkSel1C()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 talkSel1C()
     if var6 == 0:
         talk()
 
 def talkSel1():
-    save = handig.savePull()
+    save = scripts.savePull()
     var3 = save[2]
     var7 = save[6]
     var8 = save[7]
@@ -163,9 +163,9 @@ def talkSel1():
         talkSel1A()
 
 def talkSel2():
-        handig.screenClear()
-        handig.versionHeader()
-        handig.invDisplay()
+        scripts.screenClear()
+        scripts.versionHeader()
+        scripts.invDisplay()
         print("You just...stare at them. They look bewildered.\n")
         print('KEEP STARING [1]')
         print('GO BACK [2]')
@@ -182,8 +182,8 @@ def talkSel2():
                     time.sleep(1.5)
                     talk()
                 if choose > 2 or choose < 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     talkSel2()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 talkSel2()

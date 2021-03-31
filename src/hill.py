@@ -2,17 +2,17 @@ import os
 import time
 import mm1
 import textwrap
-import handig
+import scripts
 
 def hill():
-    save = handig.savePull()
+    save = scripts.savePull()
     var1 = save[0]
     var6 = save[5]
     var12 = save[11]
     var16 = save[15]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
@@ -41,7 +41,7 @@ def hill():
             choose = int(input('\nACTION >> '))
             if choose == 1:
                 if var12 == 1:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hill()
                 if var12 == 0:
                     hillSel1()
@@ -49,7 +49,7 @@ def hill():
                 if var1 == 0:
                     hillSel2()
                 if var1 == 1:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hill()
             if choose == 3:
                 hillSel3()
@@ -61,16 +61,16 @@ def hill():
                 if var6 == 1:
                     mm1.mainMenu1()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 hill()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             hill()
 
 def hs1e1():
     line_ext = line[11]
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     print('\nThe reptilian man seems untrusting of you, and leaves the area pretty quickly.')
     time.sleep(5)
     hill()
@@ -93,13 +93,13 @@ def hs1e3():
     hill()
 
 def hillSel1Ext():
-    save = handig.savePull()
+    save = scripts.savePull()
     var7 = save[6]
     var15 = save[14]
     var16 = save[15]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var16 != 2:
         print('The huge reptilian sees you, and approaches.')
     if var16 == 2:
@@ -135,17 +135,17 @@ def hillSel1Ext():
                 if var15 == 1:
                     line_ext = 5
                     state_ext = 1
-                    handig.saveWriter(line_ext, state_ext)
+                    scripts.saveWriter(line_ext, state_ext)
                     line_ext = 6
                     state_ext = 1
-                    handig.saveWriter(line_ext, state_ext)
+                    scripts.saveWriter(line_ext, state_ext)
                     print('\nYou run up to the lizard and stab him to death.')
                     time.sleep(3)
                     print('Blood stains your uniform.')
                     time.sleep(6)
                     hill()
                 if var15 == 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hillSel1Ext()
             if choose == 2:
                 if var7 == 0 and var16 == 2:
@@ -161,7 +161,7 @@ def hillSel1Ext():
                     print('\nYou give the lizard man the flower. He smiles at you.')
                     line_ext = 15
                     state_ext = 2
-                    handig.saveWriter(line_ext, state_ext)
+                    scripts.saveWriter(line_ext, state_ext)
                     time.sleep(3)
                     hillSel1Ext()
                 if var16 == 2:
@@ -171,15 +171,15 @@ def hillSel1Ext():
                     hill()
             if choose == 4:
                 if var16 == 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hillSel1Ext()
                 if var16 == 1:
                     lizardBack()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 hillSel1Ext()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             hillSel1Ext()
 
 def lizardBack():
@@ -189,13 +189,13 @@ def lizardBack():
     
 
 def hillSel1():
-    save = handig.savePull()
+    save = scripts.savePull()
     var5 = save[4]
     var6 = save[5]
     var16 = save[15]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')
         if var16 == 1:
@@ -208,7 +208,7 @@ def hillSel1():
                     if var16 == 1:
                         line_ext = 15
                         state_ext = 4
-                        handig.saveWriter(line_ext, state_ext)
+                        scripts.saveWriter(line_ext, state_ext)
                         print('')
                         print(textwrap.fill('You lay the flower down next to his lifeless corpse.', 75))
                         time.sleep(3)
@@ -218,19 +218,19 @@ def hillSel1():
                 if choose == 2:
                     hill()
                 if choose > 2 or choose < 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hillSel1()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 hillSel1()
     hillSel1Ext()
 
 def hs2Sub2():
-    save = handig.savePull()
+    save = scripts.savePull()
     var6 = save[5]
     line_ext = 0
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     print('...')
     time.sleep(3)
     print("\nYou're completely motionless.")
@@ -242,7 +242,7 @@ def hs2Sub2():
 def hs2Sub():
     line_ext = 0
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     time.sleep(1)
     print('.')
     time.sleep(1)
@@ -254,11 +254,11 @@ def hs2Sub():
     time.sleep(5)
 
 def hillSel2():
-    save = handig.savePull()
+    save = scripts.savePull()
     var6 = save[5]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     if var6 == 0:
         print('Despite the massive mountain ahead of you, you decide to simply stand still.')
     if var6 == 1:
@@ -281,18 +281,18 @@ def hillSel2():
                     time.sleep(5)
                     hill()
                 if choose > 2 or choose < 0:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     hillSel2()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 hillSel2()
 
 def hillSel3():
-    save = handig.savePull()
+    save = scripts.savePull()
     var16 = save[15]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print(textwrap.fill("You sit down in the grassy plains and take a look around.", 75))
     if var16 == 0:
          print("There's a beautiful flower sitting there.")
@@ -311,7 +311,7 @@ def hillSel3():
                 print(textwrap.fill('You put it in your pocket.', 75))
                 line_ext = 15
                 state_ext = 1
-                handig.saveWriter(line_ext, state_ext)
+                scripts.saveWriter(line_ext, state_ext)
                 time.sleep(3)
                 hillSel3()
             if choose == 2:
@@ -323,8 +323,8 @@ def hillSel3():
                 time.sleep(2)
                 hill()
             if choose > 3 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 hillSel3()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             hillSel3()

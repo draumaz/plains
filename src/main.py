@@ -5,14 +5,14 @@ import mm2
 import mm3
 import reset
 import textwrap
-import handig
+import scripts
 
 def breakTest():
     while True:
         try:
             file = open('plains.txt', 'r')
             file.close()
-            handig.screenClear()
+            scripts.screenClear()
             print('\nFATAL ERROR OCCURRED\n')
             reset.resetter()
             quit()
@@ -22,7 +22,7 @@ def breakTest():
 def fileTest():
     while True:
         try:
-            saves = handig.savePull()
+            saves = scripts.savePull()
             var1 = saves[0]
             var2 = saves[1]
             var3 = saves[2]
@@ -42,7 +42,7 @@ def fileTest():
             var17 = saves[16]
             splashScreen()
         except (NameError, IndexError):
-            handig.saveGenerator()
+            scripts.saveGenerator()
             fileTest()
 
 def splashDisp():
@@ -52,7 +52,7 @@ def splashDisp():
     print('==CHARACTER BY BRYCE CANO==')
 
 def splashScreen(): #Main menu
-    save = handig.savePull()
+    save = scripts.savePull()
     var9 = save[8]
     var10 = save[9]
     var14 = save[13]
@@ -61,7 +61,7 @@ def splashScreen(): #Main menu
     if var9 == 1:
         mainExt()
     if var9 == 0:
-        handig.screenClear()
+        scripts.screenClear()
         splashDisp()
         if var14 == 0:
             print('\nPLAY [1]')
@@ -74,18 +74,18 @@ def splashScreen(): #Main menu
                 if choose == 1:
                     saveLoader()
                 if choose == 2:
-                    handig.screenClear()
+                    scripts.screenClear()
                     reset.resetter()
                     splashScreen()
                 if choose < 1 or choose > 2:
-                    handig.inpErrorHandler()
+                    scripts.inpErrorHandler()
                     splashScreen()
             except ValueError:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 splashScreen()
 
 def saveLoader():
-    save = handig.savePull()
+    save = scripts.savePull()
     var2 = save[1]
     var14 = save[13]
     if var14 == 0:
@@ -104,19 +104,19 @@ def saveLoader():
 ##BAD ENDING FUNCTIONS##
 
 def mainExt():
-    handig.screenClear()
+    scripts.screenClear()
     print('\n==AAAAAAAAAA==')
     print('==AAAAAAAA AAAAAAA AAAAAAA==')
     print('==KILLER KILLER KILLER==')
     print('==KILLER KILLER==')
     time.sleep(0.08)
-    handig.screenClear()
+    scripts.screenClear()
     splashDisp()
     time.sleep(5)
     mainExt2()
 
 def mainExt2():
-    handig.screenClear()
+    scripts.screenClear()
     splashDisp()
     print('\n[3]')
     while True:
@@ -128,22 +128,22 @@ def mainExt2():
             mainExt2()
 
 def mainAlt():
-    handig.screenClear()
+    scripts.screenClear()
     print('\n...')
     time.sleep(5)
     print("\nYou killed him.")
     time.sleep(3)
     print("You abandoned your friends.")
     time.sleep(3)
-    handig.screenClear()
+    scripts.screenClear()
     print('\n...')
     time.sleep(2)
     mainAlt2()
 
 def mainAlt2():
-    save = handig.savePull()
+    save = scripts.savePull()
     var10 = save[9]
-    handig.screenClear()
+    scripts.screenClear()
     print("\nDo you regret it?")
     print('\nYES [1]')
     print('NO [2]')
@@ -180,7 +180,7 @@ def mainAlt3():
     time.sleep(4)
     print("The ability to hurt others, without recourse?")
     time.sleep(4)
-    handig.screenClear()
+    scripts.screenClear()
     time.sleep(2)
     print('\nYou still have the chance to make things right.')
     time.sleep(2)
@@ -189,7 +189,7 @@ def mainAlt3():
     mainAlt4()
 
 def mainAlt4():
-    handig.screenClear()
+    scripts.screenClear()
     print('\nWill you?')
     print('\nYES [1]')
     print('NO [2]')
@@ -199,10 +199,10 @@ def mainAlt4():
             if choose == 1:
                 line_ext = 8
                 state_ext = 0
-                handig.saveWriter(line_ext, state_ext)
+                scripts.saveWriter(line_ext, state_ext)
                 line_ext = 9
                 state_ext = 0
-                handig.saveWriter(line_ext, state_ext)
+                scripts.saveWriter(line_ext, state_ext)
                 time.sleep(2)
                 reset.resetter()
             if choose == 2:
@@ -211,10 +211,10 @@ def mainAlt4():
             mainAlt4()
 
 def mainAlt5():
-    handig.screenClear()
+    scripts.screenClear()
     line_ext = 9
     state_ext = 1
-    handig.saveWriter(line_ext, state_ext)
+    scripts.saveWriter(line_ext, state_ext)
     time.sleep(5)
     print('\nFATAL ERROR ENCOUNTERED')
     time.sleep(2)

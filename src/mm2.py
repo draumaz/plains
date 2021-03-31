@@ -3,15 +3,15 @@ import time
 import talk
 import saan
 import embark
-import handig
+import scripts
 
 def mainMenu2():
-    save = handig.savePull()
+    save = scripts.savePull()
     var1 = save[0]
     var6 = save[5]
-    handig.screenClear()
-    handig.versionHeader()
-    handig.invDisplay()
+    scripts.screenClear()
+    scripts.versionHeader()
+    scripts.invDisplay()
     print('A fancy, metallic ship lands a little ways from where you landed.')
     if var6 == 0:
         print('Your friends walk out, and approach you.\n')
@@ -31,10 +31,10 @@ def mainMenu2():
             if choose == 3:
                 embark.Embark()
             if choose == 4:
-                handig.quitHandler()
+                scripts.quitHandler()
             if choose > 4 or choose < 0:
-                handig.inpErrorHandler()
+                scripts.inpErrorHandler()
                 mainMenu2()
         except ValueError:
-            handig.inpErrorHandler()
+            scripts.inpErrorHandler()
             mainMenu2()
