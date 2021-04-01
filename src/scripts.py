@@ -86,17 +86,17 @@ def invDisplay(): #Displays inventory
     else:
         visibility = 0
     if flower_state == 0 or flower_state == 2:
-        flower = ''
+        flower = 'EMPTY'
     if flower_state == 1:
         flower = "1x FLOWER"
     if blade_state  == 0 or blade_state == 2:
-        blade = ''
+        blade = 'EMPTY'
     if blade_state == 1 and did_murder == 0:
         blade = "1x KNIFE"
     if blade_state == 1 and did_murder == 1:
         blade = "1x KNIFE (BLOODIED)"
     if bottle_state == 0 or bottle_state == 2:
-        bottle = ''
+        bottle = 'EMPTY'
     if bottle_state == 1 or bottle_state == 5:
         bottle = "1x EMPTY BOTTLE"
     if bottle_state == 3:
