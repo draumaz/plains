@@ -98,6 +98,8 @@ def invDisplay(): #Displays inventory
         bottle = ''
     if bottle_state == 1:
         bottle = "1x BOTTLE"
+    if bottle_state == 3:
+        bottle = "1x BOTTLE OF BLOOD"
     if visibility == 1:
         print("INV:", flower, blade, bottle, '\n', sep=" | ")
     if visibility == 0:

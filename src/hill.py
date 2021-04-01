@@ -193,14 +193,17 @@ def hillSel1():
     var5 = save[4]
     var6 = save[5]
     var16 = save[15]
+    var17 = save[16]
     scripts.screenClear()
     scripts.versionHeader()
     scripts.invDisplay()
     if var6 == 1:
         print('Silence fills the air.\n')
         if var16 == 1:
-            print('FLOWER [1]')
-        print('BACK [2]')
+            print('PLACE FLOWER [1]')
+        if var17 == 1:
+            print('COLLECT BLOOD [2]')
+        print('BACK [3]')
         while True:
             try:
                 choose = int(input('\nACTION >> '))
@@ -216,8 +219,20 @@ def hillSel1():
                     if var16 == 4:
                         hillSel1()
                 if choose == 2:
+                    if var17 != 1:
+                        scripts.inpErrorHandler()
+                        hillSel1()
+                    if var17 == 1:
+                        line_ext = 16
+                        state_ext = 3
+                        scripts.saveWriter(line_ext, state_ext)
+                        print('')
+                        print(textwrap.fill('You use the bottle to collect his blood. Still warm.', 75))
+                        time.sleep(4)
+                        hill()
+                if choose == 3:
                     hill()
-                if choose > 2 or choose < 0:
+                if choose > 3 or choose < 0:
                     scripts.inpErrorHandler()
                     hillSel1()
             except ValueError:
