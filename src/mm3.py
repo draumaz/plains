@@ -3,6 +3,7 @@ import time
 import textwrap
 import scripts
 import lizard
+import river
 
 def mainMenu3(): #WIP (main mm3)
     scripts.screenClear()
@@ -12,10 +13,10 @@ def mainMenu3(): #WIP (main mm3)
     var6 = vars[5]
     print(textwrap.fill("You and your friends are walking through a field of yellow-red grass.", 75))
     print(textwrap.fill("There's so many strange things to see on this planet.", 75))
-    print('\nOPT1 [1]')
+    print('\PLACEHOLDER [1]')
     if var6 != 1:
         print('LIZARD [2]')
-    print('OPT3 [3]')
+    print('RIVER [3]')
     print('QUIT [4]')
     while True:
         try:
@@ -25,7 +26,7 @@ def mainMenu3(): #WIP (main mm3)
             if choose == 2:
                 lizard.Lizard()
             if choose == 3:
-                pass
+                river.riverMain()
             if choose == 4:
                 scripts.quitHandler()
             if choose > 4 or choose < 0:

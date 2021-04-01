@@ -80,7 +80,7 @@ def invDisplay(): #Displays inventory
     blade_state = save[14]
     flower_state = save[15]
     bottle_state = save[16]
-    if blade_state == 1 or flower_state == 1 or bottle_state == 1 or blade_state == 2 or flower_state == 2 or bottle_state == 2:
+    if blade_state == 1 or flower_state == 1 or bottle_state == 1 or blade_state == 2 or flower_state == 2 or bottle_state == 2 or blade_state == 3 or flower_state == 3 or bottle_state == 3 or blade_state == 4 or flower_state == 4 or bottle_state == 4 or blade_state == 5 or flower_state == 5 or bottle_state == 5:
         visibility = 1
     else:
         visibility = 0
@@ -96,10 +96,12 @@ def invDisplay(): #Displays inventory
         blade = "1x KNIFE (BLOODIED)"
     if bottle_state == 0 or bottle_state == 2:
         bottle = ''
-    if bottle_state == 1:
-        bottle = "1x BOTTLE"
+    if bottle_state == 1 or bottle_state == 5:
+        bottle = "1x EMPTY BOTTLE"
     if bottle_state == 3:
         bottle = "1x BOTTLE OF BLOOD"
+    if bottle_state == 4:
+        bottle = "1x BOTTLE OF WATER"
     if visibility == 1:
         print("INV:", flower, blade, bottle, '\n', sep=" | ")
     if visibility == 0:
