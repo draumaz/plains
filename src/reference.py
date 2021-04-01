@@ -22,6 +22,7 @@ def display():
     var14 = save[13]
     var15 = save[14]
     var16 = save[15]
+    var17 = save[16]
     print('')
     print('VAR1: CH1ENDFLAG', '      |', 'STATE:', var1)
     print('VAR2: CHAPTFLAG', '       |', 'STATE:', var2)
@@ -37,8 +38,9 @@ def display():
     print('VAR12: LIZARD-DX', '      |', 'STATE:', var12)
     print('VAR13: SPLASHSKIP2', '    |', 'STATE:', var13)
     print('VAR14: GAMEOVER', '       |', 'STATE:', var14)
-    print('VAR15: BLADE', '          |', 'STATE:', var15)
-    print('VAR16: FLOWER', '         |', 'STATE:', var16)
+    print('VAR15: BLADE', '          |', 'STATE:', var15) #0=false, 1=has, 2=putback, 3=bloody
+    print('VAR16: FLOWER', '         |', 'STATE:', var16) #0=false, 1=has, 2=putback, 3=gavetolizard, 4=gavetosaan
+    print('VAR17: BOTTLE', '         |', 'STATE:', var17) #0=false, 1=has, 2=putback, 3=fillwithblood, 4=fillwithwater, 5=waterpoured
     print('')
 
 def varMod():
@@ -82,5 +84,5 @@ def clean():
     os.system('rm -r ../.DS_Store')
     quit()
 
-clean()
-#landing() #uncomment for var list
+#clean()
+landing() #uncomment for var list
