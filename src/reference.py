@@ -84,5 +84,5 @@ def clean():
     os.system('rm -r ../.DS_Store')
     quit()
 
-#clean()
-landing() #uncomment for var list
+#clean() uncomment for dev reset
+#landing() #uncomment for var list
