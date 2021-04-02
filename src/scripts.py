@@ -21,23 +21,23 @@ def savePull(): #Retrieves variables and returns an array
         try:
             file = open('data.txt', 'r')
             lines = file.readlines()
-            a = int(lines[0])
-            b = int(lines[1])
-            c = int(lines[2])
-            d = int(lines[3])
-            e = int(lines[4])
-            f = int(lines[5])
-            g = int(lines[6])
-            h = int(lines[7])
-            i = int(lines[8])
-            j = int(lines[9])
-            k = int(lines[10])
-            l = int(lines[11])
-            m = int(lines[12])
-            n = int(lines[13])
-            o = int(lines[14])
-            p = int(lines[15])
-            q = int(lines[16])
+            a = int(lines[0]) #sound flag (end of chapter 1)
+            b = int(lines[1]) #chapter launch flag
+            c = int(lines[2]) #tool usage flag (chapter 1)
+            d = int(lines[3]) #friend flag (chapter 2)
+            e = int(lines[4]) #reset flag
+            f = int(lines[5]) #lizard murder flag
+            g = int(lines[6]) #lizard perm flag
+            h = int(lines[7]) #explain flag (chapter 2)
+            i = int(lines[8]) #bad ending flag
+            j = int(lines[9]) #bad ending extended
+            k = int(lines[10]) #skip splash (deprecated)
+            l = int(lines[11]) #lizard deluxe
+            m = int(lines[12]) #skip splash 2 (deprecated)
+            n = int(lines[13]) #game over (deprecated)
+            o = int(lines[14]) #knife flag
+            p = int(lines[15]) #flower flag
+            q = int(lines[16]) #bottle flag
             file.close()
             return [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q]
         except ValueError:

@@ -18,15 +18,15 @@ def hill():
     if var6 == 0 and var1 == 1:
         print(textwrap.fill("Having stood there, you hear a strange noise in the sky. Perhaps heading back to where you started will reveal the source.", 75))
     if var6 == 1 and var1 == 0:
-        print('You should stand still.')
+        print('Stand still.')
     if var6 == 1 and var1 == 1:
-        print("They're coming. Go back.")
+        print("Go back.")
     if var6 == 0 and var12 == 0 and var16 != 2:
         print('In the distance, you can see a creature moving about.\n')
         print('GO TOWARDS THE CREATURE [1]')
     if var16 == 2:
         print('You can see the lizard sitting down, enjoying the sun.\n')
-        print('VISIT HIM [1]')
+        print('VISIT [1]')
     if var12 == 1:
         print('')
     if var6 == 1:
