@@ -11,11 +11,19 @@ def mainMenu3(): #WIP (main mm3)
     scripts.invDisplay()
     vars = scripts.savePull()
     var6 = vars[5]
-    print(textwrap.fill("You and your friends are walking through a field of yellow-red grass.", 75))
-    print(textwrap.fill("There's so many strange things to see on this planet.", 75))
-    print('\PLACEHOLDER [1]')
+    print(textwrap.fill("You're all walking through a field of grass.", 75))
+    print('Saan points out the river, and your other friends ', end='')
+    if var6 == 1:
+        print('notice the Placeholder')
+        print('that something something something.')
+    if var6 == 0:
+        print("notice a reptilian")
+        print("near the cave you were at.")
+    print('\nPLACEHOLDER [1]')
     if var6 != 1:
         print('LIZARD [2]')
+    if var6 == 1:
+        print('DEAD LIZARD PLACEHOLDER [2]')
     print('RIVER [3]')
     print('QUIT [4]')
     while True:
@@ -24,7 +32,10 @@ def mainMenu3(): #WIP (main mm3)
             if choose == 1:
                 pass
             if choose == 2:
-                lizard.Lizard()
+                if var6 == 0:
+                    lizard.Lizard()
+                if var6 == 1:
+                    pass
             if choose == 3:
                 river.riverMain()
             if choose == 4:
