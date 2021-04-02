@@ -47,11 +47,17 @@ def Embark2():
             if choose == 1:
                 emb2End()
             if choose == 2:
-                print('\nYou and your friends disembark, and take a walk.')
-                time.sleep(3)
+                print('\nYou and your friends disembark.')
                 line_ext = 1
                 state_ext = 2
                 scripts.saveWriter(line_ext, state_ext)
+                time.sleep(3)
+                scripts.screenClear()
+                time.sleep(1)
+                print('\nChapter Two complete.')
+                time.sleep(2)
+                scripts.screenClear()
+                time.sleep(1)
                 mm3.mainMenu3()
             if choose > 2 or choose < 0:
                 scripts.inpErrorHandler()

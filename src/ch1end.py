@@ -20,6 +20,12 @@ def ch1End():
                 print('')
                 print(textwrap.fill('The spacecraft descends from the sky, and lands safely. A hatch opens, and your friends walk out.', 75))
                 time.sleep(5)
+                scripts.screenClear()
+                time.sleep(1)
+                print('\nChapter One complete.')
+                time.sleep(2)
+                scripts.screenClear()
+                time.sleep(1)
                 mm2.mainMenu2()
             if choose > 1 or choose < 0:
                 ch1End()
