@@ -23,23 +23,6 @@ def fileTest():
     while True:
         try:
             saves = scripts.savePull()
-            var1 = saves[0]
-            var2 = saves[1]
-            var3 = saves[2]
-            var4 = saves[3]
-            var5 = saves[4]
-            var6 = saves[5]
-            var7 = saves[6]
-            var8 = saves[7]
-            var9 = saves[8]
-            var10 = saves[9]
-            var11 = saves[10]
-            var12 = saves[11]
-            var13 = saves[12]
-            var14 = saves[13]
-            var15 = saves[14]
-            var16 = saves[15]
-            var17 = saves[16]
             splashScreen()
         except (NameError, IndexError):
             scripts.saveGenerator()
