@@ -11,6 +11,7 @@ def mainMenu3(): #WIP (main mm3)
     scripts.invDisplay()
     vars = scripts.savePull()
     var6 = vars[5]
+    var18 = vars[17]
     print(textwrap.fill("You're all walking through a field of grass.", 75))
     print('Saan points out the river, and your other friends ', end='')
     if var6 == 1:
@@ -20,10 +21,12 @@ def mainMenu3(): #WIP (main mm3)
         print("notice a reptilian")
         print("near the cave you were at.")
     print('\nPLACEHOLDER [1]')
-    if var6 != 1:
+    if var6 != 1 and var18 == 0:
         print('LIZARD [2]')
     if var6 == 1:
         print('DEAD LIZARD PLACEHOLDER [2]')
+    if var18 == 1:
+        print('', end='')
     print('RIVER [3]')
     print('QUIT [4]')
     while True:
@@ -35,7 +38,7 @@ def mainMenu3(): #WIP (main mm3)
                 if var6 == 0:
                     lizard.Lizard()
                 if var6 == 1:
-                    pass
+                    mainMenu3()
             if choose == 3:
                 river.riverMain()
             if choose == 4:

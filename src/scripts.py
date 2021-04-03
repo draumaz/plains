@@ -13,7 +13,7 @@ def saveWriter(line_ext, state_ext): #Save write bus
 
 def saveGenerator(): #Creates blank save file
     file = open('data.txt', 'w+')
-    file.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
+    file.write("0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0")
     file.close()
 
 def savePull(): #Retrieves variables and returns an array
@@ -38,8 +38,9 @@ def savePull(): #Retrieves variables and returns an array
             o = int(lines[14]) #knife flag
             p = int(lines[15]) #flower flag
             q = int(lines[16]) #bottle flag
+            r = int(lines[17]) #lizard gone flag (chapter 3)
             file.close()
-            return [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q]
+            return [a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r]
         except ValueError:
             saveCorruptHandler()
         except FileNotFoundError:

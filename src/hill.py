@@ -128,8 +128,6 @@ def hillSel1Ext():
                     print('\nI genuinely do not have the heart to program a scenario for this.')
                     time.sleep(2)
                     print('Sorry!')
-                    time.sleep(0.25)
-                    print('-draumaz')
                     time.sleep(2)
                     hill()
                 if var15 == 1:
@@ -321,16 +319,20 @@ def hillSel3():
         try:
             choose = int(input('\nACTION >> '))
             if choose == 1:
-                print('')
-                print(textwrap.fill('The flower comes off its root without hesitation.', 75))
-                print(textwrap.fill('You put it in your pocket.', 75))
-                line_ext = 15
-                state_ext = 1
-                scripts.saveWriter(line_ext, state_ext)
-                time.sleep(3)
-                hillSel3()
+                if var16 == 0:
+                    print('')
+                    print(textwrap.fill('The flower comes off its root without hesitation.', 75))
+                    print(textwrap.fill('You put it in your pocket.', 75))
+                    line_ext = 15
+                    state_ext = 1
+                    scripts.saveWriter(line_ext, state_ext)
+                    time.sleep(3)
+                    hillSel3()
+                if var16 == 1:
+                    scripts.inpErrorHandler()
+                    hillSel3()
             if choose == 2:
-                print('\nLaying down on the grass, it makes you feel truly refreshed.')
+                print('\nLaying down for a moment, you feel refreshed.')
                 time.sleep(3)
                 hill()
             if choose == 3:

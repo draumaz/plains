@@ -45,6 +45,8 @@ def riverMain():
 					time.sleep(3)
 					riverMain()
 			if choose == 3:
+				print("\nAs beautiful as the river is, there's so much more to discover.")
+				time.sleep(4)
 				mm3.mainMenu3()
 			if choose > 3 or choose < 1:
 				scripts.inpErrorHandler()
