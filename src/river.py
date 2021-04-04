@@ -24,7 +24,7 @@ def riverMain():
 			print('BACK [3]')
 			choose = int(input('\nACTION >> '))
 			if choose == 1:
-				pass
+				riverSel1()
 			if choose == 2:
 				if has_bottle == 1 or has_bottle == 5:
 					line_ext = 16
@@ -46,7 +46,7 @@ def riverMain():
 					riverMain()
 			if choose == 3:
 				print("\nAs beautiful as the river is, there's so much more to discover.")
-				time.sleep(4)
+				time.sleep(2.5)
 				mm3.mainMenu3()
 			if choose > 3 or choose < 1:
 				scripts.inpErrorHandler()
@@ -54,3 +54,28 @@ def riverMain():
 		except ValueError:
 			scripts.inpErrorHandler()
 			riverMain()
+			
+def riverSel1():
+	while True:
+		try:
+			vars = scripts.savePull()
+			scripts.screenClear()
+			scripts.versionHeader()
+			scripts.invDisplay()
+			print(textwrap.fill("You and your friends sit down next to the riverbank. It's truly unlike anything you've seen back home.", 75))
+			print('\nPH1 [1]')
+			print('PH2 [2]')
+			print('BACK [3]')
+			choose = int(input('\nACTION >> '))
+			if choose == 1:
+				pass
+			if choose == 2:
+				pass
+			if choose == 3:
+				riverMain()
+			if choose > 3 or choose < 1:
+				scripts.inpErrorHandler()
+				riverSel1()
+		except ValueError:
+			scripts.inpErrorHandler()
+			riverSel1()
