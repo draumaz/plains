@@ -3,6 +3,7 @@ import time
 import mm1
 import textwrap
 import scripts
+import battle
 
 def hill():
     save = scripts.savePull()
@@ -131,17 +132,7 @@ def hillSel1Ext():
                     time.sleep(2)
                     hill()
                 if var15 == 1:
-                    line_ext = 5
-                    state_ext = 1
-                    scripts.saveWriter(line_ext, state_ext)
-                    line_ext = 6
-                    state_ext = 1
-                    scripts.saveWriter(line_ext, state_ext)
-                    print('\nYou run up to the lizard and stab him to death.')
-                    time.sleep(3)
-                    print('Blood stains your uniform.')
-                    time.sleep(6)
-                    hill()
+                    battle.battleFlashy()
                 if var15 == 0:
                     scripts.inpErrorHandler()
                     hillSel1Ext()
@@ -265,6 +256,7 @@ def hs2Sub():
     time.sleep(1)
     print("\nThey're coming.")
     time.sleep(5)
+    hill()
 
 def hillSel2():
     save = scripts.savePull()
