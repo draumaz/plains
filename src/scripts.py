@@ -31,7 +31,7 @@ def savePull(): #Retrieves variables and returns an array
             h = int(lines[7]) #explain flag (chapter 2)
             i = int(lines[8]) #bad ending flag
             j = int(lines[9]) #bad ending extended
-            k = int(lines[10]) #skip splash (deprecated)
+            k = int(lines[10]) #lizard 3 fight disappear (int 3)
             l = int(lines[11]) #lizard deluxe
             m = int(lines[12]) #skip splash 2 (deprecated)
             n = int(lines[13]) #game over (deprecated)
@@ -77,7 +77,7 @@ def versionHeader(): #Displays the title and version
 
 def invDisplay(): #Displays inventory
     save = savePull()
-    did_murder = save[6]
+    did_murder = save[5]
     blade_state = save[14]
     flower_state = save[15]
     bottle_state = save[16]
