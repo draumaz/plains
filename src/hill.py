@@ -112,7 +112,7 @@ def hillSel1Ext():
         print("Looks like he's having a sense of déjà vu.\n")
         time.sleep(3)
     if var15 == 1:
-        print('KILL [1]')
+        print('FIGHT [1]')
     print('TALK [2]')
     if var16 == 0:
         print('BACK [3]')
