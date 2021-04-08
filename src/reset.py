@@ -64,6 +64,9 @@ def normalReset():
     line_ext = 7
     state_ext = 0
     scripts.saveWriter(line_ext, state_ext)
+    line_ext = 10
+    state_ext = 0
+    scripts.saveWriter(line_ext, state_ext)
     line_ext = 13
     state_ext = 0
     scripts.saveWriter(line_ext, state_ext)
