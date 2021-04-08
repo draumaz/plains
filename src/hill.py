@@ -218,7 +218,7 @@ def hillSel1():
                         print('')
                         print(textwrap.fill('You use the bottle to collect his blood. Still warm.', 75))
                         time.sleep(4)
-                        hill()
+                        hillSel1()
                 if choose == 3:
                     hill()
                 if choose > 3 or choose < 0:

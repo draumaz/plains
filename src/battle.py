@@ -31,7 +31,7 @@ def battleFlashy():
 	print('N')
 	time.sleep(0.06)
 	print('!')
-	time.sleep(1)
+	time.sleep(0.5)
 	battleBegin()
 
 def battleBegin():
@@ -45,7 +45,11 @@ def battleBegin():
 	choose = int(input('\nACTION >> '))
 	if choose == 1:
 		print("\nYou're too weak.")
+		time.sleep(0.35)
+		print("He's fully unaffected.")
 		time.sleep(1)
+		print("...doesn't seem like he wants to be doing this.")
+		time.sleep(2)
 		battleBegin()
 	if choose == 2:
 		battleItems()

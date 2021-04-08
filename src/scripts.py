@@ -86,7 +86,7 @@ def invDisplay(): #Displays inventory
         visibility = 1
     else:
         visibility = 0
-    if flower_state == 0 or flower_state == 2:
+    if flower_state == 0 or flower_state == 2 or flower_state == 4:
         flower = 'EMPTY'
     if flower_state == 1:
         flower = "1x FLOWER"
