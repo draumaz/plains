@@ -51,7 +51,7 @@ def battleBegin():
 				line_ext = 10
 				state_ext = var + 1
 				scripts.saveWriter(line_ext, state_ext)
-				if var < 2:
+				if var <= 0:
 					print("\nYou're too weak.")
 					time.sleep(0.35)
 					print("He's fully unaffected.")
@@ -59,13 +59,23 @@ def battleBegin():
 					print("...doesn't seem like he wants to be doing this.")
 					time.sleep(2)
 					battleBegin()
+				if var == 1:
+					print("\nHe's starting to lose his patience.")
+					time.sleep(2)
+					battleBegin()
 				if var == 2:
+					print('\nGetting really impatient now.')
+					time.sleep(2)
+					battleBegin()
+				if var == 3:
 					line_ext = 11
 					state_ext = 1
 					scripts.saveWriter(line_ext, state_ext)
 					print('\nThe lizard man gets tired of this, and leaves.')
 					time.sleep(2)
 					hill.hill()
+				if var != 0 or var != 1 or var != 2 or var != 3:
+					battleBegin()
 			if choose == 2:
 				battleItems()
 			if choose == 3:

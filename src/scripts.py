@@ -31,7 +31,7 @@ def savePull(): #Retrieves variables and returns an array
             h = int(lines[7]) #explain flag (chapter 2)
             i = int(lines[8]) #bad ending flag
             j = int(lines[9]) #bad ending extended
-            k = int(lines[10]) #lizard 3 fight disappear (int 3)
+            k = int(lines[10]) #lizard fight disappear (int 3)
             l = int(lines[11]) #lizard deluxe
             m = int(lines[12]) #skip splash 2 (deprecated)
             n = int(lines[13]) #game over (deprecated)
