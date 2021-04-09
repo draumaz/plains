@@ -33,7 +33,7 @@ def mainMenu3(): #WIP (main mm3)
         try:
             choose = int(input('\nACTION >> '))
             if choose == 1:
-                pass
+                mainMenu3()
             if choose == 2:
                 if var6 == 0:
                     lizard.Lizard()
