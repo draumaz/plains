@@ -16,6 +16,7 @@ def Lizard():
 			var7 = vars[6]
 			var15 = vars[14]
 			var16 = vars[15]
+			annoyed_lizard = vars[10]
 			print('You and your friends walk towards the lizard. ', end='')
 			if var16 == 2:
 				print('He waves at you all, inviting you over!')
@@ -28,7 +29,13 @@ def Lizard():
 			print('BACK [3]')
 			choose = int(input('\nACTION >> '))
 			if choose == 1:
-				if var5 == 1 and var7 == 1:
+				if annoyed_lizard == 4:
+					print('\nThe lizard mentions how strangely you acted earlier, trying to punch him.')
+					time.sleep(4)
+					print('...kinda awkward. You head back.')
+					time.sleep(2)
+					mm3.mainMenu3()
+				if var5 == 1 and var7 == 1 and annoyed_lizard != 4:
 					print("\nYou ask him why he looks so nervous. He can't even look at you.")
 					time.sleep(3)
 					print("He leaves in a hurry.")
@@ -38,9 +45,9 @@ def Lizard():
 					scripts.saveWriter(line_ext, state_ext)
 					#write new var so he doesn't show up on mm3
 					mm3.mainMenu3()
-				if var6 == 1:
+				if var6 == 1 and annoyed_lizard != 4:
 					Lizard() #shouldn't be possible
-				if var16 == 2:
+				if var16 == 2 and annoyed_lizard != 4:
 					print('\nHe starts up a little chat with you guys.')
 					print('Seems like he really appreciates your presence.')
 					time.sleep(5)
