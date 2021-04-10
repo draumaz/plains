@@ -112,7 +112,7 @@ def battleItems():
 				line_ext = 6
 				state_ext = 1
 				scripts.saveWriter(line_ext, state_ext)
-				print('\nYou stab him to death.')
+				print('\nYou lunge at the lizard and stab him to death.')
 				time.sleep(4)
 				hill.hill()
 			if choose == 2:
