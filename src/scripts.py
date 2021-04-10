@@ -101,9 +101,9 @@ def invDisplay(): #Displays inventory
     if bottle_state == 1 or bottle_state == 5:
         bottle = "1x EMPTY BOTTLE"
     if bottle_state == 3:
-        bottle = "1x BOTTLE OF BLOOD"
+        bottle = "1x BOTTLE (BLOOD)"
     if bottle_state == 4:
-        bottle = "1x BOTTLE OF WATER"
+        bottle = "1x BOTTLE (WATER)"
     if visibility == 1:
         print("INV:", flower, blade, bottle, '\n', sep=" | ")
     if visibility == 0:

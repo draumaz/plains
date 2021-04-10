@@ -20,11 +20,11 @@ def mainMenu3(): #WIP (main mm3)
     if var6 == 0:
         print("notice a reptilian")
         print("near the cave you were at.")
-    print('\nPLACEHOLDER [1]')
+    print('\nCAVE [1]')
     if var6 != 1 and var18 == 0:
         print('LIZARD [2]')
     if var6 == 1:
-        print('DEAD LIZARD PLACEHOLDER [2]')
+        print('CHECK OUT THAT MESS [2]')
     if var18 == 1:
         print('', end='')
     print('RIVER [3]')
@@ -38,6 +38,8 @@ def mainMenu3(): #WIP (main mm3)
                 if var6 == 0:
                     lizard.Lizard()
                 if var6 == 1:
+                    print('not ready')
+                    time.sleep(0.05)
                     mainMenu3()
             if choose == 3:
                 river.riverMain()
