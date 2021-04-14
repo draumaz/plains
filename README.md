@@ -2,7 +2,7 @@
 ![Screenie](https://github.com/draumaz/plains/blob/main/art/aaaa.png?raw=true "Screenshot")
 <p align="center">
   <b></b><br>
-  <a href="https://github.com/draumaz/plains/releases/tag/v0.23_02">Download (macOS, Linux, Windows)</a>
+  <a href="https://github.com/draumaz/plains/releases/tag/v0.25">Download (macOS, Linux, Windows)</a>
   <br><br>
   
 # Story
