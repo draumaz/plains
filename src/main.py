@@ -142,7 +142,7 @@ def mainAlt2():
                     time.sleep(0.5)
                     mainAlt2()
                 if var10 == 0:
-                    print("You're proud of it.")
+                    print("\nYou're proud of it.")
                     time.sleep(2)
                     print("Here's your chance.")
                     time.sleep(1)
