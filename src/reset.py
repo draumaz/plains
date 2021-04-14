@@ -24,7 +24,7 @@ def resetter():
                     if var10 == 0:
                         line_ext = 9
                         state_ext = 1
-                        scripts.saveWriter()
+                        scripts.saveWriter(line_ext, state_ext)
                     quit()
                 if var9 == 0:
                     normalReset()
