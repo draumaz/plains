@@ -10,10 +10,11 @@ import scripts
 def breakTest():
     while True:
         try:
-            file = open('plains.txt', 'r')
+            file = open('e.txt', 'r')
             file.close()
             scripts.screenClear()
             print('\nFATAL ERROR OCCURRED\n')
+            time.sleep(1)
             reset.resetter()
             quit()
         except FileNotFoundError:
@@ -201,7 +202,7 @@ def mainAlt5():
     time.sleep(5)
     print('\nFATAL ERROR ENCOUNTERED')
     time.sleep(2)
-    dest = open('plains.txt', 'w+')
+    dest = open('e.txt', 'w+')
     dest.write('EVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\n')
     dest.close()
     quit()
