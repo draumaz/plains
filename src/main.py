@@ -14,7 +14,7 @@ def breakTest():
             file = open('e.txt', 'r')
             file.close()
             scripts.screenClear()
-            print('\nFATAL ERROR OCCURRED\n')
+            print('\nFATAL ERROR OCCURRED')
             reset.resetter()
             sys.exit()
         except FileNotFoundError:
