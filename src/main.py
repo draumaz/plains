@@ -1,5 +1,6 @@
 import os
 import time
+import sys
 import mm1
 import mm2
 import mm3
@@ -14,9 +15,8 @@ def breakTest():
             file.close()
             scripts.screenClear()
             print('\nFATAL ERROR OCCURRED\n')
-            time.sleep(1)
             reset.resetter()
-            quit()
+            sys.exit()
         except FileNotFoundError:
             fileTest()
 
@@ -108,7 +108,11 @@ def mainExt2():
             choose = int(input('\nACTION >> '))
             if choose == 3:
                 mainAlt()
+            if choose > 3 or choose < 3:
+                scripts.screenClear()
+                mainExt2()
         except ValueError:
+            scripts.screenClear()
             mainExt2()
 
 def mainAlt():
@@ -158,7 +162,7 @@ def mainAlt3():
     time.sleep(2)
     print("You killed him.")
     time.sleep(2)
-    print(textwrap.fill("Think about what that means. You downloaded a game, just to kill an innocent creature.", 75))
+    print(textwrap.fill("You downloaded a game, just to kill an innocent creature.", 75))
     time.sleep(3)
     print("Does that make you feel good?")
     time.sleep(4)
@@ -168,7 +172,7 @@ def mainAlt3():
     time.sleep(2)
     print('\nYou still have the chance to make things right.')
     time.sleep(2)
-    print('You can go back there, do the right thing.')
+    print('You can go back there, and do the right thing.')
     time.sleep(2)
     mainAlt4()
 
@@ -205,6 +209,6 @@ def mainAlt5():
     dest = open('e.txt', 'w+')
     dest.write('EVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\nEVIL\n')
     dest.close()
-    quit()
+    sys.exit()
 
 breakTest() #Execution call

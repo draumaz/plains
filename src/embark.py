@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import mm2
 import mm3
@@ -15,7 +16,7 @@ def emb2Handler():
             if choose == 1:
                 mm3.mainMenu3()
             if choose == 2:
-                quit()
+                sys.exit()
             if choose > 2 or choose < 0:
                 scripts.inpErrorHandler()
                 emb2Handler()
@@ -32,7 +33,7 @@ def emb2End():
     line_ext = 13
     state_ext = 1
     scripts.saveWriter()
-    quit()
+    sys.exit()
 
 def Embark2():
     print("\nSaan mentions how beautiful this planet is.")
@@ -86,7 +87,7 @@ def Embark1():
     print('MONSTER')
     time.sleep(0.15)
     scripts.screenClear()
-    quit()
+    sys.exit()
 
 def Embark():
     save = scripts.savePull()

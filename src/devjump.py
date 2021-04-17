@@ -3,6 +3,7 @@ import mm2
 import mm1
 import time
 import os
+import sys
 import scripts
 import configparser
 
@@ -89,7 +90,7 @@ def devJump():
                 scripts.saveWriter(line_ext, state_ext)
             if choose == 11:
                 scripts.screenClear()
-                quit()
+                sys.exit()
         except ValueError:
             devJump()
 

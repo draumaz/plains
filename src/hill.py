@@ -254,7 +254,7 @@ def hs2Sub():
     time.sleep(1)
     print('.')
     time.sleep(1)
-    print("\nThey're coming.")
+    print("\nYou hear a whirring sound near your crashsite.")
     time.sleep(5)
     hill()
 

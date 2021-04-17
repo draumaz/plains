@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import textwrap
 import scripts
@@ -19,19 +20,20 @@ def resetter():
             if choose == 1:
                 if var9 == 1:
                     scripts.savePull()
+                    time.sleep(2)
                     print('\nReset failed.\n')
                     time.sleep(1)
                     if var10 == 0:
                         line_ext = 9
                         state_ext = 1
                         scripts.saveWriter(line_ext, state_ext)
-                    quit()
+                    sys.exit()
                 if var9 == 0:
                     normalReset()
                     return
             if choose == 2:
                 if var9 == 1:
-                    quit()
+                    sys.exit()
                 if var9 == 0:
                     return
             if choose == 420:

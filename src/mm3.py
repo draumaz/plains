@@ -1,4 +1,5 @@
 import os
+import sys
 import time
 import textwrap
 import scripts
@@ -64,4 +65,4 @@ def mainMenu3W(): #Placeholder director
     print(textwrap.fill("Visit https://github.com/draumaz/plains to keep up with the game!", 75))
     print('')
     time.sleep(5)
-    quit()
+    sys.exit()

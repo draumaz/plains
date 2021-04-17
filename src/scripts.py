@@ -59,9 +59,9 @@ def saveCorruptHandler():
                 os.remove('data.txt')
                 saveGenerator()
                 print('\nSave reset. Please restart the game.')
-                quit()
+                sys.exit()
             if choose == 2:
-                quit()
+                sys.exit()
             if choose > 2 or choose < 1:
                 inpErrorHandler()
                 saveCorruptHandler()
