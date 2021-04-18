@@ -5,6 +5,25 @@ import textwrap
 import scripts
 import battle
 
+def hillPostMurder():
+    while True:
+        try:
+            scripts.screenClear()
+            scripts.versionHeader()
+            scripts.invDisplay()
+            print('Stand still.')
+            print('\n')
+            print('            [1]')
+            print('STAND STILL [2]')
+            print('            [3]')
+            choose = int(input('\nACTION >> '))
+            if choose > 2 or choose < 2:
+                hillPostMurder()
+            if choose == 2:
+                hillSel2()
+        except ValueError:
+            hillPostMurder()
+
 def hill():
     save = scripts.savePull()
     var1 = save[0]
@@ -14,12 +33,12 @@ def hill():
     scripts.screenClear()
     scripts.versionHeader()
     scripts.invDisplay()
+    if var6 == 1 and var1 == 0:
+        hillPostMurder()
     if var6 == 0 and var1 == 0:
         print(textwrap.fill('That hill looks pretty strange. It juts out of the landscape in an unrealistic way.', 75))
     if var6 == 0 and var1 == 1:
         print(textwrap.fill("Having stood there, you hear a strange noise in the sky. Perhaps heading back to where you started will reveal the source.", 75))
-    if var6 == 1 and var1 == 0:
-        print('Stand still.')
     if var6 == 1 and var1 == 1:
         print("Go back.")
     if var6 == 0 and var12 == 0 and var16 != 2:
