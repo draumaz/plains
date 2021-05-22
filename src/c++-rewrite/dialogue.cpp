@@ -1,5 +1,15 @@
 #include <iostream>
 
+int m1_dialogue(int p){
+	if ( p == 1 ){
+		std::cout << "You are Liam. An astronaut by trade, you took a bad turn on the Space Belt" << "\n" << "and landed on a strange planet. You awaken, laying in a field of grass." << "\n" << "You see hills, a cave, and strange flora." << std::endl;
+	}
+	if ( p == 11 ){
+		std::cout << "You're covered in the blood of the innocent. The sky rumbles before you." << std::endl;
+	}
+	return 0;
+}
+
 int embark_dialogue(int p){
 	if ( p == 1 ){
 		std::cout << "You decide to depart anyways, and your journey comes to an end." << std::endl;

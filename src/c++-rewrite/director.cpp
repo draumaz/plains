@@ -9,13 +9,21 @@ using namespace std;
 
 int direct(){
 	int i;
+	int * x = save_reader();
+	int s = x[1];
 	screen_clear();
 	cout << "\n";
 	splash_display();
 	cout << "\n" << "PLAY [1]" << "\nRESET [2]" << "\n\nACTION >> ";
 	cin >> i;
 	if (i == 1){
-		cout << "game direct" << endl;
+		if ( s == 0 ){
+			m1_main_screen();
+		}
+		else {
+			cout << "WIP" << endl;
+			return 0;
+		}
 	}
 	if (i == 2){
 		resetter();
