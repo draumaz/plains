@@ -2,6 +2,7 @@
 #include "visuals.hpp"
 #include "backend.hpp"
 #include "dialogue.hpp"
+#include "screens.hpp"
 
 using namespace std;
 
@@ -14,7 +15,6 @@ int direct(){
 	cin >> i;
 	if (i == 1){
 		cout << "game direct" << endl;
-		return 0;
 	}
 	if (i == 2){
 		cout << "reset direct" << endl;

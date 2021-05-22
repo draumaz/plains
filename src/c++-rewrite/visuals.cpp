@@ -12,7 +12,7 @@ void splash_display(){
 
 void version_header(){
 	string v = "0.26";
-	cout << "The Plains v" << v << endl;
+	cout << "\n" << "The Plains v" << v << "\n" << endl;
 }
 
 void screen_clear(){

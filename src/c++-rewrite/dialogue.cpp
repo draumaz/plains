@@ -192,5 +192,60 @@ int hill_dialogue(int p){
 		std::cout << "Upon seeing the towering lizard, you decide to head back." << std::endl;
 		return 0;
 	}
+	if ( p == 3 ){
+		std::cout << "Silence fills the air." << std::endl;
+		return 0;
+	}
+	if ( p == 31 ){
+		std::cout << "You lay the flower down next to his lifeless corpse." << std::endl;
+		return 0;
+	}
+	if ( p == 311 ){
+		std::cout << "You use the bottle to collect his blood. Still warm." << std::endl;
+		return 0;
+	}
+	if ( p == 4 ){
+		std::cout << "You're completely motionless." << std::endl;
+	}
+	if ( p == 41 ){
+		std::cout << "Suddenly, you hear a sound coming from near your ship." << std::endl;
+		return 0;
+	}
+	if ( p == 412 ){
+		std::cout << "You hear a whirring sound by your crashsite." << std::endl;
+		return 0;
+	}
+	if ( p == 5 ){
+		std::cout << "Despite all that layd ahead, you decide to simply stand still." << std::endl;
+		return 0;
+	}
+	if ( p == 51 ){
+		std::cout << "Seems like a waste of time." << std::endl;
+		return 0;
+	}
+	if ( p == 512 ){
+		std::cout << "You decide to stop being motionless, and return to a life full of motion." << std::endl;
+		return 0;
+	}
+	if ( p == 6 ){
+		std::cout << "You sit down on the soft grass and take in your surroundings.\nYou see a flower growing." << std::endl;
+		return 0;
+	}
+	if ( p == 61 ){
+		std::cout << "The flower comes off its root without hesitation." << std::endl;
+		return 0;
+	}
+	if ( p == 611 ){
+		std::cout << "You put it in your pocket." << std::endl;
+		return 0;
+	}
+	if ( p == 62 ){
+		std::cout << "You lay down for a moment, and feel refreshed." << std::endl;
+		return 0;
+	}
+	if ( p == 621 ){
+		std::cout << "You decide that there's more important things to be doing." << std::endl;
+		return 0;
+	}
 	return 0;
 }
