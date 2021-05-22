@@ -1,25 +1,26 @@
 #include <iostream>
 #include "visuals.hpp"
 
+using namespace std;
+
 int direct(){
 	int i;
 	screen_clear();
-	std::cout << "\n";
+	cout << "\n";
 	splash_display();
-	std::cout << "\n" << "PLAY [1]" << "\nRESET [2]" << "\n\nACTION >> ";
-	std::cin >> i;
+	cout << "\n" << "PLAY [1]" << "\nRESET [2]" << "\n\nACTION >> ";
+	cin >> i;
 	if (i == 1){
-		std::cout << "game direct" << std::endl;
+		cout << "game direct" << endl;
 		return 0;
 	}
 	if (i == 2){
-		std::cout << "reset direct" << std::endl;
+		cout << "reset direct" << endl;
 		return 0;
 	}
 	else{
-		std::cout << "FUCK" << std::endl;
+		cout << "FUCK" << endl;
 		return 0;
 	}
-	//
 	return 0;
 }

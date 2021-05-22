@@ -1,10 +1,18 @@
 #include <iostream>
+#include <string>
+
+using namespace std;
 
 void splash_display(){
-    std::cout << "==THE PLAINS===============" << std::endl;
-    std::cout << "==MADE BY DRAUMAZ IN 2021==" << std::endl;
-    std::cout << "==WRITTEN IN C++!=======" << std::endl;
-    std::cout << "==CHARACTER BY BRYCE CANO==" << std::endl;
+    cout << "==THE PLAINS===============" << endl;
+    cout << "==MADE BY DRAUMAZ IN 2021==" << endl;
+    cout << "==WRITTEN IN C++!=======" << endl;
+    cout << "==CHARACTER BY BRYCE CANO==" << endl;
+}
+
+void version_header(){
+	string v = "0.26";
+	cout << "The Plains v" << v << endl;
 }
 
 void screen_clear(){
