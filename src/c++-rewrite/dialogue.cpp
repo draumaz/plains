@@ -123,3 +123,74 @@ int cave_dialogue(int p){
 	}
 	return 0;
 }
+
+int hill_dialogue(int p){
+	if ( p == 1 ){
+		std::cout << "That hill looks pretty strange...it juts out of the landscape in an unnatural way." << std::endl;
+		return 0;
+	}
+	if ( p == 11 ){
+		std::cout << "You hear a strange noise. Perhaps heading back to your ship will reveal the source." << std::endl;
+		return 0;
+	}
+	if ( p == 12 ){
+		std::cout << "In the distance, you can see a creature moving about." << std::endl;
+		return 0;
+	}
+	if ( p == 121 ){
+		std::cout << "You can see the lizard sitting down, enjoying the sun." << std::endl;
+		return 0;
+	}
+	if ( p == 2 ){
+		std::cout << "The reptilian man seems untrusting of you, and leaves the area." << std::endl;
+		return 0;
+	}
+	if ( p == 21 ){
+		std::cout << "The reptilian man comes to you, and gives you some information." << std::endl;
+		return 0;
+	}
+	if ( p == 211 ){
+		std::cout << "You're far from home, aren't'cha?" << std::endl;
+		return 0;
+	}
+	if ( p == 212 ){
+		std::cout << "...not really helpful. But he means well." << std::endl;
+		return 0;
+	}
+	if ( p == 22 ){
+		std::cout << "The reptilian tells you that everyone seems to be scared of him except for you." << std::endl;
+		return 0;
+	}
+	if ( p == 221 ){
+		std::cout << "He looks really happy." << std::endl;
+		return 0;
+	}
+	if ( p == 23 ){
+		std::cout << "The huge reptilian sees you, and approaches." << std::endl;
+		return 0;
+	}
+	if ( p == 231 ){
+		std::cout << "The reptilian waves and smiles at you." << std::endl;
+		return 0;
+	}
+	if ( p == 232 ){
+		std::cout << "Looks like he's having a sense of déjà vu." << std::endl;
+		return 0;
+	}
+	if ( p == 233 ){
+		std::cout << "You give the lizard man the flower. He smiles at you." << std::endl;
+	}
+	if ( p == 234 ){
+		std::cout << "I don't have the heart to program this. Sorry!" << std::endl;
+		return 0;
+	}
+	if ( p == 235 ){
+		 std::cout << "He tells you nobody's shown him kindness like this before." << std::endl;
+		 return 0;
+	}
+	if ( p == 236 ){
+		std::cout << "Upon seeing the towering lizard, you decide to head back." << std::endl;
+		return 0;
+	}
+	return 0;
+}

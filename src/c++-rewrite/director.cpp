@@ -1,5 +1,7 @@
 #include <iostream>
 #include "visuals.hpp"
+#include "backend.hpp"
+#include "dialogue.hpp"
 
 using namespace std;
 
@@ -18,9 +20,13 @@ int direct(){
 		cout << "reset direct" << endl;
 		return 0;
 	}
-	else{
-		cout << "FUCK" << endl;
-		return 0;
+	if (i != 2 or i != 1){
+		while(cin.fail()){
+			input_error();
+			direct();
+		}
+		input_error();
+		direct();
 	}
 	return 0;
 }

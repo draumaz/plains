@@ -1,5 +1,13 @@
 #include <iostream>
 #include <fstream>
+#include <unistd.h>
+#include <time.h>
+
+int input_error(){
+	std::cout << "\n" << "Did you mean something else?" << std::endl;
+	sleep(1);
+	return 0;
+}
 
 void save_gen(){
 	std::ofstream i("data.txt");
