@@ -3,6 +3,7 @@
 #include "backend.hpp"
 #include "dialogue.hpp"
 #include "screens.hpp"
+#include "reset.hpp"
 
 using namespace std;
 
@@ -17,7 +18,7 @@ int direct(){
 		cout << "game direct" << endl;
 	}
 	if (i == 2){
-		cout << "reset direct" << endl;
+		resetter();
 		return 0;
 	}
 	return 0;
