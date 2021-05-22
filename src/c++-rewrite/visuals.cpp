@@ -4,10 +4,10 @@
 using namespace std;
 
 void splash_display(){
-    cout << "==THE PLAINS===============" << endl;
-    cout << "==MADE BY DRAUMAZ IN 2021==" << endl;
-    cout << "==WRITTEN IN C++!=======" << endl;
-    cout << "==CHARACTER BY BRYCE CANO==" << endl;
+    cout << "==THE PLAINS======================" << endl;
+    cout << "==MADE BY DRAUMAZ IN 2021=========" << endl;
+    cout << "==WRITTEN IN C++!=================" << endl;
+    cout << "==CHARACTER DESIGN BY BRYCE CANO==" << endl;
 }
 
 void version_header(){
