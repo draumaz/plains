@@ -20,13 +20,5 @@ int direct(){
 		cout << "reset direct" << endl;
 		return 0;
 	}
-	if (i != 2 or i != 1){
-		while(cin.fail()){
-			input_error();
-			direct();
-		}
-		input_error();
-		direct();
-	}
 	return 0;
 }
