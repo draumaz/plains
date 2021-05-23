@@ -226,7 +226,7 @@ int hill_dialogue(int p){
 		return 0;
 	}
 	if ( p == 5 ){
-		std::cout << "Despite all that layd ahead, you decide to simply stand still." << std::endl;
+		std::cout << "Despite all that lies ahead, you decide to simply stand still." << std::endl;
 		return 0;
 	}
 	if ( p == 51 ){
@@ -235,6 +235,14 @@ int hill_dialogue(int p){
 	}
 	if ( p == 512 ){
 		std::cout << "You decide to stop being motionless, and return to a life full of motion." << std::endl;
+		return 0;
+	}
+	if ( p == 513 ){
+		std::cout << "Stand still." << std::endl;
+		return 0;
+	}
+	if ( p == 514 ){
+		std::cout << "Go back." << std::endl;
 		return 0;
 	}
 	if ( p == 6 ){
