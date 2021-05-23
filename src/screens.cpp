@@ -46,7 +46,7 @@ void hill_evil_stand_screen(){
 	p = 513;
 	cout << "" << endl;
 	hill_dialogue(p);
-	cout << "\n" << "   [1]" << "\n" << "STAND STILL [2]" << "\n" << "    [3]" << endl;
+	cout << "\n" << "            [1]" << "\n" << "STAND STILL [2]" << "\n" << "            [3]" << endl;
 	i = input_display();
 	if ( i == 1 ){
 		hill_evil_stand_screen();
@@ -198,7 +198,6 @@ void cave_deeper_screen(){
 		}
 	}
 	if ( i == 2 ){
-		cout << "" << endl;
 		p = 36;
 		cout << endl;
 		cave_dialogue(p);
