@@ -1,5 +1,5 @@
 # The Plains
-![Screenie](https://github.com/draumaz/plains/blob/main/art/aaaa.png?raw=true "Screenshot")
+![Screenie](https://github.com/draumaz/plains/blob/main/art/screen.png?raw=true "Screenshot")
 <p align="center">
   <b></b><br>
   <a href="https://github.com/draumaz/plains/releases/latest">Download (Linux, Windows)</a>
