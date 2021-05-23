@@ -52,7 +52,7 @@ void hill_evil_stand_screen(){
 		hill_evil_stand_screen();
 	}
 	if ( i == 2 ){
-		// Stand
+		hill_stand_screen();
 	}
 	if ( i == 3 ){
 		hill_evil_stand_screen();
@@ -60,6 +60,42 @@ void hill_evil_stand_screen(){
 	if ( i != 1 or i != 2 or i != 3 ){
 		error_handle();
 		hill_evil_stand_screen();
+	}
+}
+
+void hill_stand_screen(){
+	screen_clear();
+	version_header();
+	inventory_display();
+	int * x = save_reader();
+	int p,i,line,state;
+	int v6 = x[5];
+	if ( v6 == 0 ){
+		p = 5;
+		hill_dialogue(p);
+	}
+	sleep(2);
+	cout << "..." << endl;
+	line = 0;
+	state = 1;
+	save_writer(line, state);
+	sleep(2);
+	if ( v6 == 0 ){
+		p = 4;
+		hill_dialogue(p);
+		sleep(2);
+		p = 41;
+		cout << endl;
+		hill_dialogue(p);
+		sleep(2);
+		hill_main_screen();
+	}
+	if ( v6 == 1 ){
+		p = 412;
+		cout << endl;
+		hill_dialogue(p);
+		sleep(2);
+		hill_main_screen();
 	}
 }
 
@@ -92,6 +128,7 @@ void hill_main_screen(){
 	}
 	if ( v6 == 0 and v1 == 1 ){
 		p = 11;
+		cout << endl;
 		hill_dialogue(p);
 	}
 	if ( v6 == 1 and v1 == 1 ){
@@ -122,7 +159,7 @@ void hill_main_screen(){
 	}
 	if ( i == 2 ){
 		if ( v1 == 0 ){
-			// Stand
+			hill_stand_screen();
 		}
 		if ( v1 == 1 ){
 			error_handle();
