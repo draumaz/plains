@@ -16,7 +16,7 @@ int direct(){
 	splash_display();
 	cout << "\n" << "PLAY [1]" << "\nRESET [2]" << "\n\nACTION >> ";
 	cin >> i;
-	if (i == 1){
+	if ( i == 1 ){
 		if ( s == 0 ){
 			m1_main_screen();
 		}
@@ -25,9 +25,13 @@ int direct(){
 			return 0;
 		}
 	}
-	if (i == 2){
+	if ( i == 2 ){
 		resetter();
 		return 0;
+	}
+	if ( i != 1 or i != 2 ){
+		error_handle();
+		direct();
 	}
 	return 0;
 }

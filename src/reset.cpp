@@ -10,7 +10,7 @@ using namespace std;
 
 void std_reset(){
 	ofstream x("data.txt");
-	x<<"0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0";
+	x<<"0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0";
 	x.close();
 }
 

@@ -26,15 +26,12 @@ void inventory_display(){
         int blade_state = i[14];
         int flower_state = i[15];
         int bottle_state = i[16];
-        int viz;
+        int viz = 0;
         string flower;
         string bottle;
         string blade;
         if ( blade_state != 0 or flower_state != 0 or bottle_state != 0 ){
                 viz = 1;
-        }
-        else {
-                viz = 0;
         }
         if ( flower_state == 0 or flower_state == 2 or flower_state == 4 ){
                 flower = "EMPTY";

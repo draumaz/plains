@@ -25,9 +25,16 @@ void m1_main_screen(){
 	if ( i == 2 ){
 		cave_main_screen();
 	}
+	if ( i == 3 ){
+		// Tool
+	}
 	if ( i == 4 ){
 		screen_clear();
 		exit(0);
+	}
+	if ( i != 1 or i != 2 or i != 3 or i != 4 ){
+		error_handle();
+		m1_main_screen();
 	}
 }
 
@@ -45,9 +52,13 @@ void hill_evil_stand_screen(){
 		hill_evil_stand_screen();
 	}
 	if ( i == 2 ){
-		//
+		// Stand
 	}
 	if ( i == 3 ){
+		hill_evil_stand_screen();
+	}
+	if ( i != 1 or i != 2 or i != 3 ){
+		error_handle();
 		hill_evil_stand_screen();
 	}
 }
@@ -91,12 +102,42 @@ void hill_main_screen(){
 		s1 = "GO FORWARDS";
 	}
 	if ( v1 == 0 ){
-		s2 = "STAND STILL";
+		s2 = "STAND STILL [2]";
 	}
-	cout << "\n" << s1 << " [1]" << "\n" << s2 << " [2]" << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
+	if ( v1 == 1 ){
+		s2 == "";
+	}
+	cout << "\n" << s1 << " [1]" << "\n" << s2 << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
 	i = input_display();
+	if ( i == 1 ){
+		if ( v6 == 1 ){
+			// Go forwards (dead)
+		}
+		if ( v16 == 2 ){
+			// Visit (friendly)
+		}
+		if ( v6 == 0 and v12 == 0 and v16 != 2 ){
+			// Go forwards (alive)
+		}
+	}
+	if ( i == 2 ){
+		if ( v1 == 0 ){
+			// Stand
+		}
+		if ( v1 == 1 ){
+			error_handle();
+			hill_main_screen();
+		}
+	}
+	if ( i == 3 ){
+		// Take a Break
+	}
 	if ( i == 4 ){
 		m1_main_screen();
+	}
+	if ( i != 1 or i != 2 or i != 3 or i != 4 ){
+		error_handle();
+		hill_main_screen();
 	}
 
 }
@@ -107,7 +148,7 @@ void cave_deeper_screen(){
 	inventory_display();
 	int * x = save_reader();
 	int v15 = x[14];
-	int p,i;
+	int p,i,line,state;
 	string k;
 	if ( v15 == 0 ){
 		p = 3;
@@ -124,12 +165,46 @@ void cave_deeper_screen(){
 	cave_dialogue(p);
 	cout << "\n" << k << " [1]" << "\n" << "BACK [2]" << endl;
 	i = input_display();
+	if ( i == 1 ){
+		if ( v15 == 0 ){
+			line = 14;
+			state = 1;
+			p = 33;
+			save_writer(line, state);
+			cave_dialogue(p);
+			sleep(2);
+			cave_deeper_screen();
+		}
+		if ( v15 == 1 ){
+			line = 14;
+			state = 2;
+			p = 34;
+			save_writer(line, state);
+			cave_dialogue(p);
+			sleep(2);
+			cave_deeper_screen();
+		}
+		if ( v15 == 2 ){
+			line = 14;
+			state = 1;
+			p = 35;
+			save_writer(line, state);
+			cave_dialogue(p);
+			sleep(2);
+			cave_deeper_screen();
+		}
+	}
 	if ( i == 2 ){
 		cout << "" << endl;
 		p = 36;
 		cave_dialogue(p);
 		sleep(2);
 		cave_main_screen();
+	}
+	if ( i != 1 or i != 2 ){
+		error_handle();
+		cave_deeper_screen();
+
 	}
 }
 
@@ -145,12 +220,22 @@ void cave_main_screen(){
 	if ( i == 1 ){
 		cave_deeper_screen();
 	}
+	if ( i == 2 ){
+		// Look around
+	}
+	if ( i == 3 ){
+		// Go right (second chest)
+	}
 	if ( i == 4 ){
 		p = 2;
 		cout << "" << endl;
 		cave_dialogue(p);
 		sleep(2);
 		m1_main_screen();
+	}
+	if ( i != 1 or i != 2 or i != 3 or i != 4 ){
+		error_handle();
+		cave_main_screen();
 	}
 }
 
