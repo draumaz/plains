@@ -2,11 +2,21 @@
 #include <fstream>
 #include <unistd.h>
 #include <time.h>
+#include "backend.hpp"
 
-int input_error(){
-	std::cout << "\n" << "Did you mean something else?" << std::endl;
-	sleep(1);
-	return 0;
+int input_display(){
+	int i;
+	std::cout << "\nACTION >> ";
+	std::cin >> i;
+	while ( std::cin.fail() ){
+		std::cin.clear();
+		std::cin.ignore(256,'\n');
+		std::cout << "\n" << "Did you mean something else?" << std::endl;
+        	sleep(1);
+		std::cout << "\nACTION >> ";
+		std::cin >> i;
+	}
+	return i;
 }
 
 void save_gen(){

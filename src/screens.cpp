@@ -17,8 +17,8 @@ void m1_main_screen(){
 	int p,i;
 	p = 1;
 	m1_dialogue(p);
-	cout << "\n" << "HILL [1]" << "\n" << "CAVE [2]" << "\n" << "TOOL [3]" << "\n" << "QUIT [4]" << "\n\n" << "ACTION >> ";
-	cin >> i;
+	cout << "\n" << "HILL [1]" << "\n" << "CAVE [2]" << "\n" << "TOOL [3]" << "\n" << "QUIT [4]" << endl;
+	i = input_display();
 	if ( i == 1 ){
 		hill_main_screen();
 	}
@@ -39,8 +39,8 @@ void hill_evil_stand_screen(){
 	p = 513;
 	cout << "" << endl;
 	hill_dialogue(p);
-	cout << "\n" << "   [1]" << "\n" << "STAND STILL [2]" << "\n" << "    [3]" << "\n\n" << "ACTION >> ";
-	cin >> i;
+	cout << "\n" << "   [1]" << "\n" << "STAND STILL [2]" << "\n" << "    [3]" << endl;
+	i = input_display();
 	if ( i == 1 ){
 		hill_evil_stand_screen();
 	}
@@ -93,8 +93,12 @@ void hill_main_screen(){
 	if ( v1 == 0 ){
 		s2 = "STAND STILL";
 	}
-	cout << "\n" << s1 << " [1]" << "\n" << s2 << " [2]" << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << "\n\n" << "ACTION >> ";
-	cin >> i;
+	cout << "\n" << s1 << " [1]" << "\n" << s2 << " [2]" << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
+	i = input_display();
+	if ( i == 4 ){
+		m1_main_screen();
+	}
+
 }
 
 void cave_deeper_screen(){
@@ -118,8 +122,8 @@ void cave_deeper_screen(){
 		k = "TAKE BACK";
 	}
 	cave_dialogue(p);
-	cout << "\n" << k << " [1]" << "\n" << "BACK [2]" << "\n\n" << "ACTION >> ";
-	cin >> i;
+	cout << "\n" << k << " [1]" << "\n" << "BACK [2]" << endl;
+	i = input_display();
 	if ( i == 2 ){
 		cout << "" << endl;
 		p = 36;
@@ -136,8 +140,8 @@ void cave_main_screen(){
 	int p,i;
 	p = 1;
 	cave_dialogue(p);
-	cout << "\n" << "GO FORWARDS [1]" << "\n" << "LOOK AROUND [2]" << "\n" << "GO RIGHT [3]" << "\n" << "BACK [4]" << "\n\n" << "ACTION >> ";
-	cin >> i;
+	cout << "\n" << "GO FORWARDS [1]" << "\n" << "LOOK AROUND [2]" << "\n" << "GO RIGHT [3]" << "\n" << "BACK [4]" << endl;
+	i = input_display();
 	if ( i == 1 ){
 		cave_deeper_screen();
 	}
