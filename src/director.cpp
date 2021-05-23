@@ -14,8 +14,8 @@ int direct(){
 	screen_clear();
 	cout << "\n";
 	splash_display();
-	cout << "\n" << "PLAY [1]" << "\nRESET [2]" << "\n\nACTION >> ";
-	cin >> i;
+	cout << "\n" << "PLAY [1]" << "\nRESET [2]" << endl;
+	i = input_display();
 	if ( i == 1 ){
 		if ( s == 0 ){
 			m1_main_screen();
