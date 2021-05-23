@@ -35,19 +35,19 @@ int embark_dialogue(int p){
 		std::cout << "Ignoring your friends, you make your way to their spaceship and lock the doors." << std::endl;
 		return 0;
 	}
-	if ( p = 32 ){
+	if ( p == 32 ){
 		std::cout << "Your friends follow along." << std::endl;
 		return 0;
 	}
-	if ( p = 33 ){
+	if ( p == 33 ){
 		std::cout <<  "This ship is gorgeous. Complex, shiny white metal covers the interior." << std::endl;
 		return 0;
 	}
-	if ( p = 34 ){
+	if ( p == 34 ){
 		std::cout << "The ship doesn't matter, it's a means to an end." << std::endl;
 		return 0;
 	}
-	if ( p = 35 ){
+	if ( p == 35 ){
 		std::cout << "You decide against leaving quite yet." << std::endl;
 		return 0;
 	}
@@ -107,7 +107,7 @@ int cave_dialogue(int p){
 		std::cout << "Too much work, anyways." << std::endl;
 		return 0;
 	}
-	if ( p = 5 ){
+	if ( p == 5 ){
 		std::cout << "You come across another unlocked chest. It's rather dusty." << std::endl;
 		return 0;
 	}
@@ -129,6 +129,30 @@ int cave_dialogue(int p){
 	}
 	if ( p == 513 ){
 		std::cout << "You take the bottle back." << std::endl;
+		return 0;
+	}
+	if ( p == 6 ){
+		std::cout << "You come across another corner. A divot is blocked by dense shrubbery." << std::endl;
+		return 0;
+	}
+	if ( p == 61 ){
+		std::cout << "You cut the shrubs, and behind it you find a bottle." << std::endl;
+		return 0;
+	}
+	if ( p == 62 ){
+		std::cout << "These plants are definitely too strong to get through by hand. You'll need to find some sort of tool." << std::endl;
+		return 0;
+	}
+	if ( p == 63 ){
+		std::cout << "Just some boring shrubs." << std::endl;
+		return 0;
+	}
+	if ( p == 631 ){
+		std::cout << "They're already slashed." << std::endl;
+		return 0;
+	}
+	if ( p == 632 ){
+		std::cout << "Nothing more than a dusty corner." << std::endl;
 		return 0;
 	}
 	return 0;

@@ -179,6 +179,77 @@ void hill_main_screen(){
 
 }
 
+void cave_right_screen(){
+        screen_clear();
+        version_header();
+        inventory_display();
+        int * x = save_reader();
+        int p,i,line,state;
+        int blade_state = x[14];
+	int bottle_state = x[16];
+	string v;
+	if ( bottle_state == 0 ){
+		p = 6;
+	}
+	if ( bottle_state == 1 ){
+		p = 63;
+	}
+	if ( blade_state == 0 ){
+		v = "";
+	}
+	if ( blade_state == 1 ){
+		v = "SLASH [1]";
+	}
+	cave_dialogue(p);
+	cout << "\n" << v << "\n" << "INSPECT [2]" << "\n" << "BACK [3]" << endl;
+	i = input_display();
+	if ( i == 1 ){
+		if ( blade_state == 1 ){
+			if ( bottle_state == 0 ){
+				p = 61;
+				cout << endl;
+				cave_dialogue(p);
+				line = 16;
+				state = 1;
+				save_writer(line, state);
+				sleep(2);
+				cave_right_screen();
+			}
+			if ( bottle_state == 1 ){
+				p = 631;
+				cout << endl;
+				cave_dialogue(p);
+				sleep(2);
+				cave_right_screen();
+			}
+		}
+
+	}
+	if ( i == 2 ){
+		if ( bottle_state == 0 ){
+			p = 62;
+			cout << endl;
+			cave_dialogue(p);
+			sleep(3);
+			cave_right_screen();
+		}
+		if ( bottle_state == 1 ){
+			p = 632;
+			cout << endl;
+			cave_dialogue(p);
+			sleep(2);
+			cave_right_screen();
+		}
+	}
+	if ( i == 3 ){
+		cave_main_screen();
+	}
+	if ( i != 1 or i != 2 or i != 3 ){
+		error_handle();
+		cave_right_screen();
+	}
+}
+
 void cave_deeper_screen(){
 	screen_clear();
 	version_header();
@@ -264,7 +335,7 @@ void cave_main_screen(){
 		// Look around
 	}
 	if ( i == 3 ){
-		// Go right (second chest)
+		cave_right_screen();
 	}
 	if ( i == 4 ){
 		p = 2;
