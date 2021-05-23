@@ -105,4 +105,3 @@ int save_writer(int line, int state){
 	xy<<a<<"\n"<<b<<"\n"<<c<<"\n"<<d<<"\n"<<e<<"\n"<<f<<"\n"<<g<<"\n"<<h<<"\n"<<i<<"\n"<<j<<"\n"<<k<<"\n"<<l<<"\n"<<m<<"\n"<<o<<"\n"<<p<<"\n"<<q<<"\n"<<r<<"\n";
 	return 0;
 }
-

@@ -13,6 +13,7 @@ using namespace std;
 void m1_main_screen(){
 	screen_clear();
 	version_header();
+	inventory_display();
 	int p,i;
 	p = 1;
 	m1_dialogue(p);
@@ -30,6 +31,7 @@ void m1_main_screen(){
 void cave_deeper_screen(){
 	screen_clear();
 	version_header();
+	inventory_display();
 	int * x = save_reader();
 	int v15 = x[14];
 	int p,i;
@@ -61,6 +63,7 @@ void cave_deeper_screen(){
 void cave_main_screen(){
 	screen_clear();
 	version_header();
+	inventory_display();
 	int p,i;
 	p = 1;
 	cave_dialogue(p);
