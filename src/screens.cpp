@@ -171,6 +171,7 @@ void cave_deeper_screen(){
 			state = 1;
 			p = 33;
 			save_writer(line, state);
+			cout << endl;
 			cave_dialogue(p);
 			sleep(2);
 			cave_deeper_screen();
@@ -180,6 +181,7 @@ void cave_deeper_screen(){
 			state = 2;
 			p = 34;
 			save_writer(line, state);
+			cout << endl;
 			cave_dialogue(p);
 			sleep(2);
 			cave_deeper_screen();
@@ -189,6 +191,7 @@ void cave_deeper_screen(){
 			state = 1;
 			p = 35;
 			save_writer(line, state);
+			cout << endl;
 			cave_dialogue(p);
 			sleep(2);
 			cave_deeper_screen();
@@ -197,6 +200,7 @@ void cave_deeper_screen(){
 	if ( i == 2 ){
 		cout << "" << endl;
 		p = 36;
+		cout << endl;
 		cave_dialogue(p);
 		sleep(2);
 		cave_main_screen();
@@ -228,7 +232,7 @@ void cave_main_screen(){
 	}
 	if ( i == 4 ){
 		p = 2;
-		cout << "" << endl;
+		cout << endl;
 		cave_dialogue(p);
 		sleep(2);
 		m1_main_screen();

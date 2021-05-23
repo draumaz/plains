@@ -30,6 +30,7 @@ void inventory_display(){
         string flower;
         string bottle;
         string blade;
+	string div = " | ";
         if ( blade_state != 0 or flower_state != 0 or bottle_state != 0 ){
                 viz = 1;
         }
@@ -61,7 +62,7 @@ void inventory_display(){
                 bottle = "1x BOTTLE (WATER)";
         }
         if ( viz == 1 ){
-                cout << "INV: " << flower << " | " << blade << " | " << bottle << "\n" << endl;
+                cout << "INV:" << div << flower << div << blade << div << bottle << div << "\n" << endl;
         }
         if ( viz == 0 ){}
 }
