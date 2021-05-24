@@ -99,6 +99,66 @@ void hill_stand_screen(){
 	}
 }
 
+void hill_lizard_dead_screen(){
+	screen_clear();
+	version_header();
+	inventory_display();
+	int * x = save_reader();
+	int p,i,line,state;
+	string a,b;
+	int v5 = x[4];
+	int v6 = x[5];
+	int v16 = x[15];
+	int v17 = x[16];
+	p = 3;
+	if ( v16 == 1 ){
+		a = "PLACE FLOWER";
+	}
+	if ( v17 == 1 ){
+		b = "COLLECT BLOOD";
+	}
+	hill_dialogue(p);
+	cout << a << " [1]\n" << b << "[2]\nBACK [3]" << endl;
+	i = input_display();
+	if ( i == 1 ){
+		if ( v16 == 1 ){
+			line = 15;
+			state = 4;
+			p = 31;
+			save_writer(line, state);
+			cout << endl;
+			hill_dialogue(p);
+			sleep(3);
+			hill_lizard_dead_screen();
+		}
+		if ( v16 != 1 ){
+			hill_lizard_dead_screen();
+		}
+	}
+	if ( i == 2 ){
+		if ( v17 == 1 ){
+			line = 16;
+			state = 3;
+			p = 311;
+			save_writer(line, state);
+			cout << endl;
+			hill_dialogue(p);
+			sleep(3);
+			hill_lizard_dead_screen();
+		}
+		if ( v17 != 1 ){
+			hill_lizard_dead_screen();
+		}
+	}
+	if ( i == 3 ){
+		hill_main_screen();
+	}
+	if ( i != 1 or i != 2 or i != 3 ){
+		error_handle();
+		hill_lizard_dead_screen();
+	}
+}
+
 void hill_lizard_neutral_screen(){
 	screen_clear();
 	version_header();
@@ -206,8 +266,8 @@ void hill_lizard_neutral_screen(){
 			p = 235;
 			cout << endl;
 			hill_dialogue(p);
-			sleep(3);
-			hill_lizard_neutral_screen();
+			sleep(2);
+			hill_main_screen();
 		}
 	}
 	if ( i == 4 ){
@@ -272,11 +332,20 @@ void hill_break_screen(){
 			hill_break_screen();
 		}
 	}
-	if ( i == 3 ){
-		p = 621;
+	if ( i == 2 ){
+		p = 62;
 		cout << endl;
 		hill_dialogue(p);
 		sleep(2);
+		hill_break_screen();
+	}
+	if ( i == 3 ){
+		if ( v16 == 0 ){
+			p = 621;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+		}
 		hill_main_screen();
 	}
 	if ( i != 1 or i != 2 or i != 3 ){
@@ -334,12 +403,9 @@ void hill_main_screen(){
 	i = input_display();
 	if ( i == 1 ){
 		if ( v6 == 1 ){
-			// Go forwards (dead)
+			hill_lizard_dead_screen();
 		}
-		if ( v16 == 2 ){
-			// Visit (friendly)
-		}
-		if ( v6 == 0 and v12 == 0 and v16 != 2 ){
+		if ( v6 == 0 and v12 == 0 ){
 			hill_lizard_neutral_screen();
 		}
 	}

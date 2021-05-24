@@ -1,5 +1,6 @@
 void m1_main_screen();
 void hill_evil_stand_screen();
+void hill_lizard_dead_screen();
 void hill_lizard_neutral_screen();
 void hill_break_screen();
 void hill_stand_screen();
