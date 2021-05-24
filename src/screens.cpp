@@ -119,7 +119,7 @@ void hill_lizard_neutral_screen(){
 	}
 	hill_dialogue(p);
 	if ( v15 == 1 ){
-		cout << "FIGHT [1]" << endl;
+		cout << "\nFIGHT [1]" << endl;
 	}
 	else {
 		cout << endl;
