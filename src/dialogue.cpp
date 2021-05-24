@@ -213,14 +213,15 @@ int hill_dialogue(int p){
 	}
 	if ( p == 233 ){
 		std::cout << "You give the lizard man the flower. He smiles at you." << std::endl;
+		return 0;
 	}
 	if ( p == 234 ){
 		std::cout << "I don't have the heart to program this. Sorry!" << std::endl;
 		return 0;
 	}
 	if ( p == 235 ){
-		 std::cout << "He tells you nobody's shown him kindness like this before." << std::endl;
-		 return 0;
+		std::cout << "He tells you nobody's shown him kindness like this before." << std::endl;
+		return 0;
 	}
 	if ( p == 236 ){
 		std::cout << "Upon seeing the towering lizard, you decide to head back." << std::endl;
