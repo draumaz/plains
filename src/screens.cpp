@@ -99,6 +99,136 @@ void hill_stand_screen(){
 	}
 }
 
+void hill_lizard_neutral_screen(){
+	screen_clear();
+	version_header();
+	inventory_display();
+	int * x = save_reader();
+	int v7 = x[6];
+	int v15 = x[14];
+	int v16 = x[15];
+	int p,i,line,state;
+	if ( v16 != 2 ){
+		p = 23;
+	}
+	if ( v16 == 2 ){
+		p = 231;
+	}
+	if ( v7 == 1 ){
+		p = 232;
+	}
+	hill_dialogue(p);
+	if ( v15 == 1 ){
+		cout << "FIGHT [1]" << endl;
+	}
+	else {
+		cout << endl;
+	}
+	cout << "TALK [2]" << endl;
+	if ( v16 == 0 or v16 == 2 ){
+		cout << "BACK [3]" << endl;
+	}
+	if ( v16 == 1 ){
+		cout << "GIVE FLOWER [3]\nBACK [4]" << endl;
+	}
+	i = input_display();
+	if ( i == 1 ){
+		if ( v16 == 2 and v15 == 1 ){
+			p = 234;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(3);
+			hill_lizard_neutral_screen();
+		}
+		if ( v15 == 1 ){
+			// Battle
+		}
+		if ( v15 == 0 ){
+			error_handle();
+			hill_lizard_neutral_screen();
+		}
+	}
+	if ( i == 2 ){
+		if ( v7 == 0 and v16 == 2 ){
+			p = 22;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			p = 221;
+			hill_dialogue(p);
+			sleep(3);
+			hill_main_screen();
+		}
+		if ( v7 == 1 ){
+			line = 11;
+			state = 1;
+			save_writer(line, state);
+			p = 2;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(3);
+			hill_main_screen();
+		}
+		if ( v7 == 0 ){
+			p = 21;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			p = 211;
+			hill_dialogue(p);
+			sleep(2);
+			cout << endl;
+			p = 212;
+			hill_dialogue(p);
+			sleep(3);
+			hill_lizard_neutral_screen();
+		}
+	}
+	if ( i == 3 ){
+		if ( v16 == 0 ){
+			p = 236;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_main_screen();
+		}
+		if ( v16 == 1 ){
+			line = 15;
+			state = 2;
+			save_writer(line, state);
+			p = 233;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_lizard_neutral_screen();
+		}
+		if ( v16 == 2 ){
+			p = 235;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(3);
+			hill_lizard_neutral_screen();
+		}
+	}
+	if ( i == 4 ){
+		if ( v16 != 1 ){
+			error_handle();
+			hill_lizard_neutral_screen();
+		}
+		if ( v16 == 1 ){
+			p = 236;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_main_screen();
+		}
+	}
+	if ( i != 1 or i != 2 or i != 3 or i != 4 ){
+		error_handle();
+		hill_lizard_neutral_screen();
+	}
+}
+
 void hill_main_screen(){
 	screen_clear();
 	version_header();
@@ -154,7 +284,7 @@ void hill_main_screen(){
 			// Visit (friendly)
 		}
 		if ( v6 == 0 and v12 == 0 and v16 != 2 ){
-			// Go forwards (alive)
+			hill_lizard_neutral_screen();
 		}
 	}
 	if ( i == 2 ){
