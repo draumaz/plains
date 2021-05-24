@@ -270,7 +270,15 @@ int hill_dialogue(int p){
 		return 0;
 	}
 	if ( p == 6 ){
-		std::cout << "You sit down on the soft grass and take in your surroundings.\nYou see a flower growing." << std::endl;
+		std::cout << "You sit down on the soft grass and take in your surroundings." << std::endl;
+		return 0;
+	}
+	if ( p == 601 ){
+		std::cout << "You see a flower blooming." << std::endl;
+		return 0;
+	}
+	if ( p == 602 ){
+		std::cout << "Stems and petals cover the ground." << std::endl;
 		return 0;
 	}
 	if ( p == 61 ){

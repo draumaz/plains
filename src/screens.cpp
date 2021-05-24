@@ -229,6 +229,55 @@ void hill_lizard_neutral_screen(){
 	}
 }
 
+void hill_break_screen(){
+	screen_clear();
+	version_header();
+	inventory_display();
+	int * x = save_reader();
+	int p,i,line,state;
+	int v16 = x[15];
+	string v;
+	p = 6;
+	hill_dialogue(p);
+	if ( v16 == 0 ){
+		p = 601;
+		v = "PICK";
+		hill_dialogue(p);
+		
+	}
+	if ( v16 == 1 ){
+		cout << endl;
+		v = "INSPECT";
+	}
+	cout << "\n" << v << " [1]\nLAY DOWN [2]\nBACK[3]" << endl;
+	i = input_display();
+	if ( i == 1 ){
+		if ( v16 == 0 ){
+			line = 15;
+			state = 1;
+			save_writer(line, state);
+			p = 61;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			p = 611;
+			hill_dialogue(p);
+			sleep(1);
+			hill_break_screen();
+		}
+		if ( v16 == 1 ){
+			p = 602;
+			hill_dialogue(p);
+			sleep(2);
+			hill_break_screen();
+		}
+	}		
+	if ( i != 1 or i != 2 or i != 3 ){
+		error_handle();
+		hill_break_screen();
+	}
+}
+
 void hill_main_screen(){
 	screen_clear();
 	version_header();
@@ -297,7 +346,7 @@ void hill_main_screen(){
 		}
 	}
 	if ( i == 3 ){
-		// Take a Break
+		hill_break_screen();
 	}
 	if ( i == 4 ){
 		m1_main_screen();
