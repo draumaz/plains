@@ -246,7 +246,6 @@ void hill_break_screen(){
 		
 	}
 	if ( v16 == 1 ){
-		cout << endl;
 		v = "INSPECT";
 	}
 	cout << "\n" << v << " [1]\nLAY DOWN [2]\nBACK[3]" << endl;
