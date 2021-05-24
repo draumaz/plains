@@ -248,7 +248,7 @@ void hill_break_screen(){
 	if ( v16 == 1 ){
 		v = "INSPECT";
 	}
-	cout << "\n" << v << " [1]\nLAY DOWN [2]\nBACK[3]" << endl;
+	cout << "\n" << v << " [1]\nLAY DOWN [2]\nBACK [3]" << endl;
 	i = input_display();
 	if ( i == 1 ){
 		if ( v16 == 0 ){
@@ -266,11 +266,19 @@ void hill_break_screen(){
 		}
 		if ( v16 == 1 ){
 			p = 602;
+			cout << endl;
 			hill_dialogue(p);
 			sleep(2);
 			hill_break_screen();
 		}
-	}		
+	}
+	if ( i == 3 ){
+		p = 621;
+		cout << endl;
+		hill_dialogue(p);
+		sleep(2);
+		hill_main_screen();
+	}
 	if ( i != 1 or i != 2 or i != 3 ){
 		error_handle();
 		hill_break_screen();
