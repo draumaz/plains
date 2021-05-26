@@ -397,7 +397,7 @@ void hill_main_screen(){
 		s2 = "STAND STILL [2]";
 	}
 	if ( v1 == 1 ){
-		s2 == "";
+		s2 = "";
 	}
 	cout << "\n" << s1 << " [1]" << "\n" << s2 << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
 	i = input_display();

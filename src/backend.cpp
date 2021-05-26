@@ -33,7 +33,7 @@ void save_gen(){
 
 int * save_reader(){
 	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
-	static int ij[17];
+	static int ij[18];
 	std::ifstream z("data.txt");
 	z>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j>>k>>l>>m>>n>>o>>p>>q>>r;
 	ij[0] = a;
