@@ -10,10 +10,10 @@
 
 using namespace std;
 
+// TODO Replace version_header, inventory_display >> header TODO //
+
 void m1_main_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int p,i;
 	p = 1;
 	m1_dialogue(p);
@@ -39,9 +39,7 @@ void m1_main_screen(){
 }
 
 void hill_evil_stand_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int p,i;
 	p = 513;
 	cout << "" << endl;
@@ -64,9 +62,7 @@ void hill_evil_stand_screen(){
 }
 
 void hill_stand_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int p,i,line,state;
 	int v6 = x[5];
@@ -100,9 +96,7 @@ void hill_stand_screen(){
 }
 
 void hill_lizard_dead_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int p,i,line,state;
 	string a,b;
@@ -160,9 +154,7 @@ void hill_lizard_dead_screen(){
 }
 
 void hill_lizard_neutral_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int v7 = x[6];
 	int v15 = x[14];
@@ -290,9 +282,7 @@ void hill_lizard_neutral_screen(){
 }
 
 void hill_break_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int p,i,line,state;
 	int v16 = x[15];
@@ -355,9 +345,7 @@ void hill_break_screen(){
 }
 
 void hill_main_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int v1 = x[0];
 	int v6 = x[5];
@@ -432,9 +420,7 @@ void hill_main_screen(){
 }
 
 void cave_right_screen(){
-        screen_clear();
-        version_header();
-        inventory_display();
+        header();
         int * x = save_reader();
         int p,i,line,state;
         int blade_state = x[14];
@@ -503,9 +489,7 @@ void cave_right_screen(){
 }
 
 void cave_deeper_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int v15 = x[14];
 	int p,i,line,state;
@@ -574,9 +558,7 @@ void cave_deeper_screen(){
 }
 
 void cave_main_screen(){
-	screen_clear();
-	version_header();
-	inventory_display();
+	header();
 	int * x = save_reader();
 	int v15 = x[14];
 	int p,i;

@@ -11,11 +11,6 @@ void splash_display(){
     cout << "==CHARACTER DESIGN BY BRYCE CANO==" << endl;
 }
 
-void version_header(){
-	string v = "0.26";
-	cout << "\n" << "The Plains v" << v << "\n" << endl;
-}
-
 void screen_clear(){
 	system("cls||clear");
 }
@@ -62,8 +57,20 @@ void inventory_display(){
                 bottle = "1x BOTTLE (WATER)";
         }
         if ( viz == 1 ){
-                cout << "INV:" << div << flower << div << blade << div << bottle << div << "\n" << endl;
+                cout << div << flower << div << blade << div << bottle << div << "\n" << endl;
         }
-        if ( viz == 0 ){}
+        if ( viz == 0 ){
+		cout << "\n" << endl;
+	}
 }
 
+void version_header(){
+	string v = "0.26";
+	cout << "\n" << "The Plains v" << v;
+}
+
+void header(){
+	screen_clear();
+	version_header();
+	inventory_display();
+}
