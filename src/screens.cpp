@@ -558,10 +558,12 @@ void cave_deeper_screen(){
 		}
 	}
 	if ( i == 2 ){
-		p = 36;
-		cout << endl;
-		cave_dialogue(p);
-		sleep(2);
+		if ( v15 == 0 ){
+			p = 36;
+			cout << endl;
+			cave_dialogue(p);
+			sleep(2);
+		}
 		cave_main_screen();
 	}
 	if ( i != 1 or i != 2 ){
@@ -575,6 +577,8 @@ void cave_main_screen(){
 	screen_clear();
 	version_header();
 	inventory_display();
+	int * x = save_reader();
+	int v15 = x[14];
 	int p,i;
 	p = 1;
 	cave_dialogue(p);
@@ -590,10 +594,12 @@ void cave_main_screen(){
 		cave_right_screen();
 	}
 	if ( i == 4 ){
-		p = 2;
-		cout << endl;
-		cave_dialogue(p);
-		sleep(2);
+		if ( v15 == 0 ){
+			p = 2;
+			cout << endl;
+			cave_dialogue(p);
+			sleep(2);
+		}
 		m1_main_screen();
 	}
 	if ( i != 1 or i != 2 or i != 3 or i != 4 ){
