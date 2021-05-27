@@ -140,7 +140,7 @@ int cave_dialogue(int p){
 		return 0;
 	}
 	if ( p == 62 ){
-		std::cout << "These plants are definitely too strong to get through by hand. You'll need to find some sort of tool." << std::endl;
+		std::cout << "These plants are definitely too strong to get through by hand.\nYou'll need to find some sort of tool." << std::endl;
 		return 0;
 	}
 	if ( p == 63 ){
