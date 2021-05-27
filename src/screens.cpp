@@ -10,8 +10,6 @@
 
 using namespace std;
 
-// TODO Replace version_header, inventory_display >> header TODO //
-
 void m1_main_screen(){
 	header();
 	int p,i;
@@ -425,7 +423,7 @@ void cave_right_screen(){
         int p,i,line,state;
         int blade_state = x[14];
 	int bottle_state = x[16];
-	string v;
+	string v,vi;
 	if ( bottle_state == 0 ){
 		p = 6;
 	}
@@ -434,12 +432,14 @@ void cave_right_screen(){
 	}
 	if ( blade_state == 0 ){
 		v = "";
+		vi = "";
 	}
 	if ( blade_state == 1 ){
 		v = "SLASH [1]";
+		vi = "\n";
 	}
 	cave_dialogue(p);
-	cout << "\n" << v << "\n" << "INSPECT [2]" << "\n" << "BACK [3]" << endl;
+	cout << "\n" << v << vi << "INSPECT [2]" << "\n" << "BACK [3]" << endl;
 	i = input_display();
 	if ( i == 1 ){
 		if ( blade_state == 1 ){
