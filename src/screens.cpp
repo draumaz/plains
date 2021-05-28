@@ -350,13 +350,12 @@ void hill_main_screen(){
 	int v12 = x[11];
 	int v16 = x[15];
 	int p,i;
-	string s1;
+	string s1 = "\nGO TOWARDS THE CREATURE";
 	string s2;
 	if ( v6 == 1 and v1 == 0 ){
 		hill_evil_stand_screen();
 	}
-	if ( v6 == 0 and v12 == 0 and v16 != 2 ){
-		s1 = "GO TOWARDS THE CREATURE";
+	if ( v6 == 0 and v12 == 0 and v16 != 2 and v1 == 0 ){
 		p = 1;
 		hill_dialogue(p);
 		p = 12;
@@ -369,7 +368,6 @@ void hill_main_screen(){
 	}
 	if ( v6 == 0 and v1 == 1 ){
 		p = 11;
-		cout << endl;
 		hill_dialogue(p);
 	}
 	if ( v6 == 1 and v1 == 1 ){
@@ -377,15 +375,15 @@ void hill_main_screen(){
 		hill_dialogue(p);
 	}
 	if ( v6 == 1 ){
-		s1 = "GO FORWARDS";
+		s1 = "\nGO FORWARDS";
 	}
 	if ( v1 == 0 ){
-		s2 = "STAND STILL [2]";
+		s2 = "STAND STILL [2]\n";
 	}
 	if ( v1 == 1 ){
 		s2 = "";
 	}
-	cout << "\n" << s1 << " [1]" << "\n" << s2 << "\n" << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
+	cout << s1 << " [1]" << "\n" << s2 << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
 	i = input_display();
 	if ( i == 1 ){
 		if ( v6 == 1 ){
