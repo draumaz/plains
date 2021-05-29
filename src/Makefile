@@ -1,2 +1,2 @@
 plains: *.cpp
-  clang++ *.cpp -o bin
+        clang++ *.cpp -o bin
