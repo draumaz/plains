@@ -27,7 +27,7 @@ int input_display(){
 
 void save_gen(){
 	std::ofstream i("data.txt");
-	i<<"0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n";
+	i << "0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n0\n";
 	i.close();
 }
 
@@ -35,7 +35,7 @@ int * save_reader(){
 	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
 	static int ij[18];
 	std::ifstream z("data.txt");
-	z>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j>>k>>l>>m>>n>>o>>p>>q>>r;
+	z >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j >> k >> l >> m >> n >> o >> p >> q >> r;
 	ij[0] = a;
 	ij[1] = b;
 	ij[2] = c;
@@ -62,7 +62,7 @@ int * save_reader(){
 int save_writer(int line, int state){
 	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
 	std::ifstream xx("data.txt");
-	xx>>a>>b>>c>>d>>e>>f>>g>>h>>i>>j>>k>>l>>m>>n>>o>>p>>q>>r;
+	xx >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j >> k >> l >> m >> n >> o >> p >> q >> r;
 	if ( line == 0 ){
 		a = state;
 	}
@@ -118,6 +118,6 @@ int save_writer(int line, int state){
 		r = state;
 	}
 	std::ofstream xy("data.txt");
-	xy<<a<<"\n"<<b<<"\n"<<c<<"\n"<<d<<"\n"<<e<<"\n"<<f<<"\n"<<g<<"\n"<<h<<"\n"<<i<<"\n"<<j<<"\n"<<k<<"\n"<<l<<"\n"<<m<<"\n"<<n<<"\n"<<o<<"\n"<<p<<"\n"<<q<<"\n"<<r<<"\n";
+	xy << a << "\n" << b << "\n" << c << "\n" << d << "\n" << e << "\n" << f << "\n" << g << "\n" << h << "\n" << i << "\n" << j << "\n" << k << "\n" << l << "\n" << m << "\n" << n << "\n" << o << "\n" << p << "\n" << q << "\n" << r << "\n";
 	return 0;
 }
