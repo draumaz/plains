@@ -151,6 +151,75 @@ void hill_lizard_dead_screen(){
 	}
 }
 
+void hill_lizard_battle_screen(){
+	header();
+	int * x = save_reader();
+	int v = x[10];
+	int p,line,state;
+	cout << "NAME: LIAM | ATTACK: 5 | DEFENSE: 5" << endl;
+	cout << "ENEMY: LIZARD | ATTACK: 45 | DEFENSE: 60" << endl;
+	cout << "\n" << "PUNCH [1]" << endl;
+	cout << "ITEMS [2]" << endl;
+	cout << "FLEE [3]" << endl;
+	int i = input_display();
+	if (i == 1){
+		line = 10;
+		state = v + 1;
+		save_writer(line, state);
+		if (v <= 0){
+			p = 7;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			p = 71;
+			hill_dialogue(p);
+			sleep(1);
+			p = 72;
+			hill_dialogue(p);
+			sleep(2);
+			hill_lizard_battle_screen();
+		}
+		if (v == 1){
+			p = 73;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_lizard_battle_screen();
+		}
+		if (v == 2){
+			p = 74;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_lizard_battle_screen();
+		}
+		if (v == 3){
+			line = 11;
+			state = 1;
+			save_writer(line, state);
+			p = 75;
+			cout << endl;
+			hill_dialogue(p);
+			sleep(2);
+			hill_main_screen();
+		}
+	}
+	if (i == 2){
+		// Battle items
+	}
+	if (i == 3){
+		p = 76;
+		cout << endl;
+		hill_dialogue(p);
+		sleep(2);
+		hill_main_screen();
+	}
+	if (i != 1 or i != 2 or i != 3){
+		error_handle();
+		hill_lizard_battle_screen();
+	}
+}
+
 void hill_lizard_neutral_screen(){
 	header();
 	int * x = save_reader();
@@ -191,7 +260,7 @@ void hill_lizard_neutral_screen(){
 			hill_lizard_neutral_screen();
 		}
 		if ( v15 == 1 ){
-			// Battle
+			hill_lizard_battle_screen();
 		}
 		if ( v15 == 0 ){
 			error_handle();
@@ -350,20 +419,25 @@ void hill_main_screen(){
 	int v12 = x[11];
 	int v16 = x[15];
 	int p,i;
-	string s1 = "\nGO TOWARDS THE CREATURE";
+	string s1 = "\nGO TOWARDS THE CREATURE [1]";
 	string s2;
+	if ( v6 == 0 ){
+		p = 1;
+		hill_dialogue(p);
+	}
+	if ( v12 == 1 ){
+		s1 = "";
+	}
 	if ( v6 == 1 and v1 == 0 ){
 		hill_evil_stand_screen();
 	}
 	if ( v6 == 0 and v12 == 0 and v16 != 2 and v1 == 0 ){
-		p = 1;
-		hill_dialogue(p);
 		p = 12;
 		hill_dialogue(p);
 	}
 	if ( v16 == 2 ){
 		p = 121;
-		s1 = "VISIT";
+		s1 = "VISIT [1]";
 		hill_dialogue(p);
 	}
 	if ( v6 == 0 and v1 == 1 ){
@@ -375,7 +449,7 @@ void hill_main_screen(){
 		hill_dialogue(p);
 	}
 	if ( v6 == 1 ){
-		s1 = "\nGO FORWARDS";
+		s1 = "\nGO FORWARDS [1]";
 	}
 	if ( v1 == 0 ){
 		s2 = "STAND STILL [2]\n";
@@ -383,7 +457,7 @@ void hill_main_screen(){
 	if ( v1 == 1 ){
 		s2 = "";
 	}
-	cout << s1 << " [1]" << "\n" << s2 << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
+	cout << s1 << "\n" << s2 << "TAKE A BREAK [3]" << "\n" << "BACK [4]" << endl;
 	i = input_display();
 	if ( i == 1 ){
 		if ( v6 == 1 ){

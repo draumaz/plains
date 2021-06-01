@@ -298,5 +298,37 @@ int hill_dialogue(int p){
 		std::cout << "You decide that there's more important things to be doing." << std::endl;
 		return 0;
 	}
+	if ( p == 7 ){
+		std::cout << "You're too weak." << std::endl;
+		return 0;
+	}
+	if ( p == 71 ){
+		std::cout << "He's fully unaffected." << std::endl;
+		return 0;
+	}
+	if ( p == 72 ){
+		std::cout << "...doesn't seem like he wants to be doing this." << std::endl;
+		return 0;
+	}
+	if ( p == 73 ){
+		std::cout << "He's starting to lose his patience." << std::endl;
+		return 0;
+	}
+	if ( p == 74 ){
+		std::cout << "Really losing his patience now." << std::endl;
+		return 0;
+	}
+	if ( p == 75 ){
+		std::cout << "He gets tired of this madness and leaves." << std::endl;
+		return 0;
+	}
+	if ( p == 76 ){
+		std::cout << "Seems like the wrong guy to mess with." << std::endl;
+		return 0;
+	}
+	if ( p == 77 ){
+		std::cout << "You lunge at the lizard and stab him to death." << std::endl;
+		return 0;
+	}
 	return 0;
 }
