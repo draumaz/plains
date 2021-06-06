@@ -13,7 +13,7 @@ I am currently rewriting The Plains, transferring from Python to C++. The old co
 
 The Plains is a game about You, a goat named Liam. You've crash landed on the surface of a distant planet, with much to explore. What will you discover? And how will you go about it? Will you be peaceful, or will you hurt others?
 
-# Concept Art
+# Concept Art by Bryce Cano
 
 ![LiamArt](https://github.com/draumaz/plains/blob/main/art/liambody.png?raw=true "Goat Boy")
 ![Concept3](https://github.com/draumaz/plains/blob/main/art/concept3.jpg?raw=true "Concept 3")
