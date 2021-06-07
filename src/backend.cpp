@@ -32,92 +32,19 @@ void save_gen(){
 }
 
 int * save_reader(){
-	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
 	static int ij[18];
 	std::ifstream z("data.txt");
-	z >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j >> k >> l >> m >> n >> o >> p >> q >> r;
-	ij[0] = a;
-	ij[1] = b;
-	ij[2] = c;
-	ij[3] = d;
-	ij[4] = e;
-	ij[5] = f;
-	ij[6] = g;
-	ij[7] = h;
-	ij[8] = i;
-	ij[9] = j;
-	ij[10] = k;
-	ij[11] = l;
-	ij[12] = m;
-	ij[13] = n;
-	ij[14] = o;
-	ij[15] = p;
-	ij[16] = q;
-	ij[17] = r;
+	z >> ij[0] >> ij[1] >> ij[2] >> ij[3] >> ij[4] >> ij[5] >> ij[6] >> ij[7] >> ij[8] >> ij[9] >> ij[10] >> ij[11] >> ij[12] >> ij[13] >> ij[14] >> ij[15] >> ij[16] >> ij[17];
 	z.close();
 	return ij;
 }
 
 
-int save_writer(int line, int state){
-	int a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r;
+void save_writer(int line, int state){
+	static int v[18];
 	std::ifstream xx("data.txt");
-	xx >> a >> b >> c >> d >> e >> f >> g >> h >> i >> j >> k >> l >> m >> n >> o >> p >> q >> r;
-	if ( line == 0 ){
-		a = state;
-	}
-	if ( line == 1 ){
-		b = state;
-	}
-	if ( line == 2 ){
-		c = state;
-	}
-	if ( line == 3 ){
-		d = state;
-	}
-	if ( line == 4 ){
-		e = state;
-	}
-	if ( line == 5 ){
-		f = state;
-	}
-	if ( line == 6 ){
-		g = state;
-	}
-	if ( line == 7 ){
-		h = state;
-	}
-	if ( line == 8 ){
-		i = state;
-	}
-	if ( line == 9 ){
-		j = state;
-	}
-	if ( line == 10 ){
-		k = state;
-	}
-	if ( line == 11 ){
-		l = state;
-	}
-	if ( line == 12 ){
-		m = state;
-	}
-	if ( line == 13 ){
-		n = state;
-	}
-	if ( line == 14 ){
-		o = state;
-	}
-	if ( line == 15 ){
-		p = state;
-	}
-	if ( line == 16 ){
-		q = state;
-	}
-	if ( line == 17 ){
-		r = state;
-	}
+	xx >> v[0] >> v[1] >> v[2] >> v[3] >> v[4] >> v[5] >> v[6] >> v[7] >> v[8] >> v[9] >> v[10] >> v[11] >> v[12] >> v[13] >> v[14] >> v[15] >> v[16] >> v[17];
+	v[line] = state;
 	std::ofstream xy("data.txt");
-	xy << a << "\n" << b << "\n" << c << "\n" << d << "\n" << e << "\n" << f << "\n" << g << "\n" << h << "\n" << i << "\n" << j << "\n" << k << "\n" << l << "\n" << m << "\n" << n << "\n" << o << "\n" << p << "\n" << q << "\n" << r << "\n";
-	return 0;
+	xy << v[0] << "\n" << v[1] << "\n" << v[2] << "\n" << v[3] << "\n" << v[4] << "\n" << v[5] << "\n" << v[6] << "\n" << v[7] << "\n" << v[8] << "\n" << v[9] << "\n" << v[10] << "\n" << v[11] << "\n" << v[12] << "\n" << v[13] << "\n" << v[14] << "\n" << v[15] << "\n" << v[16] << "\n" << v[17] << "\n";
 }
