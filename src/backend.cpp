@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
+#include <vector>
 #include <time.h>
 
 void error_handle(){
@@ -32,19 +33,17 @@ void save_gen(){
 }
 
 int * save_reader(){
-	static int ij[18];
-	std::ifstream z("data.txt");
-	z >> ij[0] >> ij[1] >> ij[2] >> ij[3] >> ij[4] >> ij[5] >> ij[6] >> ij[7] >> ij[8] >> ij[9] >> ij[10] >> ij[11] >> ij[12] >> ij[13] >> ij[14] >> ij[15] >> ij[16] >> ij[17];
-	z.close();
-	return ij;
+	static int i[18];
+	std::ifstream x("data.txt");
+	x >> i[0] >> i[1] >> i[2] >> i[3] >> i[4] >> i[5] >> i[6] >> i[7] >> i[8] >> i[9] >> i[10] >> i[11] >> i[12] >> i[13] >> i[14] >> i[15] >> i[16] >> i[17];
+	x.close();
+	return i;
 }
 
-
 void save_writer(int line, int state){
-	static int v[18];
-	std::ifstream xx("data.txt");
-	xx >> v[0] >> v[1] >> v[2] >> v[3] >> v[4] >> v[5] >> v[6] >> v[7] >> v[8] >> v[9] >> v[10] >> v[11] >> v[12] >> v[13] >> v[14] >> v[15] >> v[16] >> v[17];
-	v[line] = state;
+	int * i = save_reader();
+	i[line] = state;
 	std::ofstream xy("data.txt");
-	xy << v[0] << "\n" << v[1] << "\n" << v[2] << "\n" << v[3] << "\n" << v[4] << "\n" << v[5] << "\n" << v[6] << "\n" << v[7] << "\n" << v[8] << "\n" << v[9] << "\n" << v[10] << "\n" << v[11] << "\n" << v[12] << "\n" << v[13] << "\n" << v[14] << "\n" << v[15] << "\n" << v[16] << "\n" << v[17] << "\n";
+	xy << i[0] << "\n" << i[1] << "\n" << i[2] << "\n" << i[3] << "\n" << i[4] << "\n" << i[5] << "\n" << i[6] << "\n" << i[7] << "\n" << i[8] << "\n" << i[9] << "\n" << i[10] << "\n" << i[11] << "\n" << i[12] << "\n" << i[13] << "\n" << i[14] << "\n" << i[15] << "\n" << i[16] << "\n" << i[17] << "\n";
+	xy.close();
 }
