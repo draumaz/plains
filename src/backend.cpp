@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <unistd.h>
-#include <vector>
 #include <time.h>
 
 void error_handle(){
