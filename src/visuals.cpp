@@ -21,13 +21,13 @@ void inventory_display(){
         int blade_state = i[14];
         int flower_state = i[15];
         int bottle_state = i[16];
-        int viz = 0;
+        int visibility = 0;
         string flower;
         string bottle;
         string blade;
 	string div = " | ";
         if ( blade_state != 0 or flower_state != 0 or bottle_state != 0 ){
-                viz = 1;
+                visibility = 1;
         }
         if ( flower_state == 0 or flower_state == 2 or flower_state == 4 ){
                 flower = "EMPTY";
@@ -56,10 +56,10 @@ void inventory_display(){
         if ( bottle_state == 4 ){
                 bottle = "1x BOTTLE (WATER)";
         }
-        if ( viz == 1 ){
+        if ( visibility == 1 ){
                 cout << div << flower << div << blade << div << bottle << div << "\n" << endl;
         }
-        if ( viz == 0 ){
+	else {
 		cout << "\n" << endl;
 	}
 }
