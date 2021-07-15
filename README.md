@@ -16,6 +16,7 @@ The Plains is a game about You, a goat named Liam. You've crash landed on the su
 # Concept Art by Bryce Cano
 
 ![LiamArt](https://github.com/draumaz/plains/blob/main/art/liambody.png?raw=true "Goat Boy")
+![LiamHot](https://github.com/draumaz/plains/blob/main/art/liam_hawt.png?raw=true "Cute boy!")
 ![Concept3](https://github.com/draumaz/plains/blob/main/art/concept3.jpg?raw=true "Concept 3")
 ![Lizard](https://github.com/draumaz/plains/blob/main/art/lizard.jpg?raw=true "Lizard")
 ![Concept1](https://github.com/draumaz/plains/blob/main/art/concept1.jpg?raw=true "Concept 1")
