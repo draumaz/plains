@@ -4,10 +4,6 @@
   <b></b><br>
   <a href="https://github.com/draumaz/plains/releases/latest">Download (Linux, Windows)</a>
   <br><br>
- 
-# Notice
-
-I am currently rewriting The Plains, transferring from Python to C++. The old code has been frozen and can be accessed <a href="https://github.com/draumaz/plains-py/">here</a>.
 
 # Story
 
