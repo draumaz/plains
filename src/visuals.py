@@ -1,7 +1,7 @@
 import tools
 
 def header():
-    print("\n==THE PLAINS: REBOOT==============")
+    print("\n==THE PLAINS======================")
     print("==MADE BY DRAUMAZ IN 2021=========")
     print("==WRITTEN IN PYTHON!==============")
     print("==CHARACTER DESIGN BY BRYCE CANO==\n")
