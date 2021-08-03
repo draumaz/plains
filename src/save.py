@@ -4,10 +4,7 @@ def exists():
     if (os.path.exists("data.txt")):
         pass
     else:
-        generate()
-
-def generate():
-    open("data.txt", "w+").write(20*"0\n")
+        open("data.txt", "w+").write(20*"0\n")
 
 def read():
     return open("data.txt", "r").readlines()
