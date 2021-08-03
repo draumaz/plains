@@ -22,7 +22,7 @@ def snooze(ms):
 
 def array_reader(string, ms):
     for i in string:
-        print(i, end='', flush=True)
+        print(i, end="", flush=True)
         snooze(ms)
     return ""
 
@@ -34,12 +34,10 @@ def user_input(min, max):
             if int(raw_input) < min or int(raw_input) > max:
                 if int(raw_input) == 69 or int(raw_input) == 420:
                     print("\nNice.")
-                    snooze(0.2)
-                    continue
                 else:
                     print(oops)
-                    snooze(0.2)
-                    continue
+                snooze(0.2)
+                continue
             else:
                 break
         except ValueError:
@@ -49,9 +47,12 @@ def user_input(min, max):
     return int(raw_input)
 
 def reset():
-    print("\nAre you sure you want to reset?\n\nYES [1]\nNO [2]\n")
+    print("\nYou sure you wanna reset?\n\nYES [1]\nNO [2]\n")
     if user_input(1, 2) == 1:
-        save.destroy()
-        save.exists()
-        print("\nSave reset.")
+        if save.destroy() == 0:
+            save.exists()
+            print("\nSave reset.")
+        else:
+            print("\nDelete failed.")
         snooze(0.25)
+    return 0
