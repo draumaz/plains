@@ -5,6 +5,10 @@
   <a href="https://github.com/draumaz/plains/releases/latest">Download (Linux, Windows)</a>
   <br><br>
 
+# Notice
+
+The Plains is currently being rewritten. v0.26 will likely be an update of massive proportions.
+  
 # Story
 
 The Plains is a game about You, a goat named Liam. You've crash landed on the surface of a distant planet, with much to explore. What will you discover? And how will you go about it? Will you be peaceful, or will you hurt others?
