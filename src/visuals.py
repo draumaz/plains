@@ -15,3 +15,5 @@ def exit_header():
     tools.array_reader(url, 0.004)
     print(".\n")
     tools.snooze(0.05)
+    if tools.os_check() == 1:
+        input("Press ENTER to continue: ")

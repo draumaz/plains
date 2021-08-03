@@ -1,15 +1,26 @@
 import os
 
+def config(i):
+    if i == 0:
+        return "data.txt"
+
 def exists():
-    if (os.path.exists("data.txt")):
+    if (os.path.exists(config(0))):
         pass
     else:
-        open("data.txt", "w+").write(20*"0\n")
+        open(config(0), "w+").write(20*"0\n")
+
+def destroy():
+    if (os.path.exists(config(0))):
+        os.remove(config(0))
+        return 0
+    else:
+        return 1
 
 def read():
-    return open("data.txt", "r").readlines()
+    return open(config(0), "r").readlines()
 
 def write(line, state):
     i = read()
     i[line] = str(state) + "\n"
-    open("data.txt", "w+").writelines(i)
+    open(config(0), "w+").writelines(i)

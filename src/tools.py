@@ -1,14 +1,21 @@
 import os
+import save
 import time
 
 def version():
     return "0.01"
 
 def clear():
-    if os.name == "nt":
+    if os_check() == 1:
         os.system("cls")
     else:
         os.system("clear")
+
+def os_check():
+    if os.name == "nt":
+        return 1
+    else:
+        return 0
 
 def snooze(ms):
     time.sleep(ms)
@@ -40,3 +47,11 @@ def user_input(min, max):
             snooze(0.2)
             continue
     return int(raw_input)
+
+def reset():
+    print("\nAre you sure you want to reset?\n\nYES [1]\nNO [2]\n")
+    if user_input(1, 2) == 1:
+        save.destroy()
+        save.exists()
+        print("\nSave reset.")
+        snooze(0.25)
