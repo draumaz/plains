@@ -31,15 +31,23 @@ def intro_pause(i): # soon to be deprecated
 
 def intro_strings(i):
     if i == 0:
-        s = ["Esakul", 0.006, 1]
+        s = ["Esakul Base 6", 0.006, 1]
     elif i == 1:
         s = ["LIAM", 0.015, 1]
     elif i == 2:
         s = ["hey man,", 0.035, 0.45]
     elif i == 3:
-        s = [" whats up?", 0.045, 0.5]
+        s = [" whats up?", 0.045, 0.005]
     elif i == 4:
-        s = ["..." , 0.04, 0.5]
+        s = ["..." , 0.04, 1]
+    elif i == 5:
+        s = ["classic.", 0.05, 1]
+    elif i == 6:
+        s = ["anyways, ", 0.075, 0.75]
+    elif i == 7:
+        s = ["i'm currently stuck at this old base...", 0.008, 1]
+    elif i == 8:
+        s = ["mind swingin' by and pickin' me up?", 0.01, 1]
     return list(s)
 
 def intro_words(i): # soon to be deprecated
@@ -76,25 +84,20 @@ def intro_main():
     visuals.header()
     print("")
     tools.snooze(1)
-    for i in range(0, 5):
+    for i in range (0, 9):
+        x = None
         if i == 0:
-            print("Establishing connection to: ", end="", flush=True)
-            tools.snooze(0.8) 
+            x = "Establishing connection to: "
         elif i == 1:
-            print("\n\nIncoming message from:", end="", flush=True)
-            tools.snooze(0.8)
-            print("      ", end="", flush=True)
-        elif i == 2:
-            print("\n")
-            print(intro_strings(1)[0], "| ", end="", flush=True)
-            tools.snooze(0.8)
-        for x in intro_strings(i)[0]:
+            x = "\n\nIncoming chat from:         "
+        elif i == 2 or i == 6 or i == 8:
+            x = "\n\nLIAM: "
+        if x is not None:
             print(x, end="", flush=True)
-            tools.snooze(intro_strings(i)[1])
-        if i == 3:
-            tools.snooze(1)
+        tools.snooze(0.8)
+        if i == 4:
             print("\n")
-            tools.user_input(0, 0, True)
-            print()
-            tools.snooze(1)
+            tools.user_input(0,0,True)
+            print("\nLIAM: ", end="", flush=True)
+        tools.array_reader(intro_strings(i)[0], intro_strings(i)[1])
         tools.snooze(intro_strings(i)[2])
