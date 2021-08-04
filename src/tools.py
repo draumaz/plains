@@ -3,7 +3,7 @@ import save
 import time
 
 def version():
-    return "0.01"
+    return "v0.26"
 
 def clear():
     if os_check() == 1:
@@ -12,10 +12,10 @@ def clear():
         os.system("clear")
 
 def os_check():
+    i = 0
     if os.name == "nt":
-        return 1
-    else:
-        return 0
+        i = 1
+    return i
 
 def snooze(ms):
     time.sleep(ms)
@@ -26,9 +26,11 @@ def array_reader(string, ms):
         snooze(ms)
     return ""
 
-def user_input(min, max):
+def user_input(min, max, strout):
     while True:
         try:
+            if strout == True:
+                return input(array_reader("YOU  | ", 0.005))
             raw_input = input(array_reader("ACTION >> ", 0.005))
             oops = "\nDid you mean something else?\n"
             if int(raw_input) < min or int(raw_input) > max:

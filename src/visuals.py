@@ -1,10 +1,13 @@
 import tools
 
-def header():
+def splash_header():
     print("\n==THE PLAINS======================")
     print("==MADE BY DRAUMAZ IN 2021=========")
     print("==WRITTEN IN PYTHON!==============")
     print("==CHARACTER DESIGN BY BRYCE CANO==\n")
+
+def header():
+    print("\nThe Plains", tools.version(), "\n", end="")
 
 def exit_header():
     tools.clear()
