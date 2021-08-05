@@ -33,7 +33,7 @@ def intro_strings(i):
     if i == 0:
         s = ["Esakul Base 6", 0.006, 1]
     elif i == 1:
-        s = ["LIAM", 0.015, 1]
+        s = ["ELI", 0.015, 1]
     elif i == 2:
         s = ["hey man,", 0.035, 0.45]
     elif i == 3:
@@ -48,6 +48,10 @@ def intro_strings(i):
         s = ["i'm currently stuck at this old base...", 0.008, 1]
     elif i == 8:
         s = ["mind swingin' by and pickin' me up?", 0.01, 1]
+    elif i == 9:
+        s = ["thanks man!!", 0.008, 1]
+    elif i == 10:
+        s = ["lol see you soon man", 0.008, 1]
     return list(s)
 
 def intro_words(i): # soon to be deprecated
@@ -91,13 +95,24 @@ def intro_main():
         elif i == 1:
             x = "\n\nIncoming chat from:         "
         elif i == 2 or i == 6 or i == 8:
-            x = "\n\nLIAM: "
+            x = "\n\nELI: "
         if x is not None:
             print(x, end="", flush=True)
         tools.snooze(0.8)
         if i == 4:
             print("\n")
             tools.user_input(0,0,True)
-            print("\nLIAM: ", end="", flush=True)
+            print("\nELI: ", end="", flush=True)
         tools.array_reader(intro_strings(i)[0], intro_strings(i)[1])
         tools.snooze(intro_strings(i)[2])
+        if i == 8:
+            print("\n\nYES [1]\nNO [2]\n")
+            if tools.user_input(1, 2, False) == 1:
+                print("\nELI: ", end="", flush=True)
+                tools.array_reader(intro_strings(9)[0], intro_strings(9)[1])
+                tools.snooze(intro_strings(9)[2])
+            else:
+                print(intro_strings(1)[0], end="", flush=True)
+                print("\nELI: ", end="", flush=True)
+                tools.array_reader(intro_strings(10)[0], intro_strings(10)[1])
+                tools.snooze(intro_strings(10)[2])

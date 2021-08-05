@@ -30,7 +30,7 @@ def user_input(min, max, strout):
     while True:
         try:
             if strout == True:
-                return input(array_reader("YOU:  ", 0.005))
+                return input(array_reader("YOU: ", 0.005))
             raw_input = input(array_reader("ACTION >> ", 0.005))
             oops = "\nDid you mean something else?\n"
             if int(raw_input) < min or int(raw_input) > max:
