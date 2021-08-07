@@ -1,2 +1,7 @@
 import supervisor
-supervisor.superblade()
+
+def main():
+    supervisor.superblade()
+
+if __name__ == "__main__":
+    main()

@@ -8,7 +8,7 @@ def superblade():
     tools.clear()
     save.exists()
     visuals.splash_header()
-    print("PLAY [1]\nRESET [2]\nQUIT [3]\n")
+    tools.option_reader(1, 3, "PLAY", "RESET", "QUIT")
     i = tools.user_input(1, 3, False)
     if i == 1:
         intro.intro_main()

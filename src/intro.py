@@ -106,7 +106,8 @@ def intro_main():
         tools.array_reader(intro_strings(i)[0], intro_strings(i)[1])
         tools.snooze(intro_strings(i)[2])
         if i == 8:
-            print("\n\nYES [1]\nNO [2]\n")
+            print("\n")
+            tools.option_reader(1, 2, "I'LL GET YA", "NO WAY")
             if tools.user_input(1, 2, False) == 1:
                 print("\nELI: ", end="", flush=True)
                 tools.array_reader(intro_strings(9)[0], intro_strings(9)[1])

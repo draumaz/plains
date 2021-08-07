@@ -26,6 +26,11 @@ def array_reader(string, ms):
         snooze(ms)
     return ""
 
+def option_reader(*args):
+    for i in range(2, len(args)):
+        print(args[i] + " [" + str(i-1) + "]")
+    print()
+
 def user_input(min, max, strout):
     while True:
         try:
@@ -49,8 +54,9 @@ def user_input(min, max, strout):
     return int(raw_input)
 
 def reset():
-    print("\nYou sure you wanna reset?\n\nYES [1]\nNO [2]\n")
-    if user_input(1, 2) == 1:
+    print("\nYou sure you wanna reset?\n")
+    option_reader(1, 2, "YES", "NO")
+    if user_input(1, 2, False) == 1:
         if save.destroy() == 0:
             save.exists()
             print("\nSave reset.")
