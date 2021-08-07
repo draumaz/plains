@@ -1,4 +1,4 @@
-import tools
+from tools import version, clear, snooze, array_reader, os_check
 
 def splash_header():
     print("\n==THE PLAINS======================")
@@ -10,12 +10,12 @@ def header():
     print("\nThe Plains", tools.version(), "\n", end="")
 
 def exit_header():
-    tools.clear()
+    clear()
     print("\nThanks for playing my game!")
-    tools.snooze(0.5)
+    snooze(0.5)
     print("\nKeep up with development at ", end="")
-    tools.array_reader("https://github.com/draumaz/plains-reboot", 0.004)
+    array_reader("https://github.com/draumaz/plains-reboot", 0.004)
     print(".\n")
-    tools.snooze(0.05)
-    if tools.os_check() == 1:
+    snooze(0.05)
+    if os_check() == 1:
         input("Press ENTER to continue: ")

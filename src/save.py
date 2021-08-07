@@ -1,4 +1,4 @@
-import os
+from os import path, remove
 
 def config(path):
     if path == 0:
@@ -7,7 +7,7 @@ def config(path):
         return 20
 
 def exists():
-    if (os.path.exists(config(0))):
+    if (path.exists(config(0))):
         pass
     else:
         open(config(0), "w+").write(config(1)*"0\n")
@@ -21,10 +21,8 @@ def write(line, state):
     open(config(0), "w+").writelines(i)
 
 def destroy():
-    if (os.path.exists(config(0))):
-        os.remove(config(0))
+    if (path.exists(config(0))):
+        remove(config(0))
         return 0
     else:
         return 1
-
-

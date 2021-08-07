@@ -1,5 +1,5 @@
-import tools
-import visuals
+from tools import clear, snooze, array_reader, option_reader, user_input
+from visuals import header
 
 def intro_pause(i): # soon to be deprecated
     if i == 0:
@@ -84,10 +84,10 @@ def intro_words(i): # soon to be deprecated
     return list(i)
 
 def intro_main():
-    tools.clear()
-    visuals.header()
+    clear()
+    header()
     print("")
-    tools.snooze(1)
+    snooze(1)
     for i in range (0, 9):
         x = None
         if i == 0:
@@ -98,22 +98,22 @@ def intro_main():
             x = "\n\nELI: "
         if x is not None:
             print(x, end="", flush=True)
-        tools.snooze(0.8)
+        snooze(0.8)
         if i == 4:
             print("\n")
-            tools.user_input(0,0,True)
+            user_input(0,0,True)
             print("\nELI: ", end="", flush=True)
-        tools.array_reader(intro_strings(i)[0], intro_strings(i)[1])
-        tools.snooze(intro_strings(i)[2])
+        array_reader(intro_strings(i)[0], intro_strings(i)[1])
+        snooze(intro_strings(i)[2])
         if i == 8:
             print("\n")
-            tools.option_reader(1, 2, "I'LL GET YA", "NO WAY")
-            if tools.user_input(1, 2, False) == 1:
+            option_reader(1, 2, "I'LL GET YA", "NO WAY")
+            if user_input(1, 2, False) == 1:
                 print("\nELI: ", end="", flush=True)
-                tools.array_reader(intro_strings(9)[0], intro_strings(9)[1])
-                tools.snooze(intro_strings(9)[2])
+                array_reader(intro_strings(9)[0], intro_strings(9)[1])
+                snooze(intro_strings(9)[2])
             else:
                 print(intro_strings(1)[0], end="", flush=True)
                 print("\nELI: ", end="", flush=True)
-                tools.array_reader(intro_strings(10)[0], intro_strings(10)[1])
-                tools.snooze(intro_strings(10)[2])
+                array_reader(intro_strings(10)[0], intro_strings(10)[1])
+                snooze(intro_strings(10)[2])

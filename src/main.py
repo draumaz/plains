@@ -1,7 +1,7 @@
-import supervisor
+from supervisor import superblade as i
 
 def main():
-    supervisor.superblade()
+    i()
 
 if __name__ == "__main__":
     main()

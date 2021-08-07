@@ -1,24 +1,24 @@
-import os
-import save
-import time
+from os import system, name
+from save import destroy, exists
+from time import sleep
 
 def version():
     return "v0.26"
 
 def clear():
     if os_check() == 1:
-        os.system("cls")
+        system("cls")
     else:
-        os.system("clear")
+        system("clear")
 
 def os_check():
     i = 0
-    if os.name == "nt":
+    if name == "nt":
         i = 1
     return i
 
 def snooze(ms):
-    time.sleep(ms)
+    sleep(ms)
 
 def array_reader(string, ms):
     for i in string:
@@ -57,10 +57,11 @@ def reset():
     print("\nYou sure you wanna reset?\n")
     option_reader(1, 2, "YES", "NO")
     if user_input(1, 2, False) == 1:
-        if save.destroy() == 0:
-            save.exists()
+        if destroy() == 0:
+            exists()
             print("\nSave reset.")
         else:
-            print("\nDelete failed.")
+            print("\nDelete failed.\n")
+            return 1
         snooze(0.25)
     return 0
