@@ -31,11 +31,11 @@ def intro_pause(i): # soon to be deprecated
 
 def intro_strings(i):
     if i == 0:
-        s = ["Esakul Base 6", 0.006, 1]
+        s = ["Esakul", 0.05, 2]
     elif i == 1:
-        s = ["ELI", 0.015, 1]
+        s = ["ELI", 0.025, 1]
     elif i == 2:
-        s = ["hey man,", 0.035, 0.45]
+        s = ["hey man,", 0.035, 0]
     elif i == 3:
         s = [" whats up?", 0.045, 0.005]
     elif i == 4:

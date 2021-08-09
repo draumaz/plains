@@ -7,7 +7,7 @@ def splash_header():
     print("==CHARACTER DESIGN BY BRYCE CANO==\n")
 
 def header():
-    print("\nThe Plains", tools.version(), "\n", end="")
+    print("\nThe Plains", version(), "\n", end="")
 
 def exit_header():
     clear()

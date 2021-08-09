@@ -17,8 +17,12 @@ def read():
     
 def write(line, state):
     i = read()
-    i[line] = str(state) + "\n"
-    open(config(0), "w+").writelines(i)
+    f = open(config(0), "w")
+    for r in range (0,config(1)):
+        if r == line:
+            f.write(str(state)+"\n")
+            continue
+        f.write(str(i[r])+"\n")
 
 def destroy():
     if (path.exists(config(0))):
