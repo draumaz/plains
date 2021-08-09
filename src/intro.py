@@ -30,6 +30,7 @@ def intro_strings(i):
     return list(s)
 
 def intro_main():
+    eli_prompt = "\n" + intro_strings(1)[0] + ": "
     clear()
     header()
     print("")
@@ -41,26 +42,25 @@ def intro_main():
         elif i == 1:
             x = "\n\nIncoming chat from:         "
         elif i == 2 or i == 6 or i == 8:
-            x = "\n\nELI: "
+            x = "\n" + eli_prompt
         if x is not None:
             print(x, end="", flush=True)
         snooze(0.8)
         if i == 4:
             print("\n")
             user_input(0,0,True)
-            print("\nELI: ", end="", flush=True)
+            print(eli_prompt, end="", flush=True)
         array_reader(intro_strings(i)[0], intro_strings(i)[1])
         snooze(intro_strings(i)[2])
         if i == 8:
             print("\n")
             option_reader(1, 2, "I'LL GET YA", "NO WAY")
             if user_input(1, 2, False) == 1:
-                print("\nELI: ", end="", flush=True)
+                print(eli_prompt, end="", flush=True)
                 array_reader(intro_strings(9)[0], intro_strings(9)[1])
                 snooze(intro_strings(9)[2])
             else:
-                print(intro_strings(1)[0], end="", flush=True)
-                print("\nELI: ", end="", flush=True)
+                print(eli_prompt, end="", flush=True)
                 array_reader(intro_strings(10)[0], intro_strings(10)[1])
                 snooze(intro_strings(10)[2])
             write(0, 1)
