@@ -1,33 +1,6 @@
 from tools import clear, snooze, array_reader, option_reader, user_input
 from visuals import header
-
-def intro_pause(i): # soon to be deprecated
-    if i == 0:
-        return [0.03, 0.15]
-    if i == 1:
-        return [0.75, 0.02]
-    if i == 2:
-        return [1.50, 0.0015]
-    if i == 3:
-        return [0.75, 0.0020]
-    if i == 4:
-        return [0.70, 0.0075]
-    if i == 5:
-        return [0.70, 0.0040]
-    if i == 6:
-        return [0.50, 0.0040]
-    if i == 7 or i == 8:
-        return [1, 0.0035]
-    if i == 9:
-        return [1, 0.006]
-    if i == 10:
-        return [1, 0.002]
-    if i == 11:
-        return [0, 0.0035]
-    if i == 12:
-        return [1, 0.0045]
-    if i == 13:
-        return [0, 0.0008]
+from save import write
 
 def intro_strings(i):
     if i == 0:
@@ -52,36 +25,9 @@ def intro_strings(i):
         s = ["thanks man!!", 0.008, 1]
     elif i == 10:
         s = ["lol see you soon man", 0.008, 1]
-    return list(s)
-
-def intro_words(i): # soon to be deprecated
-    if i == 0:
-        i = "hey man,"
-    elif i == 1:
-        i = " what's up?"
-    elif i == 2:
-        i = "..."
-    elif i == 3:
-        i = "classic."
-    elif i == 4:
-        i = "anyways,"
-    elif i == 5:
-        i = " i'm currently stuck on a deserted planet..."
-    elif i == 6:
-        i = "mind swingin' by and grabbin' me?"
-    elif i == 7:
-        i = "thanks man!!"
-    elif i == 8:
-        i = "lol ok see you soon man"
-    elif i == 9:
-        i = "Esakul"
-    elif i == 10:
-        i = "513:486 JKZ"
     elif i == 11:
-        i = "LIAM"
-    elif i == 12:
-        i = "Seems like you've found yourself in the same position as LIAM."
-    return list(i)
+        s = ["513:486 JKZ", 0.35, 1]
+    return list(s)
 
 def intro_main():
     clear()
@@ -117,3 +63,8 @@ def intro_main():
                 print("\nELI: ", end="", flush=True)
                 array_reader(intro_strings(10)[0], intro_strings(10)[1])
                 snooze(intro_strings(10)[2])
+            write(0, 1)
+            return True
+
+def intro_travel():
+    pass
