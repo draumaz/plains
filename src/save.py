@@ -4,7 +4,7 @@ def config(path):
     if path == 0:
         return "data.txt"
     elif path == 1:
-        return 20
+        return 20 # Ascends from 0
 
 def exists():
     if (path.exists(config(0))):

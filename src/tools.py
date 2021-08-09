@@ -17,13 +17,10 @@ def os_check():
         i = 1
     return i
 
-def snooze(ms):
-    sleep(ms)
-
 def array_reader(string, ms):
     for i in string:
         print(i, end="", flush=True)
-        snooze(ms)
+        sleep(ms)
     return ""
 
 def option_reader(*args):
@@ -32,24 +29,24 @@ def option_reader(*args):
     print()
 
 def user_input(min, max, strout):
+    oops = "\nDid you mean something else?\n"
     while True:
         try:
             if strout == True:
                 return input(array_reader("YOU: ", 0.005))
             raw_input = input(array_reader("ACTION >> ", 0.005))
-            oops = "\nDid you mean something else?\n"
             if int(raw_input) < min or int(raw_input) > max:
                 if int(raw_input) == 69 or int(raw_input) == 420:
                     print("\nNice.")
                 else:
                     print(oops)
-                snooze(0.2)
+                sleep(0.2)
                 continue
             else:
                 break
         except ValueError:
             print(oops)
-            snooze(0.2)
+            sleep(0.2)
             continue
     return int(raw_input)
 
@@ -63,5 +60,5 @@ def reset():
         else:
             print("\nDelete failed.\n")
             return 1
-        snooze(0.25)
+        sleep(0.25)
     return 0

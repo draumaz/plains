@@ -1,6 +1,7 @@
-from tools import clear, snooze, array_reader, option_reader, user_input
+from tools import clear, array_reader, option_reader, user_input
 from visuals import header
 from save import write
+from time import sleep
 
 def intro_strings(i):
     if i == 0:
@@ -34,7 +35,7 @@ def intro_main():
     clear()
     header()
     print("")
-    snooze(1)
+    sleep(1)
     for i in range (0, 9):
         x = None
         if i == 0:
@@ -45,24 +46,24 @@ def intro_main():
             x = "\n" + eli_prompt
         if x is not None:
             print(x, end="", flush=True)
-        snooze(0.8)
+        sleep(0.8)
         if i == 4:
             print("\n")
             user_input(0,0,True)
             print(eli_prompt, end="", flush=True)
         array_reader(intro_strings(i)[0], intro_strings(i)[1])
-        snooze(intro_strings(i)[2])
+        sleep(intro_strings(i)[2])
         if i == 8:
             print("\n")
             option_reader(1, 2, "I'LL GET YA", "NO WAY")
             if user_input(1, 2, False) == 1:
                 print(eli_prompt, end="", flush=True)
                 array_reader(intro_strings(9)[0], intro_strings(9)[1])
-                snooze(intro_strings(9)[2])
+                sleep(intro_strings(9)[2])
             else:
                 print(eli_prompt, end="", flush=True)
                 array_reader(intro_strings(10)[0], intro_strings(10)[1])
-                snooze(intro_strings(10)[2])
+                sleep(intro_strings(10)[2])
             write(0, 1)
             return True
 

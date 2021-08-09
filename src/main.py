@@ -1,7 +1,3 @@
-from supervisor import superblade as i
-
-def main():
-    i()
-
+from supervisor import superblade as s
 if __name__ == "__main__":
-    main()
+    s()
