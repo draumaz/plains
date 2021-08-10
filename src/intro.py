@@ -1,6 +1,6 @@
 from tools import clear, array_reader, option_reader, user_input
-from visuals import header
-from save import write
+from visuals import headers
+from save import save
 from time import sleep
 
 def intro_strings(i):
@@ -33,7 +33,7 @@ def intro_strings(i):
 def intro_main():
     eli_prompt = "\n" + intro_strings(1)[0] + ": "
     clear()
-    header()
+    headers.version_header()
     print("")
     sleep(1)
     for i in range (0, 9):
@@ -64,7 +64,7 @@ def intro_main():
                 print(eli_prompt, end="", flush=True)
                 array_reader(intro_strings(10)[0], intro_strings(10)[1])
                 sleep(intro_strings(10)[2])
-            write(0, 1)
+            save.write(0, 1)
             return True
 
 def intro_travel():

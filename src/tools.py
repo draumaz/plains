@@ -1,5 +1,5 @@
 from os import system, name
-from save import destroy, exists
+from save import save
 from time import sleep
 
 def version():
@@ -54,8 +54,8 @@ def reset():
     print("\nYou sure you wanna reset?\n")
     option_reader(1, 2, "YES", "NO")
     if user_input(1, 2, False) == 1:
-        if destroy() == 0:
-            exists()
+        if save.destroy() == 0:
+            save.exists()
             print("\nSave reset.")
         else:
             print("\nDelete failed.\n")
