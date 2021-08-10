@@ -1,6 +1,6 @@
 from tools import version, clear, sleep, array_reader, os_check
 
-class headers():
+class headers:
     def splash_header():
         print("\n===========THE PLAINS=============")
         print("=====MADE BY DRAUMAZ IN 2021======")
