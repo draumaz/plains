@@ -2,7 +2,8 @@ from time import sleep
 from sys import exit
 from save import save
 from visuals import headers
-from tools import option_reader, user_input, reset, clear
+from reader import readers
+from tools import user_input, reset, clear
 from intro import intro_main, intro_travel
 
 def superblade():
@@ -10,22 +11,23 @@ def superblade():
     save.exists()
     headers.splash_header()
     opt = [1, 3]
-    option_reader(opt[0], opt[1], "PLAY", "RESET", "QUIT")
-    i = user_input(opt[0], opt[1], False)
-    if i == 1:
-        if save.read()[0] == 0:
-            if intro_main() == True:
-                intro_travel()
-            else:
+    readers.option_reader(opt[0], opt[1], "PLAY", "RESET", "QUIT")
+    match user_input(opt[0], opt[1], False):
+        case 1:
+            match save.read()[0]:
+                case 0:
+                    if intro_main() == True:
+                        intro_travel()
+                    else:
+                        superblade()
+                case 1:
+                    intro_travel()
+        case 2:
+            if reset() == 0:
                 superblade()
-        elif save.read()[1] == 1:
-            intro_travel()
-    elif i == 2:
-        if reset() == 0:
-            superblade()
-        else:
-            sleep(1)
+            else:
+                sleep(1)
+                exit()
+        case 3:
+            headers.exit_header()
             exit()
-    elif i == 3:
-        headers.exit_header()
-        exit()

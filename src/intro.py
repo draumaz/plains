@@ -1,5 +1,6 @@
-from tools import clear, array_reader, option_reader, user_input
+from tools import clear, user_input
 from visuals import headers
+from reader import readers
 from save import save
 from time import sleep
 
@@ -49,20 +50,20 @@ def intro_main():
         sleep(0.8)
         if i == 4:
             print("\n")
-            user_input(0,0,True)
+            user_input(0, 0, True)
             print(eli_prompt, end="", flush=True)
-        array_reader(intro_strings(i)[0], intro_strings(i)[1])
+        readers.array_reader(intro_strings(i)[0], intro_strings(i)[1])
         sleep(intro_strings(i)[2])
         if i == 8:
             print("\n")
-            option_reader(1, 2, "I'LL GET YA", "NO WAY")
+            readers.option_reader(1, 2, "I'LL GET YA", "NO WAY")
             if user_input(1, 2, False) == 1:
                 print(eli_prompt, end="", flush=True)
-                array_reader(intro_strings(9)[0], intro_strings(9)[1])
+                readers.array_reader(intro_strings(9)[0], intro_strings(9)[1])
                 sleep(intro_strings(9)[2])
             else:
                 print(eli_prompt, end="", flush=True)
-                array_reader(intro_strings(10)[0], intro_strings(10)[1])
+                readers.array_reader(intro_strings(10)[0], intro_strings(10)[1])
                 sleep(intro_strings(10)[2])
             save.write(0, 1)
             return True
