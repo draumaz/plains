@@ -1,12 +1,11 @@
 from os import path, remove
 
 def config(path):
-    match path:
-        case 0:
-            i = "data.txt"
-        case 1:
-            i = str(0)
-        case 2:
+    if path == 0:
+        i = "data.txt"
+    elif path == 1:
+        i = str(0)
+    elif path == 2:
             i = 20
     return i
 

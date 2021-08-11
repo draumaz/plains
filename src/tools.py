@@ -43,13 +43,13 @@ def user_input(min, max, strout):
 def reset():
     print("\nYou sure you wanna reset?\n")
     readers.option_reader(1, 2, "YES", "NO")
-    match user_input(1, 2, False):
-        case 1:
-            if save.destroy() == 0:
-                save.exists()
-                print("\nSave reset.")
-            else:
-                print("\nDelete failed.\n")
-                return 1
+    i = user_input(1, 2, False)
+    if i == 1:
+        if save.destroy() == 0:
+            save.exists()
+            print("\nSave reset.")
+        else:
+            print("\nDelete failed.\n")
+            return 1
     sleep(0.25)
     return 0
