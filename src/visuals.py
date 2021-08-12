@@ -19,3 +19,4 @@ class headers:
         sleep(0.05)
         if os_check() == 1:
             input("Press ENTER to continue: ")
+            print()
