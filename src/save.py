@@ -2,12 +2,12 @@ from os import path, remove
 
 def config(path):
     if path == 0:
-        i = "data.txt"
+        return str("data.txt") # File name
     elif path == 1:
-        i = str(0)
+        return str(0) # Fill type
     elif path == 2:
-            i = 20
-    return i
+        return int(20) # Zero count
+    return 1
 
 class save():
     def read():
@@ -24,7 +24,7 @@ class save():
         if (path.exists(config(0))):
             pass
         else:
-            open(config(0), "w+").write(config(2)*config(1)+"\n")
+            open(config(0), "w+").write(config(2)*(config(1)+"\n"))
     def destroy():
         if (path.exists(config(0))):
             remove(config(0))

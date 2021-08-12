@@ -46,10 +46,12 @@ def reset():
     i = user_input(1, 2, False)
     if i == 1:
         if save.destroy() == 0:
-            save.exists()
             print("\nSave reset.")
+            r = 0
         else:
             print("\nDelete failed.\n")
-            return 1
+            r = 1
+    elif i == 2:
+        return 1
     sleep(0.25)
-    return 0
+    return r
