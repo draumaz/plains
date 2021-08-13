@@ -23,8 +23,8 @@ def user_input(min, max, strout):
     while True:
         try:
             if strout == True:
-                return input(readers.array_reader("YOU: ", 0.005))
-            raw_input = input(readers.array_reader("ACTION >> ", 0.005))
+                return input(readers.array_reader("YOU: ", 0.015))
+            raw_input = input(readers.array_reader("ACTION >> ", 0.015))
             if int(raw_input) < min or int(raw_input) > max:
                 if int(raw_input) == 69 or int(raw_input) == 420:
                     print("\nNice.")
