@@ -1,4 +1,4 @@
-from tools import version, clear, sleep, os_check
+from tools import version, clear, sleep, is_win
 from reader import readers
 
 class headers:
@@ -14,9 +14,9 @@ class headers:
         print("\nThanks for playing my game!")
         sleep(0.5)
         print("\nKeep up with development at ", end="")
-        readers.array_reader("https://github.com/draumaz/plains-reboot", 0.004)
+        readers.array_reader("https://github.com/draumaz/plains", 0.004)
         print(".\n")
         sleep(0.05)
-        if os_check() == 1:
+        if is_win() == 1:
             input("Press ENTER to continue: ")
             print()

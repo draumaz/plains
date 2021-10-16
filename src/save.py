@@ -21,9 +21,7 @@ class save():
                 continue
             f.write(str(i[r])+"\n")
     def exists():
-        if (path.exists(config(0))):
-            pass
-        else:
+        if not (path.exists(config(0))):
             open(config(0), "w+").write(config(2)*(config(1)+"\n"))
     def destroy():
         if (path.exists(config(0))):

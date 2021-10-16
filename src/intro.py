@@ -18,9 +18,9 @@ def intro_strings(i):
     elif i == 5:
         s = ["classic.", 0.05, 1]
     elif i == 6:
-        s = ["anyways, ", 0.075, 0.75]
+        s = ["anyways, ", 0.075, 0.25]
     elif i == 7:
-        s = ["i'm currently stuck at this old base...", 0.008, 1]
+        s = ["i'm currently stuck at this old base...", 0.025, 1]
     elif i == 8:
         s = ["mind swingin' by and pickin' me up?", 0.01, 1]
     elif i == 9:
@@ -57,14 +57,15 @@ def intro_main():
         if i == 8:
             print("\n")
             readers.option_reader(1, 2, "I'LL GET YA", "NO WAY")
-            if user_input(1, 2, False) == 1:
+            match user_input(1, 2, False):
+                case 1:
+                    s = 9
+                case 2:
+                    s = 10
+            for l in range(0, 2):
                 print(eli_prompt, end="", flush=True)
-                readers.array_reader(intro_strings(9)[0], intro_strings(9)[1])
-                sleep(intro_strings(9)[2])
-            else:
-                print(eli_prompt, end="", flush=True)
-                readers.array_reader(intro_strings(10)[0], intro_strings(10)[1])
-                sleep(intro_strings(10)[2])
+                readers.array_reader(intro_strings(s)[0], intro_strings(s)[1])
+                sleep(intro_strings(s)[2])
             save.write(0, 1)
             return True
 

@@ -7,16 +7,16 @@ def version():
     return "v0.26"
 
 def clear():
-    if os_check() == 1:
+    if is_win() == True:
         system("cls")
     else:
         system("clear")
 
-def os_check():
-    i = 0
+def is_win():
     if name == "nt":
-        i = 1
-    return i
+        return True
+    else:
+        return False
 
 def user_input(min, max, strout):
     oops = "\nDid you mean something else?\n"
@@ -43,15 +43,15 @@ def user_input(min, max, strout):
 def reset():
     print("\nYou sure you wanna reset?\n")
     readers.option_reader(1, 2, "YES", "NO")
-    i = user_input(1, 2, False)
-    if i == 1:
-        if save.destroy() == 0:
-            print("\nSave reset.")
-            r = 0
-        else:
-            print("\nDelete failed.\n")
-            r = 1
-    elif i == 2:
-        return 1
-    sleep(0.25)
-    return r
+    match user_input(1, 2, False):
+        case 1:
+            if save.destroy() == 0:
+                print("\nSave reset.")
+                v = 0
+            else:
+                print("\nFailed to delete save.")
+                v = 1
+        case 2:
+            return
+    sleep(0.25)    
+    return v

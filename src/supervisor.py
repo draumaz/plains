@@ -12,18 +12,18 @@ def superblade():
     x = save.read()[0]
     headers.splash_header()
     readers.option_reader(1, 3, "PLAY", "RESET", "QUIT")
-    i = user_input(1, 3, False)
-    if i == 1:
-        if x == 0:
-            if intro_main() == True:
+    match user_input(1, 3, False):
+        case 1:
+            if x == 0:
+                if intro_main() == True:
+                    intro_travel()
+                else:
+                    superblade()
+            elif x == 1:
                 intro_travel()
-            else:
-                superblade()
-        elif x == 1:
-                intro_travel()
-    elif i == 2:
-        reset()
-        superblade()
-    elif i == 3:
-        headers.exit_header()
-        exit()
+        case 2:
+            reset()
+            superblade()
+        case 3:
+            headers.exit_header()
+            exit()
