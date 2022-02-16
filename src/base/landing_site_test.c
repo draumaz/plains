@@ -3,16 +3,14 @@
 #include <curses.h>
 #include <unistd.h>
 
+#include "./../header/screen_manip.h"
+
 void land_test() {
+	screen_up();
 	int game_loop = 0;
 	int game_loop2 = 0;
 	int active_x = 0;
 	int active_y = 0;
-	initscr();
-	noecho();
-	curs_set(0);
-	raw();
-	keypad(stdscr, true);
 	active_y = 1;
 	char* sel_txt[4] = {"[HILL ]", "[CAVE ]", "[TOOLS]", "[QUIT ]"};
 	move(active_y, 0);
@@ -43,39 +41,49 @@ void land_test() {
 	move(active_y, active_x);
 	refresh();
 	while (game_loop == 0) {
-		move(active_y, active_x);
-		printw("<");
-		refresh();
-		switch (getch()) {
-			case 'q':
-				system("stty sane");
-				curs_set(1);
-				exit(0);
-			case KEY_UP:
-			case 'w':
-			case 'i':
-				mvdelch(active_y, active_x);
-				if (active_y == 7) {
-					active_y = 10;
-				} else {
-					active_y -= 1;
-				}
-				break;
-			case KEY_DOWN:
-			case 's':
-			case 'k':
-				mvdelch(active_y, active_x);
-				if (active_y == 10) {
-					active_y = 7;
-				} else {
-					active_y += 1;
-				}
-				break;
+		while (game_loop2 == 0) {
+			move(active_y, active_x);
+			printw("<");
+			refresh();
+			switch (getch()) {
+				case 'q':
+					screen_down();
+					exit(0);
+				case KEY_UP:
+				case 'w':
+				case 'i':
+					mvdelch(active_y, active_x);
+					if (active_y == 7) {
+						active_y = 10;
+					} else {
+						active_y -= 1;
+					}
+					break;
+				case KEY_DOWN:
+				case 's':
+				case 'k':
+					mvdelch(active_y, active_x);
+					if (active_y == 10) {
+						active_y = 7;
+					} else {
+						active_y += 1;
+					}
+					break;
+				case '\n':
+					game_loop2 = 1;
+					break;
+			}
+		}
+		if (game_loop2 == 1) {
+			switch (active_y) {
+				case 10:
+					screen_down();
+					exit(0);
+				default:
+					game_loop2 = 0;
+					game_loop = 0;
+					break;
+			}
 		}
 	}
-	clear();
-	keypad(stdscr, false);
-	endwin();
-	curs_set(1);
-	system("stty sane");
 }
