@@ -8,5 +8,5 @@ plains:
 	cd ./build && $(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
 	landing_site_test.o screen_manip.o main.o \
-	-o ./plains-debug
+	-o ../plains-debug
 	rm -rf ./build
