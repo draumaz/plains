@@ -4,9 +4,15 @@
 
 #include "../header/screen_manip.h"
 
+#ifndef CTRL // TODO move into a header file
+#define CTRL(c) ((c) & 037)
+#endif
+
 void crashland_head() {
-	char* star[4] = {"The Plains v0.26", "You are Liam. An astronaut by trade, you took a bad turn",
-					 "on the Space Belt, and crash-landed on this strange, ", "alien planet. You awaken, lain in a vast field of grass."
+	char* star[4] = {"The Plains v0.26",
+					 "You are Liam. An astronaut by trade, you took a bad turn",
+					 "on the Space Belt, and crash-landed on this strange,",
+					 "alien planet. You awaken, lain in a vast field of grass."
 	};
 	int j = 0;
 	for (int i = 1; i < 6; i++) {
@@ -45,6 +51,8 @@ void land_test() {
 			refresh();
 			switch (getch()) {
 				case 'q':
+				case CTRL('q'):
+				case CTRL('c'):
 					screen_down();
 					exit(0);
 				case KEY_UP:

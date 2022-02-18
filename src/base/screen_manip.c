@@ -1,6 +1,8 @@
 #include <curses.h>
 #include <stdlib.h>
 
+#define CLEAN_SCREEN_LINUX "stty sane"
+
 void screen_up() {
 	initscr();
 	noecho();
@@ -14,5 +16,5 @@ void screen_down() {
 	keypad(stdscr, false);
 	endwin();
 	curs_set(1);
-	system("stty sane");
+	system(CLEAN_SCREEN_LINUX);
 }
