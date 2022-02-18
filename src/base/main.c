@@ -1,4 +1,4 @@
-#include "./../header/landing_site_test.h"
+#include "../header/landing_site_test.h"
 
 int main() {
 	land_test();
