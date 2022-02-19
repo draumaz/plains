@@ -65,10 +65,10 @@ void landing_site() {
 			}
 		}
 		switch (active_y) {
-			case 8:
-				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
-				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
-				break;
+		//	case 8:
+			//	the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
+			//	the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
+			//	break;
 			case 10:
 				screen_down();
 				exit(0);
