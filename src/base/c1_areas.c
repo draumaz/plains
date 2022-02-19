@@ -13,6 +13,8 @@
 void landing_site() {
 	int game_loop = 0;
 	int game_loop2 = 0;
+	int active_y = LANDING_SITE_OPTS_MIN;
+	int active_x = 8;
 	int j = 0;
 	char* sel_txt[4] = {"[HILL ]",
 	"[CAVE ]",
@@ -25,8 +27,6 @@ void landing_site() {
 		printw("%s", sel_txt[j]);
 		j++;
 	}
-	int active_y = 7;
-	int active_x = 8;
 	while (game_loop == 0) {
 		while (game_loop2 == 0) {
 			move(active_y, active_x);
@@ -42,8 +42,8 @@ void landing_site() {
 				case 'w':
 				case 'i':
 					mvdelch(active_y, active_x);
-					if (active_y == 7) {
-						active_y = 10;
+					if (active_y == LANDING_SITE_OPTS_MIN) {
+						active_y = LANDING_SITE_OPTS_MAX-1;
 					} else {
 						active_y -= 1;
 					}
@@ -52,8 +52,8 @@ void landing_site() {
 				case 's':
 				case 'k':
 					mvdelch(active_y, active_x);
-					if (active_y == 10) {
-						active_y = 7;
+					if (active_y == LANDING_SITE_OPTS_MAX-1) {
+						active_y = LANDING_SITE_OPTS_MIN;
 					} else {
 						active_y += 1;
 					}
