@@ -2,12 +2,13 @@
 #include <stdlib.h>
 #include <curses.h>
 
+#include "../header/c1_areas.h"
+
 #include "../header/glob_vars.h"
 #include "../header/glob_vis.h"
 #include "../header/screen_manip.h"
 #include "../header/savesys.h"
 #include "../header/c1_txt.h"
-#include "../header/c1_areas.h"
 #include "../header/c0_splash.h"
 
 void landing_site() {

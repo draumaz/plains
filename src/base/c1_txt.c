@@ -1,7 +1,8 @@
 #include <curses.h>
 
-#include "../header/glob_vars.h"
 #include "../header/c1_txt.h"
+
+#include "../header/glob_vars.h"
 
 void landing_site_head() {
 	char* star[3] = {"You are Liam. An astronaut by trade, you took a bad turn",
