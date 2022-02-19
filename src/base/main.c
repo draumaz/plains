@@ -1,6 +1,6 @@
-#include "../header/landing_site_test.h"
+#include "../header/c1_areas.h"
 
 int main() {
-	land_test();
+	landing_site();
 	return 0;
 }

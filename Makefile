@@ -2,11 +2,14 @@ plains:
 	mkdir \
 	-pv \
 	./build
-	$(CC) $(CFLAGS) -Wall -c ./src/base/landing_site_test.c -o ./build/landing_site_test.o
+	$(CC) $(CFLAGS) -Wall -c ./src/base/c1_areas.c -o ./build/c1_areas.o
+	$(CC) $(CFLAGS) -Wall -c ./src/base/c1_txt.c -o ./build/c1_txt.o
+	$(CC) $(CFLAGS) -Wall -c ./src/base/glob_vis.c -o ./build/glob_vis.o
+	$(CC) $(CFLAGS) -Wall -c ./src/base/savesys.c -o ./build/savesys.o
 	$(CC) $(CFLAGS) -Wall -c ./src/base/screen_manip.c -o ./build/screen_manip.o
 	$(CC) $(CFLAGS) -Wall -c ./src/base/main.c -o ./build/main.o
 	cd ./build && $(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
-	landing_site_test.o screen_manip.o main.o \
+	c1_areas.o c1_txt.o glob_vis.o savesys.o screen_manip.o main.o \
 	-o ../plains-debug
 	rm -rf ./build

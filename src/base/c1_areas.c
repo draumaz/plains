@@ -2,31 +2,13 @@
 #include <stdlib.h>
 #include <curses.h>
 
+#include "../header/glob_vars.h"
+#include "../header/glob_vis.h"
 #include "../header/screen_manip.h"
+#include "../header/savesys.h"
+#include "../header/c1_txt.h"
 
-#ifndef CTRL // TODO move into a header file
-#define CTRL(c) ((c) & 037)
-#endif
-
-void crashland_head() {
-	char* star[4] = {"The Plains v0.26",
-					 "You are Liam. An astronaut by trade, you took a bad turn",
-					 "on the Space Belt, and crash-landed on this strange,",
-					 "alien planet. You awaken, lain in a vast field of grass."
-	};
-	int j = 0;
-	for (int i = 1; i < 6; i++) {
-		if (i == 2) {
-			continue;
-		}
-		move(i, 0);
-		printw("%s", star[j]);
-		j++;
-	}
-	move(0, 0);
-}
-
-void land_test() {
+void landing_site() {
 	int game_loop = 0;
 	int game_loop2 = 0;
 	int j = 0;
@@ -35,8 +17,10 @@ void land_test() {
 						"[TOOLS]",
 						"[QUIT ]"
 	};
+	save_exists();
 	screen_up();
-	crashland_head();
+	tippy_head();
+	landing_site_head();
 	for (int i = 7; i < 11; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[j]);
