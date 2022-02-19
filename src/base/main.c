@@ -1,6 +1,6 @@
-#include "../header/c1_areas.h"
+#include "../header/c0_splash.h"
 
 int main() {
-	landing_site();
+	splash_screen();
 	return 0;
 }

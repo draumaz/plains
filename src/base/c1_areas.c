@@ -8,6 +8,7 @@
 #include "../header/savesys.h"
 #include "../header/c1_txt.h"
 #include "../header/c1_areas.h"
+#include "../header/c0_splash.h"
 
 void landing_site() {
 	int game_loop = 0;
@@ -17,8 +18,6 @@ void landing_site() {
 	"[CAVE ]",
 	"[TOOLS]",
 	"[QUIT ]"};
-	save_exists();
-	screen_up();
 	tippy_head();
 	landing_site_head();
 	for (int i = LANDING_SITE_OPTS_MIN; i < LANDING_SITE_OPTS_MAX; i++) {
@@ -65,13 +64,11 @@ void landing_site() {
 			}
 		}
 		switch (active_y) {
-		//	case 8:
-			//	the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
-			//	the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
-			//	break;
 			case 10:
-				screen_down();
-				exit(0);
+				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
+				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
+				splash_screen();
+				return;
 			default:
 				game_loop2 = 0;
 				break;

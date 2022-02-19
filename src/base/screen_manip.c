@@ -12,7 +12,6 @@ void screen_up() {
 }
 
 void screen_down() {
-	clear();
 	keypad(stdscr, false);
 	endwin();
 	curs_set(1);

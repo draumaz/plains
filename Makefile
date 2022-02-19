@@ -2,6 +2,7 @@ plains:
 	mkdir \
 	-pv \
 	./build
+	$(CC) $(CFLAGS) -Wall -c ./src/base/c0_splash.c -o ./build/c0_splash.o
 	$(CC) $(CFLAGS) -Wall -c ./src/base/c1_areas.c -o ./build/c1_areas.o
 	$(CC) $(CFLAGS) -Wall -c ./src/base/c1_txt.c -o ./build/c1_txt.o
 	$(CC) $(CFLAGS) -Wall -c ./src/base/glob_vis.c -o ./build/glob_vis.o
@@ -10,6 +11,6 @@ plains:
 	$(CC) $(CFLAGS) -Wall -c ./src/base/main.c -o ./build/main.o
 	cd ./build && $(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
-	c1_areas.o c1_txt.o glob_vis.o savesys.o screen_manip.o main.o \
+	c0_splash.o c1_areas.o c1_txt.o glob_vis.o savesys.o screen_manip.o main.o \
 	-o ../plains-debug
 	rm -rf ./build
