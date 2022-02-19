@@ -13,9 +13,9 @@ void landing_site() {
 	int game_loop2 = 0;
 	int j = 0;
 	char* sel_txt[4] = {"[HILL ]",
-    "[CAVE ]",
-    "[TOOLS]",
-    "[QUIT ]"};
+	"[CAVE ]",
+	"[TOOLS]",
+	"[QUIT ]"};
 	save_exists();
 	screen_up();
 	tippy_head();
