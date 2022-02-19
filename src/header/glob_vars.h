@@ -1,4 +1,4 @@
-#ifndef CTRL // TODO move into a header file
+#ifndef CTRL
 #define CTRL(c) ((c) & 037)
 #endif
 
