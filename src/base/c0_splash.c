@@ -10,6 +10,14 @@
 #include "../header/savesys.h"
 #include "../header/c1_areas.h"
 
+struct c0s_game {
+	int head_loop;
+	int body_loop;
+	int active_x;
+	int active_y;
+	int disp_inc;
+};
+
 void splash_head() {
 	char* star[3] = {"==THE PLAINS===============",
 	"==DRAUMAZ, 2021-2022=======",
@@ -25,22 +33,23 @@ void splash_head() {
 }
 
 void splash_screen() {
-	int game_loop = 0;
-	int game_loop2 = 0;
-	int active_y = SPLASH_OPTS_MIN;
-	int active_x = 8;
-	int j = 0;
+	struct c0s_game c;
+	c.head_loop = 0;
+	c.body_loop = 0;
+	c.active_y = SPLASH_OPTS_MIN;
+	c.active_x = 8;
+	c.disp_inc = 0;
 	char* sel_txt[3] = {"[PLAY ]", "[RESET]", "[QUIT ]"};
 	screen_up();
 	splash_head();
 	for (int i = SPLASH_OPTS_MIN; i < SPLASH_OPTS_MAX; i++) {
 		move(i, 0);
-		printw("%s", sel_txt[j]);
-		j++;
+		printw("%s", sel_txt[c.disp_inc]);
+		c.disp_inc++;
 	}
-	while (game_loop == 0) {
-		while (game_loop2 == 0) {
-			move(active_y, active_x);
+	while (c.head_loop == 0) {
+		while (c.body_loop == 0) {
+			move(c.active_y, c.active_x);
 			printw("<");
 			refresh();
 			switch (getch()) {
@@ -52,29 +61,29 @@ void splash_screen() {
 				case KEY_UP:
 				case 'w':
 				case 'i':
-					mvdelch(active_y, active_x);
-					if (active_y == SPLASH_OPTS_MIN) {
-						active_y = SPLASH_OPTS_MAX-1;
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == SPLASH_OPTS_MIN) {
+						c.active_y = SPLASH_OPTS_MAX-1;
 					} else {
-						active_y -= 1;
+						c.active_y -= 1;
 					}
 					break;
 				case KEY_DOWN:
 				case 's':
 				case 'k':
-					mvdelch(active_y, active_x);
-					if (active_y == SPLASH_OPTS_MAX-1) {
-						active_y = SPLASH_OPTS_MIN;
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == SPLASH_OPTS_MAX-1) {
+						c.active_y = SPLASH_OPTS_MIN;
 					} else {
-						active_y += 1;
+						c.active_y += 1;
 					}
 					break;
 				case '\n':
-					game_loop2 = 1;
+					c.body_loop = 1;
 					break;
 			}
 		}
-		switch (active_y) {
+		switch (c.active_y) {
 			case 5:
 				save_exists();
 				the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX-1);
@@ -82,7 +91,7 @@ void splash_screen() {
 				landing_site();
 				break;
 			case 6:
-				game_loop2 = 0;
+				c.body_loop = 0;
 				break;
 			case 7:
 				screen_down();
