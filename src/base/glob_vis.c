@@ -5,6 +5,8 @@
 
 #include "../header/glob_vars.h"
 
+#include "../header/savesys.h"
+
 void tippy_head() {
 	move(1, 0);
 	printw("The Plains v%s", VERSION);

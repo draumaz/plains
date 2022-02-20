@@ -33,7 +33,6 @@ void cave() {
 	"[ADMIRE  ]",
 	"[GO LEFT ]",
 	"[BACK    ]"};
-	tippy_head();
 	cave_head();
 	for (int i = CAVE_OPTS_MIN; i < CAVE_OPTS_MAX+1; i++) {
 		move(i, 0);

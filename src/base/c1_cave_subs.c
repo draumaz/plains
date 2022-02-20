@@ -25,9 +25,19 @@ void cave_subs_continue() {
     c.body_loop = 0;
     c.disp_inc = 0;
     c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
-    c.active_x = 7;
-    char* head_txt = "You continue deeper. A chest sits against the stone.";
-    char* sel_txt[2] = {"[OPEN]", "[BACK]"};
+	char* head_txt;
+	char* sel_txt[2];
+	if (save_compare(20, 1) == 0) {
+		head_txt = "An empty chest sits among the darkness.";
+		sel_txt[0] = "[PUT BACK]";
+		sel_txt[1] = "[GO  BACK]";
+		c.active_x = 11;
+	} else {
+		head_txt = "You continue deeper. A chest sits against the stone.";
+		sel_txt[0] = "[OPEN]";
+		sel_txt[1] = "[BACK]";
+		c.active_x = 7;
+	}
     for (int i = CAVE_SUBS_CONTINUE_OPTS_MIN; i < CAVE_SUBS_CONTINUE_OPTS_MAX+1; i++) {
         move(i, 0);
         printw("%s", sel_txt[c.disp_inc]);
@@ -72,6 +82,20 @@ void cave_subs_continue() {
 			}
 		}
         switch (c.active_y) {
+			case 5:
+				move(8, 0);
+				if (c.active_x == 7) {
+					save_writer(20, 1);
+					printw("A rusty knife! You take it.");
+				} else if (c.active_x == 11) {
+					save_writer(20, 0);
+					printw("You put the knife back.");
+				}
+				refresh();
+				scr_sleep(500);
+				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
+				cave_subs_continue();
+				break;
             case 6:
                 the_wiper(3, 5);
                 the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);

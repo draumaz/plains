@@ -17,6 +17,13 @@ int * save_reader() {
 	return array;
 }
 
+int save_compare(int line, int num) {
+	if (save_reader()[line] == num) {
+		return 0;
+	}
+	return 1;
+}
+
 void save_writer(int line, int state) {
 	if (state < 0) { state = 0; }
 	int * save_in = save_reader();
