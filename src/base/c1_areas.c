@@ -31,7 +31,7 @@ void cave() {
 	c.disp_inc = 0;
 	char* sel_txt[4] = {"[CONTINUE]",
 	"[ADMIRE  ]",
-	"[GANDER  ]",
+	"[GO LEFT ]",
 	"[BACK    ]"};
 	tippy_head();
 	cave_head();
@@ -81,6 +81,15 @@ void cave() {
 				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
 				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX+1);
 				cave_subs_continue();
+				break;
+			case 7:
+				move(11, 0);
+				printw("...sure is a cave.");
+				refresh();
+				scr_sleep(500);
+				move(11, 0);
+				printw("\n");
+				c.body_loop = 0;
 				break;
 			case 9:
 				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
