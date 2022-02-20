@@ -23,12 +23,9 @@ void the_wiper(int min, int max) {
 void scr_sleep(int ms) {
 	struct timespec ts;
 	int res;
-	if (ms < 0) {
-		errno = EINVAL;
-	}
+	if (ms < 0) { errno = EINVAL; }
 	ts.tv_sec = ms / 1000;
 	ts.tv_nsec = (ms % 1000) * 1000000;
-	do {
-		res = nanosleep(&ts, &ts);
-	} while (res && errno == EINTR);
+	do { res = nanosleep(&ts, &ts); }
+	while (res && errno == EINTR);
 }

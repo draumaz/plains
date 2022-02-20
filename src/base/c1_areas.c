@@ -83,7 +83,33 @@ void cave() {
 				break;
 			case 7:
 				move(11, 0);
-				printw("...sure is a cave.");
+				if (save_reader()[19] <= 7) {
+					save_writer(19, save_reader()[19]+1);
+				}
+				switch (save_reader()[19]) {
+					case 2:
+						printw("...a pretty dark one, at that.");
+						break;
+					case 3:
+						printw("Definitely a cave we've got here.");
+						break;
+					case 4:
+						printw("But is it, really?");
+						break;
+					case 5:
+						printw("No one may ever truly know.");
+						break;
+					case 6:
+						printw("But I know one thing...");
+						break;
+					case 7:
+						printw("Why are you still doing this?");
+						break;
+					case 1:
+					default:
+						printw("...sure is a cave.");
+						break;
+				}
 				refresh();
 				scr_sleep(500);
 				move(11, 0);

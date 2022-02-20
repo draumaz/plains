@@ -30,9 +30,9 @@ void cave_subs_continue() {
 	char* sel_txt[2];
 	if (has_knife == 0) {
 		head_txt = "An empty chest sits among the darkness.";
-		sel_txt[0] = "[PUT BACK]";
-		sel_txt[1] = "[GO  BACK]";
-		c.active_x = 11;
+		sel_txt[0] = "[RETURN ]";
+		sel_txt[1] = "[GO BACK]";
+		c.active_x = 10;
 	} else {
 		head_txt = "You continue deeper. A chest sits against the stone.";
 		sel_txt[0] = "[OPEN]";
@@ -98,12 +98,9 @@ void cave_subs_continue() {
 				cave_subs_continue();
 				break;
 			case 6:
-				the_wiper(3, 5);
+				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
 				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
 				cave();
-				break;
-			default:
-				c.body_loop = 0;
 				break;
 		}
 	}
