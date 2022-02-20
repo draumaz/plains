@@ -17,7 +17,7 @@ obj_build:
 
 compile:
 	cd ./build && $(CC) $(CFLAGS) -Wall -lncurses -lm \
-	-ltinfo  \
+	-ltinfo \
 	c0_splash.o c1_areas.o c1_txt.o c1_cave_subs.o glob_vis.o savesys.o screen_manip.o main.o \
 	-o ../plains-debug
 
