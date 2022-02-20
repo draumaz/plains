@@ -35,7 +35,7 @@ void cave() {
 	"[BACK    ]"};
 	tippy_head();
 	cave_head();
-	for (int i = CAVE_OPTS_MIN; i < CAVE_OPTS_MAX; i++) {
+	for (int i = CAVE_OPTS_MIN; i < CAVE_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
@@ -56,7 +56,7 @@ void cave() {
 				case 'i':
 					mvdelch(c.active_y, c.active_x);
 					if (c.active_y == CAVE_OPTS_MIN) {
-						c.active_y = CAVE_OPTS_MAX-1;
+						c.active_y = CAVE_OPTS_MAX;
 					} else {
 						c.active_y -= 1;
 					}
@@ -65,7 +65,7 @@ void cave() {
 				case 's':
 				case 'k':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == CAVE_OPTS_MAX-1) {
+					if (c.active_y == CAVE_OPTS_MAX) {
 						c.active_y = CAVE_OPTS_MIN;
 					} else {
 						c.active_y += 1;
@@ -78,13 +78,13 @@ void cave() {
 		}
 		switch (c.active_y) {
 			case 6:
-				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX);
-				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX);
+				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
+				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX+1);
 				cave_subs_continue();
 				break;
 			case 9:
-				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX);
-				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX);
+				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
+				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX+1);
 				landing_site();
 				break;
 			default:
@@ -107,7 +107,7 @@ void landing_site() {
 	"[QUIT ]"};
 	tippy_head();
 	landing_site_head();
-	for (int i = LANDING_SITE_OPTS_MIN; i < LANDING_SITE_OPTS_MAX; i++) {
+	for (int i = LANDING_SITE_OPTS_MIN; i < LANDING_SITE_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
@@ -128,7 +128,7 @@ void landing_site() {
 				case 'i':
 					mvdelch(c.active_y, c.active_x);
 					if (c.active_y == LANDING_SITE_OPTS_MIN) {
-						c.active_y = LANDING_SITE_OPTS_MAX-1;
+						c.active_y = LANDING_SITE_OPTS_MAX;
 					} else {
 						c.active_y -= 1;
 					}
@@ -137,7 +137,7 @@ void landing_site() {
 				case 's':
 				case 'k':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == LANDING_SITE_OPTS_MAX-1) {
+					if (c.active_y == LANDING_SITE_OPTS_MAX) {
 						c.active_y = LANDING_SITE_OPTS_MIN;
 					} else {
 						c.active_y += 1;
@@ -150,13 +150,13 @@ void landing_site() {
 		}
 		switch (c.active_y) {
 			case 8:
-				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
-				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
+				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX+1);
+				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX+1);
 				cave();
 				break;
 			case 10:
-				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX);
-				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX);
+				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX+1);
+				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX+1);
 				splash_screen();
 				break;
 			default:

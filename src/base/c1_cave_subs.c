@@ -12,30 +12,30 @@
 #include "../header/c1_txt.h"
 
 struct c1c_subs {
-	int head_loop;
-	int body_loop;
-	int active_x;
-	int active_y;
-	int disp_inc;
+    int head_loop;
+    int body_loop;
+    int active_x;
+    int active_y;
+    int disp_inc;
 };
 
 void cave_subs_continue() {
-	struct c1c_subs c;
-	c.head_loop = 0;
-	c.body_loop = 0;
-	c.disp_inc = 0;
-	c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
-	c.active_x = 7;
-	char* head_txt = "You continue deeper. A chest sits against the stone.";
-	char* sel_txt[2] = {"[OPEN]", "[BACK]"};
-	for (int i = CAVE_SUBS_CONTINUE_OPTS_MIN; i < CAVE_SUBS_CONTINUE_OPTS_MAX; i++) {
-		move(i, 0);
-		printw("%s", sel_txt[c.disp_inc]);
-		c.disp_inc++;
-	}
-	move(3, 0);
-	printw("%s", head_txt);
-	while (c.head_loop == 0) {
+    struct c1c_subs c;
+    c.head_loop = 0;
+    c.body_loop = 0;
+    c.disp_inc = 0;
+    c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
+    c.active_x = 7;
+    char* head_txt = "You continue deeper. A chest sits against the stone.";
+    char* sel_txt[2] = {"[OPEN]", "[BACK]"};
+    for (int i = CAVE_SUBS_CONTINUE_OPTS_MIN; i < CAVE_SUBS_CONTINUE_OPTS_MAX+1; i++) {
+        move(i, 0);
+        printw("%s", sel_txt[c.disp_inc]);
+        c.disp_inc++;
+    }
+    move(3, 0);
+    printw("%s", head_txt);
+    while (c.head_loop == 0) {
 		while (c.body_loop == 0) {
 			move(c.active_y, c.active_x);
 			printw("<");
@@ -51,7 +51,7 @@ void cave_subs_continue() {
 				case 'i':
 					mvdelch(c.active_y, c.active_x);
 					if (c.active_y == CAVE_SUBS_CONTINUE_OPTS_MIN) {
-						c.active_y = CAVE_SUBS_CONTINUE_OPTS_MAX-1;
+						c.active_y = CAVE_SUBS_CONTINUE_OPTS_MAX;
 					} else {
 						c.active_y -= 1;
 					}
@@ -60,7 +60,7 @@ void cave_subs_continue() {
 				case 's':
 				case 'k':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == CAVE_SUBS_CONTINUE_OPTS_MAX-1) {
+					if (c.active_y == CAVE_SUBS_CONTINUE_OPTS_MAX) {
 						c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
 					} else {
 						c.active_y += 1;
@@ -71,15 +71,15 @@ void cave_subs_continue() {
 					break;
 			}
 		}
-		switch (c.active_y) {
-			case 6:
-				the_wiper(3, 5);
-				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
-				cave();
-				break;
-			default:
-				c.body_loop = 0;
-				break;
-		}
-	}
+        switch (c.active_y) {
+            case 6:
+                the_wiper(3, 5);
+                the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
+                cave();
+                break;
+            default:
+                c.body_loop = 0;
+                break;
+        }
+    }
 }

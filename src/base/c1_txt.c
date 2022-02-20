@@ -10,7 +10,7 @@ void landing_site_head() {
 	"alien planet. You awaken, lain in a vast field of grass."
 	};
 	int j = 0;
-	for (int i = LANDING_SITE_HEAD_MIN; i < LANDING_SITE_HEAD_MAX; i++) {
+	for (int i = LANDING_SITE_HEAD_MIN; i < LANDING_SITE_HEAD_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", star[j]);
 		j++;
@@ -23,7 +23,7 @@ void cave_head() {
 	"You can barely make anything out past the entrance."
 	};
 	int j = 0;
-	for (int i = CAVE_HEAD_MIN; i < CAVE_HEAD_MAX; i++) {
+	for (int i = CAVE_HEAD_MIN; i < CAVE_HEAD_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", star[j]);
 		j++;

@@ -24,7 +24,7 @@ void splash_head() {
 	"==WRITTEN IN C!============"
 	};
 	int j = 0;
-	for (int i = SPLASH_HEAD_MIN; i < SPLASH_HEAD_MAX; i++) {
+	for (int i = SPLASH_HEAD_MIN; i < SPLASH_HEAD_MAX+1; i++) {
 		move(i, 0);
 		printw("%s",star[j]);
 		j++;
@@ -42,7 +42,7 @@ void splash_screen() {
 	char* sel_txt[3] = {"[PLAY ]", "[RESET]", "[QUIT ]"};
 	screen_up();
 	splash_head();
-	for (int i = SPLASH_OPTS_MIN; i < SPLASH_OPTS_MAX; i++) {
+	for (int i = SPLASH_OPTS_MIN; i < SPLASH_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
@@ -63,7 +63,7 @@ void splash_screen() {
 				case 'i':
 					mvdelch(c.active_y, c.active_x);
 					if (c.active_y == SPLASH_OPTS_MIN) {
-						c.active_y = SPLASH_OPTS_MAX-1;
+						c.active_y = SPLASH_OPTS_MAX;
 					} else {
 						c.active_y -= 1;
 					}
@@ -72,7 +72,7 @@ void splash_screen() {
 				case 's':
 				case 'k':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == SPLASH_OPTS_MAX-1) {
+					if (c.active_y == SPLASH_OPTS_MAX) {
 						c.active_y = SPLASH_OPTS_MIN;
 					} else {
 						c.active_y += 1;
@@ -86,8 +86,8 @@ void splash_screen() {
 		switch (c.active_y) {
 			case 5:
 				save_exists();
-				the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX-1);
-				the_wiper(SPLASH_OPTS_MIN, SPLASH_OPTS_MAX-1);
+				the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX+1);
+				the_wiper(SPLASH_OPTS_MIN, SPLASH_OPTS_MAX+1);
 				landing_site();
 				break;
 			case 6:
