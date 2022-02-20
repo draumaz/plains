@@ -25,9 +25,10 @@ void cave_subs_continue() {
     c.body_loop = 0;
     c.disp_inc = 0;
     c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
+	int has_knife = save_compare(20, 1);
 	char* head_txt;
 	char* sel_txt[2];
-	if (save_compare(20, 1) == 0) {
+	if (has_knife == 0) {
 		head_txt = "An empty chest sits among the darkness.";
 		sel_txt[0] = "[PUT BACK]";
 		sel_txt[1] = "[GO  BACK]";
@@ -84,10 +85,10 @@ void cave_subs_continue() {
         switch (c.active_y) {
 			case 5:
 				move(8, 0);
-				if (c.active_x == 7) {
+				if (has_knife == 1) {
 					save_writer(20, 1);
 					printw("A rusty knife! You take it.");
-				} else if (c.active_x == 11) {
+				} else if (has_knife == 0) {
 					save_writer(20, 0);
 					printw("You put the knife back.");
 				}
