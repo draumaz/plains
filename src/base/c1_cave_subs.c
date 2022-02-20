@@ -25,7 +25,7 @@ void cave_subs_continue() {
 	c.body_loop = 0;
 	c.disp_inc = 0;
 	c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
-	int has_knife = save_compare(20, 1);
+	int has_knife = save_compare(0, 1);
 	char* head_txt;
 	char* sel_txt[2];
 	if (has_knife == 0) {
@@ -86,10 +86,10 @@ void cave_subs_continue() {
 			case 5:
 				move(8, 0);
 				if (has_knife == 1) {
-					save_writer(20, 1);
+					save_writer(0, 1);
 					printw("A rusty knife! You take it.");
 				} else if (has_knife == 0) {
-					save_writer(20, 0);
+					save_writer(0, 0);
 					printw("You put the knife back.");
 				}
 				refresh();

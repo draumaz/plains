@@ -85,6 +85,8 @@ void splash_reset() {
 						printw("Unable to delete.");
 					} else {
 						printw("Successfully deleted.");
+						save_exists();
+						save_writer(1, 1);
 					}
 					refresh();
 					scr_sleep(200);
