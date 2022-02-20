@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <curses.h>
 
-#include <unistd.h>
-
 #include "../header/c1_areas.h"
 
 #include "../header/glob_vars.h"
