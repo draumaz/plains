@@ -192,6 +192,7 @@ void landing_site() {
 				cave();
 				break;
 			case 10:
+				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
 				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX+1);
 				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX+1);
 				splash_screen();

@@ -29,7 +29,7 @@ void cave_subs_continue() {
 	char* head_txt;
 	char* sel_txt[2];
 	if (has_knife == 0) {
-		head_txt = "An empty chest sits among the darkness.";
+		head_txt = "An empty chest lies beneath the darkness.";
 		sel_txt[0] = "[RETURN ]";
 		sel_txt[1] = "[GO BACK]";
 		c.active_x = 10;
@@ -94,7 +94,9 @@ void cave_subs_continue() {
 				}
 				refresh();
 				scr_sleep(500);
+				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
+				tippy_head();
 				cave_subs_continue();
 				break;
 			case 6:

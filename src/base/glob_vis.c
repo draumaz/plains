@@ -9,7 +9,12 @@
 
 void tippy_head() {
 	move(1, 0);
-	printw("The Plains v%s", VERSION);
+	if (save_compare(20, 1) == 0) {
+		printw("The Plains v%s ~ INV: %dx KNIFE", VERSION, save_reader()[20]);
+	} else {
+		printw("The Plains v%s", VERSION);
+	}
+	
 	move(0, 0);
 }
 
