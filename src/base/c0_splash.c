@@ -18,9 +18,88 @@ struct c0s_game {
 	int disp_inc;
 };
 
+void splash_reset() {
+	struct c0s_game c;
+	c.active_x = 0;
+	c.active_y = 0;
+	c.head_loop = 0;
+	c.body_loop = 0;
+	move(SPLASH_RESET_MSG, 0);
+	if (save_ephemerance() == 0) {
+		printw("No save file to speak of.");
+		refresh();
+		scr_sleep(250);
+		the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_MSG+1);
+		return;
+	} else {
+		printw("Are you sure you want to reset?");
+		move(SPLASH_RESET_OPTS_MIN, 0);
+		printw("[YES]");
+		move(SPLASH_RESET_OPTS_MAX, 0);;
+		printw("[NO ]");
+		c.active_y = SPLASH_RESET_OPTS_MIN;
+		c.active_x = 6;
+		while (c.head_loop == 0) {
+			while (c.body_loop == 0) {
+				move(c.active_y, c.active_x);
+				printw("<");
+				refresh();
+				switch (getch()) {
+					case 'q':
+					case CTRL('q'):
+					case CTRL('c'):
+						screen_down();
+						exit(0);
+						return;
+					case KEY_UP:
+					case 'w':
+					case 'i':
+						mvdelch(c.active_y, c.active_x);
+						if (c.active_y == SPLASH_RESET_OPTS_MAX) {
+							c.active_y = SPLASH_RESET_OPTS_MIN;
+						} else {
+							c.active_y += 1;
+						}
+						break;
+					case KEY_DOWN:
+					case 's':
+					case 'k':
+						mvdelch(c.active_y, c.active_x);
+						if (c.active_y == SPLASH_RESET_OPTS_MIN) {
+							c.active_y = SPLASH_RESET_OPTS_MAX;
+						} else {
+							c.active_y -= 1;
+						}
+						break;
+					case '\n':
+						c.body_loop = 1;
+						break;
+					default:
+						break;
+					}
+			}
+			switch (c.active_y) {
+				case 11:
+					move(SPLASH_RESET_OPTS_MAX+2, 0);
+					if (remove("data.txt") != 0) {
+						printw("Unable to delete.");
+					} else {
+						printw("Successfully deleted.");
+					}
+					refresh();
+					scr_sleep(200);
+				case 12:
+					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_MSG+1);
+					the_wiper(SPLASH_RESET_OPTS_MIN, SPLASH_RESET_OPTS_MAX+3);
+					return;
+			}
+		}
+	}
+}
+
 void splash_head() {
 	char* star[3] = {"==THE PLAINS===============",
-	"==DRAUMAZ, 2021-2022=======",
+	"==DRAUMAZ, 2021-22=========",
 	"==WRITTEN IN C!============"
 	};
 	int j = 0;
@@ -91,6 +170,7 @@ void splash_screen() {
 				landing_site();
 				break;
 			case 6:
+				splash_reset();
 				c.body_loop = 0;
 				break;
 			case 7:

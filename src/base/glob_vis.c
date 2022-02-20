@@ -3,12 +3,13 @@
 #include <errno.h>
 #include <ctype.h>
 
+#include "../header/glob_vis.h"
 #include "../header/glob_vars.h"
 
 #include "../header/savesys.h"
 
 void tippy_head() {
-	move(1, 0);
+	move(TIPPY_HEAD_MIN, 0);
 	if (save_compare(20, 1) == 0) {
 		printw("The Plains v%s ~ INV: %dx KNIFE", VERSION, save_reader()[20]);
 	} else {
