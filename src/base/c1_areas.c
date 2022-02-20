@@ -4,12 +4,15 @@
 
 #include "../header/c1_areas.h"
 
+#include "../header/c1_txt.h"
+#include "../header/c1_cave_subs.h"
+
+#include "../header/c0_splash.h"
+
 #include "../header/glob_vars.h"
 #include "../header/glob_vis.h"
 #include "../header/screen_manip.h"
 #include "../header/savesys.h"
-#include "../header/c1_txt.h"
-#include "../header/c0_splash.h"
 
 struct c1a_game {
 	int head_loop;
@@ -26,9 +29,9 @@ void cave() {
 	c.active_y = CAVE_OPTS_MIN;
 	c.active_x = 11;
 	c.disp_inc = 0;
-	char* sel_txt[4] = {"[GO FORTH]",
-	"[INSPECT ]",
-	"[CORNER  ]",
+	char* sel_txt[4] = {"[CONTINUE]",
+	"[ADMIRE  ]",
+	"[GANDER  ]",
 	"[BACK    ]"};
 	tippy_head();
 	cave_head();
@@ -74,6 +77,11 @@ void cave() {
 			}
 		}
 		switch (c.active_y) {
+			case 6:
+				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX);
+				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX);
+				cave_subs_continue();
+				break;
 			case 9:
 				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX);
 				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX);
