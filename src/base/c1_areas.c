@@ -86,9 +86,9 @@ void cave() {
 			case 7:
 				move(11, 0);
 				if (c.admire_loop <= 7) {
-					save_writer(19, c.admire_loop+1);
+					save_writer(2, c.admire_loop+1);
 				}
-				c.admire_loop = save_reader()[19];
+				c.admire_loop = save_reader()[2];
 				switch (c.admire_loop) {
 					case 2:
 						printw("...a pretty dark one, at that.");

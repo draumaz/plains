@@ -5,6 +5,14 @@
 #define SAVE_LENGTH 21
 #define SAVE_NAME "data.txt"
 
+// BEGIN SAVE LEGEND //
+
+// 0 ~ knife
+// 1 ~ reset
+// 2 ~ cave dialog loop
+
+// END SAVE LEGEND //
+
 int * save_reader() {
 	static int array[12];
 	int i = 0;
