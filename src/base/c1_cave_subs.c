@@ -25,19 +25,24 @@ void cave_subs_continue() {
 	c.body_loop = 0;
 	c.disp_inc = 0;
 	c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
-	int has_knife = save_compare(0, 1);
+	int has_knife = save_reader()[0];
 	char* head_txt;
 	char* sel_txt[2];
-	if (has_knife == 0) {
-		head_txt = "An empty chest lies beneath the darkness.";
-		sel_txt[0] = "[RETURN ]";
-		sel_txt[1] = "[GO BACK]";
-		c.active_x = 10;
-	} else {
-		head_txt = "You continue deeper. A chest sits against the stone.";
-		sel_txt[0] = "[OPEN]";
-		sel_txt[1] = "[BACK]";
-		c.active_x = 7;
+	switch (has_knife) {
+		case 0:
+		case 2:
+			if (has_knife == 0) { head_txt = "You continue deeper. A chest sits against the stone."; }
+			if (has_knife == 2) { head_txt = "There's that knife-filled chest again."; }
+			sel_txt[0] = "[OPEN]";
+			sel_txt[1] = "[BACK]";
+			c.active_x = 7;
+			break;
+		case 1:
+			head_txt = "An empty chest lies beneath the darkness.";
+			sel_txt[0] = "[RETURN ]";
+			sel_txt[1] = "[GO BACK]";
+			c.active_x = 10;
+			break;
 	}
 	for (int i = CAVE_SUBS_CONTINUE_OPTS_MIN; i < CAVE_SUBS_CONTINUE_OPTS_MAX+1; i++) {
 		move(i, 0);
@@ -85,12 +90,19 @@ void cave_subs_continue() {
 		switch (c.active_y) {
 			case 5:
 				move(8, 0);
-				if (has_knife == 1) {
-					save_writer(0, 1);
-					printw("A rusty knife! You take it.");
-				} else if (has_knife == 0) {
-					save_writer(0, 0);
-					printw("You put the knife back.");
+				switch (has_knife) {
+					case 0:
+						save_writer(0, 1);
+						printw("A rusty knife! You take it.");
+						break;
+					case 1:
+						save_writer(0, 2);
+						printw("You put the knife back.");
+						break;
+					case 2:
+						save_writer(0, 1);
+						printw("You grab the knife again.");
+						break;
 				}
 				refresh();
 				scr_sleep(500);

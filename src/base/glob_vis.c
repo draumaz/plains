@@ -10,12 +10,13 @@
 
 void tippy_head() {
 	move(TIPPY_HEAD_MIN, 0);
-	if (save_compare(20, 1) == 0) {
-		printw("The Plains v%s ~ INV: %dx KNIFE", VERSION, save_reader()[20]);
-	} else {
-		printw("The Plains v%s", VERSION);
+	printw("The Plains v%s", VERSION);
+	if (save_compare(0, 1) == 0) {
+		move(TIPPY_HEAD_MIN, 17);
+		printw("| INV:");
+		move(TIPPY_HEAD_MIN, 24);
+		printw("%dx KNIFE", save_reader()[0]);
 	}
-	
 	move(0, 0);
 }
 
