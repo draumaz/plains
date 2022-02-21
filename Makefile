@@ -22,7 +22,7 @@ obj_build:
 	@$(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(FILE0).c -o $(BUILD_PFX)/$(FILE0).o
 	@echo "  CC	 $(BUILD_PFX)/$(FILE1).o"
 	@$(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(FILE1).c -o $(BUILD_PFX)/$(FILE1).o
-	@echo "  CC	 $(BUILD_PFX)/$(FILE2)"
+	@echo "  CC	 $(BUILD_PFX)/$(FILE2).o"
 	@$(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(FILE2).c -o $(BUILD_PFX)/$(FILE2).o
 	@echo "  CC	 $(BUILD_PFX)/$(FILE3).o"
 	@$(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(FILE3).c -o $(BUILD_PFX)/$(FILE3).o
