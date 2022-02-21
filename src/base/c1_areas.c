@@ -17,7 +17,6 @@
 struct c1a_game {
 	int head_loop;
 	int body_loop;
-	int admire_loop;
 	int active_x;
 	int active_y;
 	int disp_inc;
@@ -25,7 +24,6 @@ struct c1a_game {
 
 void cave() {
 	struct c1a_game c;
-	c.admire_loop = save_reader()[19];
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.active_y = CAVE_OPTS_MIN;
@@ -85,11 +83,10 @@ void cave() {
 				break;
 			case 7:
 				move(11, 0);
-				if (c.admire_loop <= 7) {
-					save_writer(2, c.admire_loop+1);
+				if (save_reader()[2] <= 7) {
+					save_writer(2, save_reader()[2]+1);
 				}
-				c.admire_loop = save_reader()[2];
-				switch (c.admire_loop) {
+				switch (save_reader()[2]) {
 					case 2:
 						printw("...a pretty dark one, at that.");
 						break;
