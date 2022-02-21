@@ -22,6 +22,41 @@ struct c1a_game {
 	int disp_inc;
 };
 
+void cave_admiration() {
+	move(11, 0);
+	if (save_reader()[2] <= 7) {
+		save_writer(2, save_reader()[2]+1);
+	}
+	switch (save_reader()[2]) {
+		case 2:
+			printw("...a pretty dark one, at that.");
+			break;
+		case 3:
+			printw("Definitely a cave we've got here.");
+			break;
+		case 4:
+			printw("But is it, really?");
+			break;
+		case 5:
+			printw("No one may ever truly know.");
+			break;
+		case 6:
+			printw("But one question remains...");
+			break;
+		case 7:
+			printw("Why are you still doing this?");
+			break;
+		case 1:
+		default:
+			printw("...sure is a cave.");
+			break;
+	}
+	refresh();
+	scr_sleep(500);
+	move(11, 0);
+	printw("\n");
+}
+
 void cave() {
 	struct c1a_game c;
 	c.head_loop = 0;
@@ -82,38 +117,7 @@ void cave() {
 				cave_subs_continue();
 				break;
 			case 7:
-				move(11, 0);
-				if (save_reader()[2] <= 7) {
-					save_writer(2, save_reader()[2]+1);
-				}
-				switch (save_reader()[2]) {
-					case 2:
-						printw("...a pretty dark one, at that.");
-						break;
-					case 3:
-						printw("Definitely a cave we've got here.");
-						break;
-					case 4:
-						printw("But is it, really?");
-						break;
-					case 5:
-						printw("No one may ever truly know.");
-						break;
-					case 6:
-						printw("But I know one thing...");
-						break;
-					case 7:
-						printw("Why are you still doing this?");
-						break;
-					case 1:
-					default:
-						printw("...sure is a cave.");
-						break;
-				}
-				refresh();
-				scr_sleep(500);
-				move(11, 0);
-				printw("\n");
+				cave_admiration();
 				c.body_loop = 0;
 				break;
 			case 9:

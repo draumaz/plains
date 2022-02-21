@@ -4,5 +4,6 @@
 #define CAVE_OPTS_MIN 6
 #define CAVE_OPTS_MAX 9
 
+void cave_admiration();
 void cave();
 void landing_site();
