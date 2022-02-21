@@ -120,6 +120,11 @@ void cave() {
 				cave_admiration();
 				c.body_loop = 0;
 				break;
+			case 8:
+				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
+				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX+1);
+				cave_subs_goleft();
+				break;
 			case 9:
 				the_wiper(CAVE_HEAD_MIN, CAVE_HEAD_MAX+1);
 				the_wiper(CAVE_OPTS_MIN, CAVE_OPTS_MAX+1);
