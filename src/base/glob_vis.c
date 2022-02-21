@@ -8,6 +8,37 @@
 
 #include "../header/savesys.h"
 
+int tippy_inv_quantity(int slot) {
+	int quant = 0;
+	switch (slot) {
+		case 0: // knife
+			switch (save_reader()[0]) {
+				case 0:
+				case 2:
+					quant = 0;
+					break;
+				case 1:
+					quant = 1;
+					break;
+			}
+			return quant;
+			break;
+		case 1: // bottle:
+			switch (save_reader()[3]) {
+				case 0:
+				case 2:
+					quant = 0;
+					break;
+				case 1:
+					quant = 1;
+					break;
+			}
+			return quant;
+			break;
+	}
+	return ERR;
+}
+
 void tippy_inv() {
 	move(TIPPY_HEAD_MIN, 17);
 	printw("| INV:");
@@ -15,7 +46,7 @@ void tippy_inv() {
 
 void tippy_knife(int o) {
 	int quant = 0;
-	switch (save_reader()[3]) {
+	switch (save_reader()[0]) {
 		case 0:
 		case 2:
 			quant = 0;
