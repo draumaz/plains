@@ -45,16 +45,7 @@ void tippy_inv() {
 }
 
 void tippy_knife(int o) {
-	int quant = 0;
-	switch (save_reader()[0]) {
-		case 0:
-		case 2:
-			quant = 0;
-			break;
-		case 1:
-			quant = 1;
-			break;
-	}
+	int quant = tippy_inv_quantity(0);
 	int x = 0;
 	switch (o) {
 		case 0:
@@ -70,7 +61,7 @@ void tippy_knife(int o) {
 }
 
 void tippy_bottle(int o) {
-	int quant = 0;
+	int quant = tippy_inv_quantity(1);
 	switch (save_reader()[3]) {
 		case 0:
 		case 2:
