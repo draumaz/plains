@@ -33,12 +33,12 @@ obj_build:
 	@$(CC) $(CFLAGS) -Wall -c ./src/base/$(FILE7).c -o ./build/$(FILE7).o
 
 compile:
-	@echo -en "Compiling binary..."
+	@echo -n "Compiling binary..."
 	@cd ./build && $(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
 	c0_splash.o c1_areas.o c1_txt.o c1_cave_subs.o glob_vis.o savesys.o screen_manip.o main.o \
 	-o ../plains-debug
-	@echo -e "DONE -> ./plains-debug"
+	@echo -e " DONE -> ./plains-debug"
 
 cleanup:
 	@rm -rf ./build
