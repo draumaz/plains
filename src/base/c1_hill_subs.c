@@ -102,8 +102,10 @@ void hill_subs_river() {
 				scr_sleep(500);
 				move(HILL_SUBS_RIVER_OPTS_MAX+2, 0);
 				printw("\n");
-				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
-				tippy_head();
+				if (bottle_cont == 1 || bottle_cont == 3) {
+					the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
+					tippy_head();
+				}
 				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX);
 				hill_subs_river();
 				break;
