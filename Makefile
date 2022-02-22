@@ -10,7 +10,7 @@ dir_create:
 	./build
 
 obj_build:
-	$(foreach obj, $(SRCS), $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(obj).c -o $(BUILD_PFX)/$(obj).o;)
+	$(foreach obj, $(SRCS), echo "CC      $(BUILD_PFX)/$(obj).o" && $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(obj).c -o $(BUILD_PFX)/$(obj).o;)
 
 compile:
 	cd $(BUILD_PFX) && \
