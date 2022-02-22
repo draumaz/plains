@@ -54,3 +54,16 @@ void cave_head() {
 	}
 	move(0, 0);
 }
+
+void hill_head() {
+	char* star[2] = {"You venture out towards a gargantuan hill.",
+	"Beside it runs a stream of quickly-flowing water."
+	};
+	int j = 0;
+	for (int i = HILL_HEAD_MIN; i < HILL_HEAD_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", star[j]);
+		j++;
+	}
+	move(0, 0);
+}

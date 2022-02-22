@@ -300,6 +300,86 @@ void cave() {
 	}
 }
 
+void hill() {
+	struct c1a_game c;
+	c.head_loop = 0;
+	c.body_loop = 0;
+	c.active_y = CAVE_OPTS_MIN;
+	c.active_x = 12;
+	c.disp_inc = 0;
+	char* sel_txt[4] = {"[USE PHONE]",
+	"[GO FORTH ]",
+	"[RIVER    ]",
+	"[BACK     ]"};
+	hill_head();
+	for (int i = HILL_OPTS_MIN; i < HILL_OPTS_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", sel_txt[c.disp_inc]);
+		c.disp_inc++;
+	}
+	while (c.head_loop == 0) {
+		while (c.body_loop == 0) {
+			move(c.active_y, c.active_x);
+			printw("<");
+			refresh();
+			switch (getch()) {
+				case 'q':
+				case CTRL('q'):
+				case CTRL('c'):
+					screen_down();
+					exit(0);
+				case KEY_UP:
+				case 'w':
+				case 'i':
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == HILL_OPTS_MIN) {
+						c.active_y = HILL_OPTS_MAX;
+					} else {
+						c.active_y -= 1;
+					}
+					break;
+				case KEY_DOWN:
+				case 's':
+				case 'k':
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == HILL_OPTS_MAX) {
+						c.active_y = HILL_OPTS_MIN;
+					} else {
+						c.active_y += 1;
+					}
+					break;
+				case '\n':
+					c.body_loop = 1;
+					break;
+			}
+		}
+		switch (c.active_y) {
+			case 6:
+				move(HILL_OPTS_MAX+2, 0);
+				printw("Not getting anything resembling service.");
+				refresh();
+				scr_sleep(750);
+				move(HILL_OPTS_MAX+3, 0);
+				printw("Maybe the signal would be better somewhere higher?");
+				refresh();
+				scr_sleep(1000);
+				move(HILL_OPTS_MAX+2, 0);
+				printw("\n");
+				move(HILL_OPTS_MAX+3, 0);
+				printw("\n");
+				c.body_loop = 0;
+				break;
+			case 9:
+				the_wiper(HILL_HEAD_MIN, HILL_HEAD_MAX+1);
+				the_wiper(HILL_OPTS_MIN, HILL_OPTS_MAX+1);
+				landing_site();
+			default:
+				c.body_loop = 0;
+				break;
+		}
+	}
+}
+
 void landing_site() {
 	struct c1a_game c;
 	c.head_loop = 0;
@@ -355,6 +435,11 @@ void landing_site() {
 			}
 		}
 		switch (c.active_y) {
+			case 7:
+				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX+1);
+				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX+1);
+				hill();
+				break;
 			case 8:
 				the_wiper(LANDING_SITE_HEAD_MIN, LANDING_SITE_HEAD_MAX+1);
 				the_wiper(LANDING_SITE_OPTS_MIN, LANDING_SITE_OPTS_MAX+1);

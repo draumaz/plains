@@ -10,6 +10,9 @@
 #define CAVE_OPTS_MIN 6
 #define CAVE_OPTS_MAX 9
 
+#define HILL_OPTS_MIN 6
+#define HILL_OPTS_MAX 9
+
 void cave_admiration();
 void ship_dig_sequence();
 void ship();
