@@ -1,3 +1,3 @@
 # The Plains, C port
 
-# If you're compiling on macOS or BSD, use gmake
+# If you're compiling on a BSD, use gmake
