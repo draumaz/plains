@@ -4,11 +4,7 @@ The Plains is currently being rewritten. If you'd like to follow development pro
 <a href="https://github.com/draumaz/plains/tree/rewrite">rewrite branch</a>.
 
 # The Plains
-![Screenie](https://github.com/draumaz/plains/blob/main/art/screen.png?raw=true "Screenshot")
-<p align="center">
-  <b></b><br>
-  <a href="https://github.com/draumaz/plains/releases/latest">Download (Linux, Windows)</a>
-  <br><br>
+![Screenie](https://github.com/draumaz/plains/blob/main/art/landing.png?raw=true "Landing")
 
 # Story
 
