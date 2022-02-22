@@ -10,13 +10,13 @@ dir_create:
 	./build
 
 obj_build:
-	$(foreach obj, $(SRCS), echo "CC      $(BUILD_PFX)/$(obj).o" && $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(obj).c -o $(BUILD_PFX)/$(obj).o;)
+	$(foreach OBJ, $(SRCS), echo "CC      $(BUILD_PFX)/$(OBJ).o" && $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(OBJ).c -o $(BUILD_PFX)/$(OBJ).o;)
 
 compile:
 	cd $(BUILD_PFX) && \
 	$(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
-	$(foreach obj, $(SRCS), $(obj).o) \
+	$(foreach OBJ, $(SRCS), $(OBJ).o) \
 	-o ../plains-debug
 
 cleanup:
