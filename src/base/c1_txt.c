@@ -18,6 +18,30 @@ void landing_site_head() {
 	move(0, 0);
 }
 
+void ship_dig_head() {
+	char* star[2] = {"You dig around, and find your busted-up cell phone!",
+	"Will you take it?"};
+	int j = 0;
+	for (int i = SHIP_DIG_HEAD_MIN; i < SHIP_DIG_HEAD_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", star[j]);
+		j++;
+	}
+}
+
+void ship_head() {
+	char* star[3] = {"You make your way back to your ship - or at least",
+	"what's left of it. Everything is covered in wires,",
+	"broken machinery, and a strange, ashy substance."
+	};
+	int j = 0;
+	for (int i = SHIP_HEAD_MIN; i < SHIP_HEAD_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", star[j]);
+		j++;
+	}
+}
+
 void cave_head() {
 	char* star[2] = {"You make your way towards a deep, cavernous grotto.",
 	"You can barely make anything out past the entrance."

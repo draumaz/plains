@@ -10,6 +10,8 @@
 // 0 ~ knife
 // 1 ~ reset
 // 2 ~ cave dialog loop
+// 3 ~ bottle
+// 4 ~ phone
 
 // END SAVE LEGEND //
 

@@ -35,6 +35,17 @@ int tippy_inv_quantity(int slot) {
 			}
 			return quant;
 			break;
+		case 2: // phone:
+			switch (save_reader()[4]) {
+				case 0:
+					quant = 0;
+					break;
+				case 1:
+					quant = 1;
+					break;
+			}
+			return quant;
+			break;
 	}
 	return ERR;
 }
@@ -46,55 +57,54 @@ void tippy_inv() {
 
 void tippy_knife(int o) {
 	int quant = tippy_inv_quantity(0);
-	int x = 0;
-	switch (o) {
-		case 0:
-			x = 24;
-			break;
-		case 1:
-			x = 35;
-			break;
+	char* itm = "";
+	if (save_reader()[0] == 0) {
+		itm = "?????";
+	} else {
+		itm = "KNIFE";
 	}
-	move(TIPPY_HEAD_MIN, x);
-	printw("%dx KNIFE", quant);
+	int x = 0;
+	move(TIPPY_HEAD_MIN, 24);
+	printw("%dx %s |", quant, itm);
 	move(TIPPY_HEAD_MIN, x+9);
 }
 
 void tippy_bottle(int o) {
 	int quant = tippy_inv_quantity(1);
-	int x = 0;
-	switch (o) {
-		case 0:
-			x = 24;
-			break;
-		case 1:
-			x = 35;
-			break;
+	char* itm = "";
+	if (save_reader()[3] == 0) {
+		itm = "??????";
+	} else {
+		itm = "BOTTLE";
 	}
-	move(TIPPY_HEAD_MIN, x);
-	printw("%dx BOTTLE", quant);
+	int x = 0;
+	move(TIPPY_HEAD_MIN, 35);
+	printw("%dx %s |", quant, itm);
+	move(TIPPY_HEAD_MIN, x+10);
+}
+
+void tippy_phone(int o) {
+	char* itm = "";
+	if (save_reader()[4] == 0) {
+		itm = "?????";
+	} else {
+		itm = "PHONE";
+	}
+	int quant = tippy_inv_quantity(2);
+	int x = 0;
+	move(TIPPY_HEAD_MIN, 47);
+	printw("%dx %s", quant, itm);
 	move(TIPPY_HEAD_MIN, x+9);
 }
 
 void tippy_head() {
 	move(TIPPY_HEAD_MIN, 0);
 	printw("The Plains v%s", VERSION);
-	if (save_compare(0, 1) == 0 && save_compare(3, 1) == 0) { // This is not sustainable.
+	if (save_compare(0, 1 == 0) || save_compare(3, 1 == 0) || save_compare(4, 1 == 0)) {
 		tippy_inv();
 		tippy_knife(0);
-		printw("|");
 		tippy_bottle(1);
-		return;
-	}
-	if (save_compare(0, 1) == 1 && save_compare(3, 1) == 0) {
-		tippy_inv();
-		tippy_bottle(0);
-		return;
-	}
-	if (save_compare(0, 1) == 0 && save_compare(3, 1) == 1) {
-		tippy_inv();
-		tippy_knife(0);
-		return;
+		tippy_phone(2);
 	}
 	move(0, 0);
 }
