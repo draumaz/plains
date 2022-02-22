@@ -13,9 +13,11 @@ obj_build:
 	$(foreach obj, $(SRCS), $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(obj).c -o $(BUILD_PFX)/$(obj).o;)
 
 compile:
-	cd $(BUILD_PFX) && $(CC) $(CFLAGS) -Wall -lncurses -lm \
+	cd $(BUILD_PFX) && \
+	$(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
-	*.o -o ../plains-debug
+	$(foreach obj, $(SRCS), $(obj).o) \
+	-o ../plains-debug
 
 cleanup:
 	rm -rf ./build
