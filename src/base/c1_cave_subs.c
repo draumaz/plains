@@ -89,8 +89,8 @@ void cave_subs_goleft() {
 			}
 		}
 		switch (c.active_y) {
-			case 5:
-				move(8, 0);
+			case CAVE_SUBS_CONTINUE_OPTS_MIN:
+				move(CAVE_SUBS_CONTINUE_OPTS_MAX+2, 0);
 				switch (has_bottle) {
 					case 0:
 						save_writer(3, 1);
@@ -108,7 +108,7 @@ void cave_subs_goleft() {
 						printw("The water would leak everywhere!");
 						refresh();
 						scr_sleep(500);
-						move(9, 0);
+						move(CAVE_SUBS_CONTINUE_OPTS_MAX+3, 0);
 						printw("Best to keep it with you.");
 						refresh();
 						scr_sleep(500);
@@ -121,7 +121,7 @@ void cave_subs_goleft() {
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+4);
 				cave_subs_goleft();
 				break;
-			case 6:
+			case CAVE_SUBS_CONTINUE_OPTS_MAX:
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
 				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
 				cave();
@@ -203,7 +203,7 @@ void cave_subs_continue() {
 		}
 		switch (c.active_y) {
 			case 5:
-				move(8, 0);
+				move(CAVE_SUBS_CONTINUE_OPTS_MAX+2, 0);
 				switch (has_knife) {
 					case 0:
 						save_writer(0, 1);
