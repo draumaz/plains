@@ -20,4 +20,4 @@ compile:
 	-o ../plains-debug
 
 cleanup:
-	rm -rf ./build
+	rm -rf $(BUILD_PFX)
