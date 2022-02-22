@@ -38,6 +38,7 @@ void cave_subs_goleft() {
 			c.active_x = 7;
 			break;
 		case 1:
+		case 3:
 			head_txt = "That chest sucks, but this bottle seems useful.";
 			sel_txt[0] = "[RETURN ]";
 			sel_txt[1] = "[GO BACK]";
@@ -103,12 +104,21 @@ void cave_subs_goleft() {
 						save_writer(3, 1);
 						printw("You take the bottle back.");
 						break;
+					case 3:
+						printw("The water would leak everywhere!");
+						refresh();
+						scr_sleep(500);
+						move(9, 0);
+						printw("Best to keep it with you.");
+						refresh();
+						scr_sleep(500);
+						break;
 				}
 				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
 				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
+				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+4);
 				cave_subs_goleft();
 				break;
 			case 6:
