@@ -1,9 +1,14 @@
 # Automated non-Linux patchfile creation
 # Execute in project root.
 
-cp -fv Makefile Makefile-ref
-sed -i 's/-pv/-p/g' Makefile; echo "replacing -pv -> -p"
-sed -i 's/-ltinfo//g' Makefile; echo "removing -ltinfo"
-diff Makefile-ref Makefile > patches/non_linux.patch; echo "created patchfile"
-rm -vf Makefile
-mv -vf Makefile-ref Makefile
+PATCH_PATH="./patches/non_linux.patch"
+MAKEFILE_PROTECT="Makefile-ref"
+MAKEFILE_NORMAL="Makefile"
+
+cp -fv $MAKEFILE_NORMAL $MAKEFILE_PROTECT
+rm -fv $PATCH_PATH | sed 's/removed/removed existing/g'
+sed -i 's/-pv/-p/g' $MAKEFILE_NORMAL; echo "replacing -pv -> -p"
+sed -i 's/-ltinfo//g' $MAKEFILE_NORMAL; echo "removing -ltinfo"
+diff $MAKEFILE_PROTECT $MAKEFILE_NORMAL > $PATCH_PATH; echo "created patchfile -> '$PATCH_PATH'"
+rm -vf $MAKEFILE_NORMAL
+mv -vf $MAKEFILE_PROTECT $MAKEFILE_NORMAL
