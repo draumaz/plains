@@ -114,10 +114,10 @@ void ship_dig_sequence() {
 				save_writer(4, 1);
 				move(17, 0);
 				printw("You take your phone. The signal is really weak...");
+				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
+				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(0, 2);
-				tippy_head();
 				the_wiper(SHIP_DIG_HEAD_MIN, SHIP_DIG_HEAD_MAX+1);
 				the_wiper(SHIP_DIG_OPTS_MIN, SHIP_DIG_OPTS_MAX+3);
 				ship();

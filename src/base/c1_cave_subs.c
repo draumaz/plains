@@ -104,11 +104,11 @@ void cave_subs_goleft() {
 						printw("You take the bottle back.");
 						break;
 				}
+				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
+				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
-				tippy_head();
 				cave_subs_goleft();
 				break;
 			case 6:
@@ -208,11 +208,11 @@ void cave_subs_continue() {
 						printw("You grab the knife again.");
 						break;
 				}
+				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
+				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
-				tippy_head();
 				cave_subs_continue();
 				break;
 			case 6:
