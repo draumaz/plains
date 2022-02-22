@@ -24,7 +24,7 @@ void cave_subs_goleft() {
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.disp_inc = 0;
-	c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
+	c.active_y = CAVE_SUBS_GOLEFT_OPTS_MIN;
 	int has_bottle = save_reader()[3];
 	char* head_txt;
 	char* sel_txt[2];
@@ -45,7 +45,7 @@ void cave_subs_goleft() {
 			c.active_x = 10;
 			break;
 	}
-	for (int i = CAVE_SUBS_CONTINUE_OPTS_MIN; i < CAVE_SUBS_CONTINUE_OPTS_MAX+1; i++) {
+	for (int i = CAVE_SUBS_GOLEFT_OPTS_MIN; i < CAVE_SUBS_GOLEFT_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
@@ -67,8 +67,8 @@ void cave_subs_goleft() {
 				case 'w':
 				case 'i':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == CAVE_SUBS_CONTINUE_OPTS_MIN) {
-						c.active_y = CAVE_SUBS_CONTINUE_OPTS_MAX;
+					if (c.active_y == CAVE_SUBS_GOLEFT_OPTS_MIN) {
+						c.active_y = CAVE_SUBS_GOLEFT_OPTS_MAX;
 					} else {
 						c.active_y -= 1;
 					}
@@ -77,8 +77,8 @@ void cave_subs_goleft() {
 				case 's':
 				case 'k':
 					mvdelch(c.active_y, c.active_x);
-					if (c.active_y == CAVE_SUBS_CONTINUE_OPTS_MAX) {
-						c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
+					if (c.active_y == CAVE_SUBS_GOLEFT_OPTS_MAX) {
+						c.active_y = CAVE_SUBS_GOLEFT_OPTS_MIN;
 					} else {
 						c.active_y += 1;
 					}
@@ -89,8 +89,8 @@ void cave_subs_goleft() {
 			}
 		}
 		switch (c.active_y) {
-			case CAVE_SUBS_CONTINUE_OPTS_MIN:
-				move(CAVE_SUBS_CONTINUE_OPTS_MAX+2, 0);
+			case CAVE_SUBS_GOLEFT_OPTS_MIN:
+				move(CAVE_SUBS_GOLEFT_OPTS_MAX+2, 0);
 				switch (has_bottle) {
 					case 0:
 						save_writer(3, 1);
@@ -118,12 +118,12 @@ void cave_subs_goleft() {
 				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+4);
+				the_wiper(3, CAVE_SUBS_GOLEFT_OPTS_MAX+4);
 				cave_subs_goleft();
 				break;
 			case CAVE_SUBS_CONTINUE_OPTS_MAX:
-				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
-				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
+				the_wiper(3, CAVE_SUBS_GOLEFT_OPTS_MAX+1);
+				the_wiper(CAVE_SUBS_GOLEFT_OPTS_MIN, CAVE_SUBS_GOLEFT_OPTS_MAX);
 				cave();
 				break;
 			default:
@@ -202,7 +202,7 @@ void cave_subs_continue() {
 			}
 		}
 		switch (c.active_y) {
-			case 5:
+			case CAVE_SUBS_CONTINUE_OPTS_MIN:
 				move(CAVE_SUBS_CONTINUE_OPTS_MAX+2, 0);
 				switch (has_knife) {
 					case 0:
@@ -225,7 +225,7 @@ void cave_subs_continue() {
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
 				cave_subs_continue();
 				break;
-			case 6:
+			case CAVE_SUBS_CONTINUE_OPTS_MAX:
 				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
 				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
 				cave();
