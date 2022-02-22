@@ -1,6 +1,6 @@
 SRC_PFX = "./src/base"
+SRCS := main savesys screen_manip glob_vis c0_splash c1_areas c1_cave_subs c1_hill_subs c1_txt
 BUILD_PFX = "./build"
-SRCS := c0_splash c1_areas c1_cave_subs c1_hill_subs c1_txt glob_vis savesys screen_manip main
 
 all: dir_create obj_build compile cleanup
 
