@@ -6,6 +6,7 @@
 
 #include "../header/c1_txt.h"
 #include "../header/c1_cave_subs.h"
+#include "../header/c1_hill_subs.h"
 
 #include "../header/c0_splash.h"
 
@@ -308,8 +309,8 @@ void hill() {
 	c.active_x = 12;
 	c.disp_inc = 0;
 	char* sel_txt[4] = {"[USE PHONE]",
-	"[GO FORTH ]",
-	"[RIVER    ]",
+	"[MOUNTAIN ]",
+	"[TO RIVER ]",
 	"[BACK     ]"};
 	hill_head();
 	for (int i = HILL_OPTS_MIN; i < HILL_OPTS_MAX+1; i++) {
@@ -362,17 +363,23 @@ void hill() {
 				move(HILL_OPTS_MAX+3, 0);
 				printw("Maybe the signal would be better somewhere higher?");
 				refresh();
-				scr_sleep(1000);
+				scr_sleep(1500);
 				move(HILL_OPTS_MAX+2, 0);
 				printw("\n");
 				move(HILL_OPTS_MAX+3, 0);
 				printw("\n");
 				c.body_loop = 0;
 				break;
+			case 8:
+				the_wiper(HILL_HEAD_MIN, HILL_HEAD_MAX+1);
+				the_wiper(HILL_OPTS_MIN, HILL_OPTS_MAX+1);
+				hill_subs_river();
+				break;
 			case 9:
 				the_wiper(HILL_HEAD_MIN, HILL_HEAD_MAX+1);
 				the_wiper(HILL_OPTS_MIN, HILL_OPTS_MAX+1);
 				landing_site();
+				break;
 			default:
 				c.body_loop = 0;
 				break;

@@ -17,4 +17,5 @@ void cave_admiration();
 void ship_dig_sequence();
 void ship();
 void cave();
+void hill();
 void landing_site();

@@ -30,6 +30,7 @@ int tippy_inv_quantity(int slot) {
 					quant = 0;
 					break;
 				case 1:
+				case 3:
 					quant = 1;
 					break;
 			}
@@ -41,6 +42,7 @@ int tippy_inv_quantity(int slot) {
 					quant = 0;
 					break;
 				case 1:
+				case 2:
 					quant = 1;
 					break;
 			}
@@ -74,13 +76,15 @@ void tippy_bottle(int o) {
 	char* itm = "";
 	if (save_reader()[3] == 0) {
 		itm = "??????";
+	} else if (save_reader()[3] == 3) {
+		itm = "BOTTLE (WTR)";
 	} else {
 		itm = "BOTTLE";
 	}
 	int x = 0;
-	move(TIPPY_HEAD_MIN, 35);
-	printw("%dx %s |", quant, itm);
-	move(TIPPY_HEAD_MIN, x+10);
+	move(TIPPY_HEAD_MIN, 46);
+	printw("%dx %s", quant, itm);
+	move(TIPPY_HEAD_MIN, x+9);
 }
 
 void tippy_phone(int o) {
@@ -92,9 +96,9 @@ void tippy_phone(int o) {
 	}
 	int quant = tippy_inv_quantity(2);
 	int x = 0;
-	move(TIPPY_HEAD_MIN, 47);
-	printw("%dx %s", quant, itm);
-	move(TIPPY_HEAD_MIN, x+9);
+	move(TIPPY_HEAD_MIN, 35);
+	printw("%dx %s |", quant, itm);
+	move(TIPPY_HEAD_MIN, x+10);
 }
 
 void tippy_head() {
