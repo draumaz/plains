@@ -1,0 +1,8 @@
+7a8
+> 	@echo "mkdir: created directory '$(BUILD_PFX)'"
+9c10
+< 	-pv \
+---
+> 	-p \
+18d18
+< 	-ltinfo \
