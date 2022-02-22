@@ -2,8 +2,6 @@
 #include <stdlib.h>
 #include <curses.h>
 
-#include <unistd.h>
-
 #include "../header/c1_areas.h"
 
 #include "../header/c1_txt.h"
@@ -114,7 +112,7 @@ void ship_dig_sequence() {
 			case 14:
 				save_writer(4, 1);
 				move(17, 0);
-				printw("You take your phone. Should still work!");
+				printw("You take your phone. The signal is really weak...");
 				refresh();
 				scr_sleep(500);
 				the_wiper(0, 2);
