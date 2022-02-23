@@ -7,7 +7,7 @@
 #define SPLASH_RESET_OPTS_MAX 12
 
 #define SPLASH_OPTS_MIN 5
-#define SPLASH_OPTS_MAX 7
+#define SPLASH_OPTS_MAX 8
 
 void splash_head();
 void splash_screen();
