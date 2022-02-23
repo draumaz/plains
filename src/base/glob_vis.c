@@ -9,10 +9,11 @@
 #include "../header/savesys.h"
 
 int tippy_inv_quantity(int slot) {
+	int * sav = save_reader();
 	int quant = 0;
 	switch (slot) {
 		case 0: // knife
-			switch (save_reader()[0]) {
+			switch (sav[0]) {
 				case 0:
 				case 2:
 					quant = 0;
@@ -24,7 +25,7 @@ int tippy_inv_quantity(int slot) {
 			return quant;
 			break;
 		case 1: // bottle:
-			switch (save_reader()[3]) {
+			switch (sav[3]) {
 				case 0:
 				case 2:
 					quant = 0;
@@ -37,7 +38,7 @@ int tippy_inv_quantity(int slot) {
 			return quant;
 			break;
 		case 2: // phone:
-			switch (save_reader()[4]) {
+			switch (sav[4]) {
 				case 0:
 					quant = 0;
 					break;

@@ -16,7 +16,7 @@
 // END SAVE LEGEND //
 
 int * save_reader() {
-	static int array[12];
+	static int array[SAVE_LENGTH];
 	FILE *read_in = fopen(SAVE_NAME, "r");
 	for (int i = 0; i < SAVE_LENGTH; i++) {
 		fscanf(read_in, "%d", &array[i]);
