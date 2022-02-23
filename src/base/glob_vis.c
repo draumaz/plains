@@ -59,8 +59,9 @@ void tippy_inv() {
 
 void tippy_knife(int o) {
 	int quant = tippy_inv_quantity(0);
+	int knife_var = save_reader()[0];
 	char* itm = "";
-	if (save_reader()[0] == 0) {
+	if (knife_var == 0) {
 		itm = "?????";
 	} else {
 		itm = "KNIFE";
@@ -73,15 +74,20 @@ void tippy_knife(int o) {
 
 void tippy_bottle(int o) {
 	int quant = tippy_inv_quantity(1);
-	char* itm = "";
-	if (save_reader()[3] == 0) {
-		itm = "??????";
-	} else if (save_reader()[3] == 3) {
-		itm = "BOTTLE (WTR)";
-	} else {
-		itm = "BOTTLE";
-	}
+	int bottle_var = save_reader()[3];
 	int x = 0;
+	char* itm = "";
+	switch (bottle_var) {
+		case 0:
+			itm = "??????";
+			break;
+		case 3:
+			itm = "BOTTLE (WTR)";
+			break;
+		default:
+			itm = "BOTTLE";
+			break;
+	}
 	move(TIPPY_HEAD_MIN, 46);
 	printw("%dx %s", quant, itm);
 	move(TIPPY_HEAD_MIN, x+9);
@@ -89,7 +95,8 @@ void tippy_bottle(int o) {
 
 void tippy_phone(int o) {
 	char* itm = "";
-	if (save_reader()[4] == 0) {
+	int phone_var = save_reader()[4];
+	if (phone_var == 0) {
 		itm = "?????";
 	} else {
 		itm = "PHONE";

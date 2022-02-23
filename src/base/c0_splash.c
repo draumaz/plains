@@ -79,18 +79,19 @@ void splash_reset() {
 					}
 			}
 			switch (c.active_y) {
-				case 11:
+				case 12:
 					move(SPLASH_RESET_OPTS_MAX+2, 0);
-					if (remove("data.txt") != 0) {
-						printw("Unable to delete.");
+					if (remove("data.txt") == 0) {
+						printw("Success.");
 					} else {
-						printw("Successfully deleted.");
-						save_exists();
-						save_writer(1, 1);
+						printw("I/O error. What have you done.");
 					}
 					refresh();
-					scr_sleep(200);
-				case 12:
+					scr_sleep(250);
+					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_OPTS_MAX+3);
+					refresh();
+					return;
+				case 13:
 					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_MSG+1);
 					the_wiper(SPLASH_RESET_OPTS_MIN, SPLASH_RESET_OPTS_MAX+3);
 					return;

@@ -1,6 +1,4 @@
 #include <stdio.h>
-#include <unistd.h>
-#include <curses.h>
 
 #define SAVE_LENGTH 21
 #define SAVE_NAME "data.txt"
@@ -61,15 +59,18 @@ void save_generate() {
 }
 
 void save_exists() {
-	if (access(SAVE_NAME,F_OK) == -1) {
+	FILE *f;
+	if ((f = fopen(SAVE_NAME, "r"))) {
+	} else {
 		save_generate();
 	}
 }
 
 int save_ephemerance() {
-	if (access(SAVE_NAME,F_OK) == -1) {
-		return 0;
+	FILE *f;
+	if ((f = fopen(SAVE_NAME, "r"))) {
+		return 1; 
 	} else {
-		return 1;
+		return 0;
 	}
 }
