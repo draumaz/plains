@@ -13,6 +13,7 @@ obj_build:
 	@$(foreach OBJ, $(SRCS), echo " CC      $(BUILD_PFX)/$(OBJ).o" && $(CC) $(CFLAGS) -Wall -c $(SRC_PFX)/$(OBJ).c -o $(BUILD_PFX)/$(OBJ).o;)
 
 compile:
+	@echo "creating binary"
 	@cd $(BUILD_PFX) && \
 	$(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
