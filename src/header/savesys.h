@@ -1,5 +1,4 @@
 int * save_reader();
-int save_compare(int line, int num);
 int save_empty();
 void save_writer(int line, int state);
 void save_generate();

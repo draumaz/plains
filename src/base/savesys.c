@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+#include <curses.h>
+
 #define SAVE_LENGTH 21
 #define SAVE_NAME "data.txt"
 
@@ -15,25 +17,12 @@
 
 int * save_reader() {
 	static int array[12];
-	int i = 0;
-	int x = 0;
 	FILE *read_in = fopen(SAVE_NAME, "r");
-	fscanf(read_in, "%d", &i);
-	while (!feof (read_in)) {
-		array[x] = i; x += 1;
-		fscanf(read_in, "%d", &i);
+	for (int i = 0; i < SAVE_LENGTH; i++) {
+		fscanf(read_in, "%d", &array[i]);
 	}
+	fclose(read_in);
 	return array;
-}
-
-int save_compare(int line, int num) {
-	int ret;
-	if (save_reader()[line] == num) {
-		ret = 0;
-	} else {
-		ret = 1;
-	}
-	return ret;
 }
 
 void save_writer(int line, int state) {
@@ -66,11 +55,11 @@ void save_exists() {
 	}
 }
 
-int save_ephemerance() {
+int save_ephemerance() { // ret 0 if file exists
 	FILE *f;
 	if ((f = fopen(SAVE_NAME, "r"))) {
-		return 1; 
+		return 0; 
 	} else {
-		return 0;
+		return 1;
 	}
 }

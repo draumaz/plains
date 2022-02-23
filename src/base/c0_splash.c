@@ -25,7 +25,7 @@ void splash_reset() {
 	c.head_loop = 0;
 	c.body_loop = 0;
 	move(SPLASH_RESET_MSG, 0);
-	if (save_ephemerance() == 0) {
+	if (save_ephemerance() == 1) {
 		printw("No save file to speak of.");
 		refresh();
 		scr_sleep(250);

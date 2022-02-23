@@ -109,9 +109,10 @@ void tippy_phone(int o) {
 }
 
 void tippy_head() {
+	int * sav = save_reader();
 	move(TIPPY_HEAD_MIN, 0);
 	printw("The Plains v%s", VERSION);
-	if (save_compare(0, 1 == 0) || save_compare(3, 1 == 0) || save_compare(4, 1 == 0)) {
+	if ((sav[0] == 1) || (sav[3] == 1) || (sav[4] == 1)) {
 		tippy_inv();
 		tippy_knife(0);
 		tippy_bottle(1);
