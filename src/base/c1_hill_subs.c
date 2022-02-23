@@ -87,13 +87,15 @@ void hill_subs_river() {
 			}
 		}
 		switch (c.active_y) {
-			case 6:
+			case HILL_SUBS_RIVER_OPTS_MIN+1:
 				move(HILL_SUBS_RIVER_OPTS_MAX+2, 0);
 				if (bottle_cont == 0) {
 					printw("...isn't this the same thing as relaxing?");
 				} else if (bottle_cont == 1) {
 					save_writer(3, 3);
 					printw("You collect some water into your bottle.");
+				} else if (bottle_cont == 2) { // should never happen
+					printw("Really? Editing the save file? Lame.");
 				} else if (bottle_cont == 3) {
 					save_writer(3, 1);
 					printw("You empty your bottle out into the river.");
@@ -109,7 +111,7 @@ void hill_subs_river() {
 				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX);
 				hill_subs_river();
 				break;
-			case 7:
+			case HILL_SUBS_RIVER_OPTS_MAX:
 				the_wiper(3, 4);
 				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX+1);
 				hill();

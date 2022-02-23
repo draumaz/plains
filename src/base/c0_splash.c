@@ -79,7 +79,7 @@ void splash_reset() {
 					}
 			}
 			switch (c.active_y) {
-				case 12:
+				case SPLASH_RESET_OPTS_MIN:
 					move(SPLASH_RESET_OPTS_MAX+2, 0);
 					if (remove("data.txt") == 0) {
 						printw("Success.");
@@ -91,7 +91,7 @@ void splash_reset() {
 					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_OPTS_MAX+3);
 					refresh();
 					return;
-				case 13:
+				case SPLASH_RESET_OPTS_MAX:
 					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_MSG+1);
 					the_wiper(SPLASH_RESET_OPTS_MIN, SPLASH_RESET_OPTS_MAX+3);
 					return;
@@ -166,28 +166,28 @@ void splash_screen() {
 			}
 		}
 		switch (c.active_y) {
-			case 5:
+			case SPLASH_OPTS_MIN:
 				save_exists();
 				the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX+1);
 				the_wiper(SPLASH_OPTS_MIN, SPLASH_OPTS_MAX+1);
 				landing_site();
 				break;
-			case 6:
+			case SPLASH_OPTS_MIN+1:
 				splash_reset();
 				c.body_loop = 0;
 				break;
-			case 7:
+			case SPLASH_OPTS_MIN+2:
 				move(SPLASH_OPTS_MAX+2, 0);
 				printw("The Plains is released under the");
 				move(SPLASH_OPTS_MAX+3, 0);
 				printw("GNU General Public License, version 3.");
 				move(c.active_y, c.active_x);
 				refresh();
-				scr_sleep(2000);
+				scr_sleep(1500);
 				the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
 				c.body_loop = 0;
 				break;
-			case 8:
+			case SPLASH_OPTS_MAX:
 				screen_down();
 				exit(0);
 				break;
