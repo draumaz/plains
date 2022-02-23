@@ -1,3 +1,3 @@
 # The Plains, C port
 
-# If you're compiling on a BSD, use gmake and gcc
+# <a href="https://github.com/draumaz/plains/issues/1">If you're compiling on a BSD, use gmake and gcc</a>
