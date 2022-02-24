@@ -79,14 +79,13 @@ void tippy_bottle(int o) {
 	int x = 0;
 	char* itm = "";
 	switch (bottle_var) {
-		case 0:
-			itm = "??????";
-			break;
+		case 1:
+			itm = "BOTTLE";
 		case 3:
 			itm = "BOTTLE (WTR)";
 			break;
 		default:
-			itm = "BOTTLE";
+			itm = "??????";
 			break;
 	}
 	move(TIPPY_HEAD_MIN, 46);
@@ -113,7 +112,7 @@ void tippy_head() {
 	int * sav = save_reader();
 	move(TIPPY_HEAD_MIN, 0);
 	printw("The Plains v%s", VERSION);
-	if ((sav[0] == 1) || (sav[3] == 1) || (sav[4] == 1)) {
+	if ((sav[0] == 1) || (sav[3] == 1) || (sav[3] == 3) || (sav[4] == 1)) {
 		tippy_inv();
 		tippy_knife(0);
 		tippy_bottle(1);
