@@ -80,7 +80,9 @@ void tippy_bottle(int o) {
 	char* itm = "";
 	switch (bottle_var) {
 		case 1:
+		case 2:
 			itm = "BOTTLE";
+			break;
 		case 3:
 			itm = "BOTTLE (WTR)";
 			break;
