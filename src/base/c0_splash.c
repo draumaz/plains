@@ -180,9 +180,9 @@ void splash_screen() {
 				break;
 			case SPLASH_OPTS_MIN+2:
 				move(SPLASH_OPTS_MAX+2, 0);
-				printw("The Plains is released under the");
+				printw("The Plains is free software, released under");
 				move(SPLASH_OPTS_MAX+3, 0);
-				printw("GNU General Public License, version 3.");
+				printw("the GNU General Public License, version 3.");
 				move(c.active_y, c.active_x);
 				refresh();
 				scr_sleep(1500);
