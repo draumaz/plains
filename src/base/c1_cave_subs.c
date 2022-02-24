@@ -26,13 +26,22 @@ void cave_subs_goleft() {
 	c.disp_inc = 0;
 	c.active_y = CAVE_SUBS_GOLEFT_OPTS_MIN;
 	int has_bottle = save_reader()[3];
+	int has_knife = save_reader()[0];
 	char* head_txt;
 	char* sel_txt[2];
 	switch (has_bottle) {
 		case 0:
 		case 2:
-			if (has_bottle == 0) { head_txt = "Another locked chest! This one's covered in dirt."; }
-			if (has_bottle == 2) { head_txt = "What a gross chest. Does nobody keep tidy here?"; }
+			if (has_bottle == 0) {
+				if (has_knife == 0) {
+					head_txt = "A locked chest! It's covered in dirt.";
+				} else {
+					head_txt = "Another locked chest! This one's covered in dirt."; 
+				}
+			}
+			if (has_bottle == 2) { 
+				head_txt = "What a gross chest. Does nobody keep tidy here?"; 
+			}
 			sel_txt[0] = "[OPEN]";
 			sel_txt[1] = "[BACK]";
 			c.active_x = 7;
@@ -140,13 +149,22 @@ void cave_subs_continue() {
 	c.disp_inc = 0;
 	c.active_y = CAVE_SUBS_CONTINUE_OPTS_MIN;
 	int has_knife = save_reader()[0];
+	int has_bottle = save_reader()[3];
 	char* head_txt;
 	char* sel_txt[2];
 	switch (has_knife) {
 		case 0:
 		case 2:
-			if (has_knife == 0) { head_txt = "You continue deeper. A chest sits against the stone."; }
-			if (has_knife == 2) { head_txt = "There's that knife-filled chest again."; }
+			if (has_knife == 0) {
+				if (has_bottle == 0) {
+					head_txt = "You continue deeper. A chest sits against the stone.";
+				} else {
+					head_txt = "You continue deeper, and stumble across another chest.";
+				}
+			}
+			if (has_knife == 2) { 
+				head_txt = "There's that knife-filled chest again."; 
+			}
 			sel_txt[0] = "[OPEN]";
 			sel_txt[1] = "[BACK]";
 			c.active_x = 7;
