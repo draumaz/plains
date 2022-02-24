@@ -83,6 +83,8 @@ void splash_reset() {
 					move(SPLASH_RESET_OPTS_MAX+2, 0);
 					if (remove("data.txt") == 0) {
 						printw("Success.");
+						save_exists();
+						save_writer(1, 1);
 					} else {
 						printw("I/O error. What have you done.");
 					}
