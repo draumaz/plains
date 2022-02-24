@@ -50,7 +50,7 @@ void cave_subs_goleft() {
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
 	}
-	move(3, 0);
+	move(CAVE_SUBS_GOLEFT_MSG, 0);
 	printw("%s", head_txt);
 	while (c.head_loop == 0) {
 		while (c.body_loop == 0) {
@@ -118,11 +118,11 @@ void cave_subs_goleft() {
 				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(3, CAVE_SUBS_GOLEFT_OPTS_MAX+4);
+				the_wiper(CAVE_SUBS_GOLEFT_MSG, CAVE_SUBS_GOLEFT_OPTS_MAX+4);
 				cave_subs_goleft();
 				break;
 			case CAVE_SUBS_CONTINUE_OPTS_MAX:
-				the_wiper(3, CAVE_SUBS_GOLEFT_OPTS_MAX+1);
+				the_wiper(CAVE_SUBS_GOLEFT_MSG, CAVE_SUBS_GOLEFT_OPTS_MAX+1);
 				the_wiper(CAVE_SUBS_GOLEFT_OPTS_MIN, CAVE_SUBS_GOLEFT_OPTS_MAX);
 				cave();
 				break;
@@ -163,7 +163,7 @@ void cave_subs_continue() {
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
 	}
-	move(3, 0);
+	move(CAVE_SUBS_CONTINUE_MSG, 0);
 	printw("%s", head_txt);
 	while (c.head_loop == 0) {
 		while (c.body_loop == 0) {
@@ -222,11 +222,11 @@ void cave_subs_continue() {
 				tippy_head();
 				refresh();
 				scr_sleep(500);
-				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
+				the_wiper(CAVE_SUBS_CONTINUE_MSG, CAVE_SUBS_CONTINUE_OPTS_MAX+3);
 				cave_subs_continue();
 				break;
 			case CAVE_SUBS_CONTINUE_OPTS_MAX:
-				the_wiper(3, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
+				the_wiper(CAVE_SUBS_CONTINUE_MSG, CAVE_SUBS_CONTINUE_OPTS_MAX+1);
 				the_wiper(CAVE_SUBS_CONTINUE_OPTS_MIN, CAVE_SUBS_CONTINUE_OPTS_MAX);
 				cave();
 				break;

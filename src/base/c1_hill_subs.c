@@ -48,7 +48,7 @@ void hill_subs_river() {
 		printw("%s", sel_txt[c.disp_inc]);
 		c.disp_inc++;
 	}
-	move(3, 0);
+	move(HILL_SUBS_RIVER_MSG, 0);
 	printw("%s", head_txt);
 	while (c.head_loop == 0) {
 		while (c.body_loop == 0) {
@@ -108,12 +108,11 @@ void hill_subs_river() {
 				scr_sleep(500);
 				move(HILL_SUBS_RIVER_OPTS_MAX+2, 0);
 				printw("\n");
-				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX);
+				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX+1);
 				hill_subs_river();
 				break;
 			case HILL_SUBS_RIVER_OPTS_MAX:
-				the_wiper(3, 4);
-				the_wiper(HILL_SUBS_RIVER_OPTS_MIN, HILL_SUBS_RIVER_OPTS_MAX+1);
+				the_wiper(HILL_SUBS_RIVER_MSG, HILL_SUBS_RIVER_OPTS_MAX+1);
 				hill();
 				break;
 			default:
