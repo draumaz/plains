@@ -21,12 +21,13 @@ struct c1c_subs {
 
 void cave_subs_goleft() {
 	struct c1c_subs c;
+	int * sav = save_reader();
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.disp_inc = 0;
 	c.active_y = CAVE_SUBS_GOLEFT_OPTS_MIN;
-	int has_bottle = save_reader()[3];
-	int has_knife = save_reader()[0];
+	int has_bottle = sav[3];
+	int has_knife = sav[0];
 	char* head_txt;
 	char* sel_txt[2];
 	switch (has_bottle) {
