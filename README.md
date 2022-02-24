@@ -4,7 +4,7 @@ The Plains is currently being rewritten. If you'd like to follow development pro
 <a href="https://github.com/draumaz/plains/tree/rewrite">rewrite branch</a>.
 
 # The Plains
-![Screenie](https://github.com/draumaz/plains/blob/main/art/carbonplains.svg?raw=true "Landing")
+![Screenie](https://github.com/draumaz/plains/blob/main/art/plains.svg?raw=true "Landing")
 ## <p align="center">A text-based adventure, powered by curses.</p>
 
 # Story
