@@ -2,7 +2,7 @@
 
 ## Compile notes
 
-### If you're compiling on a OpenBSD;
+### If you're compiling on OpenBSD:
 ```
 patch Makefile < patches/openbsd.patch
 ```
