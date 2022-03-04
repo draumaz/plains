@@ -2,8 +2,7 @@
 
 ## Compile notes
 
-#### <a href="https://github.com/draumaz/plains/issues/2">If you're compiling on a BSD, use gmake</a>.
-#### If you're compiling on macOS, 
+### If you're compiling on a OpenBSD;
 ```
-patch Makefile < patches/macos-make.patch
+patch Makefile < patches/openbsd.patch
 ```
