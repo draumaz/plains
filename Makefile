@@ -1,5 +1,6 @@
 SRC_PFX = "./src/base"
 BUILD_PFX = "./build"
+BIN_OUT = "plains-debug"
 
 all: dir_create obj_build compile cleanup
 
@@ -25,8 +26,8 @@ compile:
 	$(CC) $(CFLAGS) -Wall -lncurses -lm \
 	-ltinfo \
 	main.o savesys.o screen_manip.o glob_vis.o c0_splash.o c1_areas.o c1_cave_subs.o c1_hill_subs.o c1_txt.o \
-	-o ../plains-debug
-	@echo "-> ./plains-debug"
+	-o ../$(BIN_OUT)
+	@echo "-> ./$(BIN_OUT)"
 
 cleanup:
 	rm -rf $(BUILD_PFX)
