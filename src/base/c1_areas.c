@@ -370,6 +370,10 @@ void hill() {
 				printw("\n");
 				c.body_loop = 0;
 				break;
+			case 7:
+				the_wiper(HILL_HEAD_MIN, HILL_HEAD_MAX+1);
+				the_wiper(HILL_OPTS_MIN, HILL_OPTS_MAX+1);
+				hill_subs_mntn();
 			case 8:
 				the_wiper(HILL_HEAD_MIN, HILL_HEAD_MAX+1);
 				the_wiper(HILL_OPTS_MIN, HILL_OPTS_MAX+1);

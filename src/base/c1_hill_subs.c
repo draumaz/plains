@@ -19,6 +19,79 @@ struct c1h_subs {
 	int disp_inc;
 };
 
+void hill_subs_mntn() {
+	struct c1h_subs c;
+	c.head_loop = 0;
+	c.body_loop = 0;
+	c.disp_inc = 0;
+	c.active_y = HILL_SUBS_MNTN_OPTS_MIN;
+	c.active_x = 7;
+	char* sel_txt[2] = {"[CALL]", "[BACK]"};
+	char* head_txt[2] = {"A gentle wind flows through the sky.", "Seems like your phone's got service."};
+	for (int i = HILL_SUBS_MNTN_OPTS_MIN; i < HILL_SUBS_MNTN_OPTS_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", sel_txt[c.disp_inc]);
+		c.disp_inc++;
+	}
+	c.disp_inc = 0;
+	for (int i = HILL_SUBS_MNTN_MSG_MIN; i < HILL_SUBS_MNTN_MSG_MAX+1; i++) {
+		move(i, 0);
+		printw("%s", head_txt[c.disp_inc]);
+		c.disp_inc++;
+	}
+	while (c.head_loop == 0) {
+		while (c.body_loop == 0) {
+			move(c.active_y, c.active_x);
+			printw("<");
+			refresh();
+			switch (getch()) {
+				case 'q':
+				case CTRL('q'):
+				case CTRL('c'):
+					screen_down();
+					exit(0);
+				case KEY_UP:
+				case 'w':
+				case 'i':
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == HILL_SUBS_MNTN_OPTS_MIN) {
+						c.active_y = HILL_SUBS_MNTN_OPTS_MAX;
+					} else {
+						c.active_y -= 1;
+					}
+					break;
+				case KEY_DOWN:
+				case 's':
+				case 'k':
+					mvdelch(c.active_y, c.active_x);
+					if (c.active_y == HILL_SUBS_MNTN_OPTS_MAX) {
+						c.active_y = HILL_SUBS_MNTN_OPTS_MIN;
+					} else {
+						c.active_y += 1;
+					}
+					break;
+				case '\n':
+					c.body_loop = 1;
+					break;
+			}
+		}
+		switch (c.active_y) {
+			case HILL_SUBS_MNTN_OPTS_MIN:
+				// ch1 end flag
+				c.body_loop = 0;
+				break;
+			case HILL_SUBS_MNTN_OPTS_MAX:
+				the_wiper(HILL_SUBS_MNTN_OPTS_MIN, HILL_SUBS_MNTN_OPTS_MAX+1);
+				the_wiper(HILL_SUBS_MNTN_MSG_MIN, HILL_SUBS_MNTN_MSG_MAX+1);
+				hill();
+				break;
+			default:
+				c.body_loop = 0;
+				break;
+		}
+	}
+}
+
 void hill_subs_river() {
 	struct c1h_subs c;
 	c.head_loop = 0;
