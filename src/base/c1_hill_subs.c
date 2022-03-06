@@ -20,14 +20,24 @@ struct c1h_subs {
 };
 
 void hill_subs_mntn() {
+	int * sav = save_reader();
 	struct c1h_subs c;
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.disp_inc = 0;
 	c.active_y = HILL_SUBS_MNTN_OPTS_MIN;
 	c.active_x = 7;
-	char* sel_txt[2] = {"[CALL]", "[BACK]"};
-	char* head_txt[2] = {"A gentle wind flows through the sky.", "Seems like your phone's got service."};
+	char* sel_txt[2];
+	char* head_txt[2];
+	sel_txt[1] = "[BACK]";
+	head_txt[0] = "A gentle wind flows through the sky.";
+	if (sav[4] == 1) {
+		sel_txt[0] = "[CALL]";
+		head_txt[1] = "Seems like you're phone's got service up here.";
+	} else {
+		sel_txt[0] = "[COLD]";
+		head_txt[1] = "Not a whole lot to see up here.";
+	}
 	for (int i = HILL_SUBS_MNTN_OPTS_MIN; i < HILL_SUBS_MNTN_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);
@@ -75,9 +85,35 @@ void hill_subs_mntn() {
 					break;
 			}
 		}
+		sav = save_reader();
 		switch (c.active_y) {
 			case HILL_SUBS_MNTN_OPTS_MIN:
-				// ch1 end flag
+				if (sav[5] == 0 && sav[4] == 1) {
+					save_writer(5, 1); // ch1 end flag
+					move(HILL_SUBS_MNTN_SUBMSG_MIN, 0);
+					printw("Brrrrr...");
+					refresh();
+					scr_sleep(3000);
+					move(HILL_SUBS_MNTN_SUBMSG_MIN+2, 0);
+					printw("'Liam! Where'd you end up?'");
+					refresh();
+					scr_sleep(1000);
+					move(HILL_SUBS_MNTN_SUBMSG_MIN+3, 0);
+					printw("...sounds like Saan! You send your coords over.");
+					refresh();
+					scr_sleep(2000);
+					move(HILL_SUBS_MNTN_SUBMSG_MIN+5, 0);
+					printw("Prrnk! ...he hung up.");
+				} else if (sav[5] == 1) {
+					move(HILL_SUBS_MNTN_SUBMSG_MIN, 0);
+					printw("Your friends are already on the way.");
+				} else {
+					move(HILL_SUBS_MNTN_SUBMSG_MIN, 0);
+					printw("Indeed, it is quite cold.");
+				}
+				refresh();
+				scr_sleep(1000);
+				the_wiper(HILL_SUBS_MNTN_SUBMSG_MIN, HILL_SUBS_MNTN_SUBMSG_MAX+1);
 				c.body_loop = 0;
 				break;
 			case HILL_SUBS_MNTN_OPTS_MAX:
@@ -167,11 +203,11 @@ void hill_subs_river() {
 				} else if (bottle_cont == 1) {
 					save_writer(3, 3);
 					printw("You collect some water into your bottle.");
-				} else if (bottle_cont == 2) { // should never happen
-					printw("Really? Editing the save file? Lame.");
 				} else if (bottle_cont == 3) {
 					save_writer(3, 1);
 					printw("You empty your bottle out into the river.");
+				} else { // should never happen
+					printw("Really? Modding the save file? Lame.");
 				}
 				if (bottle_cont == 1 || bottle_cont == 3) {
 					the_wiper(TIPPY_HEAD_MIN, TIPPY_HEAD_MAX);

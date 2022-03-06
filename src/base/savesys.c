@@ -1,5 +1,4 @@
 #include <stdio.h>
-
 #include <curses.h>
 
 #define SAVE_LENGTH 21
@@ -7,11 +6,12 @@
 
 // BEGIN SAVE LEGEND //
 
-// 0 ~ knife
-// 1 ~ reset
-// 2 ~ cave dialog loop
-// 3 ~ bottle
-// 4 ~ phone
+// 0 ~ knife flag
+// 1 ~ reset flag
+// 2 ~ cave dialog loop increment
+// 3 ~ bottle flag
+// 4 ~ phone flag
+// 5 ~ ch1 friends called flag
 
 // END SAVE LEGEND //
 
@@ -55,7 +55,7 @@ void save_exists() {
 	}
 }
 
-int save_ephemerance() { // ret 0 if file exists
+int save_ephemerance() { // returns 0 if file exists
 	FILE *f;
 	if ((f = fopen(SAVE_NAME, "r"))) {
 		return 0; 
