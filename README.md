@@ -4,7 +4,18 @@ The Plains is currently being rewritten. If you'd like to follow development pro
 <a href="https://github.com/draumaz/plains/tree/rewrite">rewrite branch</a>.
 
 # The Plains
-![Screenie](https://github.com/draumaz/plains/blob/main/art/plains.svg?raw=true "Landing")
+```
+The Plains v0.26
+
+You are Liam. An astronaut by trade, you took a bad
+turn on the Space Belt, and crash-landed on this strange,
+alien planet. You awaken, lain in a vast field of grass.
+
+[HILL ] <
+[CAVE ]
+[SHIP ]
+[QUIT ]
+```
 ## <p align="center">A text-based adventure, powered by curses.</p>
 
 # Story
