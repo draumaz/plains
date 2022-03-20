@@ -11,3 +11,8 @@ Welcome to the rewrite branch of The Plains.
 
 - Windows support has been dropped as ncurses lacks win32 support
 - Some aspects of the game may be changed, such as dialogue
+
+## Release
+
+- Expected release should be in early May 2022
+- Binaries will be available on release day for Linux, macOS, and FreeBSD
