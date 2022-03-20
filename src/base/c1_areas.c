@@ -393,6 +393,7 @@ void hill() {
 
 void landing_site() {
 	struct c1a_game c;
+	int * sav = save_reader();
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.active_y = LANDING_SITE_OPTS_MIN;
@@ -404,6 +405,26 @@ void landing_site() {
 	"[QUIT ]"};
 	tippy_head();
 	landing_site_head();
+	if (sav[5] == 1) {
+		refresh();
+		scr_sleep(1500);
+		save_writer(6, 1);
+		move(LANDING_SITE_OPTS_MIN, 0);
+		printw("You feel the ground shake...");
+		refresh();
+		scr_sleep(2000);
+		move(LANDING_SITE_OPTS_MIN+1, 0);
+		printw("With a resounding thud, a spaceship touches down.");
+		refresh();
+		scr_sleep(2000);
+		move(LANDING_SITE_OPTS_MIN+2, 0);
+		clear();
+		move(1, 0);
+		printw("CHAPTER ONE: COMPLETE");
+		refresh();
+		scr_sleep(1000);
+		splash_screen(); // temporary loopback until ch2 work begins
+	}
 	for (int i = LANDING_SITE_OPTS_MIN; i < LANDING_SITE_OPTS_MAX+1; i++) {
 		move(i, 0);
 		printw("%s", sel_txt[c.disp_inc]);

@@ -168,12 +168,32 @@ void splash_screen() {
 			}
 		}
 		switch (c.active_y) {
-			case SPLASH_OPTS_MIN:
+			case SPLASH_OPTS_MIN: {
 				save_exists();
-				the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX+1);
-				the_wiper(SPLASH_OPTS_MIN, SPLASH_OPTS_MAX+1);
-				landing_site();
-				break;
+				int * sav = save_reader();
+				switch (sav[6]) {
+					case 0:
+						the_wiper(SPLASH_HEAD_MIN, SPLASH_HEAD_MAX+1);
+						the_wiper(SPLASH_OPTS_MIN, SPLASH_OPTS_MAX+1);
+						landing_site();
+						break;
+					case 1:
+						move(SPLASH_OPTS_MAX+2, 0);
+						printw("Chapter two is not quite ready yet!");
+						refresh();
+						scr_sleep(1000);
+						move(SPLASH_OPTS_MAX+3, 0);
+						printw("Feel free to reset your save to go back in.");
+						refresh();
+						scr_sleep(1000);
+						the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
+						c.body_loop = 0;
+						break;
+					default:
+						c.body_loop = 0;
+						break;
+				}
+				break; }
 			case SPLASH_OPTS_MIN+1:
 				splash_reset();
 				c.body_loop = 0;
@@ -185,7 +205,7 @@ void splash_screen() {
 				printw("the GNU General Public License, version 3.");
 				move(c.active_y, c.active_x);
 				refresh();
-				scr_sleep(1500);
+				scr_sleep(2000);
 				the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
 				c.body_loop = 0;
 				break;

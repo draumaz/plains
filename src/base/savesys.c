@@ -12,6 +12,7 @@
 // 3 ~ bottle flag
 // 4 ~ phone flag
 // 5 ~ ch1 friends called flag
+// 6 ~ chapter flag
 
 // END SAVE LEGEND //
 
