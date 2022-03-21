@@ -7,3 +7,4 @@ void tippy_bottle(int o);
 void tippy_head();
 void the_wiper();
 void scr_sleep(int ms);
+void scr_write(char* l, int p);

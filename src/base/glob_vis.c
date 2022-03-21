@@ -2,6 +2,7 @@
 #include <time.h>
 #include <errno.h>
 #include <ctype.h>
+#include <string.h>
 
 #include "../header/glob_vis.h"
 #include "../header/glob_vars.h"
@@ -138,4 +139,12 @@ void scr_sleep(int ms) {
 	ts.tv_nsec = (ms % 1000) * 1000000;
 	do { res = nanosleep(&ts, &ts); }
 	while (res && errno == EINTR);
+}
+
+void scr_write(char* l, int p) {
+	for (unsigned long int i = 0; i < strlen(l); i++) {
+		printw("%c",l[i]);
+		refresh();
+		scr_sleep(p);
+	}
 }

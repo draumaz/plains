@@ -104,7 +104,11 @@ void cave_subs_goleft() {
 				switch (has_bottle) {
 					case 0:
 						save_writer(3, 1);
-						printw("Woah, an empty bottle! You take it.");
+						scr_write("Woah,", 20);
+						scr_sleep(250);
+						scr_write(" an empty bottle!", 20);
+						scr_sleep(500);
+						printw(" You take it.");
 						break;
 					case 1:
 						save_writer(3, 2);
@@ -226,7 +230,9 @@ void cave_subs_continue() {
 				switch (has_knife) {
 					case 0:
 						save_writer(0, 1);
-						printw("A rusty knife! You take it.");
+						scr_write("A rusty knife!", 20);
+						scr_sleep(500);
+						printw(" You take it.");
 						break;
 					case 1:
 						save_writer(0, 2);

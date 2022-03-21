@@ -91,7 +91,7 @@ void hill_subs_mntn() {
 				if (sav[5] == 0 && sav[4] == 1) {
 					save_writer(5, 1); // ch1 end flag
 					move(HILL_SUBS_MNTN_SUBMSG_MIN, 0);
-					printw("Brrrrr...");
+					scr_write("Brrrrr...", 35);
 					refresh();
 					scr_sleep(3000);
 					move(HILL_SUBS_MNTN_SUBMSG_MIN+2, 0);

@@ -82,11 +82,11 @@ void splash_reset() {
 				case SPLASH_RESET_OPTS_MIN:
 					move(SPLASH_RESET_OPTS_MAX+2, 0);
 					if (remove("data.txt") == 0) {
-						printw("Success.");
+						scr_write("Success.", 20);
 						save_exists();
 						save_writer(1, 1);
 					} else {
-						printw("I/O error. What have you done.");
+						scr_write("I/O error. What have you done.", 100);
 					}
 					refresh();
 					scr_sleep(250);
@@ -200,12 +200,12 @@ void splash_screen() {
 				break;
 			case SPLASH_OPTS_MIN+2:
 				move(SPLASH_OPTS_MAX+2, 0);
-				printw("The Plains is free software, released under");
-				move(SPLASH_OPTS_MAX+3, 0);
-				printw("the GNU General Public License, version 3.");
+				scr_write("The Plains is free software,", 20);
+				scr_sleep(250);
+				scr_write(" released under\nthe GNU General Public License, version 3.", 20);
 				move(c.active_y, c.active_x);
 				refresh();
-				scr_sleep(2000);
+				scr_sleep(1500);
 				the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
 				c.body_loop = 0;
 				break;
