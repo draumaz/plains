@@ -303,6 +303,7 @@ void cave() {
 
 void hill() {
 	struct c1a_game c;
+	int * sav = save_reader();
 	c.head_loop = 0;
 	c.body_loop = 0;
 	c.active_y = CAVE_OPTS_MIN;
@@ -356,18 +357,23 @@ void hill() {
 		}
 		switch (c.active_y) {
 			case 6:
-				move(HILL_OPTS_MAX+2, 0);
-				printw("Not getting anything resembling service.");
-				refresh();
-				scr_sleep(750);
-				move(HILL_OPTS_MAX+3, 0);
-				printw("Maybe the signal would be better somewhere higher?");
-				refresh();
-				scr_sleep(1500);
-				move(HILL_OPTS_MAX+2, 0);
-				printw("\n");
-				move(HILL_OPTS_MAX+3, 0);
-				printw("\n");
+				if (sav[4] == 1) {
+					move(HILL_OPTS_MAX+2, 0);
+					printw("Not getting anything resembling service.");
+					refresh();
+					scr_sleep(750);
+					move(HILL_OPTS_MAX+3, 0);
+					printw("Maybe the signal would be better somewhere higher?");
+					refresh();
+					scr_sleep(1500);
+					the_wiper(HILL_OPTS_MAX+2, HILL_OPTS_MAX+4);
+				} else {
+					move(HILL_OPTS_MAX+2, 0);
+					printw("Seems like you lost your phone in the crash.");
+					refresh();
+					scr_sleep(1000);
+					the_wiper(HILL_OPTS_MAX+2, HILL_OPTS_MAX+4);
+				}
 				c.body_loop = 0;
 				break;
 			case 7:
