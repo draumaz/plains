@@ -200,12 +200,12 @@ void splash_screen() {
 				break;
 			case SPLASH_OPTS_MIN+2:
 				move(SPLASH_OPTS_MAX+2, 0);
-				scr_write("The Plains is free software,", 20);
+				scr_write("Copyright (c) 2021-22 draumaz.", 20);
 				scr_sleep(250);
-				scr_write(" released under\nthe GNU General Public License, version 3.", 20);
+				scr_write("\nAll rights reserved.", 20);
 				move(c.active_y, c.active_x);
 				refresh();
-				scr_sleep(1500);
+				scr_sleep(500);
 				the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
 				c.body_loop = 0;
 				break;
