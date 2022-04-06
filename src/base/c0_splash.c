@@ -86,16 +86,17 @@ void splash_reset() {
 						save_exists();
 						save_writer(1, 1);
 					} else {
-						scr_write("I/O error. What have you done.", 100);
+						scr_write("Error.  ", 20);
 					}
 					refresh();
 					scr_sleep(250);
-					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_OPTS_MAX+3);
+					schwoop_wipe(9, -1, SPLASH_RESET_OPTS_MAX+2, 10);
+					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_OPTS_MAX+2);
 					refresh();
 					return;
 				case SPLASH_RESET_OPTS_MAX:
 					the_wiper(SPLASH_RESET_MSG, SPLASH_RESET_MSG+1);
-					the_wiper(SPLASH_RESET_OPTS_MIN, SPLASH_RESET_OPTS_MAX+3);
+					the_wiper(SPLASH_RESET_OPTS_MIN, SPLASH_RESET_OPTS_MAX+1);
 					return;
 			}
 		}
@@ -206,7 +207,8 @@ void splash_screen() {
 				move(c.active_y, c.active_x);
 				refresh();
 				scr_sleep(500);
-				the_wiper(SPLASH_OPTS_MAX+2, SPLASH_OPTS_MAX+4);
+				schwoop_wipe(19, -1, SPLASH_OPTS_MAX+3, 10);
+				schwoop_wipe(30, -1, SPLASH_OPTS_MAX+2, 10);
 				c.body_loop = 0;
 				break;
 			case SPLASH_OPTS_MAX:

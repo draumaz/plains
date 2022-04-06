@@ -124,6 +124,15 @@ void tippy_head() {
 	move(0, 0);
 }
 
+void schwoop_wipe(int max, int min, int y, int sleep) {
+	for (int i = max; i > min; i--) {
+		move(y, i);
+		printw(" ");
+		refresh();
+		scr_sleep(sleep);
+	}
+}
+
 void the_wiper(int min, int max) {
 	for (int i = min; i < max; i++) {
 		move(i, 0);

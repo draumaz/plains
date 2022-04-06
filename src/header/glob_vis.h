@@ -5,6 +5,7 @@ void tippy_inv();
 void tippy_knife(int o);
 void tippy_bottle(int o);
 void tippy_head();
+void schwoop_wipe(int max, int min, int y, int sleep);
 void the_wiper();
 void scr_sleep(int ms);
 void scr_write(char* l, int p);
