@@ -1,0 +1,12 @@
+[package]
+name = "plains"
+version = "0.26.0"
+edition = "2018"
+
+[dependencies]
+savesys = "3.5.9"
+rand = "0.8.5"
+
+[dependencies.pancurses]
+version = "0.17"
+features = ["win32"]
