@@ -1,5 +1,3 @@
-extern crate pancurses;
-
 use pancurses::{Input, resize_term, echo, noecho, curs_set};
 
 pub fn universal_tabler(
@@ -42,7 +40,7 @@ pub fn screen_smash(
 	min: i32, 
 	max: i32) 
 {
-	for i in min..max {
+	for i in min..max+1 {
 		win.mv(i, 0);
 		win.printw("\n");
 		win.refresh();
