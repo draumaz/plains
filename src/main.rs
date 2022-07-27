@@ -1,10 +1,9 @@
-mod b_display;
-mod f_display;
+mod routine;
 mod misc;
 mod area;
 
 use misc::sleep;
-use b_display::{universal_tabler, screen_up, screen_down, screen_smash};
+use crate::routine::funk::{universal_tabler, screen_up, screen_down, screen_smash};
 
 use crate::area::zero::landing_site;
 

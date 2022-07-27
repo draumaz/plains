@@ -1,5 +1,4 @@
-use crate::b_display::universal_tabler;
-use crate::f_display::display_header;
+use crate::routine::{funk::universal_tabler, flourish::display_header};
 
 fn landing_site_text(win: &pancurses::Window) {
 	win.mv(3, 0);
