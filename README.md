@@ -12,6 +12,7 @@ alien planet. You awaken, lain in a vast field of grass.
 [QUIT ]
 ```
 ## <p align="center">A text-based adventure, powered by curses.</p>
+### <p align="center"><a href="https://niceme.me">Download</a></p>
 
 # Story
 
