@@ -1,12 +1,13 @@
 mod b_display;
 mod f_display;
 mod misc;
-mod areas_zero;
+mod area;
 
 use misc::sleep;
 use b_display::{universal_tabler, screen_up, screen_down, screen_smash};
 
-use areas_zero::landing_site;
+use crate::area::zero::landing_site;
+
 use pancurses::{initscr, endwin};
 
 fn splash_text(win: &pancurses::Window) {
