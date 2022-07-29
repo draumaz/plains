@@ -23,7 +23,8 @@ pub fn universal_tabler(win: &pancurses::Window, first: i32, last: i32, x: i32) 
 			Some(Input::Character('\n')) => { 
 				win.mv(y, x);
 				win.printw("\n");
-				return y },
+				return y;
+			},
 			Some(_) => (),
 			None => ()
 		}

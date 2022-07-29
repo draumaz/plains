@@ -30,7 +30,7 @@ pub fn landing_site(win: &pancurses::Window) {
 			7 => {
 				screen_smash(&win, 3, 10);
 				hill_page(&win);
-				}
+			}
 			8|9 => {continue}
 			10|_ => {
 				screen_smash(&win, 0, 10);
