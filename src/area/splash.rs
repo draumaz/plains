@@ -1,6 +1,8 @@
 use crate::routine::{funk::{universal_tabler, screen_smash}, misc::sleep};
 use super::zero::landing_site;
 
+use savesys::{exists, generate};
+
 fn splash_text(win: &pancurses::Window) {
 	win.mv(1, 0);
 	win.printw("==THE PLAINS===============\n==DRAUMAZ, 2021-22=========\n==WRITTEN IN RUST!=========");
