@@ -2,7 +2,7 @@ mod routine;
 mod area;
 
 use crate::routine::funk::{screen_up, screen_down};
-use crate::area::splash::splash_screen;
+use crate::area::zero::splash_screen;
 
 use pancurses::{initscr, endwin};
 
