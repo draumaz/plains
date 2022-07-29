@@ -66,8 +66,8 @@ pub fn splash_screen(win: &pancurses::Window) {
 				win.refresh();
 				sleep(1000);
 				screen_smash(&win, 10, 11);
-				continue
-				}
+				continue;
+			}
 			8|_ => {break}
 		}
 	}
