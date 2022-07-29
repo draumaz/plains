@@ -19,10 +19,28 @@ fn river_page(win: &pancurses::Window) {
 			}
 		}
 		match table_seek(&win, 5, 7, 8) {
-			5 => {}
+			5 => {
+				win.mv(9, 0);
+				win.printw("You sit down a spell and take in the nature.");
+				win.refresh();
+				sleep(1500);
+				win.mv(10, 0);
+				win.printw("How calming!");
+				win.refresh();
+				sleep(1000);
+				screen_smash(&win, 9, 10);
+			}
 			6 => {
 				match mode {
-					_ => {}
+					1 => {}
+					3 => {}
+					2|_ => {
+						win.mv(9, 0);
+						win.printw("This is basically the same thing as relaxing, right?");
+						win.refresh();
+						sleep(1000);
+						screen_smash(&win, 9, 9);
+					}
 				}
 			}
 			7|_ => {break}
