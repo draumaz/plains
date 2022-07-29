@@ -1,9 +1,5 @@
-use std::{thread, time};
+use std::{thread::{spawn, sleep as sl}, time::Duration};
 
 pub fn sleep(time: u64) {
-	thread::spawn(
-		move || {
-			thread::sleep(time::Duration::from_millis(time));
-		}
-	).join().unwrap();
+	spawn(move||{sl(Duration::from_millis(time))}).join().unwrap();
 }
