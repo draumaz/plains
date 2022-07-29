@@ -4,9 +4,9 @@ pub fn universal_tabler(
 	win: &pancurses::Window,
 	first: i32,
 	last: i32,
-	x:     i32,
-	mut y: i32) 
--> i32 { 
+	x:     i32) 
+-> i32 {
+	let mut y = first;
 	loop {
 		win.mv(y, x);
 		win.printw("<");

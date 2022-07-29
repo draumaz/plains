@@ -8,7 +8,7 @@ fn hill_page_text(win: &pancurses::Window) {
 fn hill_page(win: &pancurses::Window) {
 	loop {
 		hill_page_text(&win);
-		match universal_tabler(&win, 6, 9, 12, 6) {
+		match universal_tabler(&win, 6, 9, 12) {
 			6|7|8 => {continue}
 			9|_ => {
 				screen_smash(&win, 3, 9);
@@ -26,7 +26,7 @@ fn landing_site_text(win: &pancurses::Window) {
 pub fn landing_site(win: &pancurses::Window) {
 	loop {
 		landing_site_text(&win);
-		match universal_tabler(&win, 7, 10, 7, 7) {
+		match universal_tabler(&win, 7, 10, 7) {
 			7 => {
 				screen_smash(&win, 3, 10);
 				hill_page(&win);
@@ -50,7 +50,7 @@ fn splash_text(win: &pancurses::Window) {
 pub fn splash_screen(win: &pancurses::Window) {
 	loop {
 		splash_text(&win);
-		match universal_tabler(&win, 5, 8, 11, 5) {
+		match universal_tabler(&win, 5, 8, 11) {
 			5 => {
 				screen_smash(&win, 0, 11);
 				display_header(&win);
