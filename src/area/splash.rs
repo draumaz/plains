@@ -1,6 +1,4 @@
-use crate::routine::funk::{universal_tabler, screen_smash};
-use crate::routine::misc::sleep;
-
+use crate::routine::{funk::{universal_tabler, screen_smash}, misc::sleep};
 use super::zero::landing_site;
 
 fn splash_text(win: &pancurses::Window) {
