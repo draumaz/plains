@@ -1,5 +1,6 @@
 use crate::routine::{funk::{table_seek, screen_smash}, flourish::display_header, misc::sleep};
-use savesys::{exists, generate, reader};
+use savesys::{exists, generate, reader, writer};
+use std::fs::remove_file;
 
 fn river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
@@ -150,14 +151,32 @@ pub fn splash_screen(win: &pancurses::Window) {
 				landing_site(&win);
 				screen_smash(&win, 0, 11);
 			}
-			6 => {}
+			6 => {
+				if exists("data.txt") {
+					win.mv(10, 0);
+					win.printw("Are you sure you want to reset?\n\n[YES]\n[NO ]");
+					match table_seek(&win, 12, 13, 6) {
+						12 => {
+							remove_file("data.txt").unwrap();
+							generate("data.txt", 20);
+							writer("data.txt", 1, 1);
+							win.mv(15, 0);
+							win.printw("Save reset.");
+							win.refresh();
+							sleep(500);
+							screen_smash(&win, 10, 15);
+						}
+						13|_ => {}
+					}
+					screen_smash(&win, 10, 13)
+				}
+			}
 			7 => {
 				win.mv(10, 0);
 				win.printw("Copyright 2021-22 draumaz.\nAll rights reserved.");
 				win.refresh();
 				sleep(1000);
 				screen_smash(&win, 10, 11);
-				continue;
 			}
 			8|_ => {break}
 		}
