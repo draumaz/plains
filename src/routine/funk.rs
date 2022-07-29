@@ -37,12 +37,14 @@ pub fn screen_smash(win: &pancurses::Window, min: i32, max: i32) {
 		win.refresh();
 	}
 }
+
 pub fn screen_up(s: &pancurses::Window) {
 	s.keypad(true);
 	resize_term(25, 80);
 	curs_set(0);
 	noecho();
 }
+
 pub fn screen_down() {
 	curs_set(1);
 	echo();
