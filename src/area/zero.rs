@@ -1,4 +1,4 @@
-use crate::routine::{funk::{universal_tabler, screen_smash}, flourish::display_header, misc::sleep};
+use crate::routine::{funk::{table_seek, screen_smash}, flourish::display_header, misc::sleep};
 use savesys::{exists, generate, reader};
 
 fn river_page(win: &pancurses::Window) {
@@ -18,7 +18,7 @@ fn river_page(win: &pancurses::Window) {
 				win.printw("[RELAX]\n[CHILL]\n[BACK ]");
 			}
 		}
-		match universal_tabler(&win, 5, 7, 8) {
+		match table_seek(&win, 5, 7, 8) {
 			5 => {}
 			6 => {
 				match mode {
@@ -45,7 +45,7 @@ fn mountain_page(win: &pancurses::Window) {
 				win.mv(6, 0); win.printw("[COLD]\n[BACK]");
 			}
 		}
-		match universal_tabler(&win, 6, 7, 7) {
+		match table_seek(&win, 6, 7, 7) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
@@ -71,7 +71,7 @@ fn hill_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
 		win.printw("You venture out towards a gargantuan hill.\nBeside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
-		match universal_tabler(&win, 6, 9, 12) {
+		match table_seek(&win, 6, 9, 12) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
@@ -104,7 +104,7 @@ fn landing_site(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
 		win.printw("You are Liam. An astronaut by trade, you took a bad\nturn on the Space Belt, and crash-landed on this strange,\nalien planet. You awaken, lain in a vast field of grass.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
-		match universal_tabler(&win, 7, 10, 7) {
+		match table_seek(&win, 7, 10, 7) {
 			7 => {
 				screen_smash(&win, 3, 10);
 				hill_page(&win);
@@ -124,7 +124,7 @@ pub fn splash_screen(win: &pancurses::Window) {
 		win.printw("==THE PLAINS===============\n==DRAUMAZ, 2021-22=========\n==WRITTEN IN RUST!=========");
 		win.mv(5, 0);
 		win.printw("[PLAY   ]\n[RESET  ]\n[LICENSE]\n[QUIT   ]");
-		match universal_tabler(&win, 5, 8, 11) {
+		match table_seek(&win, 5, 8, 11) {
 			5 => {
 				if ! exists("data.txt") { generate("data.txt", 20) }
 				screen_smash(&win, 0, 11);

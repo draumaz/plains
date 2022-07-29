@@ -1,6 +1,6 @@
 use pancurses::{Input, resize_term, echo, noecho, curs_set};
 
-pub fn universal_tabler(win: &pancurses::Window, first: i32, last: i32, x: i32) -> i32 {
+pub fn table_seek(win: &pancurses::Window, first: i32, last: i32, x: i32) -> i32 {
 	let mut y = first;
 	loop {
 		win.mv(y, x);
