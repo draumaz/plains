@@ -2,7 +2,7 @@ use crate::routine::{funk::{table_seek, screen_smash}, flourish::display_header,
 use savesys::{exists, generate, reader, writer};
 use std::fs::remove_file;
 
-fn river_page(win: &pancurses::Window) {
+fn hill_river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
 	loop {
 		win.mv(3, 0);
@@ -49,7 +49,7 @@ fn river_page(win: &pancurses::Window) {
 	}
 }
 
-fn mountain_page(win: &pancurses::Window) {
+fn hill_mountain_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
 		win.printw("A gentle wind flows through the sky.");
@@ -105,16 +105,45 @@ fn hill_page(win: &pancurses::Window) {
 			}
 			7 => {
 				screen_smash(&win, 3, 9);
-				mountain_page(&win);
+				hill_mountain_page(&win);
 			}
 			8 => {
 				screen_smash(&win, 3, 9);
-				river_page(&win);
+				hill_river_page(&win);
 			}
 			9|_ => {
 				screen_smash(&win, 3, 9);
 				break;
 			}
+		}
+	}
+}
+
+fn cave_page(win: &pancurses::Window) {
+	loop {
+		win.mv(3, 0);
+		win.printw("You make your way towards a deep, cavernous grotto.\nHardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
+		match table_seek(&win, 6, 9, 11) {
+			6 => {}
+			7 => {
+				let mut status = reader("data.txt")[2];
+				if status <= 7 { status += 1; writer("data.txt", 2, status )}
+				win.mv(11, 0);
+				match status {
+					2 => { win.printw("...a pretty dark one, at that."); }
+					3 => { win.printw("Definitely a cave right here."); }
+					4 => { win.printw("But is it, really?"); }
+					5 => { win.printw("No one can ever truly know."); }
+					6 => { win.printw("But one question remains..."); }
+					7 => { win.printw("Why are you still doing this?"); }
+					_ => { win.printw("Sure is a cave."); }
+				}
+				win.refresh();
+				sleep(500);
+				screen_smash(&win, 11, 11);
+			}
+			8 => {}
+			9|_ => {break}
 		}
 	}
 }
@@ -128,7 +157,11 @@ fn landing_site(win: &pancurses::Window) {
 				screen_smash(&win, 3, 10);
 				hill_page(&win);
 			}
-			8|9 => {}
+			8 => {
+				screen_smash(&win, 3, 10);
+				cave_page(&win);
+			}
+			9 => {}
 			10|_ => {
 				screen_smash(&win, 0, 10);
 				break;
