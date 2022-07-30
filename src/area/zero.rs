@@ -21,17 +21,18 @@ fn hill_river_page(win: &pancurses::Window) {
 		}
 		match table_seek(&win, 5, 7, 8) {
 			5 => {
-				msw_blitter(&win, String::from("You sit down a spell and take in the nature."), 9, 1500, false);
-				msw_blitter(&win, String::from("How calming!"), 10, 1000, false);
-				screen_smash(&win, 9, 10);
+				obo_blitter(&win, String::from("You sit down a spell and take in the nature."), 9, 10); sleep(500);
+				obo_blitter(&win, String::from("How calming!"), 10, 10); sleep(500);
+				obo_wiper(&win, 10, String::from("How calming!").len() as i32, 10);
+				obo_wiper(&win, 9, String::from("You sit down a spell and take in the nature.").len() as i32, 10);
 			}
 			6 => {
 				match mode {
 					1 => {}
 					3 => {}
 					2|_ => {
-						msw_blitter(&win, String::from("This is basically the same thing as relaxing, right?"), 9, 1000, false);
-						screen_smash(&win, 9, 9);
+						obo_blitter(&win, String::from("This is basically the same thing as relaxing, right?"), 9, 10); sleep(500);
+						obo_wiper(&win, 9, String::from("This is basically the same thing as relaxing, right?").len() as i32, 10);
 					}
 				}
 			}
@@ -59,7 +60,8 @@ fn hill_mountain_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						msw_blitter(&win, String::from("Indeed, it is quite cold here."), 9, 1000, false);
+						obo_blitter(&win, String::from("Indeed, it is quite cold here."), 9, 10); sleep(500);
+						obo_wiper(&win, 9, String::from("Indeed, it is quite cold here.").len() as i32, 10);
 						screen_smash(&win, 9, 9);
 					}
 					_ => {}
@@ -103,14 +105,12 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 	msw_blitter(&win, String::from("│ * LIAM   | HP: "), 3, 10, true); win.printw(ph.to_string());
 	msw_blitter(&win, String::from("│ * LIZARD | HP: "), 4, 10, true); win.printw(eh.to_string());
 	loop {
-		win.mv(6, 0);
-		obo_blitter(&win, String::from("[FIGHT]\n[TALK ]\n[LEAVE]"), 10);
+		obo_blitter(&win, String::from("[FIGHT]\n[TALK ]\n[LEAVE]"), 6, 10);
 		match table_seek(&win, 6, 8, 8) {
 			6 => {
 				match reader("data.txt")[0] {
 					1 => {
-						win.mv(10, 0);
-						obo_blitter(&win, String::from("─> [FISTS]\n─> [KNIFE]\n─> [BACK ]"), 10);
+						obo_blitter(&win, String::from("─> [FISTS]\n─> [KNIFE]\n─> [BACK ]"), 10, 10);
 						match table_seek(&win, 10, 12, 11) {
 							10 => {}
 							11 => {
@@ -292,16 +292,13 @@ pub fn splash_screen(win: &pancurses::Window) {
 			}
 			6 => {
 				if exists("data.txt") {
-					win.mv(10, 0);
-					obo_blitter(&win, String::from("Are you sure you want to reset?\n\n[YES]\n[NO ]"), 10);
+					obo_blitter(&win, String::from("Are you sure you want to reset?\n\n[YES]\n[NO ]"), 10, 10);
 					match table_seek(&win, 12, 13, 6) {
 						12 => {
 							remove_file("data.txt").unwrap();
 							generate("data.txt", 20);
 							writer("data.txt", 1, 1);
-							win.mv(15, 0);
-							obo_blitter(&win, String::from("Save reset."), 10);
-							win.refresh();
+							obo_blitter(&win, String::from("Save reset."), 15, 10);
 							sleep(500);
 							obo_wiper(&win, 15, String::from("Save reset.").len() as i32, 10);
 						}

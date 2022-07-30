@@ -22,7 +22,8 @@ pub fn display_header(win: &pancurses::Window) {
 	win.mv(2, 0); win.printw("┌───────────────────>");
 }
 
-pub fn obo_blitter(win: &pancurses::Window, text: String, stop: u64) {
+pub fn obo_blitter(win: &pancurses::Window, text: String, pos: i32, stop: u64) {
+	win.mv(pos, 0);
 	for c in text.chars() {
 		win.printw(c.to_string());
 		win.refresh();
@@ -32,7 +33,7 @@ pub fn obo_blitter(win: &pancurses::Window, text: String, stop: u64) {
 
 pub fn msw_blitter(win: &pancurses::Window, text: String, pos: i32, stop: u64, obo: bool) {
 	win.mv(pos, 0);
-	if obo { obo_blitter(&win, text, stop) } else { win.printw(text); }
+	if obo { obo_blitter(&win, text, pos, stop) } else { win.printw(text); }
 	win.refresh();
 	sleep(stop);
 }
