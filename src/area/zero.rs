@@ -105,7 +105,7 @@ fn hill_page(win: &pancurses::Window) {
 }
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
-	let mut ph = 10; let mut eh = 50;
+	let ph = 10; let eh = 50;
 	msw(&win, "* | LIAM   | HP: ", 3, 10, true); win.printw(ph.to_string());
 	msw(&win, "* | LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
 	loop {
