@@ -104,10 +104,11 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 	msw_blitter(&win, "* | LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
 	loop {
 		win.mv(6, 0);
-		win.printw("[FIGHT]\n[LEAVE]");
-		match table_seek(&win, 6, 7, 8) {
+		obo_blitter(&win, "[FIGHT]\n[TALK ]\n[LEAVE]", 10);
+		match table_seek(&win, 6, 8, 8) {
 			6 => {}
-			7|_ => {screen_smash(&win, 3, 9); break}
+			7 => {}
+			8|_ => {screen_smash(&win, 3, 9); break}
 		}
 	}
 }
