@@ -126,15 +126,16 @@ fn cave_continue_page(win: &pancurses::Window) {
 		match reader("data.txt")[0] {
 			0|2 => {
 				match reader("data.txt")[3] {
-					0 => { win.printw("You continue deeper. A chest is sat against the wall.\n\n[OPEN]\n[BACK]"); }
-					2 => { win.printw("There's that knife chest again.\n\n[OPEN]\n[BACK]"); }
-					_ => { win.printw("You continue deeper, and stumble across another chest.\n\n[OPEN]\n[BACK]"); }
+					0 => { win.printw("You continue deeper. A chest is sat against the wall."); }
+					2 => { win.printw("There's that knife chest again."); }
+					_ => { win.printw("You continue deeper, and stumble across another chest."); }
 				}
+				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
 			1 => {
-				win.printw("An empty chest lies in the darkness.\n\n[PUT BACK]\n[BACK    ]");
-				pos = 11;
+				win.printw("An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
+				pos = 8;
 			}
 			_ => { pos = 420 }
 		}
