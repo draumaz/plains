@@ -19,6 +19,7 @@ pub fn display_header(win: &pancurses::Window) {
 		}
 		_ => { win.printw("           "); }
 	}
+	win.mv(2, 0); win.printw("┌───────────────────>");
 }
 
 pub fn obo_blitter(win: &pancurses::Window, text: &'static str, stop: u64) {

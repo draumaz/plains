@@ -6,7 +6,7 @@ fn hill_river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
 	loop {
 		win.mv(3, 0);
-		win.printw("* A river juts through the landscape.");
+		win.printw("│ A river juts through the landscape.");
 		win.mv(5, 0);
 		match mode {
 			1 => {
@@ -43,15 +43,15 @@ fn hill_river_page(win: &pancurses::Window) {
 fn hill_mountain_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("* A gentle wind flows through the sky.");
+		win.printw("│ A gentle wind flows through the sky.");
 		win.mv(4, 0);
 		match reader("data.txt")[4] {
 			1 => {
-				win.printw("* Seems like your phone's got service.");
+				win.printw("│ Seems like your phone's got service.");
 		    	win.mv(6, 0); win.printw("[CALL]\n[BACK]");
 			}
 			_ => {
-				win.printw("* Not much to see up here.");
+				win.printw("│ Not much to see up here.");
 				win.mv(6, 0); win.printw("[COLD]\n[BACK]");
 			}
 		}
@@ -74,7 +74,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 fn hill_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("* You venture out towards a gargantuan hill.\n* Beside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
+		win.printw("│ You venture out towards a gargantuan hill.\n│ Beside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
 		match table_seek(&win, 6, 9, 12) {
 			6 => {
 				match reader("data.txt")[4] {
@@ -100,8 +100,8 @@ fn hill_page(win: &pancurses::Window) {
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
 	let ph = 10; let eh = 50;
-	msw_blitter(&win, "* | LIAM   | HP: ", 3, 10, true); win.printw(ph.to_string());
-	msw_blitter(&win, "* | LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
+	msw_blitter(&win, "│ * LIAM   | HP: ", 3, 10, true); win.printw(ph.to_string());
+	msw_blitter(&win, "│ * LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
 	loop {
 		win.mv(6, 0);
 		obo_blitter(&win, "[FIGHT]\n[TALK ]\n[LEAVE]", 10);
@@ -120,18 +120,18 @@ fn cave_continue_page(win: &pancurses::Window) {
 		match reader("data.txt")[0] { // knife
 			0 => {
 				match reader("data.txt")[3] { // also bottle
-					0 => { win.printw("* You continue deeper. A chest is sat against the wall."); }
-					_ => { win.printw("* You continue deeper, and stumble across another chest."); }
+					0 => { win.printw("│ You continue deeper. A chest is sat against the wall."); }
+					_ => { win.printw("│ You continue deeper, and stumble across another chest."); }
 				}
 				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
 			1 => {
-				win.printw("* An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
+				win.printw("│ An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
 				pos = 8;
 			}
 			2 => { 
-				win.printw("* There's that chest again.");
+				win.printw("│ There's that chest again.");
 				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
@@ -162,7 +162,7 @@ fn cave_continue_page(win: &pancurses::Window) {
 fn cave_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("* You make your way towards a deep, cavernous grotto.\n* Hardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
+		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
 		match table_seek(&win, 6, 9, 11) {
 			6 => {
 				screen_smash(&win, 3, 9);
@@ -197,7 +197,7 @@ fn cave_page(win: &pancurses::Window) {
 fn landing_site(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("* You are Liam. Your only memories are of crashing on this distant planet.\n* You awaken, lain in a vast field of grass. Your back hurts.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
+		win.printw("│ You are Liam. Your only memories are of crashing on this distant planet.\n│ You awaken, lain in a vast field of grass. Your back hurts.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
 		match table_seek(&win, 6, 9, 7) {
 			6 => {
 				screen_smash(&win, 3, 10);
