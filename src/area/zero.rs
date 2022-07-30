@@ -303,11 +303,13 @@ pub fn splash_screen(win: &pancurses::Window) {
 							obo_blitter(&win, String::from("Save reset."), 10);
 							win.refresh();
 							sleep(500);
-							screen_smash(&win, 10, 15);
+							obo_wiper(&win, 15, String::from("Save reset.").len() as i32, 10);
 						}
 						13|_ => {}
 					}
-					screen_smash(&win, 10, 13)
+					obo_wiper(&win, 13, String::from("[NO ]").len() as i32, 10);
+					obo_wiper(&win, 12, String::from("[YES]").len() as i32, 10);
+					obo_wiper(&win, 10, String::from("Are you sure you want to reset?").len() as i32, 10);
 				}
 			}
 			7 => {
