@@ -6,7 +6,7 @@ fn hill_river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
 	loop {
 		win.mv(3, 0);
-		win.printw("A river juts through the landscape.");
+		win.printw("* A river juts through the landscape.");
 		win.mv(5, 0);
 		match mode {
 			1 => {
@@ -43,15 +43,15 @@ fn hill_river_page(win: &pancurses::Window) {
 fn hill_mountain_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("A gentle wind flows through the sky.");
+		win.printw("* A gentle wind flows through the sky.");
 		win.mv(4, 0);
 		match reader("data.txt")[4] {
 			1 => {
-				win.printw("Seems like your phone's got service.");
+				win.printw("* Seems like your phone's got service.");
 		    	win.mv(6, 0); win.printw("[CALL]\n[BACK]");
 			}
 			_ => {
-				win.printw("Not much to see up here.");
+				win.printw("* Not much to see up here.");
 				win.mv(6, 0); win.printw("[COLD]\n[BACK]");
 			}
 		}
@@ -59,7 +59,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						msw(&win, "Indeed it is quite cold here.", 9, 1000, false);
+						msw(&win, "Indeed, it is quite cold here.", 9, 1000, false);
 						screen_smash(&win, 9, 9);
 					}
 					_ => {}
@@ -77,7 +77,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 fn hill_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("You venture out towards a gargantuan hill.\nBeside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
+		win.printw("* You venture out towards a gargantuan hill.\n* Beside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
 		match table_seek(&win, 6, 9, 12) {
 			6 => {
 				match reader("data.txt")[4] {
@@ -125,15 +125,15 @@ fn cave_continue_page(win: &pancurses::Window) {
 		match reader("data.txt")[0] {
 			0|2 => {
 				match reader("data.txt")[3] {
-					0 => { win.printw("You continue deeper. A chest is sat against the wall."); }
-					2 => { win.printw("There's that knife chest again."); }
-					_ => { win.printw("You continue deeper, and stumble across another chest."); }
+					0 => { win.printw("* You continue deeper. A chest is sat against the wall."); }
+					2 => { win.printw("* There's that knife chest again."); }
+					_ => { win.printw("* You continue deeper, and stumble across another chest."); }
 				}
 				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
 			1 => {
-				win.printw("An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
+				win.printw("* An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
 				pos = 8;
 			}
 			_ => { pos = 420 }
@@ -148,7 +148,7 @@ fn cave_continue_page(win: &pancurses::Window) {
 fn cave_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("You make your way towards a deep, cavernous grotto.\nHardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
+		win.printw("* You make your way towards a deep, cavernous grotto.\n* Hardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
 		match table_seek(&win, 6, 9, 11) {
 			6 => {
 				screen_smash(&win, 3, 9);
@@ -183,18 +183,18 @@ fn cave_page(win: &pancurses::Window) {
 fn landing_site(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("You are Liam. An astronaut by trade, you took a bad\nturn on the Space Belt, and crash-landed on this strange,\nalien planet. You awaken, lain in a vast field of grass.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
-		match table_seek(&win, 7, 10, 7) {
-			7 => {
+		win.printw("* You are Liam. Your only memories are of crashing on a distant planet.\n* You awaken, lain in a vast field of grass.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
+		match table_seek(&win, 6, 9, 7) {
+			6 => {
 				screen_smash(&win, 3, 10);
 				hill_page(&win);
 			}
-			8 => {
+			7 => {
 				screen_smash(&win, 3, 10);
 				cave_page(&win);
 			}
-			9 => {}
-			10|_ => {
+			8 => {}
+			9|_ => {
 				screen_smash(&win, 0, 10);
 				break;
 			}
