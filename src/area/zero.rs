@@ -216,9 +216,7 @@ pub fn splash_screen(win: &pancurses::Window) {
 			6 => {
 				if exists("data.txt") {
 					win.mv(10, 0);
-					obo_blitter(&win, "Are you sure you want to reset?", 10);
-					win.mv(12, 0);
-					win.printw("[YES]\n[NO ]");
+					obo_blitter(&win, "Are you sure you want to reset?\n\n[YES]\n[NO ]", 10);
 					match table_seek(&win, 12, 13, 6) {
 						12 => {
 							remove_file("data.txt").unwrap();
