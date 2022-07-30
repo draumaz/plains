@@ -4,7 +4,7 @@ version = "0.26.0"
 edition = "2018"
 
 [dependencies]
-savesys = "3.5.9"
+savesys = "3.5.10"
 rand = "0.8.5"
 
 [dependencies.pancurses]
