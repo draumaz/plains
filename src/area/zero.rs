@@ -119,12 +119,41 @@ fn hill_page(win: &pancurses::Window) {
 	}
 }
 
+fn cave_continue_page(win: &pancurses::Window) {
+	let mut pos: i32;
+	loop {
+		win.mv(3, 0);
+		match reader("data.txt")[0] {
+			0|2 => {
+				match reader("data.txt")[3] {
+					0 => { win.printw("You continue deeper. A chest is sat against the wall.\n\n[OPEN]\n[BACK]"); }
+					2 => { win.printw("There's that knife chest again.\n\n[OPEN]\n[BACK]"); }
+					_ => { win.printw("You continue deeper, and stumble across another chest.\n\n[OPEN]\n[BACK]"); }
+				}
+				pos = 7;
+			}
+			1 => {
+				win.printw("An empty chest lies in the darkness.\n\n[PUT BACK]\n[BACK    ]");
+				pos = 11;
+			}
+			_ => { pos = 420 }
+		}
+		match table_seek(&win, 5, 6, pos) {
+			5 => {}
+			6|_ => {break}
+		}
+	}
+}
+
 fn cave_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
 		win.printw("You make your way towards a deep, cavernous grotto.\nHardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
 		match table_seek(&win, 6, 9, 11) {
-			6 => {}
+			6 => {
+				screen_smash(&win, 3, 9);
+				cave_continue_page(&win);
+			}
 			7 => {
 				let mut status = reader("data.txt")[2];
 				if status <= 7 { status += 1; writer("data.txt", 2, status )}
