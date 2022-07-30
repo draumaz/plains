@@ -20,4 +20,6 @@ The Plains is a game about You, a goat named Liam. You've crash landed on the su
 
 # Thanks to
 
-- https://
+### the <a href="https://crates.io/crates/pancurses">pancurses</a> team, without which this project would have been impossible.
+### <a href="https://deltadove.lol">DeltaDove</a>, for inspiring a significant amount of gameplay and story
+### Bryce Cano
