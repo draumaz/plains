@@ -119,6 +119,22 @@ fn hill_page(win: &pancurses::Window) {
 	}
 }
 
+fn cave_goleft_battle_page(win: &pancurses::Window) {
+	let mut ph = 10; let mut eh = 50;
+	win.mv(3, 0);
+	obo_blitter(&win, "* | LIAM   | HP: ", 10); win.printw(ph.to_string());
+	win.mv(4, 0);
+	obo_blitter(&win, "* | LIZARD | HP: ", 10); win.printw(eh.to_string());
+	loop {
+		win.mv(6, 0);
+		win.printw("[FIGHT]\n[LEAVE]");
+		match table_seek(&win, 6, 7, 8) {
+			6 => {}
+			7|_ => {screen_smash(&win, 3, 9); break}
+		}
+	}
+}
+
 fn cave_continue_page(win: &pancurses::Window) {
 	let mut pos: i32;
 	loop {
@@ -172,7 +188,10 @@ fn cave_page(win: &pancurses::Window) {
 				sleep(500);
 				screen_smash(&win, 11, 11);
 			}
-			8 => {}
+			8 => {
+				screen_smash(&win, 3, 9);
+				cave_goleft_battle_page(&win);
+			}
 			9|_ => {break}
 		}
 	}
