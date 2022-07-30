@@ -31,6 +31,15 @@ pub fn obo_blitter(win: &pancurses::Window, text: &'static str, stop: u64) {
 	}
 }
 
+pub fn obo_wiper(win: &pancurses::Window, y: i32, start: i32, stop: u64) {
+	for i in (0..start).rev() {
+		win.mv(y, i);
+		win.printw(" ");
+		win.refresh();
+		sleep(stop);
+	}
+}
+
 pub fn msw_blitter(win: &pancurses::Window, text: &'static str, pos: i32, stop: u64, obo: bool) {
 	win.mv(pos, 0);
 	if obo { obo_blitter(&win, text, stop) } else { win.printw(text); }

@@ -1,4 +1,4 @@
-use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, msw_blitter}, misc::sleep};
+use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, obo_wiper, msw_blitter}, misc::sleep};
 use savesys::{exists, generate, reader, writer};
 use std::fs::remove_file;
 
@@ -249,11 +249,10 @@ pub fn splash_screen(win: &pancurses::Window) {
 				}
 			}
 			7 => {
-				msw_blitter(&win, "Copyright (c) 2021-22 draumaz.", 10, 10, true);
-				sleep(500);
-				msw_blitter(&win, "All rights reserved.", 11, 10, true);
-				sleep(500);
-				screen_smash(&win, 10, 11);
+				msw_blitter(&win, "Copyright (c) 2021-22 draumaz.", 10, 10, true); sleep(500);
+				msw_blitter(&win, "All rights reserved.", 11, 10, true); sleep(500);
+				obo_wiper(&win, 11, "All rights reserved.".len() as i32, 10);
+				obo_wiper(&win, 10, "Copyright (c) 2021-22 draumaz.".len() as i32, 10);
 			}
 			8|_ => {break}
 		}
