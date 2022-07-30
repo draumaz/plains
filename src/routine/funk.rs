@@ -22,6 +22,7 @@ pub fn table_seek(win: &pancurses::Window, first: i32, last: i32, x: i32) -> i32
 				win.mv(y, x); win.printw("\n");
 				return y;
 			},
+			Some(Input::Character('q')) => {return 99},
 			Some(_) => (),
 			None => ()
 		}
