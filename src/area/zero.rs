@@ -1,4 +1,4 @@
-use crate::routine::{funk::{table_seek, screen_smash}, flourish::display_header, misc::sleep};
+use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep};
 use savesys::{exists, generate, reader, writer};
 use std::fs::remove_file;
 
@@ -216,14 +216,16 @@ pub fn splash_screen(win: &pancurses::Window) {
 			6 => {
 				if exists("data.txt") {
 					win.mv(10, 0);
-					win.printw("Are you sure you want to reset?\n\n[YES]\n[NO ]");
+					obo_blitter(&win, "Are you sure you want to reset?", 10);
+					win.mv(12, 0);
+					win.printw("[YES]\n[NO ]");
 					match table_seek(&win, 12, 13, 6) {
 						12 => {
 							remove_file("data.txt").unwrap();
 							generate("data.txt", 20);
 							writer("data.txt", 1, 1);
 							win.mv(15, 0);
-							win.printw("Save reset.");
+							obo_blitter(&win, "Save reset.", 10);
 							win.refresh();
 							sleep(500);
 							screen_smash(&win, 10, 15);
@@ -235,9 +237,13 @@ pub fn splash_screen(win: &pancurses::Window) {
 			}
 			7 => {
 				win.mv(10, 0);
-				win.printw("Copyright 2021-22 draumaz.\nAll rights reserved.");
+				obo_blitter(&win, "Copyright (c) 2021-22 draumaz.", 10);
 				win.refresh();
-				sleep(1000);
+				sleep(500);
+				win.mv(11, 0);
+				obo_blitter(&win, "All rights reserved.", 10);
+				win.refresh();
+				sleep(500);
 				screen_smash(&win, 10, 11);
 			}
 			8|_ => {break}
