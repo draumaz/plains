@@ -35,7 +35,7 @@ fn hill_river_page(win: &pancurses::Window) {
 					}
 				}
 			}
-			7|_ => {break}
+			7|_ => {screen_smash(&win, 3, 7); break}
 		}
 	}
 }
@@ -66,10 +66,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 				}
 				continue;
 			}
-			7|_ => {
-				screen_smash(&win, 3, 7);
-				break;
-			}
+			7|_ => {screen_smash(&win, 3, 7); break}
 		}
 	}
 }
@@ -96,10 +93,7 @@ fn hill_page(win: &pancurses::Window) {
 				screen_smash(&win, 3, 9);
 				hill_river_page(&win);
 			}
-			9|_ => {
-				screen_smash(&win, 3, 9);
-				break;
-			}
+			9|_ => {screen_smash(&win, 3, 9); break}
 		}
 	}
 }
@@ -140,7 +134,7 @@ fn cave_continue_page(win: &pancurses::Window) {
 		}
 		match table_seek(&win, 5, 6, pos) {
 			5 => {}
-			6|_ => {break}
+			6|_ => {screen_smash(&win, 3, 6); break}
 		}
 	}
 }
@@ -194,10 +188,7 @@ fn landing_site(win: &pancurses::Window) {
 				cave_page(&win);
 			}
 			8 => {}
-			9|_ => {
-				screen_smash(&win, 0, 10);
-				break;
-			}
+			9|_ => {screen_smash(&win, 0, 10); break}
 		}
 	}
 }
