@@ -24,18 +24,11 @@ pub fn display_header(win: &pancurses::Window) {
 
 pub fn obo_blitter(win: &pancurses::Window, text: String, pos: i32, stop: u64) {
 	win.mv(pos, 0);
-	for c in text.chars() {
-		win.printw(c.to_string());
-		win.refresh();
-		sleep(stop);
-	}
+	for c in text.chars() { win.printw(c.to_string()); win.refresh(); sleep(stop); }
 }
 
-pub fn msw_blitter(win: &pancurses::Window, text: String, pos: i32, stop: u64, obo: bool) {
-	win.mv(pos, 0);
-	if obo { obo_blitter(&win, text, pos, stop) } else { win.printw(text); }
-	win.refresh();
-	sleep(stop);
+pub fn msw_blitter(win: &pancurses::Window, text: String, pos: i32, stop: u64) {
+	win.mv(pos, 0); win.printw(text); win.refresh(); sleep(stop);
 }
 
 pub fn obo_wiper(win: &pancurses::Window, y: i32, leng: i32, stop: u64) {

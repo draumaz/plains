@@ -1,4 +1,4 @@
-use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, obo_wiper, msw_blitter}, misc::sleep};
+use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, obo_wiper}, misc::sleep};
 use savesys::{exists, generate, reader, writer};
 use std::fs::remove_file;
 
@@ -81,7 +81,7 @@ fn hill_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						msw_blitter(&win, String::from("Seems like you lost your phone in the crash."), 11, 1000, false);
+						obo_blitter(&win, String::from("Seems like you lost your phone in the crash."), 11, 10);
 						screen_smash(&win, 11, 11);
 					}
 					_ => {}
@@ -102,8 +102,8 @@ fn hill_page(win: &pancurses::Window) {
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
 	let ph = 10; let eh = 50; let mut inc = 0;
-	msw_blitter(&win, String::from("│ * LIAM   | HP: "), 3, 10, true); win.printw(ph.to_string());
-	msw_blitter(&win, String::from("│ * LIZARD | HP: "), 4, 10, true); win.printw(eh.to_string());
+	obo_blitter(&win, String::from("│ * LIAM   | HP: "), 3, 10); win.printw(ph.to_string());
+	obo_blitter(&win, String::from("│ * LIZARD | HP: "), 4, 10); win.printw(eh.to_string());
 	loop {
 		obo_blitter(&win, String::from("[FIGHT]\n[TALK ]\n[LEAVE]"), 6, 10);
 		match table_seek(&win, 6, 8, 8) {
@@ -122,9 +122,9 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 									win.refresh();
 									sleep(25);
 								}
-								msw_blitter(&win, String::from("│ * LIZARD | HP: 0 "), 4, 10, false);
+								obo_blitter(&win, String::from("│ * LIZARD | HP: 0 "), 4, 10);
 								sleep(2000);
-								msw_blitter(&win, String::from("Blood splatters on your suit."), 14, 10, true);
+								obo_blitter(&win, String::from("Blood splatters on your suit."), 14, 10);
 								sleep(4000);
 								screen_smash(&win, 3, 14);
 								break;
@@ -135,21 +135,21 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 					_ => {
 						match inc {
 							0 => {
-								msw_blitter(&win, String::from("You try to hit him, and he doesn't even flinch."), 10, 10, true);
+								obo_blitter(&win, String::from("You try to hit him, and he doesn't even flinch."), 10, 10);
 								sleep(500);
-								msw_blitter(&win, String::from("Seems like he doesn't want to entertain this much longer."), 11, 10, true);
+								obo_blitter(&win, String::from("Seems like he doesn't want to entertain this much longer."), 11, 10);
 								sleep(500);
 							}
 							6 => {
-								msw_blitter(&win, String::from("The lizard man is sick of you."), 10, 10, true);
+								obo_blitter(&win, String::from("The lizard man is sick of you."), 10, 10);
 								sleep(500);
-								msw_blitter(&win, String::from("He disappears into the distance."), 11, 10, true);
+								obo_blitter(&win, String::from("He disappears into the distance."), 11, 10);
 								sleep(1000);
 								screen_smash(&win, 3, 11);
 								break;
 							}
 							1|2|3|4|5|_ => {
-								msw_blitter(&win, String::from("..."), 10, 10, true);
+								obo_blitter(&win, String::from("..."), 10, 10);
 								sleep(500);
 							}
 						}
@@ -160,8 +160,13 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 			}
 			7 => {
 				match reader("data.txt")[0] {
-					1 => { msw_blitter(&win, String::from("He's afraid of you."), 10, 20, true); sleep(1000); }
-					_ => { msw_blitter(&win, String::from("He doesn't quite understand why\nyou want to check the chest so badly."), 10, 20, true); sleep(500); }
+					1 => { obo_blitter(&win, String::from("He's afraid of you."), 10, 20); sleep(1000); }
+					_ => {
+						obo_blitter(&win, String::from("He doesn't quite understand why\nyou want to check the chest so badly."), 10, 20);
+						sleep(500);
+						obo_wiper(&win, 11, String::from("you want to check the chest so badly.").len() as i32, 20);
+						obo_wiper(&win, 10, String::from("He doesn't quite understand why").len() as i32, 20);
+					}
 				}
 			}
 			8|_ => {screen_smash(&win, 3, 9); break}
@@ -198,12 +203,14 @@ fn cave_continue_page(win: &pancurses::Window) {
 				match reader("data.txt")[0] {
 				1 => {
 					writer("data.txt", 0, 2);
-					msw_blitter(&win, String::from("You put the knife back."), 8, 10, true);
+					obo_blitter(&win, String::from("You put the knife back."), 8, 10);
+					obo_wiper(&win, 10, String::from("You put the knife back.").len() as i32, 10);
 					sleep(1000);
 				}
 					0|2|_ => {
 						writer("data.txt", 0, 1);
-						msw_blitter(&win, String::from("You take the knife."), 8, 10, true)	;
+						obo_blitter(&win, String::from("You take the knife."), 8, 10);
+						obo_wiper(&win, 10, String::from("You take the knife.").len() as i32, 10);
 						sleep(1000);
 					}
 				}
@@ -310,8 +317,8 @@ pub fn splash_screen(win: &pancurses::Window) {
 				}
 			}
 			7 => {
-				msw_blitter(&win, String::from("Copyright (c) 2021-22 draumaz."), 10, 10, true); sleep(500);
-				msw_blitter(&win, String::from("All rights reserved."), 11, 10, true); sleep(500);
+				obo_blitter(&win, String::from("Copyright (c) 2021-22 draumaz."), 10, 10); sleep(500);
+				obo_blitter(&win, String::from("All rights reserved."), 11, 10); sleep(500);
 				obo_wiper(&win, 11, String::from("All rights reserved.").len() as i32, 10);
 				obo_wiper(&win, 10, String::from("Copyright (c) 2021-22 draumaz.").len() as i32, 10);
 			}
