@@ -142,17 +142,16 @@ fn cave_continue_page(win: &pancurses::Window) {
 				match reader("data.txt")[0] {
 				1 => {
 					writer("data.txt", 0, 2);
-					display_header(&win);
 					msw_blitter(&win, "You put the knife back.", 8, 10, true);
 					sleep(1000);
 				}
 					0|2|_ => {
 						writer("data.txt", 0, 1);
-						display_header(&win);
 						msw_blitter(&win, "You take the knife.", 8, 10, true)	;
 						sleep(1000);
 					}
 				}
+				display_header(&win);
 				screen_smash(&win, 3, 8);
 			}
 			6|_ => {screen_smash(&win, 3, 6); break}
