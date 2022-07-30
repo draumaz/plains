@@ -99,7 +99,7 @@ fn hill_page(win: &pancurses::Window) {
 }
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
-	let ph = 10; let mut eh = 50; let mut inc = 0;
+	let ph = 10; let eh = 50; let mut inc = 0;
 	msw_blitter(&win, "│ * LIAM   | HP: ", 3, 10, true); win.printw(ph.to_string());
 	msw_blitter(&win, "│ * LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
 	loop {
@@ -113,7 +113,21 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 						obo_blitter(&win, "─> [FISTS]\n─> [KNIFE]\n─> [BACK ]", 10);
 						match table_seek(&win, 10, 12, 11) {
 							10 => {}
-							11 => {}
+							11 => {
+								writer("data.txt", 7, 1);
+								for i in (0..50).rev() {
+									win.mv(4, 17);
+									win.printw(i.to_string());
+									win.refresh();
+									sleep(25);
+								}
+								msw_blitter(&win, "│ * LIZARD | HP: 0 ", 4, 10, false);
+								sleep(2000);
+								msw_blitter(&win, "Blood splatters on your suit.", 14, 10, true);
+								sleep(4000);
+								screen_smash(&win, 3, 14);
+								break;
+							}
 							12|_ => {screen_smash(&win, 10, 12)}
 						}
 					}
@@ -197,10 +211,15 @@ fn cave_continue_page(win: &pancurses::Window) {
 }
 
 fn cave_page(win: &pancurses::Window) {
+	let mut length: i32;
 	loop {
 		win.mv(3, 0);
-		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]");
-		match table_seek(&win, 6, 9, 11) {
+		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n");
+		match reader("data.txt")[7] {
+			1 => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8;}
+			0|_ => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9;}
+		}
+		match table_seek(&win, 6, length, 11) {
 			6 => {
 				screen_smash(&win, 3, 9);
 				cave_continue_page(&win);
@@ -223,8 +242,10 @@ fn cave_page(win: &pancurses::Window) {
 				screen_smash(&win, 11, 11);
 			}
 			8 => {
-				screen_smash(&win, 3, 9);
-				cave_goleft_battle_page(&win);
+				if reader("data.txt")[7] == 0 {
+					screen_smash(&win, 3, 9);
+					cave_goleft_battle_page(&win);
+				} else { screen_smash(&win, 3, 9); break }
 			}
 			9|_ => {screen_smash(&win, 3, 9); break}
 		}
