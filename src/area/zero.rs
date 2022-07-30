@@ -116,6 +116,7 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 							11 => {
 								writer("data.txt", 7, 1);
 								for i in (0..50).rev() {
+									if i == 9 { win.mv(4, 18); win.printw(" "); }
 									win.mv(4, 17);
 									win.printw(i.to_string());
 									win.refresh();
@@ -154,11 +155,15 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 						}
 					}
 				}
-				
 				screen_smash(&win, 10, 11);
 				inc += 1;
 			}
-			7 => {}
+			7 => {
+				match reader("data.txt")[0] {
+					1 => { msw_blitter(&win, "He's afraid of you.", 10, 20, true); sleep(1000); }
+					_ => { msw_blitter(&win, "He doesn't quite understand why\nyou want to check the chest so badly.", 10, 20, true); sleep(500); }
+				}
+			}
 			8|_ => {screen_smash(&win, 3, 9); break}
 		}
 	}
