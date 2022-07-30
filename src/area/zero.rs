@@ -175,7 +175,7 @@ fn cave_page(win: &pancurses::Window) {
 				screen_smash(&win, 3, 9);
 				cave_goleft_battle_page(&win);
 			}
-			9|_ => {break}
+			9|_ => {screen_smash(&win, 3, 9); break}
 		}
 	}
 }
