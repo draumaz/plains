@@ -11,3 +11,10 @@ pub fn obo_blitter(win: &pancurses::Window, text: &'static str, stop: u64) {
 		sleep(stop);
 	}
 }
+
+pub fn msw(win: &pancurses::Window, text: &'static str, pos: i32, stop: u64, obo: bool) {
+	win.mv(pos, 0);
+	if obo { obo_blitter(&win, text, stop) } else { win.printw(text); }
+	win.refresh();
+	sleep(stop);
+}

@@ -1,4 +1,4 @@
-use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep};
+use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, msw}, misc::sleep};
 use savesys::{exists, generate, reader, writer};
 use std::fs::remove_file;
 
@@ -21,14 +21,8 @@ fn hill_river_page(win: &pancurses::Window) {
 		}
 		match table_seek(&win, 5, 7, 8) {
 			5 => {
-				win.mv(9, 0);
-				win.printw("You sit down a spell and take in the nature.");
-				win.refresh();
-				sleep(1500);
-				win.mv(10, 0);
-				win.printw("How calming!");
-				win.refresh();
-				sleep(1000);
+				msw(&win, "You sit down a spell and take in the nature.", 9, 1500, false);
+				msw(&win, "How calming!", 10, 1000, false);
 				screen_smash(&win, 9, 10);
 			}
 			6 => {
@@ -36,10 +30,7 @@ fn hill_river_page(win: &pancurses::Window) {
 					1 => {}
 					3 => {}
 					2|_ => {
-						win.mv(9, 0);
-						win.printw("This is basically the same thing as relaxing, right?");
-						win.refresh();
-						sleep(1000);
+						msw(&win, "This is basically the same thing as relaxing, right?", 9, 1000, false);
 						screen_smash(&win, 9, 9);
 					}
 				}
@@ -68,10 +59,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						win.mv(9, 0);
-						win.printw("Indeed, it's quite cold up here.");
-						win.refresh();
-						sleep(1000);
+						msw(&win, "Indeed it is quite cold here.", 9, 1000, false);
 						screen_smash(&win, 9, 9);
 					}
 					_ => {}
@@ -94,10 +82,7 @@ fn hill_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						win.mv(11, 0);
-						win.printw("Seems like you lost your phone in the crash.");
-						win.refresh();
-						sleep(1000);
+						msw(&win, "Seems like you lost your phone in the crash.", 11, 1000, false);
 						screen_smash(&win, 11, 11);
 					}
 					_ => {}
@@ -254,13 +239,9 @@ pub fn splash_screen(win: &pancurses::Window) {
 				}
 			}
 			7 => {
-				win.mv(10, 0);
-				obo_blitter(&win, "Copyright (c) 2021-22 draumaz.", 10);
-				win.refresh();
+				msw(&win, "Copyright (c) 2021-22 draumaz.", 10, 10, true);
 				sleep(500);
-				win.mv(11, 0);
-				obo_blitter(&win, "All rights reserved.", 10);
-				win.refresh();
+				msw(&win, "All rights reserved.", 11, 10, true);
 				sleep(500);
 				screen_smash(&win, 10, 11);
 			}
