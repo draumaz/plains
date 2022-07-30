@@ -99,14 +99,51 @@ fn hill_page(win: &pancurses::Window) {
 }
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
-	let ph = 10; let eh = 50;
+	let ph = 10; let mut eh = 50; let mut inc = 0;
 	msw_blitter(&win, "│ * LIAM   | HP: ", 3, 10, true); win.printw(ph.to_string());
 	msw_blitter(&win, "│ * LIZARD | HP: ", 4, 10, true); win.printw(eh.to_string());
 	loop {
 		win.mv(6, 0);
 		obo_blitter(&win, "[FIGHT]\n[TALK ]\n[LEAVE]", 10);
 		match table_seek(&win, 6, 8, 8) {
-			6 => {}
+			6 => {
+				match reader("data.txt")[0] {
+					1 => {
+						win.mv(10, 0);
+						obo_blitter(&win, "─> [FISTS]\n─> [KNIFE]\n─> [BACK ]", 10);
+						match table_seek(&win, 10, 12, 11) {
+							10 => {}
+							11 => {}
+							12|_ => {screen_smash(&win, 10, 12)}
+						}
+					}
+					_ => {
+						match inc {
+							0 => {
+								msw_blitter(&win, "You try to hit him, and he doesn't even flinch.", 10, 10, true);
+								sleep(500);
+								msw_blitter(&win, "Seems like he doesn't want to entertain this much longer.", 11, 10, true);
+								sleep(500);
+							}
+							6 => {
+								msw_blitter(&win, "The lizard man is sick of you.", 10, 10, true);
+								sleep(500);
+								msw_blitter(&win, "He disappears into the distance.", 11, 10, true);
+								sleep(1000);
+								screen_smash(&win, 3, 11);
+								break;
+							}
+							1|2|3|4|5|_ => {
+								msw_blitter(&win, "...", 10, 10, true);
+								sleep(500);
+							}
+						}
+					}
+				}
+				
+				screen_smash(&win, 10, 11);
+				inc += 1;
+			}
 			7 => {}
 			8|_ => {screen_smash(&win, 3, 9); break}
 		}
