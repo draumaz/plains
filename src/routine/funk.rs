@@ -9,20 +9,17 @@ pub fn table_seek(win: &pancurses::Window, first: i32, last: i32, x: i32) -> i32
 			Some(Input::KeyUp) | 
 			Some(Input::Character('w')) |
 			Some(Input::Character('i')) => {
-				win.mv(y, x);
-				win.printw("\n");
+				win.mv(y, x); win.printw("\n");
 				if y == first { y = last } else { y -= 1 }
 			},
 			Some(Input::KeyDown) |
 			Some(Input::Character('s')) |
 			Some(Input::Character('k')) => {
-				win.mv(y, x);
-				win.printw("\n");
+				win.mv(y, x); win.printw("\n");
 				if y == last { y = first } else { y += 1 }
 			},
 			Some(Input::Character('\n')) => { 
-				win.mv(y, x);
-				win.printw("\n");
+				win.mv(y, x); win.printw("\n");
 				return y;
 			},
 			Some(_) => (),
