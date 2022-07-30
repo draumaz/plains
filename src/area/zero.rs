@@ -117,11 +117,10 @@ fn cave_continue_page(win: &pancurses::Window) {
 	let mut pos: i32;
 	loop {
 		win.mv(3, 0);
-		match reader("data.txt")[0] {
-			0|2 => {
-				match reader("data.txt")[3] {
+		match reader("data.txt")[0] { // knife
+			0 => {
+				match reader("data.txt")[3] { // also bottle
 					0 => { win.printw("* You continue deeper. A chest is sat against the wall."); }
-					2 => { win.printw("* There's that knife chest again."); }
 					_ => { win.printw("* You continue deeper, and stumble across another chest."); }
 				}
 				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
@@ -131,10 +130,31 @@ fn cave_continue_page(win: &pancurses::Window) {
 				win.printw("* An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
 				pos = 8;
 			}
-			_ => { pos = 420 }
+			2 => { 
+				win.printw("* There's that chest again.");
+				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
+				pos = 7;
+			}
+			_ => { pos = 420; }
 		}
 		match table_seek(&win, 5, 6, pos) {
-			5 => {}
+			5 => {
+				match reader("data.txt")[0] {
+				1 => {
+					writer("data.txt", 0, 2);
+					display_header(&win);
+					msw_blitter(&win, "You put the knife back.", 8, 10, true);
+					sleep(1000);
+				}
+					0|2|_ => {
+						writer("data.txt", 0, 1);
+						display_header(&win);
+						msw_blitter(&win, "You take the knife.", 8, 10, true)	;
+						sleep(1000);
+					}
+				}
+				screen_smash(&win, 3, 8);
+			}
 			6|_ => {screen_smash(&win, 3, 6); break}
 		}
 	}
