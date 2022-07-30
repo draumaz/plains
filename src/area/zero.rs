@@ -178,7 +178,7 @@ fn cave_page(win: &pancurses::Window) {
 fn landing_site(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("* You are Liam. Your only memories are of crashing on a distant planet.\n* You awaken, lain in a vast field of grass.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
+		win.printw("* You are Liam. Your only memories are of crashing on this distant planet.\n* You awaken, lain in a vast field of grass. Your back hurts.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
 		match table_seek(&win, 6, 9, 7) {
 			6 => {
 				screen_smash(&win, 3, 10);
