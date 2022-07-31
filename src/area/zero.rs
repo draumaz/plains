@@ -1,6 +1,5 @@
 use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter, obo_wiper}, misc::sleep};
 use savesys::{exists, generate, reader, writer};
-use std::fs::remove_file;
 
 fn hill_river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
@@ -101,7 +100,7 @@ fn hill_page(win: &pancurses::Window) {
 }
 
 fn cave_goleft_battle_page(win: &pancurses::Window) {
-	let ph = 10; let eh = 50; let mut inc = 0;
+	let ph = 20; let eh = 50; let mut inc = 0;
 	obo_blitter(&win, String::from("│ * LIAM   | HP: "), 3, 10); win.printw(ph.to_string());
 	obo_blitter(&win, String::from("│ * LIZARD | HP: "), 4, 10); win.printw(eh.to_string());
 	loop {
@@ -114,8 +113,9 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 						match table_seek(&win, 10, 12, 11) {
 							10 => {}
 							11 => {
-								writer("data.txt", 7, 1);
 								writer("data.txt", 3, 1);
+								writer("data.txt", 7, 1);
+								writer("data.txt", 8, 1);
 								for i in (0..50).rev() {
 									if i == 9 { win.mv(4, 18); win.printw(" "); }
 									win.mv(4, 17);
@@ -146,11 +146,20 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 							}
 							6 => {
 								writer("data.txt", 7, 2);
+								writer("data.txt", 8, 2);
 								obo_blitter(&win, String::from("The lizard man is sick of you."), 10, 10);
-								sleep(500);
-								obo_blitter(&win, String::from("He disappears into the distance."), 11, 10);
 								sleep(1000);
-								screen_smash(&win, 3, 11);
+								obo_blitter(&win, String::from("He disappears into the distance."), 11, 10);
+								sleep(2000);
+								obo_blitter(&win, String::from("But not before punching you for the trouble."), 12, 10);
+								for i in (10..ph).rev() {
+									win.mv(3, 17);
+									win.printw(i.to_string());
+									win.refresh();
+									sleep(25);
+								}
+								sleep(2000);
+								screen_smash(&win, 3, 12);
 								break;
 							}
 							1|2|3|4|5|_ => {
@@ -316,7 +325,7 @@ pub fn splash_screen(win: &pancurses::Window) {
 							//generate("data.txt", 20);
 							writer("data.txt", 0, 0);
 							writer("data.txt", 1, 1);
-							for i in 2..6 { writer("data.txt", i, 0); }
+							for i in 2..8 { writer("data.txt", i, 0); }
 							obo_blitter(&win, String::from("Save reset."), 15, 10);
 							sleep(500);
 							obo_wiper(&win, 15, String::from("Save reset.").len() as i32, 10);

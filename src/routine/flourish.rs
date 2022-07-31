@@ -10,7 +10,8 @@ pub fn display_header(win: &pancurses::Window) {
 			win.printw(reader("data.txt")[0].to_string());
 			win.printw("x KNIFE]");
 		}
-		_ => { win.mv(1, 29); win.printw("              "); }
+		0 => { win.mv(1, 29); win.printw("              "); }
+		2|_ => { win.mv(1, 16); win.printw("              "); }
 	}
 	match sav[3] {
 		1 => {
