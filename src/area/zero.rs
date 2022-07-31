@@ -115,6 +115,7 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 							10 => {}
 							11 => {
 								writer("data.txt", 7, 1);
+								writer("data.txt", 3, 1);
 								for i in (0..50).rev() {
 									if i == 9 { win.mv(4, 18); win.printw(" "); }
 									win.mv(4, 17);
@@ -124,9 +125,12 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 								}
 								obo_blitter(&win, String::from("│ * LIZARD | HP: 0 "), 4, 10);
 								sleep(2000);
-								obo_blitter(&win, String::from("Blood splatters on your suit."), 14, 10);
-								sleep(4000);
-								screen_smash(&win, 3, 14);
+								obo_blitter(&win, String::from("Blood splatters over your suit."), 14, 10);
+								sleep(5000);
+								display_header(&win);
+								obo_blitter(&win, String::from("You take the bottle."), 15, 10);
+								sleep(2000);
+								screen_smash(&win, 3, 15);
 								break;
 							}
 							12|_ => {screen_smash(&win, 10, 12)}
@@ -141,6 +145,7 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 								sleep(500);
 							}
 							6 => {
+								writer("data.txt", 7, 2);
 								obo_blitter(&win, String::from("The lizard man is sick of you."), 10, 10);
 								sleep(500);
 								obo_blitter(&win, String::from("He disappears into the distance."), 11, 10);
@@ -160,12 +165,16 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 			}
 			7 => {
 				match reader("data.txt")[0] {
-					1 => { obo_blitter(&win, String::from("He's afraid of you."), 10, 20); sleep(1000); }
+					1 => { 
+						obo_blitter(&win, String::from("He's afraid of you."), 10, 30); 
+						sleep(1000); 
+						obo_wiper(&win, 10, String::from("He's afraid of you.").len() as i32, 30);
+					}
 					_ => {
-						obo_blitter(&win, String::from("He doesn't quite understand why\nyou want to check the chest so badly."), 10, 20);
+						obo_blitter(&win, String::from("He doesn't quite understand why\nyou want to check the chest so badly."), 10, 10);
 						sleep(500);
-						obo_wiper(&win, 11, String::from("you want to check the chest so badly.").len() as i32, 20);
-						obo_wiper(&win, 10, String::from("He doesn't quite understand why").len() as i32, 20);
+						obo_wiper(&win, 11, String::from("you want to check the chest so badly.").len() as i32, 10);
+						obo_wiper(&win, 10, String::from("He doesn't quite understand why").len() as i32, 10);
 					}
 				}
 			}
@@ -228,7 +237,7 @@ fn cave_page(win: &pancurses::Window) {
 		win.mv(3, 0);
 		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n");
 		match reader("data.txt")[7] {
-			1 => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8;}
+			1|2 => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8;}
 			0|_ => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9;}
 		}
 		match table_seek(&win, 6, length, 11) {
