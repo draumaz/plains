@@ -3,21 +3,23 @@ use savesys::reader;
 
 pub fn display_header(win: &pancurses::Window) {
 	win.mv(1, 0); win.printw("The Plains v"); win.printw(PLAINS_VERSION);
-	match reader("data.txt")[0] {
+	let sav = reader("data.txt");
+	match sav[0] {
 		1 => {
 			win.printw(" · [");
 			win.printw(reader("data.txt")[0].to_string());
 			win.printw("x KNIFE]");
 		}
-		_ => { win.printw("           "); }
+		_ => { win.mv(1, 29); win.printw("              "); }
 	}
-	match reader("data.txt")[3] {
+	match sav[3] {
 		1 => {
+			if sav[0] != 1 { win.mv(1, 16); } else { win.mv(1, 29); }
 			win.printw(" · [");
 			win.printw(reader("data.txt")[3].to_string());
 			win.printw("x BOTTLE]");
 		}
-		_ => { win.printw("           "); }
+		_ => { win.mv(1, 29); win.printw("           "); }
 	}
 	win.mv(2, 0); win.printw("┌───────────────────>");
 }

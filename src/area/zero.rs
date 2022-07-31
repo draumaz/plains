@@ -210,20 +210,21 @@ fn cave_continue_page(win: &pancurses::Window) {
 		match table_seek(&win, 5, 6, pos) {
 			5 => {
 				match reader("data.txt")[0] {
-				1 => {
-					writer("data.txt", 0, 2);
-					obo_blitter(&win, String::from("You put the knife back."), 8, 10);
-					obo_wiper(&win, 10, String::from("You put the knife back.").len() as i32, 10);
-					sleep(1000);
-				}
-					0|2|_ => {
+					1 => {
+						writer("data.txt", 0, 2);
+						display_header(&win);
+						obo_blitter(&win, String::from("You put the knife back."), 8, 10);
+						obo_wiper(&win, 10, String::from("You put the knife back.").len() as i32, 10);
+						sleep(500);
+					}
+					_ => {
 						writer("data.txt", 0, 1);
+						display_header(&win);
 						obo_blitter(&win, String::from("You take the knife."), 8, 10);
 						obo_wiper(&win, 10, String::from("You take the knife.").len() as i32, 10);
-						sleep(1000);
+						sleep(500);
 					}
 				}
-				display_header(&win);
 				screen_smash(&win, 3, 8);
 			}
 			6|_ => {screen_smash(&win, 3, 6); break}
@@ -311,9 +312,11 @@ pub fn splash_screen(win: &pancurses::Window) {
 					obo_blitter(&win, String::from("Are you sure you want to reset?\n\n[YES]\n[NO ]"), 10, 10);
 					match table_seek(&win, 12, 13, 6) {
 						12 => {
-							remove_file("data.txt").unwrap();
-							generate("data.txt", 20);
+							//remove_file("data.txt").unwrap();
+							//generate("data.txt", 20);
+							writer("data.txt", 0, 0);
 							writer("data.txt", 1, 1);
+							for i in 2..6 { writer("data.txt", i, 0); }
 							obo_blitter(&win, String::from("Save reset."), 15, 10);
 							sleep(500);
 							obo_wiper(&win, 15, String::from("Save reset.").len() as i32, 10);
