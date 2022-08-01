@@ -35,7 +35,7 @@ fn hill_river_page(win: &pancurses::Window) {
 					}
 				}
 			}
-			7 => {screen_smash(&win, 3, 7); break}
+			7|99 => {screen_smash(&win, 3, 7); break}
 			_ => {}
 		}
 	}
@@ -68,7 +68,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 				}
 				continue;
 			}
-			7 => {screen_smash(&win, 3, 7); break}
+			7|99 => {screen_smash(&win, 3, 7); break}
 			_ => {}
 		}
 	}
@@ -98,7 +98,7 @@ fn hill_page(win: &pancurses::Window) {
 				screen_smash(&win, 3, 9);
 				hill_river_page(&win);
 			}
-			9 => {screen_smash(&win, 3, 9); break}
+			9|99 => {screen_smash(&win, 3, 9); break}
 			_ => {}
 		}
 	}
@@ -192,7 +192,7 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 					}
 				}
 			}
-			8 => {screen_smash(&win, 3, 9); break}
+			8|99 => {screen_smash(&win, 3, 9); break}
 			_ => {}
 		}
 	}
@@ -242,7 +242,7 @@ fn cave_continue_page(win: &pancurses::Window) {
 				}
 				screen_smash(&win, 3, 8);
 			}
-			6 => {screen_smash(&win, 3, 6); break}
+			6|99 => {screen_smash(&win, 3, 6); break}
 			_ => {}
 		}
 	}
@@ -293,7 +293,7 @@ fn cave_page(win: &pancurses::Window) {
 					cave_goleft_battle_page(&win);
 				} else { screen_smash(&win, 3, 9); break }
 			}
-			9 => {screen_smash(&win, 3, 9); break}
+			9|99 => {screen_smash(&win, 3, 9); break}
 			_ => {}
 		}
 	}
@@ -312,7 +312,7 @@ fn landing_site(win: &pancurses::Window) {
 				screen_smash(&win, 3, 10);
 				cave_page(&win);
 			}
-			9 => {screen_smash(&win, 0, 10); break}
+			9|99 => {screen_smash(&win, 0, 10); break}
 			8|_ => {}
 		}
 	}
@@ -359,7 +359,7 @@ pub fn splash_screen(win: &pancurses::Window) {
 				obo_wiper(&win, 11, String::from("All rights reserved.").len() as i32, 10);
 				obo_wiper(&win, 10, String::from("Copyright (c) 2021-22 draumaz.").len() as i32, 10);
 			}
-			8 => {break}
+			8|99 => {break}
 			_ => {}
 		}
 	}
