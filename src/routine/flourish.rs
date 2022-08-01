@@ -12,7 +12,7 @@ pub fn display_header(win: &pancurses::Window) {
 		}
 		_ => {
 			match sav[3] {
-				1 => { win.mv(1, 16); win.printw("			   "); }
+				0|1 => { win.mv(1, 16); win.printw("			   "); }
 				_ => {win.mv(1, 29); win.printw("              "); }
 			}
 		}

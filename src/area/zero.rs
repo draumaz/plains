@@ -35,7 +35,8 @@ fn hill_river_page(win: &pancurses::Window) {
 					}
 				}
 			}
-			7|_ => {screen_smash(&win, 3, 7); break}
+			7 => {screen_smash(&win, 3, 7); break}
+			_ => {}
 		}
 	}
 }
@@ -67,7 +68,8 @@ fn hill_mountain_page(win: &pancurses::Window) {
 				}
 				continue;
 			}
-			7|_ => {screen_smash(&win, 3, 7); break}
+			7 => {screen_smash(&win, 3, 7); break}
+			_ => {}
 		}
 	}
 }
@@ -81,6 +83,8 @@ fn hill_page(win: &pancurses::Window) {
 				match reader("data.txt")[4] {
 					0 => {
 						obo_blitter(&win, String::from("Seems like you lost your phone in the crash."), 11, 10);
+						sleep(750);
+						obo_wiper(&win, 11, String::from("Seems like you lost your phone in the crash.").len() as i32, 10);
 						screen_smash(&win, 11, 11);
 					}
 					_ => {}
@@ -94,7 +98,8 @@ fn hill_page(win: &pancurses::Window) {
 				screen_smash(&win, 3, 9);
 				hill_river_page(&win);
 			}
-			9|_ => {screen_smash(&win, 3, 9); break}
+			9 => {screen_smash(&win, 3, 9); break}
+			_ => {}
 		}
 	}
 }
@@ -187,7 +192,8 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 					}
 				}
 			}
-			8|_ => {screen_smash(&win, 3, 9); break}
+			8 => {screen_smash(&win, 3, 9); break}
+			_ => {}
 		}
 	}
 }
@@ -236,7 +242,8 @@ fn cave_continue_page(win: &pancurses::Window) {
 				}
 				screen_smash(&win, 3, 8);
 			}
-			6|_ => {screen_smash(&win, 3, 6); break}
+			6 => {screen_smash(&win, 3, 6); break}
+			_ => {}
 		}
 	}
 }
@@ -244,9 +251,10 @@ fn cave_continue_page(win: &pancurses::Window) {
 fn cave_page(win: &pancurses::Window) {
 	let mut length: i32;
 	loop {
+		let lizard_alive = reader("data.txt")[7];
 		win.mv(3, 0);
 		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n");
-		match reader("data.txt")[7] {
+		match lizard_alive {
 			1|2 => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8;}
 			0|_ => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9;}
 		}
@@ -256,21 +264,28 @@ fn cave_page(win: &pancurses::Window) {
 				cave_continue_page(&win);
 			}
 			7 => {
+				let txt: &'static str;
+				let num: i32;
 				let mut status = reader("data.txt")[2];
+				match lizard_alive {
+					1|2 => {num = 10}
+					_ => {num = 11}
+				}
 				if status <= 7 { status += 1; writer("data.txt", 2, status )}
 				win.mv(11, 0);
 				match status {
-					2 => { win.printw("...a pretty dark one, at that."); }
-					3 => { win.printw("Definitely a cave right here."); }
-					4 => { win.printw("But is it, really?"); }
-					5 => { win.printw("No one can ever truly know."); }
-					6 => { win.printw("But one question remains..."); }
-					7 => { win.printw("Why are you still doing this?"); }
-					_ => { win.printw("Sure is a cave."); }
+					2 => { txt = "...a pretty dark one, at that."; }
+					3 => { txt = "Definitely a cave right here."; }
+					4 => { txt = "But is it, really?"; }
+					5 => { txt = "No one can ever truly know."; }
+					6 => { txt = "But one question remains..."; }
+					7 => { txt = "Why are you still doing this?"; }
+					_ => { txt = "Sure is a cave."; }
 				}
-				win.refresh();
+				obo_blitter(&win, String::from(txt), num, 10);
 				sleep(500);
-				screen_smash(&win, 11, 11);
+				obo_wiper(&win, num, txt.len() as i32, 10);
+				screen_smash(&win, num, num);
 			}
 			8 => {
 				if reader("data.txt")[7] == 0 {
@@ -278,7 +293,8 @@ fn cave_page(win: &pancurses::Window) {
 					cave_goleft_battle_page(&win);
 				} else { screen_smash(&win, 3, 9); break }
 			}
-			9|_ => {screen_smash(&win, 3, 9); break}
+			9 => {screen_smash(&win, 3, 9); break}
+			_ => {}
 		}
 	}
 }
@@ -296,8 +312,8 @@ fn landing_site(win: &pancurses::Window) {
 				screen_smash(&win, 3, 10);
 				cave_page(&win);
 			}
-			8 => {}
-			9|_ => {screen_smash(&win, 0, 10); break}
+			9 => {screen_smash(&win, 0, 10); break}
+			8|_ => {}
 		}
 	}
 }
@@ -343,7 +359,8 @@ pub fn splash_screen(win: &pancurses::Window) {
 				obo_wiper(&win, 11, String::from("All rights reserved.").len() as i32, 10);
 				obo_wiper(&win, 10, String::from("Copyright (c) 2021-22 draumaz.").len() as i32, 10);
 			}
-			8|_ => {break}
+			8 => {break}
+			_ => {}
 		}
 	}
 }
