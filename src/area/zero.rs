@@ -117,6 +117,7 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 								obo_blitter(&win, String::from("│ * LIZARD | HP: 0 "), 4, 10, 0);
 								sleep(2000);
 								obo_blitter(&win, String::from("Blood splatters over your suit."), 14, 10, 5000);
+								display_header(&win);
 								obo_blitter(&win, String::from("You take the bottle."), 14, 10, 2000);
 								screen_smash(&win, 3, 15);
 								break;
@@ -127,13 +128,18 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 					_ => {
 						match inc {
 							0 => {
-								for i in ["You try to hit him.", "He barely flinches.", "Looks like you're bothering him."] { obo_blitter(&win, String::from(i), 10, 10, 500) }
+								for i in ["You try to hit him.", "He barely flinches.", "Seems like you're bothering him, though."] { obo_blitter(&win, String::from(i), 10, 10, 500) }
 							}
 							6 => {
 								for i in 7..9 { writer("data.txt", i, 2) }
 								for i in ["The lizard man is sick of you.", "He disappears into the distance."] {
 									obo_blitter(&win, String::from(i), 10, 10, 1000);
 								}
+								sleep(1000);
+								writer("data.txt", 3, 1);
+								display_header(&win);
+								obo_blitter(&win, String::from("Hey, look; a bottle!"), 10, 10, 1000);
+								
 								break;
 							}
 							1|2|3|4|5|_ => {
