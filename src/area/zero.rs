@@ -8,20 +8,13 @@ fn hill_river_page(win: &pancurses::Window) {
 		win.printw("│ A river juts through the landscape.");
 		win.mv(5, 0);
 		match mode {
-			1 => {
-				win.printw("[RELAX]\n[FILL ]\n[BACK ]");
-			}
-			3 => {
-				win.printw("[RELAX]\n[EMPTY]\n[BACK ]");
-			}
-			2|_ => {
-				win.printw("[RELAX]\n[CHILL]\n[BACK ]");
-			}
+			1 => { win.printw("[RELAX]\n[FILL ]\n[BACK ]"); }
+			3 => { win.printw("[RELAX]\n[EMPTY]\n[BACK ]"); }
+			2|_ => { win.printw("[RELAX]\n[CHILL]\n[BACK ]"); }
 		}
 		match table_seek(&win, 5, 7, 8) {
 			5 => {
-				obo_blitter(&win, String::from("You sit down a spell and take in the nature."), 9, 10, 1000); sleep(500);
-				obo_blitter(&win, String::from("How calming!"), 10, 10, 500);
+				for i in ["You sit down a spell and take in the nature.", "How calming!"] { obo_blitter(&win, String::from(i), 9, 10, 1000) }
 			}
 			6 => {
 				match mode {
@@ -134,23 +127,13 @@ fn cave_goleft_battle_page(win: &pancurses::Window) {
 					_ => {
 						match inc {
 							0 => {
-								obo_blitter(&win, String::from("You try to hit him, and he doesn't even flinch."), 10, 10, 500);
-								obo_blitter(&win, String::from("Seems like he doesn't want to entertain this much longer."), 10, 10, 500);
+								for i in ["You try to hit him.", "He barely flinches.", "Looks like you're bothering him."] { obo_blitter(&win, String::from(i), 10, 10, 500) }
 							}
 							6 => {
-								writer("data.txt", 7, 2);
-								writer("data.txt", 8, 2);
-								obo_blitter(&win, String::from("The lizard man is sick of you."), 10, 10, 1000);
-								obo_blitter(&win, String::from("He disappears into the distance."), 11, 10, 2000);
-								obo_blitter(&win, String::from("But not before punching you for the trouble."), 12, 10, 0);
-								for i in (10..ph).rev() {
-									win.mv(3, 17);
-									win.printw(i.to_string());
-									win.refresh();
-									sleep(25);
+								for i in 7..9 { writer("data.txt", i, 2) }
+								for i in ["The lizard man is sick of you.", "He disappears into the distance."] {
+									obo_blitter(&win, String::from(i), 10, 10, 1000);
 								}
-								sleep(2000);
-								screen_smash(&win, 3, 12);
 								break;
 							}
 							1|2|3|4|5|_ => {
