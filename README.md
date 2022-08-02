@@ -11,7 +11,6 @@ The Plains v0.26
 [QUIT]
 ```
 ## <p align="center">A text-based adventure!</p>
-### <p align="center"><a href="https://niceme.me">Download</a></p>
 
 # Story
 
