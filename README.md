@@ -15,7 +15,7 @@ The Plains v0.26
 # Story
 
 - What happens when a random spaceflight employee becomes stranded on a faraway, alien planet? 
-- The Plains is about Liam, a goat who truly just intended to perform a delivery, but ended up here instead. 
+- In The Plains, you are Liam, a delivery goat who _truly_ just intended to perform a mundane sale, but ended up here. 
 - Will you act peacefully towards what you find, or will you do whatever it takes to survive?
 
 ## License
