@@ -10,7 +10,7 @@ The Plains v0.26
 [SHIP]
 [QUIT]
 ```
-## <p align="center">A text-based adventure!</p>
+## <p align="center">A text-based goatventure from space!</p>
 
 # Story
 
