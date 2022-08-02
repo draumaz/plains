@@ -14,7 +14,7 @@ The Plains v0.26
 
 # Story
 
-The Plains is a game about You, a goat named Liam. You've crash landed on the surface of a distant planet, with much to explore. What will you discover? And how will you go about it? Will you be peaceful, or will you hurt others?
+What happens when a random spaceflight employee becomes stranded on a faraway, alien planet? The Plains is about Liam, a goat who truly just intended to perform a delivery, but ended up here instead. You're in uncharted territory, too, so all bets are off. Will you be peaceful to what you find, or will you do whatever it takes to survive?
 
 # Thanks to
 
