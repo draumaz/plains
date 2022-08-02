@@ -14,10 +14,16 @@ The Plains v0.26
 
 # Story
 
-What happens when a random spaceflight employee becomes stranded on a faraway, alien planet? The Plains is about Liam, a goat who truly just intended to perform a delivery, but ended up here instead. You're in uncharted territory, too, so all bets are off. Will you be peaceful to what you find, or will you do whatever it takes to survive?
+- What happens when a random spaceflight employee becomes stranded on a faraway, alien planet? 
+- The Plains is about Liam, a goat who truly just intended to perform a delivery, but ended up here instead. 
+- Will you act peacefully towards what you find, or will you do whatever it takes to survive?
 
-# Thanks to
+## License
+- Copyright (c) 2021-22 draumaz. All rights reserved.
+- pancurses is implemented under the terms of the MIT license.
 
-### the <a href="https://crates.io/crates/pancurses">pancurses</a> team, without which this project would have been impossible.
-### <a href="https://deltadove.lol">DeltaDove</a>, for inspiring a significant amount of gameplay and story
-### Bryce Cano
+## Thanks to
+
+- <a href="https://crates.io/crates/pancurses">pancurses</a>
+- <a href="https://deltadove.lol">DeltaDove</a>
+- Bryce Cano
