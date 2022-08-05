@@ -220,14 +220,11 @@ fn cave_page(win: &pancurses::Window) {
 		win.mv(3, 0);
 		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n");
 		match lizard_alive {
-			1|2 => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8;}
-			0|_ => {win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9;}
+			1|2 => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8 }
+			0|_ => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9 }
 		}
 		match table_seek(&win, 6, length, 11) {
-			6 => {
-				screen_smash(&win, 3, 9);
-				cave_continue_page(&win);
-			}
+			6 => { screen_smash(&win, 3, 9); cave_continue_page(&win) }
 			7 => {
 				let txt: &'static str;
 				let num: i32;
@@ -266,15 +263,9 @@ fn landing_site(win: &pancurses::Window) {
 		win.mv(3, 0);
 		win.printw("│ You are Liam. Your only memories are of crashing on this distant planet.\n│ You awaken, lain in a vast field of grass. Your back hurts.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
 		match table_seek(&win, 6, 9, 7) {
-			6 => {
-				screen_smash(&win, 3, 10);
-				hill_page(&win);
-			}
-			7 => {
-				screen_smash(&win, 3, 10);
-				cave_page(&win);
-			}
-			9|99 => {screen_smash(&win, 0, 10); break}
+			6 => { screen_smash(&win, 3, 10); hill_page(&win) }
+			7 => { screen_smash(&win, 3, 10); cave_page(&win) }
+			9|99 => { screen_smash(&win, 0, 10); break }
 			8|_ => {}
 		}
 	}
@@ -312,8 +303,8 @@ pub fn splash_screen(win: &pancurses::Window) {
 				}
 			}
 			7 => {
-				obo_blitter(&win, String::from("Copyright (c) 2021-22 draumaz."), 10, 10, 500);
-				obo_blitter(&win, String::from("All rights reserved."), 11, 10, 500);
+				obo_blitter(&win, String::from("Copyright (c) 2021-22 draumaz."), 10, 10, 750);
+				obo_blitter(&win, String::from("All rights reserved."), 10, 10, 750);
 			}
 			8|99 => {break}
 			_ => {}
