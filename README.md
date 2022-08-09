@@ -24,6 +24,6 @@ The Plains v0.26
 
 ## Thanks to
 
-- <a href="https://crates.io/crates/pancurses">pancurses</a> (<a href="https://github.com/ihalila">Ilkka Halila</a>)
-- <a href="https://deltadove.lol">DeltaDove</a>
 - Bryce Cano
+- <a href="https://deltadove.lol">DeltaDove</a>
+- <a href="https://crates.io/crates/pancurses">pancurses</a> by <a href="https://github.com/ihalila">Ilkka Halila</a>
