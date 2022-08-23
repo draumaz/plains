@@ -1,4 +1,4 @@
-use crate::{routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep}, prompts::zero::{hill_river, hill_mountain}};
+use crate::{routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep}, prompts::zero::{hill_river, hill_mountain, hill, cave_battle, cave_continue, cave, landing, splash}};
 use savesys::{exists, generate, reader, writer};
 
 fn hill_river_page(win: &pancurses::Window) {
@@ -66,12 +66,14 @@ fn hill_mountain_page(win: &pancurses::Window) {
 fn hill_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("│ You venture out towards a gargantuan hill.\n│ Beside it runs a stream of quickly-flowing water.\n\n[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
+		win.printw(hill("head"));
+		win.mv(6, 0);
+		win.printw("[USE PHONE]\n[MOUNTAIN]\n[TO RIVER ]\n[BACK    ]");
 		match table_seek(&win, 6, 9, 12) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						obo_blitter(&win, String::from("Seems like you lost your phone in the crash."), 11, 10, 500);
+						obo_blitter(&win, String::from(hill("sub1")), 11, 10, 500);
 					}
 					_ => {}
 				}
@@ -90,7 +92,7 @@ fn hill_page(win: &pancurses::Window) {
 	}
 }
 
-fn cave_goleft_battle_page(win: &pancurses::Window) {
+fn cave_battle_page(win: &pancurses::Window) {
 	let ph = 20; let eh = 50; let mut inc = 0;
 	obo_blitter(&win, String::from("│ * LIAM   | HP: "), 3, 10, 0); win.printw(ph.to_string());
 	obo_blitter(&win, String::from("│ * LIZARD | HP: "), 4, 10, 0); win.printw(eh.to_string());
@@ -174,19 +176,22 @@ fn cave_continue_page(win: &pancurses::Window) {
 		match reader("data.txt")[0] { // knife
 			0 => {
 				match reader("data.txt")[3] { // also bottle
-					0 => { win.printw("│ You continue deeper. A chest is sat against the wall."); }
-					_ => { win.printw("│ You continue deeper, and stumble across another chest."); }
+					0 => { win.printw(cave_continue("head_no_bottle")); }
+					_ => { win.printw(cave_continue("head_bottle")); }
 				}
 				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
 			1 => {
-				win.printw("│ An empty chest lies in the darkness.\n\n[PLACE]\n[BACK ]");
+				win.printw(cave_continue("head_empty"));
+				win.mv(5, 0);
+				win.printw("[PLACE]\n[BACK ]");
 				pos = 8;
 			}
 			2 => { 
-				win.printw("│ There's that chest again.");
-				win.mv(5, 0); win.printw("[OPEN]\n[BACK]");
+				win.printw(cave_continue("head_put_back"));
+				win.mv(5, 0);
+				win.printw("[OPEN]\n[BACK]");
 				pos = 7;
 			}
 			_ => { pos = 420; }
@@ -197,12 +202,12 @@ fn cave_continue_page(win: &pancurses::Window) {
 					1 => {
 						writer("data.txt", 0, 2);
 						display_header(&win);
-						obo_blitter(&win, String::from("You put the knife back."), 8, 10, 500);
+						obo_blitter(&win, String::from(cave_continue("sub_put_back")), 8, 10, 500);
 					}
 					_ => {
 						writer("data.txt", 0, 1);
 						display_header(&win);
-						obo_blitter(&win, String::from("You take the knife."), 8, 10, 500);
+						obo_blitter(&win, String::from(cave_continue("sub_take")), 8, 10, 500);
 					}
 				}
 				screen_smash(&win, 3, 8);
@@ -218,7 +223,8 @@ fn cave_page(win: &pancurses::Window) {
 	loop {
 		let lizard_alive = reader("data.txt")[7];
 		win.mv(3, 0);
-		win.printw("│ You make your way towards a deep, cavernous grotto.\n│ Hardly a thing to make out through the dark.\n\n");
+		win.printw(cave("head"));
+		win.mv(5, 0);
 		match lizard_alive {
 			1|2 => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8 }
 			0|_ => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9 }
@@ -249,7 +255,7 @@ fn cave_page(win: &pancurses::Window) {
 			8 => {
 				if reader("data.txt")[7] == 0 {
 					screen_smash(&win, 3, 9);
-					cave_goleft_battle_page(&win);
+					cave_battle_page(&win);
 				} else { screen_smash(&win, 3, 9); break }
 			}
 			9|99 => {screen_smash(&win, 3, 9); break}
@@ -261,7 +267,9 @@ fn cave_page(win: &pancurses::Window) {
 fn landing_site(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("│ You are Liam. Your only memories are of crashing on this distant planet.\n│ You awaken, lain in a vast field of grass. Your back hurts.\n\n[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
+		win.printw(landing("head"));
+		win.mv(6, 0);
+		win.printw("[HILL]\n[CAVE]\n[SHIP]\n[QUIT]");
 		match table_seek(&win, 6, 9, 7) {
 			6 => { screen_smash(&win, 3, 10); hill_page(&win) }
 			7 => { screen_smash(&win, 3, 10); cave_page(&win) }
@@ -274,7 +282,7 @@ fn landing_site(win: &pancurses::Window) {
 pub fn splash_screen(win: &pancurses::Window) {
 	loop {
 		win.mv(1, 0);
-		win.printw("==THE PLAINS===============\n==DRAUMAZ, 2021-22=========\n==WRITTEN IN RUST!=========");
+		win.printw(splash("hello"));
 		win.mv(5, 0);
 		win.printw("[PLAY   ]\n[RESET  ]\n[LICENSE]\n[QUIT   ]");
 		match table_seek(&win, 5, 8, 11) {
@@ -287,7 +295,9 @@ pub fn splash_screen(win: &pancurses::Window) {
 			}
 			6 => {
 				if exists("data.txt") {
-					obo_blitter(&win, String::from("Are you sure you want to reset?\n\n[YES]\n[NO ]"), 10, 10, 0);
+					obo_blitter(&win, String::from(splash("reset_warn")), 10, 10, 0);
+					win.mv(12, 0);
+					win.printw("[YES]\n[NO ]");
 					match table_seek(&win, 12, 13, 6) {
 						12 => {
 							//remove_file("data.txt").unwrap();
@@ -295,7 +305,7 @@ pub fn splash_screen(win: &pancurses::Window) {
 							writer("data.txt", 0, 0);
 							writer("data.txt", 1, 1);
 							for i in 2..8 { writer("data.txt", i, 0); }
-							obo_blitter(&win, String::from("Save reset."), 15, 10, 500);
+							obo_blitter(&win, String::from(splash("reset_succ")), 15, 10, 500);
 						}
 						13|_ => {}
 					}
@@ -303,8 +313,8 @@ pub fn splash_screen(win: &pancurses::Window) {
 				}
 			}
 			7 => {
-				obo_blitter(&win, String::from("Copyright (c) 2021-22 draumaz."), 10, 10, 750);
-				obo_blitter(&win, String::from("All rights reserved."), 10, 10, 750);
+				obo_blitter(&win, String::from(splash("copyright0")), 10, 10, 750);
+				obo_blitter(&win, String::from(splash("copyright1")), 10, 10, 750);
 			}
 			8|99 => {break}
 			_ => {}
