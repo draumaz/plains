@@ -21,6 +21,16 @@ pub fn hill(i: &str) -> &str { match i {
 } }
 
 pub fn cave_battle(i: &str) -> &str { match i {
+	"talk_knife" => { "He's afraid of you." }
+	"talk_normal" => { "He doesn't want to talk to you." }
+	"punch1" => { "You try to hit him." }
+	"punch11" => { "He barely flinches." }
+	"punch12" => { "Seems like you're bothering him, though." }
+	"punch2" => { "The lizard man is sick of you." }
+	"punch21" => { "He disappears into the distance." }
+	"knife" => { "Blood splatters over your suit." }
+	"bottle_normal" => { "Hey, look; a bottle!" }
+	"bottle_kill" => { "You take his bottle." }
 	_ => { "ERROR" }
 } }
 

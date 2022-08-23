@@ -68,7 +68,7 @@ fn hill_page(win: &pancurses::Window) {
 		win.mv(3, 0);
 		win.printw(hill("head"));
 		win.mv(6, 0);
-		win.printw("[USE PHONE]\n[MOUNTAIN]\n[TO RIVER ]\n[BACK    ]");
+		win.printw("[USE PHONE]\n[MOUNTAIN ]\n[TO RIVER ]\n[BACK     ]");
 		match table_seek(&win, 6, 9, 12) {
 			6 => {
 				match reader("data.txt")[4] {
@@ -118,9 +118,9 @@ fn cave_battle_page(win: &pancurses::Window) {
 								}
 								obo_blitter(&win, String::from("│ * LIZARD | HP: 0 "), 4, 10, 0);
 								sleep(2000);
-								obo_blitter(&win, String::from("Blood splatters over your suit."), 14, 10, 5000);
+								obo_blitter(&win, String::from(cave_battle("knife")), 14, 10, 5000);
 								display_header(&win);
-								obo_blitter(&win, String::from("You take the bottle."), 14, 10, 2000);
+								obo_blitter(&win, String::from(cave_battle("bottle_kill")), 14, 10, 2000);
 								screen_smash(&win, 3, 15);
 								break;
 							}
@@ -130,17 +130,17 @@ fn cave_battle_page(win: &pancurses::Window) {
 					_ => {
 						match inc {
 							0 => {
-								for i in ["You try to hit him.", "He barely flinches.", "Seems like you're bothering him, though."] { obo_blitter(&win, String::from(i), 10, 10, 500) }
+								for i in [cave_battle("punch1"), cave_battle("punch11"), cave_battle("punch12")] { obo_blitter(&win, String::from(i), 10, 10, 500) }
 							}
 							6 => {
 								for i in 7..9 { writer("data.txt", i, 2) }
-								for i in ["The lizard man is sick of you.", "He disappears into the distance."] {
+								for i in [cave_battle("punch2"), cave_battle("punch21")] {
 									obo_blitter(&win, String::from(i), 10, 10, 1000);
 								}
 								sleep(1000);
 								writer("data.txt", 3, 1);
 								display_header(&win);
-								obo_blitter(&win, String::from("Hey, look; a bottle!"), 10, 10, 1000);
+								obo_blitter(&win, String::from(cave_battle("bottle_normal")), 10, 10, 1000);
 								
 								break;
 							}
@@ -156,10 +156,10 @@ fn cave_battle_page(win: &pancurses::Window) {
 			7 => {
 				match reader("data.txt")[0] {
 					1 => { 
-						obo_blitter(&win, String::from("He's afraid of you."), 10, 30, 1000); 
+						obo_blitter(&win, String::from(cave_battle("talk_knife")), 10, 30, 1000); 
 					}
 					_ => {
-						obo_blitter(&win, String::from("He doesn't quite understand why\nyou want to check the chest so badly."), 10, 10, 500);
+						obo_blitter(&win, String::from(cave_battle("talk_normal")), 10, 10, 500);
 					}
 				}
 			}
@@ -224,7 +224,7 @@ fn cave_page(win: &pancurses::Window) {
 		let lizard_alive = reader("data.txt")[7];
 		win.mv(3, 0);
 		win.printw(cave("head"));
-		win.mv(5, 0);
+		win.mv(6, 0);
 		match lizard_alive {
 			1|2 => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[BACK    ]"); length = 8 }
 			0|_ => { win.printw("[CONTINUE]\n[ADMIRE  ]\n[GO LEFT ]\n[BACK    ]"); length = 9 }
