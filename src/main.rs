@@ -1,4 +1,5 @@
 mod routine;
+mod prompts;
 mod area;
 
 use crate::routine::funk::{screen_up, screen_down};

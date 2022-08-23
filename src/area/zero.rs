@@ -1,11 +1,11 @@
-use crate::routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep};
+use crate::{routine::{funk::{table_seek, screen_smash}, flourish::{display_header, obo_blitter}, misc::sleep}, prompts::zero::{hill_river, hill_mountain}};
 use savesys::{exists, generate, reader, writer};
 
 fn hill_river_page(win: &pancurses::Window) {
 	let mode = reader("data.txt")[4];
 	loop {
 		win.mv(3, 0);
-		win.printw("│ A river juts through the landscape.");
+		win.printw(hill_river("head"));
 		win.mv(5, 0);
 		match mode {
 			1 => { win.printw("[RELAX]\n[FILL ]\n[BACK ]"); }
@@ -14,14 +14,14 @@ fn hill_river_page(win: &pancurses::Window) {
 		}
 		match table_seek(&win, 5, 7, 8) {
 			5 => {
-				for i in ["You sit down a spell and take in the nature.", "How calming!"] { obo_blitter(&win, String::from(i), 9, 10, 1000) }
+				for i in [hill_river("sub1"), hill_river("sub11")] { obo_blitter(&win, String::from(i), 9, 10, 1000) }
 			}
 			6 => {
 				match mode {
 					1 => {}
 					3 => {}
 					2|_ => {
-						obo_blitter(&win, String::from("This is basically the same thing as relaxing, right?"), 9, 10, 500);
+						obo_blitter(&win, String::from(hill_river("sub2")), 9, 10, 500);
 					}
 				}
 			}
@@ -34,15 +34,15 @@ fn hill_river_page(win: &pancurses::Window) {
 fn hill_mountain_page(win: &pancurses::Window) {
 	loop {
 		win.mv(3, 0);
-		win.printw("│ A gentle wind flows through the sky.");
+		win.printw(hill_mountain("head"));
 		win.mv(4, 0);
 		match reader("data.txt")[4] {
 			1 => {
-				win.printw("│ Seems like your phone's got service.");
+				win.printw(hill_mountain("head_phone"));
 		    	win.mv(6, 0); win.printw("[CALL]\n[BACK]");
 			}
 			_ => {
-				win.printw("│ Not much to see up here.");
+				win.printw(hill_mountain("head_no_phone"));
 				win.mv(6, 0); win.printw("[COLD]\n[BACK]");
 			}
 		}
@@ -50,7 +50,7 @@ fn hill_mountain_page(win: &pancurses::Window) {
 			6 => {
 				match reader("data.txt")[4] {
 					0 => {
-						obo_blitter(&win, String::from("Indeed, it is quite cold here."), 9, 10, 500);
+						obo_blitter(&win, String::from(hill_mountain("sub1")), 9, 10, 500);
 						screen_smash(&win, 9, 9);
 					}
 					_ => {}
