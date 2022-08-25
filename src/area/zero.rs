@@ -126,9 +126,11 @@ fn cave_battle_page(win: &pancurses::Window) {
 								}
 								obo_blitter(&win, "│ * LIZARD | HP: 0 ", 4, 10, 0);
 								sleep(2000);
-								obo_blitter(&win, cave_battle("knife"), 14, 10, 5000);
+								obo_blitter(&win, cave_battle("knife"), 14, 10, 0);
+								sleep(5000);
 								display_header(&win);
-								obo_blitter(&win, cave_battle("bottle_kill"), 14, 10, 2000);
+								obo_blitter(&win, cave_battle("bottle_kill"), 15, 10, 0);
+								sleep(2000);
 								screen_smash(&win, 3, 15);
 								break;
 							}
