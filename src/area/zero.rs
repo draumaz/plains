@@ -4,16 +4,7 @@ use crate::{
 		flourish::{display_header, obo_blitter},
 		misc::sleep,
 	},
-	prompts::zero::{
-		hill_river,
-		hill_mountain,
-		hill,
-		cave_battle,
-		cave_continue,
-		cave,
-		landing,
-		splash
-	}
+	prompts::zero::*
 };
 
 use savesys::{exists, generate, reader, writer};
