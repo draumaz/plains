@@ -1,4 +1,4 @@
-AC_INIT([plains], [0.26], [draumaz@goatopossum.com])
+AC_INIT([plains], [0.27], [draumaz@goatopossum.com])
 
 AM_INIT_AUTOMAKE
 AC_PROG_CC
