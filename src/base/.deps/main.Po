@@ -1,0 +1,4 @@
+src/base/main.o: src/base/main.c /usr/include/stdc-predef.h \
+ src/base/../header/c0_splash.h
+/usr/include/stdc-predef.h:
+src/base/../header/c0_splash.h:
